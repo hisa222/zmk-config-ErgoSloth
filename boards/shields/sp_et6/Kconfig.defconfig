@@ -1,7 +1,7 @@
-if SHIELD_SPET6_RIGHT
+if SHIELD_ERGOSLOTH_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "SP-ET6"
+    default "Ergosloth"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -20,12 +20,12 @@ config BT_MAX_PAIRED
 
 endif
 
-if SHIELD_SPET6_LEFT 
+if SHIELD_ERGOSLOTH_LEFT 
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
 endif
 
-if SHIELD_SPET6_LEFT || SHIELD_SPET6_RIGHT
+if SHIELD_ERGOSLOTH_LEFT || SHIELD_ERGOSLOTH_RIGHT
 
 config ZMK_SPLIT
     default y

@@ -10,7 +10,7 @@
 / {
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
-        display-name = "SP ET6 Default";
+        display-name = "ERGOSLOTH Default";
         kscan = <&kscan0>;
         transform = <&default_transform>;
 

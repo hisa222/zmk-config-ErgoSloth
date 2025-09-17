@@ -4,21 +4,22 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "spet6.dtsi"
+#include "ergosloth.dtsi"
 #include <input/processors.dtsi>
 
 &default_transform {
-    col-offset = <6>;
+    col-offset = <7>;
 };
 
 &kscan0 {
     gpios
-        = <&xiao_d 1 (GPIO_ACTIVE_HIGH)>
-        , <&xiao_d 2 (GPIO_ACTIVE_HIGH)>
-        , <&xiao_d 3 (GPIO_ACTIVE_HIGH)>
-        , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>
+        = <&xiao_d 4 (GPIO_ACTIVE_HIGH)>
         , <&xiao_d 5 (GPIO_ACTIVE_HIGH)>
-        , <&xiao_d 6 (GPIO_ACTIVE_HIGH)>
+        , <&gpio1 10 (GPIO_ACTIVE_HIGH)>
+        , <&gpio1 00 (GPIO_ACTIVE_HIGH)>
+        , <&gpio0 16 (GPIO_ACTIVE_HIGH)>
+        , <&gpio0 10 (GPIO_ACTIVE_HIGH)>
+        , <&gpio0 09 (GPIO_ACTIVE_HIGH)>
         ;
 };
 
@@ -55,16 +56,16 @@
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, // xiao D8, see posix_seeed_xiao.overlay in zmk source
-            <NRF_PSEL(SPIM_MOSI, 1, 15)>, // xiao D10
-            <NRF_PSEL(SPIM_MISO, 1, 15)>; // The same to MOSI (Half-duplex mode)
+            <NRF_PSEL(SPIM_MOSI, 1, 14)>, // xiao D9
+            <NRF_PSEL(SPIM_MISO, 1, 14)>; // The same to MOSI (Half-duplex mode)
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 1, 15)>,
-                    <NRF_PSEL(SPIM_MISO, 1, 15)>;
+                    <NRF_PSEL(SPIM_MOSI, 1, 14)>,
+                    <NRF_PSEL(SPIM_MISO, 1, 14)>;
             low-power-enable;
         };
     };

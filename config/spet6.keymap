@@ -25,6 +25,31 @@
 #define SCROLL    7
 #define EXTRA     8
 
+// OS設定を日本語キーボードのまま使用するための変換定義
+#define JP_DQUOTE       AT                // "
+#define JP_AMPERSAND    CARET             // &
+#define JP_QUOTE        AMPERSAND         // '
+#define JP_EQUAL        UNDER             // =
+#define JP_CARET        EQUAL             // ^
+#define JP_YEN          0x89              // ¥
+#define JP_PLUS         COLON             // +
+#define JP_TILDE        PLUS              // ~
+#define JP_PIPE         LS(0x89)          // |
+#define JP_AT           LEFT_BRACKET      // @
+#define JP_COLON        SINGLE_QUOTE      // :
+#define JP_ASTERISK     DOUBLE_QUOTES     // *
+#define JP_BACKQUOTE    LEFT_BRACE        // `
+#define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_LBRACKET     RIGHT_BRACKET     // [
+#define JP_RBRACKET     BACKSLASH         // ]
+#define JP_LPAREN       ASTERISK          // (
+#define JP_RPAREN       LEFT_PARENTHESIS  // )
+#define JP_LBRACE       RIGHT_BRACE       // {
+#define JP_RBRACE       PIPE              // }
+#define JP_KANA         LANGUAGE_1        // かな
+#define JP_EISU         LANGUAGE_2        // 英数
+#define JP_HANZEN       GRAVE             // 半角/全角
+
 /**************************************************************************/
 /*  TrackBall 関連                                                        */
 
@@ -252,26 +277,68 @@
         default_layer {
             display-name = "BASE";
 
-            // -----------------------------------------------------------------------------------------
+            //               | SW2  | SW3  | SW4  | SW5  |   | SW6  | SW7  | SW8  | SW9  |
+            // | SW0  | SW1  | SW14 | SW15 | SW16 | SW17 |   | SW18 | SW19 | SW20 | SW21 | SW10 | SW11 |
+            // | SW12 | SW13 | SW26 | SW27 | SW28 | SW29 |   | SW30 | SW31 | SW32 | SW33 | SW22 | SW23 |
+            // | SW24 | SW25 | SW38 | SW39 | SW40 | SW41 |   | SW42 | SW43 | SW44 | SW45 | SW34 | SW35 |
+            // | SW36 | SW37 | SW50 | SW51 | SW52 | SW53 |   | SW54 | SW55 | SW56 | SW57 | SW46 | SW47 |
+            // | SW48 | SW49 | SW60 | SW61 | SW62 | (LAJS)   (RAJS) | SW69 | SW70 | SW71 | SW58 | SW59 |
+            //                                  (TouchPad)
+            // 		                              | SW65 |   | SW66 |	    (TrackBall)
+            // 							   | SW64 |					| SW67 |
+            // | SW72 |				| SW63 |							   | SW68 |				| SW83 |
+            //    (LeftRotaryEncoder)                                             (RightRotaryEncoder)
+            //		  | SW73 |															 | SW78 |
+            // | SW74 | SW77 | SW76 |											  | SW79 | SW82 | SW81 |
+            // 		  | SW75 |															 | SW80 |
+
+//                                                         ||
+//                                                       __||__
+//                                                        \  /
+//                                                         \/
+
             // | SW0  | SW1  | SW2  | SW3  | SW4  | SW5  |   | SW6  | SW7  | SW8  | SW9  | SW10 | SW11 |
             // | SW12 | SW13 | SW14 | SW15 | SW16 | SW17 |   | SW18 | SW19 | SW20 | SW21 | SW22 | SW23 |
             // | SW24 | SW25 | SW26 | SW27 | SW28 | SW29 |   | SW30 | SW31 | SW32 | SW33 | SW34 | SW35 |
             // | SW36 | SW37 | SW38 | SW39 | SW40 | SW41 |   | SW42 | SW43 | SW44 | SW45 | SW46 | SW47 |
             // | SW48 | SW49 | SW50 | SW51 | SW52 | SW53 |   | SW54 | SW55 | SW56 | SW57 | SW58 | SW59 |
-            // 		  | SW60 | SW61 | SW62 |      | SW63 |   | SW64 |	   | SW65 | SW66 | SW67 |
-            // 							   | SW68 |					| SW69 |
-            // | SW70 |				| SW71 |							   | SW72 |				| SW73 |
+            // | SW60 | SW61 | SW62 | SW63 | SW64 | SW65 |   | SW66 | SW67 | SW68 | SW69 | SW70 | SW71 |
+            // | SW72 | SW73 | SW74 | SW75 | SW76 | SW77 |   | SW78 | SW79 | SW80 | SW81 | SW82 | SW83 |
+
+                                                          
+
+            // -----------------------------------------------------------------------------------------
+            //               |  F4  |  F5  |  F6  |  F7  |   |  F8  |  F9  | F10  | F11  |
+            // | ESCP | HOME |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |  END |  DEL |
+            // |  E/J |   1  |   W  |   E  |   R  |   T  |   |   Y  |   U  |   I  |   O  |   0  | BKSP |
+            // |  TAB |   Q  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |   P  | ENTR |
+            // | LSft |   A  |   X  |   C  |   V  |   B  |   |   N  |   M  |   ,  |   .  |   ↑  | RSft |
+            // | LAlt |   Z  |  GUI | LCtr | SPCE |                 | SPCE | RCtr |   ←  |   ↓  |   →  |
+            // 		                      	
+            //                                    | SPCE |   | SPCE |
+            // 							   | ENTR |					| ENTR |
+            // | layr |				| BKSP |							   | BKSP |				| layr |
             //
-            //		  | SW74 |															 | SW75 |
-            // | SW76 | SW77 | SW78 |											  | SW79 | SW80 | SW81 |
-            // 		  | SW82 |															 | SW83 |
+            //		  | CtrC |															 | CtrT |
+            // | CtrZ | Entr | CtrY |											  | BTab | Entr | NTab |
+            // 		  | CtrV |															 | CtrW |
+
+            // -----------------------------------------------------------------------------------------
+            // | ESCP | HOME |  F4  |  F5  |  F6  |  F7  |   |  F8  |  F9  | F10  | F11  |  END |  DEL |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |   0  | BKSP |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  |   |   Y  |   U  |   I  |   O  |   P  | ENTR |
+            // | LSft |   A  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |   ↑  | RSft |
+            // | LAlt |   Z  |   X  |   C  |   V  |   B  |   |   N  |   M  |   ,  |   .  |   ↓  |   →  |
+            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
+            // | layr | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | layr |
 
             bindings = <
-&gresc     &kp Q  &kp L  &kp U        &kp COMMA          &kp PERIOD       &kp F          &kp W              &kp R     &kp Y  &kp P  &kp SLASH
-&kp LCTRL  &kp E  &kp I  &kp A        &kp O              &kp MINUS        &kp K          &kp T              &kp N     &kp S  &kp H  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C        &kp V              &kp SEMICOLON    &kp G          &kp D              &kp M     &kp J  &kp B  &kp EQUAL
-                         &tog SCROLL  &td_spc            &lt MARKS SPACE  &lt MARKS RET  &td_bspc
-                                      &ime_alt LALT F14  &mo NUMS         &kp LGUI       &ime_alt RALT F13  &mo NUMS
+&gresc         &kp HOME   &kp F4     &kp F5         &kp F6          &kp F7       &kp F8         &kp F9             &kp F10        &kp F11     &kp END    &kp DEL
+&kp JP_HANZEN  &kp 1      &kp 2      &kp 3          &kp 4           &kp 5        &kp 6          &kp 7              &kp 8          &kp 9       &kp 0      &kp BACKSPACE
+&kp TAB        &kp Q      &kp W      &kp E          &kp R           &kp T        &kp Y          &kp U              &kp I          &kp O       &kp P      &kp ENTER
+&kp LSHFT      &kp A      &kp S      &kp D          &kp F           &kp G        &kp H          &kp J              &kp K          &kp L       &kp UP     &kp RSHFT
+&kp LALT       &kp Z      &kp X      &kp C          &kp V           &kp B        &kp N          &kp M              &kp COMMA      &kp PERIOD  &kp DOWN   &kp RIGHT
+&kp LGUI       &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER       &kp SPACE    &kp SPACE      &kp ENTER          &kp BACKSPACE  &kp SPACE   &kp RCTRL  &kp LEFT
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;

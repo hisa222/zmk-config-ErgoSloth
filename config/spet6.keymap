@@ -253,11 +253,18 @@
             display-name = "BASE";
 
             // -----------------------------------------------------------------------------------------
-            // |  ESC |  Q  |  L  |  U  |  ,  |  .  |   |  F  |  W   |  R  |  Y  |  P  |  /   |
-            // | CTRL |  E  |  I  |  A  |  O  |  -  |   |  K  |  T   |  N  |  S  |  H  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  G  |  D   |  M  |  J  |  B  |  =   |
-            //        | SCRL| SPC(FUNK) | SPC(MARK) |   | ENT(MARK) | BKSP(FUNC) |
-            //              |  LALT     | NUMS      |   | GUI       | RALT       | BKSP(NUM)|
+            // | SW0  | SW1  | SW2  | SW3  | SW4  | SW5  |   | SW6  | SW7  | SW8  | SW9  | SW10 | SW11 |
+            // | SW12 | SW13 | SW14 | SW15 | SW16 | SW17 |   | SW18 | SW19 | SW20 | SW21 | SW22 | SW23 |
+            // | SW24 | SW25 | SW26 | SW27 | SW28 | SW29 |   | SW30 | SW31 | SW32 | SW33 | SW34 | SW35 |
+            // | SW36 | SW37 | SW38 | SW39 | SW40 | SW41 |   | SW42 | SW43 | SW44 | SW45 | SW46 | SW47 |
+            // | SW48 | SW49 | SW50 | SW51 | SW52 | SW53 |   | SW54 | SW55 | SW56 | SW57 | SW58 | SW59 |
+            // 		  | SW60 | SW61 | SW62 |      | SW63 |   | SW64 |	   | SW65 | SW66 | SW67 |
+            // 							   | SW68 |					| SW69 |
+            // | SW70 |				| SW71 |							   | SW72 |				| SW73 |
+            //
+            //		  | SW74 |															 | SW75 |
+            // | SW76 | SW77 | SW78 |											  | SW79 | SW80 | SW81 |
+            // 		  | SW82 |															 | SW83 |
 
             bindings = <
 &gresc     &kp Q  &kp L  &kp U        &kp COMMA          &kp PERIOD       &kp F          &kp W              &kp R     &kp Y  &kp P  &kp SLASH

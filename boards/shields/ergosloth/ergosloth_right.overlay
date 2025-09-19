@@ -34,6 +34,10 @@
     };
 };
 
+&glidepoint_listener {
+    status = "okay";
+};
+
 // ここに指定したキーではAMLから抜けなくなる
 &zip_temp_layer {
     excluded-positions = <

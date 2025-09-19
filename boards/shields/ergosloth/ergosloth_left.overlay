@@ -5,6 +5,7 @@
  */
 
 #include "ergosloth.dtsi"
+#include <input/processors.dtsi>
 
 &left_encoder {
     status = "okay";

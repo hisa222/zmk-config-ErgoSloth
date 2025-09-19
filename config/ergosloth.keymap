@@ -267,6 +267,22 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
+
+        encoder_msc_right_left: encoder_msc_right_left {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_RIGHT_LEFT";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+            tap-ms = <20>;
+        };
     };
 
     /**************************************************************************/
@@ -342,7 +358,7 @@
 &to 1          &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER       &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &to 1
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&encoder_msc_right_left &encoder_msc_down_up>;
         };
 
         autoshift_layer {

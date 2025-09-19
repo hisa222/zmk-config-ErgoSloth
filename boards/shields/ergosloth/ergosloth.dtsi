@@ -48,6 +48,7 @@
         };
     };
 
+/*
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -57,6 +58,7 @@
             reg = <0>;
         };
     };
+*/
 
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";

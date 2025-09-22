@@ -40,3 +40,20 @@
         device = <&glidepoint>;
     };
 };
+
+&spi0 {
+    status = "okay";
+
+    glidepoint: glidepoint@1 {
+        compatible = "cirque,pinnacle";
+        status = "okay";
+        reg = <1>;
+        spi-max-frequency = <1000000>;
+        // dr-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "2x";
+        no-taps;
+        // no-smoothing;
+        //absolute-mode;
+    };
+};

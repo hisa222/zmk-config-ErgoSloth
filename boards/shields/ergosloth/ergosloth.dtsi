@@ -123,17 +123,17 @@
             reg = <0>;
         };
 
-    glidepoint: glidepoint@1 {
-        compatible = "cirque,pinnacle";
-        status = "okay";
-        reg = <1>;
-        spi-max-frequency = <1000000>;
-        // dr-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
+    	glidepoint: glidepoint@1 {
+        	// compatible = "cirque,pinnacle";
+        	status = "disabled";
+        	reg = <1>;
+        	// spi-max-frequency = <1000000>;
+        	// dr-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "2x";
-        no-taps;
-        // no-smoothing;
-        //absolute-mode;
-    };
+        	// sensitivity = "2x";
+        	// no-taps;
+        	// no-smoothing;
+        	//absolute-mode;
+    	};
 
 };

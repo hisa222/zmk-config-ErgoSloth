@@ -48,6 +48,32 @@
         };
     };
 
+&spi0 {
+    status = "okay";
+    cirque_touchpad: glidepoint@0 {
+        compatible = "cirque,glidepoint";
+        reg = <0>;
+        spi-max-frequency = <1000000>;
+        irq-gpios = <&gpio0 15 (GPIO_ACTIVE_LOW)>; // 配線に合わせて変更
+        status = "okay";
+    };
+};
+
+cirque_listener: cirque_listener {
+    compatible = "zmk,input-listener";
+    status = "okay";
+    cirque_scroller: scroller {
+        input-processors = <&zip_xy_scaler 1 50 &zip_xy_to_scroll_mapper>,
+                           <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+    };
+};
+
+/ {
+    chosen {
+        zmk,input-listener = <&cirque_listener &trackball_listener>;
+    };
+};
+
 
 
     default_transform: keymap_transform_0 {

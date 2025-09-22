@@ -99,4 +99,5 @@
     glidepoint: glidepoint@1 {
        	status = "disable";
        	reg = <1>;
+    };
 };

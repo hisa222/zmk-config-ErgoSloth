@@ -106,6 +106,7 @@
         glidepoint_split: glidepoint_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
+			device = <&glidepoint>;
         };
     };
 };
@@ -122,7 +123,7 @@
             status = "disabled";
             reg = <0>;
         };
-
+/*
     	glidepoint: glidepoint@1 {
         	compatible = "cirque,pinnacle";
         	status = "okay";
@@ -135,4 +136,5 @@
         	// no-smoothing;
         	//absolute-mode;
 		};
+*/
 };

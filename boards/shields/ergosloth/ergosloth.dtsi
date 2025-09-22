@@ -48,6 +48,12 @@
         };
     };
 
+    glidepoint_listener: glidepoint_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        // device = <&glidepoint_split>;
+    };
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
@@ -101,12 +107,6 @@
             compatible = "zmk,input-split";
             reg = <0>;
         };
-    };
-
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint_split>;
     };
 };
 

@@ -106,7 +106,7 @@
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&glidepoint>;
+        device = <&glidepoint_split>;
     };
 };
 
@@ -124,16 +124,8 @@
         };
 
     	glidepoint: glidepoint@1 {
-        	// compatible = "cirque,pinnacle";
         	status = "disabled";
         	reg = <1>;
-        	// spi-max-frequency = <1000000>;
-        	// dr-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
-
-        	// sensitivity = "2x";
-        	// no-taps;
-        	// no-smoothing;
-        	//absolute-mode;
     	};
 
 };

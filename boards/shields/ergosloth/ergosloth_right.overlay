@@ -95,4 +95,8 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
     };
+
+    glidepoint: glidepoint@1 {
+       	status = "disable";
+       	reg = <1>;
 };

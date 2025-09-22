@@ -54,6 +54,7 @@
 
         glidepoint_split: glidepoint_split@1 {
             compatible = "zmk,input-split";
+			status = "disabled";
             reg = <1>;
         };
     };

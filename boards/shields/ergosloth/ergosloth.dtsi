@@ -91,6 +91,23 @@
         wakeup-source;
         interrupt-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
+
+    // Input Listners
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        glidepoint_split: glidepoint_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    glidepoint_listener: glidepoint_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&glidepoint_split>;
+    };
 };
 
 // Use NFC pins as GPIOs
@@ -105,5 +122,18 @@
             status = "disabled";
             reg = <0>;
         };
+
+    glidepoint: glidepoint@1 {
+        compatible = "cirque,pinnacle";
+        status = "okay";
+        reg = <1>;
+        spi-max-frequency = <1000000>;
+        // dr-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "2x";
+        no-taps;
+        // no-smoothing;
+        //absolute-mode;
+    };
 
 };

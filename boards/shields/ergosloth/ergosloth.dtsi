@@ -48,16 +48,18 @@
         };
     };
 
+/*
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 
         glidepoint_split: glidepoint_split@1 {
             compatible = "zmk,input-split";
-			status = "okay";
+			status = "disabled";
             reg = <1>;
         };
     };
+*/
 
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";

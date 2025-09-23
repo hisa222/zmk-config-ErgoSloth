@@ -96,3 +96,8 @@
         y-input-code = <INPUT_REL_Y>;
     };
 };
+
+&glidepoint_split {
+    status = "disabled";
+    device = <&glidepoint>;
+};

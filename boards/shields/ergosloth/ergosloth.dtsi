@@ -53,12 +53,13 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        glidepoint_split: glidepoint_split@0 {
+        glidepoint_split: glidepoint_split {
             compatible = "zmk,input-split";
             reg = <0>;
 			// device = <&glidepoint>;
         };
     };
+
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
@@ -118,7 +119,7 @@
 &spi0 {
         status = "disabled";
 
-        trackball: trackball@0 {
+        trackball: trackball {
             status = "disabled";
             reg = <0>;
         };

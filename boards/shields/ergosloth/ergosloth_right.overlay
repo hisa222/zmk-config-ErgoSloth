@@ -27,10 +27,6 @@
     status = "okay";
 };
 
-&glidepoint_listener {
-    status = "okay";
-};
-
 / {
     trackball_listener {
         status = "okay";
@@ -98,10 +94,5 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-    };
-
-    glidepoint: glidepoint@1 {
-       	status = "disabled";
-       	reg = <1>;
     };
 };

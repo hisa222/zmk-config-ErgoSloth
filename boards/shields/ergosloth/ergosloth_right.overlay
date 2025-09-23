@@ -84,7 +84,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+    trackball: trackball {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
@@ -96,9 +96,7 @@
         y-input-code = <INPUT_REL_Y>;
     };
 };
-/*
-&glidepoint_split {
-    status = "disabled";
-    device = <&glidepoint>;
+
+&glidepoint_listener {
+    status = "okay";
 };
-*/

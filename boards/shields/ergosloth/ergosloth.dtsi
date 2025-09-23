@@ -63,7 +63,7 @@
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&glidepoint_split>;
+        device = <&glidepoint>;
     };
 
     default_transform: keymap_transform_0 {

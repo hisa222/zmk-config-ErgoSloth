@@ -22,7 +22,7 @@
         , <&gpio0  9 (GPIO_ACTIVE_HIGH)>
         ;
 };
-
+/*
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -82,3 +82,4 @@
         device = <&glidepoint_split>;
     };
 };
+*/

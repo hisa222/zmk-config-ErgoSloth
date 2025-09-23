@@ -58,6 +58,6 @@
     glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&glidepoint>;
+        device = <&glidepoint_split>;
     };
 };

@@ -59,5 +59,6 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&glidepoint_split>;
+        input-processors = <&zip_xy_scaler 3 2>;
     };
 };

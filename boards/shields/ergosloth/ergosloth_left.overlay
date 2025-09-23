@@ -50,7 +50,7 @@
 
         glidepoint_split: glidepoint_split@0 {
             compatible = "zmk,input-split";
-            device = <&glidepoint>;
+            // device = <&glidepoint>;
             reg = <0>;
         };
     };
@@ -58,6 +58,6 @@
     glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&glidepoint_split>;
+        device = <&glidepoint>;
     };
 };

@@ -47,13 +47,13 @@
                                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
         };
     };
-
+/*
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         // device = <&glidepoint_split>;
     };
-
+*/
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
@@ -97,7 +97,7 @@
         wakeup-source;
         interrupt-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
-
+/*
     // Input Listners
     split_inputs {
         #address-cells = <1>;
@@ -109,6 +109,7 @@
 			device = <&glidepoint>;
         };
     };
+*/
 };
 
 // Use NFC pins as GPIOs

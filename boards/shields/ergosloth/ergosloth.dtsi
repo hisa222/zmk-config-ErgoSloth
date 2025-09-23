@@ -53,7 +53,7 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        glidepoint_split: glidepoint_split {
+        glidepoint_split: glidepoint_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
 			// device = <&glidepoint>;
@@ -119,7 +119,7 @@
 &spi0 {
         status = "disabled";
 
-        trackball: trackball {
+        trackball: trackball@0 {
             status = "disabled";
             reg = <0>;
         };

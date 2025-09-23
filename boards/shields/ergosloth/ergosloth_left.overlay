@@ -22,6 +22,29 @@
         , <&gpio0  9 (GPIO_ACTIVE_HIGH)>
         ;
 };
+
+&xiao_spi {
+    status = "okay";
+    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+
+    glidepoint: glidepoint@0 {
+        compatible = "cirque,pinnacle";
+        status = "okay";
+        reg = <0>;
+        spi-max-frequency = <1000000>;
+        // dr-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
+
+        rotate-90;
+
+        sensitivity = "2x";
+        no-taps;
+        no-smoothing;
+        //absolute-mode;
+    };
+};
+
+
+
 /*
 &pinctrl {
     spi0_default: spi0_default {
@@ -62,6 +85,13 @@
         // no-smoothing;
         //absolute-mode;
     };
+};
+
+&glidepoint_split {
+    device = <&glidepoint>;
+
+    // Optional
+    // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
 
 / {

@@ -43,23 +43,11 @@
     };
 };
 
-/*
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-*/
-
-        &glidepoint_split {
-            compatible = "zmk,input-split";
-            device = <&glidepoint>;
-            // reg = <1>;
-        };
-//     };
-
-    &glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        // device = <&glidepoint_split>; 
-    };
-// };
+&glidepoint_split_R {
+    status = "disabled";
+    device = <&glidepoint>;
+};
+&glidepoint_split_L {
+    status = "okay";
+    device = <&glidepoint>;
+};

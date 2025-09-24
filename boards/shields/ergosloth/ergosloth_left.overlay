@@ -7,10 +7,6 @@
 #include "ergosloth.dtsi"
 #include <input/processors.dtsi>
 
-&left_encoder {
-    status = "okay";
-};
-
 &kscan0 {
     gpios
         = <&xiao_d 5 (GPIO_ACTIVE_HIGH)>
@@ -21,6 +17,10 @@
         , <&gpio0 10 (GPIO_ACTIVE_HIGH)>
         , <&gpio0  9 (GPIO_ACTIVE_HIGH)>
         ;
+};
+
+&left_encoder {
+    status = "okay";
 };
 
 &xiao_spi {

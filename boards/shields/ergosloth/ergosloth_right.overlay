@@ -97,10 +97,6 @@
     };
 };
 
-&glidepoint_listener_R {
-    status = "disabled";
-};
-&glidepoint_listener_L {
+&glidepoint_listener {
     status = "okay";
-    device = <&glidepoint>;
 };

@@ -60,6 +60,6 @@
     &glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&glidepoint_split>; // 
+        // device = <&glidepoint_split>; 
     };
 // };

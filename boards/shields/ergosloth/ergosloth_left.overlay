@@ -50,7 +50,7 @@
         #size-cells = <0>;
 */
 
-        glidepoint_split: glidepoint_split@1 {
+        &glidepoint_split: glidepoint_split@1 {
             compatible = "zmk,input-split";
             // device = <&glidepoint>;
             reg = <1>;

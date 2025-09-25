@@ -48,6 +48,7 @@
         };
     };
 
+/*
     // Input Listners
     split_inputs {
         #address-cells = <1>;
@@ -64,6 +65,7 @@
         status = "disabled";
         device = <&glidepoint_split>;
     };
+*/
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";

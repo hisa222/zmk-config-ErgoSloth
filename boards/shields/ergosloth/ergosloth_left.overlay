@@ -23,7 +23,6 @@
     status = "okay";
 };
 
-/*
 &xiao_spi {
     status = "okay";
     cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
@@ -44,4 +43,3 @@
     status = "okay";
     device = <&glidepoint>;
 };
-*/

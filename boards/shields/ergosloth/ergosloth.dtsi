@@ -49,7 +49,7 @@
     };
 
     // Input Listners
-    split_inputs_R {
+    split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 

@@ -24,11 +24,6 @@
 };
 
 //-----------------------------------------------------------
-
-&qspi {
-	status = "disabled";
-};
-
 &xiao_spi {
     status = "okay";
     cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
@@ -46,7 +41,7 @@
 };
 
 &glidepoint_split {
-    status = "okay";
+    status = "disabled";
     device = <&glidepoint>;
 };
 //------------------------------------------------------------

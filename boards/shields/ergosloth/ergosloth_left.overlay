@@ -25,7 +25,6 @@
 
 //-----------------------------------------------------------
 &xiao_spi {
-    status = "okay";
     cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 
     glidepoint: glidepoint@1 {
@@ -41,7 +40,6 @@
 };
 
 &glidepoint_split {
-    // status = "okay";
     device = <&glidepoint>;
 };
 //------------------------------------------------------------

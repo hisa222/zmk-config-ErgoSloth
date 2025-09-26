@@ -44,8 +44,4 @@
     // status = "okay";
     device = <&glidepoint>;
 };
-
-&glidepoint_listener {
-    status = "okay";
-};
 //------------------------------------------------------------

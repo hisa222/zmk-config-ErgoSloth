@@ -65,6 +65,6 @@
 };
 
 &glidepoint_left_split {
-    // device = <&glidepoint_left>;
+    device = <&glidepoint_left>;
 };
 //------------------------------------------------------------

@@ -53,9 +53,9 @@
 /**************************************************************************/
 /*  TrackBall 関連                                                        */
 
-&trackball { cpi = <600>; };
+&trackball_right { cpi = <600>; };
 
-&trackball_listener {
+&trackball_right_listener {
     input-processors = <&zip_temp_layer MOUSE_N 5000>;
 
     precise {
@@ -65,7 +65,7 @@
     };
 };
 
-&trackball_scroller {
+&trackball_right_scroller {
     layers = <SCROLL>;
 
     // Example: adjust sensitivity of scroll multiply by 1 and divide by 60.

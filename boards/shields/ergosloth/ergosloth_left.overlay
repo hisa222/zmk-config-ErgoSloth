@@ -27,7 +27,7 @@
 &xiao_spi {
     cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 
-    glidepoint: glidepoint@1 {
+    glidepoint_left: glidepoint_left@1 {
         compatible = "cirque,pinnacle";
         status = "okay";
         reg = <1>;
@@ -39,7 +39,7 @@
     };
 };
 
-&glidepoint_split {
-    device = <&glidepoint>;
+&glidepoint_left_split {
+    device = <&glidepoint_left>;
 };
 //------------------------------------------------------------

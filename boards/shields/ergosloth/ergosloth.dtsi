@@ -42,7 +42,7 @@
     trackball_right_listener: trackball_right_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        trackball_scroller: scroller {
+        trackball_right_scroller: scroller {
             input-processors = <&zip_xy_scaler 1 50 &zip_xy_to_scroll_mapper>,
                                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
         };

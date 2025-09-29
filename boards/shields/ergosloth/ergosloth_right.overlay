@@ -30,7 +30,7 @@
 / {
     trackball_right_listener {
         status = "okay";
-        device = <&trackball>;
+        device = <&trackball_right>;
     };
 };
 

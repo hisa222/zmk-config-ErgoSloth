@@ -125,3 +125,12 @@
             reg = <0>;
         };
 };
+
+&spi1 {
+        status = "disabled";
+
+        glidepoint_left: glidepoint_left@1 {
+            status = "disabled";
+            reg = <1>;
+        };
+};

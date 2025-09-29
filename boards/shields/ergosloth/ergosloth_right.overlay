@@ -28,7 +28,7 @@
 };
 
 / {
-    trackball_listener {
+    trackball_right_listener {
         status = "okay";
         device = <&trackball>;
     };
@@ -84,7 +84,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+    trackball_right: trackball_right@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
@@ -97,6 +97,6 @@
     };
 };
 
-&glidepoint_listener {
+&glidepoint_left_listener {
     status = "okay";
 };

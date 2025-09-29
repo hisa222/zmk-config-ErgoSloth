@@ -39,7 +39,7 @@
         triggers-per-rotation = <24>;
     };
 
-    trackball_listener: trackball_listener {
+    trackball_right_listener: trackball_right_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         trackball_scroller: scroller {
@@ -54,16 +54,16 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        glidepoint_split: glidepoint_split@1 {
+        glidepoint_left_split: glidepoint_left_split@1 {
             compatible = "zmk,input-split";
             reg = <1>;
         };
     };
 
-    glidepoint_listener: glidepoint_listener {
+    glidepoint_left_listener: glidepoint_left_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&glidepoint_split>;
+        device = <&glidepoint_left_split>;
     };
 //-------------------------------------------------------
 
@@ -120,7 +120,7 @@
 &spi0 {
         status = "disabled";
 
-        trackball: trackball@0 {
+        trackball_right: trackball_right@0 {
             status = "disabled";
             reg = <0>;
         };

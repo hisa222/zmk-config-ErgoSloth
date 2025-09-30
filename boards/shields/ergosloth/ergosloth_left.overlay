@@ -64,16 +64,7 @@
     };
 };
 
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_left_split: glidepoint_left_split@1 {
-            compatible = "zmk,input-split";
-            reg = <1>;
-            device = <&glidepoint_left>;
-        };
-    };
+&glidepoint_left_split {
+    device = <&glidepoint_left>;
 };
 //------------------------------------------------------------

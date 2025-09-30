@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/hisa222/
     - name: prospector
       url-base: https://github.com/t-ogura
+    - name: ShiniNet
+      url-base: https://github.com/ShiniNet/
   projects:
     - name: zmk
       remote: zmkfirmware

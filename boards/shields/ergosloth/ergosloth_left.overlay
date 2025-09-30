@@ -64,7 +64,12 @@
     };
 };
 
-&glidepoint_left_split {
-    device = <&glidepoint_left>;
+&split_inputs {
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    &glidepoint_left_split {
+        device = <&glidepoint_left>;
+    };
 };
 //------------------------------------------------------------

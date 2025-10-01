@@ -71,17 +71,15 @@
         device = <&glidepoint_left_split>;
     };
 
-	analog_joystick_right: analog_joystick_right@2 {
+	analog_joystick_right: analog_joystick_right {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
-		reg = <2>;
 		status = "disabled";
 	};
 
-	analog_joystick_left: analog_joystick_left@3 {
+	analog_joystick_left: analog_joystick_left {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
-		reg = <3>;
 		status = "disabled";
 	};
 

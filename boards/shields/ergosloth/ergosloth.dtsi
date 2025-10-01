@@ -97,12 +97,7 @@
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_right>;
-        arrow {
-            layers = <1>;
-            input-processors = <&zip_keybind_keys>;
-            process-next;
-        };
-        
+
         arrow-prevent-move {
             layers = <1>;
             input-processors = <&zip_xy_scaler 0 1>;
@@ -118,11 +113,6 @@
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_left_split>;
-        arrow {
-            layers = <1>;
-            input-processors = <&zip_keybind_keys>;
-            process-next;
-        };
         
         arrow-prevent-move {
             layers = <1>;

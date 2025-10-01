@@ -133,6 +133,10 @@
 		};
 };
 
+&analog_joystick_right_listener {
+	status = "okay";
+};
+
 &analog_joystick_left_listener {
 	status = "okay";
 };

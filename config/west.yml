@@ -8,10 +8,15 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: hisa222
       url-base: https://github.com/hisa222/
+      
     - name: prospector
       url-base: https://github.com/t-ogura
+      
     - name: ShiniNet
       url-base: https://github.com/ShiniNet/
+      
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -32,5 +37,10 @@ manifest:
       remote: ShiniNet
       revision: main
       path: modules/cirque-input-module-shininet
+
+      # https://github.com/badjeff/zmk-analog-input-driver
+      - name: zmk-analog-input-driver
+      remote: badjeff
+      revision: main
   self:
     path: config

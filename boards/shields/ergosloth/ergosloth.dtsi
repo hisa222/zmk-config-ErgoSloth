@@ -10,6 +10,13 @@
 
 #include "ergosloth-layouts.dtsi"
 
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+/* Reference: https://docs.zephyrproject.org/apidoc/latest/group__input__events.html */
+
+&adc {
+	status = "okay";
+};
+
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
@@ -48,8 +55,6 @@
         };
     };
 
-//---------------------------------------------------------------
-    // Input Listners
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -65,7 +70,20 @@
         status = "disabled";
         device = <&glidepoint_left_split>;
     };
-//-------------------------------------------------------
+
+	analog_joystick_right: analog_joystick_right@2 {
+		compatible = "zmk,analog-input";
+		sampling-hz = <100>;
+		reg = <2>;
+		status = "disabled";
+	};
+
+	analog_joystick_left: analog_joystick_left@3 {
+		compatible = "zmk,analog-input";
+		sampling-hz = <100>;
+		reg = <3>;
+		status = "disabled";
+	};
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";

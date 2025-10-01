@@ -101,6 +101,6 @@
 		};
 };
 
-analog_joystick_left_split: {
+&analog_joystick_left_split: {
     device = <&analog_joystick_left_split>;
 };

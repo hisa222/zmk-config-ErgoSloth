@@ -39,7 +39,7 @@ manifest:
       path: modules/cirque-input-module-shininet
 
       # https://github.com/badjeff/zmk-analog-input-driver
-      - name: zmk-analog-input-driver
+    - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
   self:

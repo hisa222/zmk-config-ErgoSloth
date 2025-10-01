@@ -132,3 +132,7 @@
 
 		};
 };
+
+&analog_joystick_left_listener {
+	status = "okay";
+};

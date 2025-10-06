@@ -418,11 +418,21 @@
 
             bindings = <
 &kp KP_NUM  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4             &kp KP_N5              &kp KP_N6  &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp KP_N0        &kp EQUAL
+&trans      &kp A      &kp B      &kp C      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS   &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_ASTERISK  &kp COMMA
+&trans      &kp D      &kp E      &kp F      &none                 &kp X                  &kp MINUS  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_SLASH     &kp KP_DOT
+                                  &trans     &trans                &trans                 &trans     &kp KP_NUMBER_0
+                                             &trans                &trans                 &trans     &trans           &trans
+            >;
+
+/*
+            bindings = <
+&kp KP_NUM  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4             &kp KP_N5              &kp KP_N6  &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp KP_N0        &kp EQUAL
 &trans      &as A      &as B      &as C      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS   &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_ASTERISK  &kp COMMA
 &trans      &as D      &as E      &as F      &none                 &kp X                  &kp MINUS  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_SLASH     &kp KP_DOT
                                   &trans     &trans                &trans                 &trans     &kp KP_NUMBER_0
                                              &trans                &trans                 &trans     &trans           &trans
             >;
+*/
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
         };

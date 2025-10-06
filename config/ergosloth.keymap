@@ -109,7 +109,7 @@
     };
 
     normal {
-        layers = <DEFAULT MARKS NUMS FUNCS EXTRA>;
+        layers = <JIS JIS_MARKS NUMS FUNCS EXTRA>;
         input-processors = <&zip_wheel_scaler 1 1>;
     };
 };

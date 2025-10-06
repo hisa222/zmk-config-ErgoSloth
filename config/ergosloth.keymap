@@ -245,6 +245,7 @@
             tapping-term-ms = <150>;
         };
 
+/*
         as_ht: autoshift_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "AUTOSHIFT_HOLD_TAP";
@@ -254,6 +255,7 @@
             flavor = "tap-preferred";
             bindings = <&shifted>, <&kp>;
         };
+*/
 
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";

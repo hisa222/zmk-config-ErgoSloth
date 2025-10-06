@@ -16,7 +16,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define JIS       0
-#define JIS-MARKS 1
+#define JIS_MARKS 1
 #define NUMS      2
 #define FUNCS     3
 #define MOUSE_N   4
@@ -366,7 +366,7 @@
 
 
         mark_layer {
-            display-name = "JIS-MARKS";
+            display-name = "JIS_MARKS";
 /*
             // -----------------------------------------------------------------------------------------
             // |  ~   |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (        | )   | ?  |

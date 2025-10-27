@@ -94,13 +94,15 @@
         compatible = "zmk,input-listener";
         device = <&analog_joystick_right>;
 
+/*
         arrow-prevent-move {
             layers = <1>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
+*/
 
         scroll {
-            layers = <0>;
+            layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
     };
@@ -109,14 +111,16 @@
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_left_split>;
-        
+
+/*
         arrow-prevent-move {
             layers = <1>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
+*/
 
         scroll {
-            layers = <0>;
+            layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
     };

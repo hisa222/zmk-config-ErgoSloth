@@ -356,7 +356,7 @@
 &kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9      &kp KP_MULTIPLY  &kp KP_DIVIDE   &kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &kp RSHFT
 &kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT     &kp KP_LPAR      &kp KP_RPAR     &kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT
 &kp LGUI       &kp LCTRL     &kp SPACE  &kp BACKSPACE  &kp ENTER        &kp SPACE       &kp SPACE        &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL      &kp LEFT
-&to 1          &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER       &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &to 1
+&to 5          &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER       &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &to 5
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_down_up>;

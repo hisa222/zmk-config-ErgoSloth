@@ -56,12 +56,6 @@
 
 &trackball_right_listener {
     input-processors = <&zip_temp_layer MOUSE_N 5000>;
-
-    precise {
-        layers = <MOUSE_P>;
-        input-processors = <&zip_xy_scaler 1 16>;
-        process-next;
-    };
 };
 
 &trackball_right_scroller {

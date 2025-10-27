@@ -7,6 +7,8 @@
 #include "ergosloth.dtsi"
 #include <input/processors.dtsi>
 
+&xiao_serial { status = "disabled"; };
+
 &default_transform {
     col-offset = <7>;
 };

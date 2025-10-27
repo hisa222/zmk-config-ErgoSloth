@@ -67,7 +67,7 @@
 
 // クリック時に10秒間AMLを延長
 
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE_N 10000>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
 
 // キー入力から200ms間はAMLを抑制(AML誤発動防止)
 

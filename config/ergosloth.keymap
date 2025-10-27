@@ -59,7 +59,7 @@
 };
 
 &trackball_right_scroller {
-    layers = <SCROLL>;
+    //layers = <SCROLL>;
 
     // Example: adjust sensitivity of scroll multiply by 1 and divide by 60.
     // input-processors = <&zip_xy_scaler 1 60 &zip_xy_to_scroll_mapper>;

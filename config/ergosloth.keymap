@@ -55,7 +55,7 @@
 &trackball_right { cpi = <600>; };
 
 &trackball_right_listener {
-    input-processors = <&zip_temp_layer MOUSE_N 5000>;
+    input-processors = <&zip_temp_layer MOUSE 5000>;
 };
 
 &trackball_right_scroller {
@@ -112,63 +112,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-/*
-        combo_shift_R {
-            bindings = <&kp RSHFT>;
-            key-positions = <39 40>;
-        };
-
-        combo_shift_L {
-            bindings = <&kp LSHFT>;
-            key-positions = <37 38>;
-        };
-
-        combo_tab {
-            bindings = <&kp TAB>;
-            key-positions = <12 13>;
-        };
-
-        mo_scroll {
-            bindings = <&mo SCROLL>;
-            key-positions = <41 42>;
-        };
-
-        mo_scroll2 {
-            bindings = <&mo SCROLL>;
-            key-positions = <30 31>;
-        };
-
-        alt_space {
-            bindings = <&kp LA(SPACE)>;
-            key-positions = <38 39>;
-        };
-
-        combo_capslock {
-            bindings = <&kp CAPS>;
-            key-positions = <12 13 14>;
-        };
-
-        toggle_autoshift {
-            bindings = <&tog AUTOSHIFT>;
-            key-positions = <0 11>;
-        };
-
-        Lctrl {
-            bindings = <&kp LCTRL>;
-            key-positions = <24 25>;
-        };
-
-        Rctrl {
-            bindings = <&kp RCTRL>;
-            key-positions = <34 35>;
-        };
-
-        toggle_IME {
-            bindings = <&kp LC(SPACE)>;
-            key-positions = <37 40>;
-        };
-*/
     };
 
     /**************************************************************************/

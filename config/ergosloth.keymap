@@ -120,14 +120,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt FUNCS BSPC>, <&kp BSPC>;
+            bindings = <&lt FUNCS_L BSPC>, <&kp BSPC>;
         };
 
         td_spc: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt FUNCS SPACE>, <&kp SPACE>;
+            bindings = <&lt FUNCS_L SPACE>, <&kp SPACE>;
         };
 
         mouse_scroll: mouse_wheel_scroll {

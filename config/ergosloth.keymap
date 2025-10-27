@@ -97,7 +97,7 @@
 
 &msc_input_listener {
     warp {
-        layers = <MOUSE_N SCROLL>;
+        layers = <MOUSE>;
         input-processors = <&zip_wheel_scaler 4 1>;
     };
 

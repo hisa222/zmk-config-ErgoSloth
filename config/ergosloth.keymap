@@ -21,7 +21,7 @@
 #define US_MARKS  3
 #define NUMS      4
 #define FUNCS     5
-#define MOUSE   6
+#define MOUSE     6
 #define EXTRA     7
 
 // OS設定を日本語キーボードのまま使用するための変換定義
@@ -55,7 +55,7 @@
 &trackball_right { cpi = <600>; };
 
 &trackball_right_listener {
-    input-processors = <&zip_temp_layer MOUSE 5000>;
+    input-processors = <&zip_temp_layer 6 5000>;
 };
 
 &trackball_right_scroller {
@@ -67,7 +67,7 @@
 
 // クリック時に10秒間AMLを延長
 
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
+&mkp_input_listener { input-processors = <&zip_temp_layer 6 10000>; };
 
 // キー入力から200ms間はAMLを抑制(AML誤発動防止)
 
@@ -97,12 +97,12 @@
 
 &msc_input_listener {
     warp {
-        layers = <MOUSE>;
+        layers = <6>;
         input-processors = <&zip_wheel_scaler 4 1>;
     };
 
     normal {
-        layers = <JIS JIS_MARKS NUMS FUNCS EXTRA>;
+        layers = <0 1 2 3 4 5 7>;
         input-processors = <&zip_wheel_scaler 1 1>;
     };
 };

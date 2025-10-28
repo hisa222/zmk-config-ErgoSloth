@@ -21,7 +21,7 @@
 #define US_MARKS_L  3
 #define NUMS_L      4
 #define FUNCS_L     5
-#define MOUSE_L   6
+#define MOUSE_L     6
 #define EXTRA_L     7
 
 // OS設定を日本語キーボードのまま使用するための変換定義

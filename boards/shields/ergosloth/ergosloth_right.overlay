@@ -7,7 +7,7 @@
 #include "ergosloth.dtsi"
 #include <input/processors.dtsi>
 
-&xiao_serial { status = "disabled"; };
+// &xiao_serial { status = "disabled"; };
 
 &default_transform {
     col-offset = <7>;
@@ -39,20 +39,22 @@
 // ここに指定したキーではAMLから抜けなくなる
 &zip_temp_layer {
     excluded-positions = <
-        0  // exit mouse_layer
-        39 // exit mouse_layer
-        40 // exit mouse_layer
-        6  // F(Prev)
-        7  // W(Next)
-        18 // K(左クリック)
-        19 // T(右クリック)
-        20 // N(中クリック)  
-        24 // Shift
-        30 // PreciseLayer
-        31 // PreciseLayer
-        43 // Left Click
-        44 // Mid Click
-        45 // Right Click
+        27 // L Prev
+		28 // L Next
+		31 // R Prev
+		32 // R Next
+		38 // L Middle Click
+		39 // L Right Click
+		40 // L Left Click
+		43 // R Left Click
+		44 // R Right Click
+		45 // R Middle Click
+		63 // L Middle Click
+		64 // L Right Click
+		65 // L Left Click
+		66 // R Left Click
+		67 // R Right Click
+		68 // R Middle Click
     >;
     require-prior-idle-ms = <100>;
 };

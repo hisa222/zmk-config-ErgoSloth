@@ -18,11 +18,13 @@
 };
 
 / {
+/*
     chosen {
         zmk,physical-layout = &physical_layout0;
         zmk,matrix-transform = &default_transform;
         zmk,kscan = &kscan0;
     };
+*/
 
 // encoders
     encoder_left: encoder_left {

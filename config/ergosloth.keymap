@@ -6,14 +6,14 @@
 
 #include <input/processors.dtsi>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
-#define ZMK_MOUSE_SCRL_VAL 140
-
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
+#define ZMK_MOUSE_SCRL_VAL 140
 
 #define JIS_L       0
 #define JIS_MARKS_L 1
@@ -183,6 +183,22 @@
             label = "ENCODER_MSC_RIGHT_LEFT";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+            tap-ms = <20>;
+        };
+
+        encoder_vol_down_up: encoder_vol_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_VOL_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOL_DOWN>, <&kp C_VOL_UP>;
+            tap-ms = <20>;
+        };
+
+        encoder_bri_down_up: encoder_bri_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_BRI_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_BRI_DOWN>, <&kp C_BRI_UP>;
             tap-ms = <20>;
         };
     };

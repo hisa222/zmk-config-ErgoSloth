@@ -194,7 +194,7 @@
             label = "JIS_LAYER_NEXT";
             #binding-cells = <0>;
             // bindings = <&if &layer-0 &to 1 &if &layer-1 &to 2 &if &layer-2 &to 3 &if &layer-3 &to 0>;
-            bindings = <&to 0>;
+            bindings = <&macro_tap  &to 0>;
         };
 
         jis_layer_prev: jis_layer_prev {
@@ -202,14 +202,14 @@
             label = "JIS_LAYER_PREV";
             #binding-cells = <0>;
             // bindings = <&if &layer-0 &to 3 &if &layer-1 &to 0 &if &layer-2 &to 1 &if &layer-3 &to 2>;
-            bindings = <&to 0>;
+            bindings = <&macro_tap  &to 0>;
 
         us_layer_next: us_layer_next {
             compatible = "zmk,behavior-macro";
             label = "US_LAYER_NEXT";
             #binding-cells = <0>;
             // bindings = <&if &layer-4 &to 5 &if &layer-5 &to 6 &if &layer-6 &to 7 &if &layer-7 &to 4>;
-            bindings = <&to 0>;
+            bindings = <&macro_tap  &to 0>;
         };
 
         us_layer_prev: us_layer_prev {
@@ -217,7 +217,7 @@
             label = "US_LAYER_PREV";
             #binding-cells = <0>;
             // bindings = <&if &layer-4 &to 7 &if &layer-5 &to 4 &if &layer-6 &to 5 &if &layer-7 &to 6>;
-            bindings = <&to 0>;
+            bindings = <&macro_tap  &to 0>;
     };
 
     /**************************************************************************/

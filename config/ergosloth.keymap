@@ -259,7 +259,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_VOL_UP_DOWN";
             #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOL_UP C_VOL_DOWN>;
+            bindings = <&kp C_VOL_UP>, <&kp C_VOL_DOWN>;
             tap-ms = <20>;
         };
 
@@ -267,7 +267,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_BRI_UP_DOWN";
             #sensor-binding-cells = <0>;
-            bindings = <&kp C_BRI_UP C_BRI_DOWN>;
+            bindings = <&kp C_BRI_UP>, <&kp C_BRI_DOWN>;
             tap-ms = <20>;
         };
     };

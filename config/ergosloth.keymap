@@ -192,7 +192,7 @@
                 <&kp S>;
         };
 
-        /*
+
         jis_layer_next: jis_layer_next {
             compatible = "zmk,behavior-macro";
             label = "JIS_LAYER_NEXT";
@@ -224,7 +224,7 @@
             // bindings = <&if &layer-4 &to 7 &if &layer-5 &to 4 &if &layer-6 &to 5 &if &layer-7 &to 6>;
             bindings = <&macro_tap_time 1000>, <&macro_tap  &to 0>;
         };
-*/
+
     };
 
     /**************************************************************************/
@@ -344,7 +344,7 @@
             tap-ms = <20>;
         };
 
-        /*
+
         encoder_jis_layer: encoder_jis_layer {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -358,7 +358,7 @@
             bindings = <&us_layer_next>, <&us_layer_prev>;
             tap-ms = <20>;
         };
-*/
+
     };
 
     /**************************************************************************/
@@ -426,7 +426,7 @@
 &kp LSHFT  &kp A      &kp S      &kp D          &kp F      &kp G      &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT
 &kp LALT   &kp Z      &kp X      &kp C          &kp V      &kp B      &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT
 &kp LGUI   &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp SPACE  &kp SPACE  &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL  &kp LEFT
-&to 1      &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &to 1
+&jis_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next
             >;
 
             sensor-bindings = <&encoder_msc_up_down>, <&encoder_msc_up_down>;
@@ -451,7 +451,7 @@
 &kp LSHFT                   &kp LS(A)            &kp LS(S)         &kp LS(D)      &kp LS(F)   &kp LS(G)   &kp LS(H)  &kp LS(J)        &kp LS(K)          &kp LS(L)                      &mt AMPERSAND AT        &kp RSHFT
 &mt SEMICOLON SINGLE_QUOTE  &kp LS(Z)            &kp LS(X)         &kp LS(C)      &kp LS(V)   &kp LS(B)   &kp LS(N)  &kp LS(M)        &kp LS(COMMA)      &kp LS(PERIOD)                 &mt MINUS LS(0x87)      &mt UNDER COLON
 &kp LGUI                    &kp LCTRL            &kp SPACE         &kp BACKSPACE  &kp ENTER   &kp SPACE   &kp SPACE  &kp LANGUAGE_1   &kp LANGUAGE_2     &mt RIGHT_BRACKET RIGHT_BRACE  &mt RIGHT_BRACKET PIPE  &mt SLASH LS(SLASH)
-&to 2                       &kp LC(C)            &kp LC(Z)         &kp LC(V)      &kp LC(Y)   &kp ENTER   &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)          &kp RC(TAB)                    &kp RC(T)               &to 2
+&jis_layer_next             &kp LC(C)            &kp LC(Z)         &kp LC(V)      &kp LC(Y)   &kp ENTER   &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)          &kp RC(TAB)                    &kp RC(T)               &jis_layer_next
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
@@ -476,7 +476,7 @@
 &kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9      &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &kp RSHFT
 &kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT     &kp KP_LPAR      &kp KP_RPAR    &kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT
 &kp LGUI       &kp LCTRL     &kp SPACE  &kp BACKSPACE  &kp ENTER        &kp SPACE      &kp SPACE        &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL      &kp LEFT
-&to 3          &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER      &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &to 3
+&jis_layer_next   &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER      &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &jis_layer_next
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
@@ -501,7 +501,7 @@
 &kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)      &kp LC(F)  &kp LC(G)  &kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &kp UP     &kp RSHFT
 &kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)      &kp LC(V)  &kp LC(B)  &kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &kp DOWN   &kp RIGHT
 &kp LGUI       &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp SPACE  &kp SPACE  &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL  &kp LEFT
-&to 0          &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &to 0
+&jis_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
@@ -526,7 +526,7 @@
 &kp LSHFT      &kp A      &kp S      &kp D          &kp F      &kp G      &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT
 &kp LALT       &kp Z      &kp X      &kp C          &kp V      &kp B      &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT
 &kp LGUI       &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp SPACE  &kp SPACE  &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL  &kp LEFT
-&to 5          &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &to 5
+&us_layer_next   &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &us_layer_next
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
@@ -551,7 +551,7 @@
 &kp LSHFT            &kp LS(A)        &kp LS(S)   &kp LS(D)      &kp LS(F)   &kp LS(G)   &kp LS(H)   &kp LS(J)        &kp LS(K)      &kp LS(L)      &mt APOS DQT     &kp RSHFT
 &mt SEMICOLON COLON  &kp LS(Z)        &kp LS(X)   &kp LS(C)      &kp LS(V)   &kp LS(B)   &kp LS(N)   &kp LS(M)        &kp LT         &kp GT         &mt MINUS UNDER  &mt EQUAL PLUS
 &kp LGUI             &kp LCTRL        &kp SPACE   &kp BACKSPACE  &kp ENTER   &kp SPACE   &kp SPACE   &kp ENTER        &kp BACKSPACE  &mt LBKT LBRC  &mt RBKT RBRC    &mt SLASH QMARK
-&to 6                &kp LC(C)        &kp LC(Z)   &kp LC(V)      &kp LC(Y)   &kp ENTER   &kp RC(T)   &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)    &kp RC(T)        &to 6
+&us_layer_next       &kp LC(C)        &kp LC(Z)   &kp LC(V)      &kp LC(Y)   &kp ENTER   &kp RC(T)   &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)    &kp RC(T)        &us_layer_next
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
@@ -576,7 +576,7 @@
 &kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9      &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &kp RSHFT
 &kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT     &kp KP_LPAR      &kp KP_RPAR    &kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT
 &kp LGUI       &kp LCTRL     &kp SPACE  &kp BACKSPACE  &kp ENTER        &kp SPACE      &kp SPACE        &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL      &kp LEFT
-&to 7          &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER      &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &to 7
+&us_layer_next  &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER      &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &us_layer_next
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
@@ -601,7 +601,7 @@
 &kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)      &kp LC(F)  &kp LC(G)  &kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &kp UP     &kp RSHFT
 &kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)      &kp LC(V)  &kp LC(B)  &kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &kp DOWN   &kp RIGHT
 &kp LGUI       &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp SPACE  &kp SPACE  &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL  &kp LEFT
-&to 4          &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &to 4
+&us_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &us_layer_next
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;

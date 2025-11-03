@@ -283,6 +283,20 @@
             tap-ms = <20>;
         };
 
+        encoder_next_prev: encoder_next_prev {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LA(RIGHT)>, <&kp LA(LEFT)>;
+            tap-ms = <20>;
+        };
+
+        encoder_tab: encoder_tab {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp LS(TAB)>;
+            tap-ms = <20>;
+        };
+
     };
 
     /**************************************************************************/
@@ -357,7 +371,7 @@
 &to 1      &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER       &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &to 1
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings = <&encoder_vol_up_down &encoder_bri_up_down>;
         };
 
 

@@ -97,7 +97,7 @@
     };
 
     normal {
-        layers = <JIS_L JIS_MARKS_L US_L US_MARKS_L JIS_NUMS_L JIS_FUNCS_L EXTRA_L>;
+        layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L EXTRA_L>;
         input-processors = <&zip_wheel_scaler 1 1>;
     };
 };

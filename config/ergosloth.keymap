@@ -259,14 +259,14 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DOWN>;
-            tapping-term-ms = <100>;
+            // tap-ms = <20>;
         };
 
         encoder_bri_up_down: encoder_bri_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_BRI_UP>, <&kp C_BRI_DOWN>;
-            tapping-term-ms = <100>;
+            // tap-ms = <20>;
         };
 
     };

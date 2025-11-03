@@ -116,8 +116,76 @@
     /**************************************************************************/
 
     macros {
+        ctrl_tab: ctrl_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LCTRL>
+                , <&kp TAB>
+                , <&macro_tap_time 1000>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
 
+        ctrl_shift_tab: ctrl_shift_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LCTRL>
+                , <&macro_press   &kp LSHIFT>
+                , <&kp TAB>
+                , <&macro_release &kp LSHIFT>
+                , <&macro_tap_time 1000>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
 
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&kp TAB>
+                , <&macro_tap_time 1000>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+        alt_shift_tab: alt_shift_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_press   &kp LSHIFT>
+                , <&kp TAB>
+                , <&macro_release &kp LSHIFT>
+                , <&macro_tap_time 1000>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+        sleep_windows: sleep_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LGUI>
+                , <&kp X>
+                , <&macro_release &kp LGUI>
+                , <&kp U>
+                , <&macro_tap_time 100>
+                , <&kp S>
+                ;
+        };
     };
 
     /**************************************************************************/

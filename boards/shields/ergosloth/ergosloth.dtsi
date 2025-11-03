@@ -100,6 +100,13 @@
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
+
+/*
+        nothing {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
+*/
     };
 
     analog_joystick_left_listener: analog_joystick_left_listener {
@@ -116,6 +123,12 @@
         scroll {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+*/
+/*
+        nothing {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 0 1>;
         };
 */
     };

@@ -1,7 +1,7 @@
 if SHIELD_ERGOSLOTH_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "Ergosloth"
+    default "ErgoSloth"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y

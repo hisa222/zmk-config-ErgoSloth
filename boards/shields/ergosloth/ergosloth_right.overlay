@@ -8,7 +8,7 @@
 #include <input/processors.dtsi>
 
 // ZMK Studio Enable
-// &xiao_serial { status = "disabled"; };
+&xiao_serial { status = "disabled"; };
 
 &default_transform {
     col-offset = <7>;

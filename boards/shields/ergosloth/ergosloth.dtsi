@@ -99,17 +99,17 @@
             layers = <1>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-*/
+
         scroll {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
-/*
+*/
         nothing {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-
+/*
 		snipe {
 			layers = <0 1 2 3 4 5 6 7>;
 			input-processors = <&zip_xy_scaler 1 4>;

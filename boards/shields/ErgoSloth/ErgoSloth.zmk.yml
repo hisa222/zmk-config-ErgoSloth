@@ -9,5 +9,5 @@ features:
   - encoder
   - studio
 siblings:
-  - ergosloth_right
-  - ergosloth_left
+  - ErgoSloth_R
+  - ErgoSloth_L

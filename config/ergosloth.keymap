@@ -6,9 +6,6 @@
 
 #include <input/processors.dtsi>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 50
-#define ZMK_MOUSE_SCRL_VAL 50
-
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>

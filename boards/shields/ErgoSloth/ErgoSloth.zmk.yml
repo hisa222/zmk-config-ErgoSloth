@@ -2,7 +2,7 @@ file_format: "1"
 id: ergosloth
 name: ErgoSloth
 type: shield
-url: https://github.com/hisa222/ergosloth
+url: https://github.com/hisa222/zmk-config-ErgoSloth
 requires: [seeeduino_xiao_ble]
 features:
   - keys

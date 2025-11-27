@@ -73,38 +73,41 @@
 };
 //------------------------------------------------------------
 
-analog_joystick_left: analog_joystick_left@2 {
-	compatible = "zmk,analog-input";
-	sampling-hz = <100>;
-    status = "okay";
-		x-ch {
-			io-channels = <&adc 0>;
-			mv-mid = <1650>;
-			mv-min-max = <900>;
-			mv-deadzone = <50>;
-			scale-multiplier = <1>;
-			scale-divisor = <10>;
-			invert;
-			evt-type = <INPUT_EV_REL>;
-			input-code = <INPUT_REL_X>;
-		};
-		y-ch {
-			io-channels = <&adc 1>;
-			mv-mid = <1510>;
-			mv-min-max = <1000>;
-			mv-deadzone = <50>;
-			scale-multiplier = <1>;
-			scale-divisor = <10>;
-			invert;
-			evt-type = <INPUT_EV_REL>;
-			input-code = <INPUT_REL_Y>;
+/ {
+	analog_joystick_left: analog_joystick_left@2 {
+		compatible = "zmk,analog-input";
+		sampling-hz = <100>;
+    	status = "okay";
+		reg = <2>;
+			x-ch {
+				io-channels = <&adc 0>;
+				mv-mid = <1650>;
+				mv-min-max = <900>;
+				mv-deadzone = <50>;
+				scale-multiplier = <1>;
+				scale-divisor = <10>;
+				invert;
+				evt-type = <INPUT_EV_REL>;
+				input-code = <INPUT_REL_X>;
+			};
+			y-ch {
+				io-channels = <&adc 1>;
+				mv-mid = <1510>;
+				mv-min-max = <1000>;
+				mv-deadzone = <50>;
+				scale-multiplier = <1>;
+				scale-divisor = <10>;
+				invert;
+				evt-type = <INPUT_EV_REL>;
+				input-code = <INPUT_REL_Y>;
 
-			/* enable report mdoe for gamepad axix or knob */
-			/* to only call input_report on quantquantized value is updated */
-			/* NOTE: mouse input does NOT need this */
-			report-on-change-only;
+				/* enable report mdoe for gamepad axix or knob */
+				/* to only call input_report on quantquantized value is updated */
+				/* NOTE: mouse input does NOT need this */
+				report-on-change-only;
 
-		};
+			};
+	};
 };
 
 &analog_joystick_left_split {

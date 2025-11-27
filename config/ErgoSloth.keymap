@@ -427,7 +427,7 @@
 &jis_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER      &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next
             >;
 
-            sensor-bindings = <&inc_dec_kp C LS(C) &inc_dec_kp C RS(C)>;
+            sensor-bindings = <&inc_dec_kp L LS(L) &inc_dec_kp R RS(R)>;
         };
 
         jis_mark_layer {

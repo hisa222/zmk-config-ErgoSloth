@@ -115,7 +115,7 @@
     #address-cells = <1>;
     #size-cells = <0>;
 
-    analog_joystick_left {
+    analog_joystick_left: analog_joystick_left {
         compatible = "zmk,analog-input";
         sampling-hz = <100>;
         status = "okay";

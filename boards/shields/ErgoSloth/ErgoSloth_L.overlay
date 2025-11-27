@@ -73,7 +73,9 @@
 };
 //------------------------------------------------------------
 
-&analog_joystick_left {
+analog_joystick_left: analog_joystick_left@2 {
+	compatible = "zmk,analog-input";
+	sampling-hz = <100>;
     status = "okay";
 		x-ch {
 			io-channels = <&adc 0>;

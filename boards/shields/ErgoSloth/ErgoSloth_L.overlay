@@ -81,7 +81,7 @@
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
     	status = "okay";
-		reg = <2>;
+		//reg = <2>;
 			x-ch {
 				io-channels = <&adc 0>;
 				mv-mid = <1650>;

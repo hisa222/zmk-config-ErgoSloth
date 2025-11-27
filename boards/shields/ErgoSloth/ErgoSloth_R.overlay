@@ -141,7 +141,7 @@
 };
 
 &analog_joystick_right_listener {
-	status = "okay";
+	status = "disabled";
 };
 
 &analog_joystick_left_listener {

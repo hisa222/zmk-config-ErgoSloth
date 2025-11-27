@@ -83,12 +83,6 @@
 		status = "disabled";
 	};
 
-	analog_joystick_left: analog_joystick_left@2 {
-		compatible = "zmk,analog-input";
-		sampling-hz = <100>;
-		status = "disabled";
-	};
-
     analog_joystick_right_listener: analog_joystick_right_listener {
         status = "disabled";
         compatible = "zmk,input-listener";

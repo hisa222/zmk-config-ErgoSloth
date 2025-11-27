@@ -109,7 +109,7 @@
 };
 
 &analog_joystick_right {
-    status = "okay";
+    status = "disabled";
 		x-ch {
 			io-channels = <&adc 0>;
 			mv-mid = <1650>;

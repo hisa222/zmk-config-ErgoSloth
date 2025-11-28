@@ -120,7 +120,7 @@
     analog_joystick_left_listener {
         status = "okay";
         compatible = "zmk,input-listener";
-        device = <&analog_joystick_left>;
+        device = <&analog_joystick_left2>;
 
 /*
         arrow-prevent-move {

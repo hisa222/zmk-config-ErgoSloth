@@ -115,7 +115,7 @@
     analog_left_listener: analog_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
-        device = <&analog_joystick_left_split>;
+        device = <&analog_left_split>;
 
 /*
         arrow-prevent-move {

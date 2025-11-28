@@ -147,7 +147,7 @@
     };
 
 
-&analog_joystick_left_split {
+&analog_left_split {
 	status = "okay";
     device = <&analog_joystick_left>;
 };

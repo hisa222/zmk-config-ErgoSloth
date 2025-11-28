@@ -115,7 +115,7 @@
 
 			};
 	};
-};
+
 
     analog_joystick_left_listener {
         status = "okay";
@@ -146,6 +146,7 @@
 
     };
 
+};
 
 &analog_left_split {
 	status = "okay";

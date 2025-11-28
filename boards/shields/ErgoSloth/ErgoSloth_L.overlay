@@ -118,7 +118,7 @@
 	};
 };
 
-    analog_left_listener: analog_left_listener {
+    analog_left_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_left>;

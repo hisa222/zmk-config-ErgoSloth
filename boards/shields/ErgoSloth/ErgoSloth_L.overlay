@@ -88,7 +88,7 @@
 	analog_joystick_left2: analog_joystick_left_2 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
-    	status = "okay";
+    	// status = "okay";
 			x-ch {
 				io-channels = <&adc 0>;
 				mv-mid = <1650>;

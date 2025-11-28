@@ -144,6 +144,6 @@
 	status = "disabled";
 };
 
-&analog_joystick_left_listener {
+&analog_left_listener {
 	status = "okay";
 };

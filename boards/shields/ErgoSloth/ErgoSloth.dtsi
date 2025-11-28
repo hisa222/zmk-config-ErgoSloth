@@ -63,7 +63,7 @@
             reg = <1>;
         };
 
-        analog_joystick_left_split: analog_joystick_left_split@2 {
+        analog_left_split: analog_joystick_left_split@2 {
             compatible = "zmk,input-split";
             reg = <2>;
         };
@@ -112,7 +112,7 @@
 
     };
 
-    analog_joystick_left_listener: analog_joystick_left_listener {
+    analog_left_listener: analog_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_left_split>;

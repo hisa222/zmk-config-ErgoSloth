@@ -85,11 +85,10 @@
     #address-cells = <1>;
     #size-cells = <0>;
 
-	analog_joystick_left: analog_joystick_left@2 {
+	analog_joystick_left2: analog_joystick_left_2 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
     	status = "okay";
-		//reg = <2>;
 			x-ch {
 				io-channels = <&adc 0>;
 				mv-mid = <1650>;
@@ -118,7 +117,7 @@
 	};
 };
 
-    analog_left_listener {
+    analog_joystick_left_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_left>;

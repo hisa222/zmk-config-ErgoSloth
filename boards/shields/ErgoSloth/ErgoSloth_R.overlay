@@ -35,11 +35,6 @@
 };
 
 / {
-    trackball_right_listener {
-        status = "okay";
-        device = <&trackball_right>;
-    };
-
 	analog_joystick_right: analog_joystick_right {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
@@ -137,6 +132,10 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
     };
+};
+&trackball_right_listener {
+        status = "okay";
+        device = <&trackball_right>;
 };
 
 &glidepoint_left_listener {

@@ -80,7 +80,6 @@
     analog_joystick_right_listener: analog_joystick_right_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
-        device = <&analog_joystick_right>;
 
 /*
         arrow-prevent-move {

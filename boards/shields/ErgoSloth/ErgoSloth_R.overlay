@@ -30,10 +30,12 @@
         ;
 };
 
+// encoder
 &encoder_right {
     status = "okay";
 };
 
+//joystick
 / {
 	analog_joystick_right: analog_joystick_right {
 		compatible = "zmk,analog-input";
@@ -94,6 +96,7 @@
     require-prior-idle-ms = <100>;
 };
 
+// trackball
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -133,6 +136,7 @@
         y-input-code = <INPUT_REL_Y>;
     };
 };
+// listeners
 &trackball_right_listener {
         status = "okay";
         device = <&trackball_right>;

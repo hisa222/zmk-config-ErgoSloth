@@ -31,14 +31,12 @@
         ;
 };
 
+// encoder
 &encoder_left {
     status = "okay";
 };
 
-//------------------------------------------------------------
-// trackpad
-//------------------------------------------------------------
-
+// touchpad
 &pinctrl {
     spi1_default: spi1_default {
         group1 {
@@ -82,10 +80,7 @@
     device = <&glidepoint_left>;
 };
 
-//------------------------------------------------------------
 // joystick
-//------------------------------------------------------------
-
 / {
 	analog_joystick_left: analog_joystick_left {
 		compatible = "zmk,analog-input";

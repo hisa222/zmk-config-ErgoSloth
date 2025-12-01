@@ -85,8 +85,7 @@
 //------------------------------------------------------------
 
 / {
-    // ジョイスティックデバイスの定義
-	analog_joystick_left2: analog_joystick_left_2 {
+	analog_joystick_left: analog_joystick_left {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
 		status = "okay";
@@ -117,8 +116,7 @@
 	};
 };
 
-// split通信設定（dtsiの定義を上書き）
-&analog_left_split {
+&analog_joystick_left_split {
 	status = "okay";
-	device = <&analog_joystick_left2>;
+	device = <&analog_joystick_left>;
 };

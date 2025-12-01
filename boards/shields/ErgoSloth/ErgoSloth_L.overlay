@@ -76,7 +76,7 @@
 };
 
 &glidepoint_left_split {
-	status = "okay";
+	// status = "okay";
     device = <&glidepoint_left>;
 };
 
@@ -117,6 +117,6 @@
 };
 
 &analog_joystick_left_split {
-	status = "okay";
+	// status = "okay";
 	device = <&analog_joystick_left>;
 };

@@ -40,9 +40,9 @@
 &pinctrl {
     spi1_default: spi1_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, // xiao D8, see posix_seeed_xiao.overlay in zmk source
-            <NRF_PSEL(SPIM_MISO, 1, 14)>, // xiao D9 
-            <NRF_PSEL(SPIM_MOSI, 1, 15)>; // xiao D10
+            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
+            <NRF_PSEL(SPIM_MISO, 1, 14)>,
+            <NRF_PSEL(SPIM_MOSI, 1, 15)>;
         };
     };
 
@@ -62,7 +62,7 @@
     pinctrl-0 = <&spi1_default>;
     pinctrl-1 = <&spi1_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>,<&gpio0 13 (GPIO_PULL_UP)>;//dummy
+    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>,<&gpio0 13 (GPIO_PULL_UP)>;
 
     glidepoint_left: glidepoint_left@1 {
         compatible = "cirque,pinnacle";
@@ -72,7 +72,6 @@
         sensitivity = "2x";
         no-taps;
         no-smoothing;
-        //absolute-mode;
     };
 };
 
@@ -80,85 +79,46 @@
 	status = "okay";
     device = <&glidepoint_left>;
 };
+
+//------------------------------------------------------------
+// ジョイスティック設定
 //------------------------------------------------------------
 
 / {
-    #address-cells = <1>;
-    #size-cells = <0>;
-
+    // ジョイスティックデバイスの定義
 	analog_joystick_left2: analog_joystick_left_2 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
-    	// status = "okay";
-			x-ch {
-				io-channels = <&adc 0>;
-				mv-mid = <1650>;
-				mv-min-max = <900>;
-				mv-deadzone = <50>;
-				scale-multiplier = <1>;
-				scale-divisor = <10>;
-				invert;
-				evt-type = <INPUT_EV_REL>;
-				input-code = <INPUT_REL_X>;
-			};
-			y-ch {
-				io-channels = <&adc 1>;
-				mv-mid = <1510>;
-				mv-min-max = <1000>;
-				mv-deadzone = <50>;
-				scale-multiplier = <1>;
-				scale-divisor = <10>;
-				invert;
-				evt-type = <INPUT_EV_REL>;
-				input-code = <INPUT_REL_Y>;
-
-				// enable report mdoe for gamepad axix or knob
-				// to only call input_report on quantquantized value is updated
-				// NOTE: mouse input does NOT need this
-
-				// report-on-change-only;
-
-			};
-	};
-
-
-    analog_joystick_left_listener {
-        status = "okay";
-        compatible = "zmk,input-listener";
-        device = <&analog_joystick_left2>;
-
-/*
-        arrow-prevent-move {
-            layers = <1>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
-*/
-        scroll {
-            layers = <0 1 2 3 4 5 6 7>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-        };
-/*
-        nothing {
-            layers = <0 1 2 3 4 5 6 7>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
-
-		snipe {
-			layers = <0 1 2 3 4 5 6 7>;
-			input-processors = <&zip_xy_scaler 1 4>;
+		status = "okay";
+		
+		x-ch {
+			io-channels = <&adc 0>;
+			mv-mid = <1650>;
+			mv-min-max = <900>;
+			mv-deadzone = <50>;
+			scale-multiplier = <1>;
+			scale-divisor = <10>;
+			invert;
+			evt-type = <INPUT_EV_REL>;
+			input-code = <INPUT_REL_X>;
 		};
-*/
-    };
+		
+		y-ch {
+			io-channels = <&adc 1>;
+			mv-mid = <1510>;
+			mv-min-max = <1000>;
+			mv-deadzone = <50>;
+			scale-multiplier = <1>;
+			scale-divisor = <10>;
+			invert;
+			evt-type = <INPUT_EV_REL>;
+			input-code = <INPUT_REL_Y>;
+		};
+	};
+};
 
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        analog_left_split: analog_left_split@2 {
-            compatible = "zmk,input-split";
-			status = "okay";
-    		device = <&analog_joystick_left2>;
-            reg = <2>;
-        };
-    };
+// split通信設定（dtsiの定義を上書き）
+&analog_left_split {
+	status = "okay";
+	device = <&analog_joystick_left2>;
 };

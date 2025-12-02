@@ -40,7 +40,7 @@
 	analog_joystick_right: analog_joystick_right {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
-    	status = "disabled";
+    	status = "okay";
 			x-ch {
 				io-channels = <&adc 0>;
 				mv-mid = <1650>;
@@ -153,7 +153,7 @@
 };
 
 &analog_joystick_right_listener {
-	status = "disabled";
+	status = "okay";
     device = <&analog_joystick_right>;
 };
 

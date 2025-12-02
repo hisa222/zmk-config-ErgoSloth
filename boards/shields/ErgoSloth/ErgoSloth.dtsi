@@ -99,23 +99,22 @@
 		};
 
     };
-
+/*
     analog_joystick_left_listener: analog_joystick_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_left_split>;
 
-/*
         arrow-prevent-move {
             layers = <1>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-*/
+
         scroll {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
-/*
+
         nothing {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_scaler 0 1>;
@@ -125,9 +124,8 @@
 			layers = <0 1 2 3 4 5 6 7>;
 			input-processors = <&zip_xy_scaler 1 4>;
 		};
-*/
     };
-
+*/
 // keymap
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";

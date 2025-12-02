@@ -71,6 +71,16 @@
 
 			};
 	};
+
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        analog_joystick_left_split: analog_left_split@2 {
+            compatible = "zmk,input-split";
+            reg = <2>;
+        };
+    };
 };
 
 // ここに指定したキーではAMLから抜けなくなる

@@ -56,7 +56,7 @@
 	analog_joystick_right: analog_joystick_right {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
-    	status = "disabled";
+    	status = "okay";
 			x-ch {
 				io-channels = <&adc 0>;
 				mv-mid = <1650>;
@@ -107,7 +107,7 @@
 //listeners
 // joysticks
     analog_joystick_right_listener: analog_joystick_right_listener {
-        status = "disabled";
+        status = "okay";
         compatible = "zmk,input-listener";
 		device = <&analog_joystick_right>;
 
@@ -116,23 +116,22 @@
             layers = <1>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-
+*/
         scroll {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
-*/
 /*
         nothing {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-*/
+
 		snipe {
 			layers = <0 1 2 3 4 5 6 7>;
 			input-processors = <&zip_xy_scaler 1 4>;
 		};
-
+*/
     };
 
     analog_joystick_left_listener: analog_joystick_left_listener {
@@ -145,22 +144,22 @@
             layers = <1>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-*/
+
         scroll {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
-/*
+*//*
         nothing {
             layers = <0 1 2 3 4 5 6 7>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-
+*/
 		snipe {
 			layers = <0 1 2 3 4 5 6 7>;
 			input-processors = <&zip_xy_scaler 1 4>;
 		};
-*/
+
     };
 
 // trackball

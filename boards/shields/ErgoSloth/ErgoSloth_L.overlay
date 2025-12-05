@@ -10,7 +10,7 @@
 
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <dt-bindings/zmk/keys.h>
+// #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <physical_layouts.dtsi>
@@ -18,8 +18,8 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 /* Reference: https://docs.zephyrproject.org/apidoc/latest/group__input__events.html */
 
-#include "ErgoSloth.dtsi"
 #include "ErgoSloth-layouts.dtsi"
+#include "ErgoSloth.dtsi"
 
 // Enable Analog Input
 &adc {

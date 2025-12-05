@@ -18,7 +18,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 /* Reference: https://docs.zephyrproject.org/apidoc/latest/group__input__events.html */
 
-#include "ErgoSloth-layouts.dtsi"
 #include "ErgoSloth.dtsi"
 
 // Enable Analog Input

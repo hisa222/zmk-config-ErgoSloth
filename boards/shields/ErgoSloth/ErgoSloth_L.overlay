@@ -84,13 +84,8 @@
     };
 };
 
-&glidepoint_left_split {
-	// status = "okay";
-    device = <&glidepoint_left>;
-};
-
-// joystick
 / {
+//joystick
 	analog_joystick_left: analog_joystick_left {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
@@ -121,9 +116,16 @@
 		};
 	};
 
+//split options
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
+
+        glidepoint_left_split: glidepoint_left_split@1 {
+            compatible = "zmk,input-split";
+            reg = <1>;
+			device = <&glidepoint_left>;
+        };
 
         analog_joystick_left_split: analog_left_split@2 {
             compatible = "zmk,input-split";

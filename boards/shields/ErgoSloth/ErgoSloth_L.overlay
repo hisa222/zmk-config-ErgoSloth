@@ -133,9 +133,9 @@
         };
     };
 };
-/*
-&analog_joystick_left_split {
-	// status = "okay";
-	device = <&analog_joystick_left>;
+
+// Use NFC pins as GPIOs
+&uicr {
+	nfct-pins-as-gpios;
 };
-*/
+

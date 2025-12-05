@@ -252,12 +252,6 @@
 
 &trackball_right { cpi = <600>; };
 
-&trackball_right_listener { input-processors = <&zip_temp_layer 8 5000>; };
-
-// クリック時に10秒間AMLを延長
-
-&mkp_input_listener { input-processors = <&zip_temp_layer 8 10000>; };
-
 // キー入力から200ms間はAMLを抑制(AML誤発動防止)
 
 &zip_temp_layer { require-prior-idle-ms = <200>; };

@@ -49,22 +49,6 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 
-/**************************************************************************/
-/*  TrackBall 関連                                                        */
-
-&trackball_right { cpi = <600>; };
-
-&trackball_right_listener { input-processors = <&zip_temp_layer MOUSE_L 5000>; };
-
-// クリック時に10秒間AMLを延長
-
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE_L 10000>; };
-
-// キー入力から200ms間はAMLを抑制(AML誤発動防止)
-
-&zip_temp_layer { require-prior-idle-ms = <200>; };
-
-/**************************************************************************/
 /*   マウススクロール用設定                                               */
 
 / {

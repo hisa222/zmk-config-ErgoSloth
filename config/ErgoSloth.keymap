@@ -71,6 +71,10 @@
 };
 
 &msc_input_listener {
+
+// クリック時に10秒間AMLを延長
+    input-processors = <&zip_temp_layer 8 10000>;
+
     warp {
         layers = <MOUSE_L>;
         input-processors = <&zip_wheel_scaler 4 1>;

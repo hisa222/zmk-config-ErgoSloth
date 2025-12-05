@@ -18,7 +18,7 @@
 /* Reference: https://docs.zephyrproject.org/apidoc/latest/group__input__events.html */
 
 #include "ErgoSloth-layouts.dtsi"
-#include "ErgoSloth.dtsi"
+// #include "ErgoSloth.dtsi"
 
 // Enable Analog Input
 &adc {
@@ -47,7 +47,7 @@
         ;
 };
 
-// encoder
+//encoder
 &encoder_right {
     status = "okay";
 };
@@ -89,14 +89,50 @@
 			};
 	};
 
+//split options
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
+
+        glidepoint_left_split: glidepoint_left_split@1 {
+            compatible = "zmk,input-split";
+            reg = <1>;
+        };
 
         analog_joystick_left_split: analog_left_split@2 {
             compatible = "zmk,input-split";
             reg = <2>;
         };
+    };
+
+//listeners
+// joysticks
+    analog_joystick_right_listener: analog_joystick_right_listener {
+        status = "disabled";
+        compatible = "zmk,input-listener";
+
+/*
+        arrow-prevent-move {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
+
+        scroll {
+            layers = <0 1 2 3 4 5 6 7>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+*/
+/*
+        nothing {
+            layers = <0 1 2 3 4 5 6 7>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
+*/
+		snipe {
+			layers = <0 1 2 3 4 5 6 7>;
+			input-processors = <&zip_xy_scaler 1 4>;
+		};
+
     };
 
     analog_joystick_left_listener: analog_joystick_left_listener {
@@ -127,6 +163,18 @@
 */
     };
 
+// trackball
+    trackball_right_listener: trackball_right_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+    };
+
+// touchpad
+    glidepoint_left_listener: glidepoint_left_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&glidepoint_left_split>;
+    };
 };
 
 // ここに指定したキーではAMLから抜けなくなる
@@ -191,24 +239,6 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
     };
-};
-// listeners
-&trackball_right_listener {
-        status = "okay";
-        device = <&trackball_right>;
-};
-
-&analog_joystick_right_listener {
-	status = "disabled";
-    device = <&analog_joystick_right>;
-};
-
-&glidepoint_left_listener {
-    status = "okay";
-};
-
-&analog_joystick_left_listener {
-	status = "okay";
 };
 
 // Use NFC pins as GPIOs

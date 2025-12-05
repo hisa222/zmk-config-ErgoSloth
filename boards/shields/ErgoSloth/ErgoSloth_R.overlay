@@ -210,3 +210,8 @@
 &analog_joystick_left_listener {
 	status = "okay";
 };
+
+// Use NFC pins as GPIOs
+&uicr {
+	nfct-pins-as-gpios;
+};

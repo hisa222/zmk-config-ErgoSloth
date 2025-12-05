@@ -157,4 +157,27 @@
             , <&key_physical_attrs 100 100 1900  700       0     0     0>
 ;
     };
+
+// encoders
+    encoder_left: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <15>;
+        status = "disabled";
+    };
+
+    encoder_right: encoder_right {
+        compatible = "alps,ec11";
+        a-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <15>;
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_left &encoder_right>;
+        triggers-per-rotation = <30>;
+    }
 };

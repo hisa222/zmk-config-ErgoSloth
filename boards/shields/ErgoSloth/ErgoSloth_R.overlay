@@ -141,13 +141,11 @@
 &trackball_right_listener {
     status = "okay";
     device = <&trackball_right>;
-	input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
 };
 
 &analog_joystick_right_listener {
 	status = "okay";
     device = <&analog_joystick_right>;
-	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
 
 &glidepoint_left_listener {
@@ -156,5 +154,4 @@
 
 &analog_joystick_left_listener {
 	status = "okay";
-	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };

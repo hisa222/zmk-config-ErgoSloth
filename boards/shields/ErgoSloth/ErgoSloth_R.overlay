@@ -10,6 +10,7 @@
 
 #include "ErgoSloth.dtsi"
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 // ZMK Studio Enable
 &xiao_serial { status = "disabled"; };

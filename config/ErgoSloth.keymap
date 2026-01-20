@@ -68,6 +68,7 @@
 /*   マウススクロール用設定                                               */
 
 / {
+/*
     input_processors {
         zip_wheel_scaler: zip_wheel_scaler {
             compatible = "zmk,input-processor-scaler";
@@ -77,6 +78,7 @@
             track-remainders;
         };
     };
+*/
 };
 
 &msc {

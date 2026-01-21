@@ -54,11 +54,11 @@
 
 &trackball_right { cpi = <600>; };
 
-&trackball_right_listener { input-processors = <&zip_temp_layer MOUSE_L 5000>; };
+// &trackball_right_listener { input-processors = <&zip_temp_layer MOUSE_L 5000>; };
 
 // クリック時に10秒間AMLを延長
 
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE_L 10000>; };
+// &mkp_input_listener { input-processors = <&zip_temp_layer MOUSE_L 10000>; };
 
 // キー入力から200ms間はAMLを抑制(AML誤発動防止)
 
@@ -485,7 +485,9 @@
 &jis_layer_next  &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER      &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &jis_layer_next
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         jis_func_layer {
@@ -510,7 +512,9 @@
 &jis_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         us_layer {
@@ -535,7 +539,9 @@
 &us_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &us_layer_next
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         us_mark_layer {
@@ -560,7 +566,9 @@
 &us_layer_next       &kp LC(C)        &kp LC(Z)   &kp LC(V)      &kp LC(Y)   &kp ENTER   &kp RC(T)   &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)    &kp RC(T)        &us_layer_next
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         us_num_layer {
@@ -585,7 +593,9 @@
 &us_layer_next  &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER      &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &us_layer_next
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         us_func_layer {
@@ -610,7 +620,9 @@
 &us_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &us_layer_next
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         mouse_layer {
@@ -635,7 +647,9 @@
 &none  &kp LC(C)  &kp LC(Z)  &kp LC(V)     &kp LC(Y)      &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &none
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
 
         ex_layer {
@@ -660,7 +674,9 @@
 &none        &none  &none  &none  &none  &none  &none       &none         &none         &none         &none         &none
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&mouse_scroll SCRL_UP SCRL_DOWN>,
+                <&mouse_scroll SCRL_UP SCRL_DOWN>;
         };
     };
 };

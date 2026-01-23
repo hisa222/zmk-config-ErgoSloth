@@ -150,11 +150,11 @@
 	status = "okay";
     device = <&analog_joystick_right>;
 };
-
+/*
 &glidepoint_left_listener {
     status = "okay";
 };
-
+*/
 &analog_joystick_left_listener {
 	status = "okay";
 };

@@ -69,14 +69,14 @@
         status = "disabled";
 		// input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
-
+/*
 // touchpad
     glidepoint_left_listener: glidepoint_left_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&glidepoint_left_split>;
     };
-
+*/
 // joysticks
     analog_joystick_right_listener: analog_joystick_right_listener {
         status = "disabled";

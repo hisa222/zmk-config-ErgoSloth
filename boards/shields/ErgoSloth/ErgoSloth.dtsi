@@ -67,7 +67,6 @@
     trackball_right_listener: trackball_right_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-		// input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
 /*
 // touchpad
@@ -81,60 +80,12 @@
     analog_joystick_right_listener: analog_joystick_right_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
-		// input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
-/*
-        arrow-prevent-move {
-            layers = <1>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
-
-        scroll {
-            layers = <0 1 2 3 4 5 6 7>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-        };
-*/
-/*
-        nothing {
-            layers = <0 1 2 3 4 5 6 7>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
-*/
-		snipe {
-			layers = <0 1 2 3 4 5 6 7>;
-			input-processors = <&zip_xy_scaler 1 4>;
-		};
-
     };
 
     analog_joystick_left_listener: analog_joystick_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_left_split>;
-		// input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
-/*
-        arrow-prevent-move {
-            layers = <1>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
-*/
-        scroll {
-            layers = <0 1 2 3 4 5 6 7>;
-        	input-processors = <
-            	&zip_xy_to_scroll_mapper
-            	&zip_scroll_scaler 1 20
-        	>;
-        };
-/*
-        nothing {
-            layers = <0 1 2 3 4 5 6 7>;
-            input-processors = <&zip_xy_scaler 0 1>;
-        };
-
-		snipe {
-			layers = <0 1 2 3 4 5 6 7>;
-			input-processors = <&zip_xy_scaler 1 4>;
-		};
-*/
     };
 
 // keymap

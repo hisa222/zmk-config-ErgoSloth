@@ -74,12 +74,12 @@
         no-smoothing;
     };
 };
-
+/*
 &glidepoint_left_split {
 	// status = "okay";
     device = <&glidepoint_left>;
 };
-
+*/
 // joystick
 / {
 	analog_joystick_left: analog_joystick_left {

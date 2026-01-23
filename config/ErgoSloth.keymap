@@ -98,7 +98,7 @@
 };
 
 // joysticks
-    analog_joystick_right_listener {
+    &analog_joystick_right_listener {
 /*
         arrow-prevent-move {
             layers = <1>;

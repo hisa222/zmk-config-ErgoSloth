@@ -421,32 +421,31 @@
     keymap {
         compatible = "zmk,keymap";
 
-        //               | SW2  | SW3  | SW4  | SW5  |   | SW6  | SW7  | SW8  | SW9  |
-        // | SW0  | SW1  | SW14 | SW15 | SW16 | SW17 |   | SW18 | SW19 | SW20 | SW21 | SW10 | SW11 |
-        // | SW12 | SW13 | SW26 | SW27 | SW28 | SW29 |   | SW30 | SW31 | SW32 | SW33 | SW22 | SW23 |
-        // | SW24 | SW25 | SW38 | SW39 | SW40 | SW41 |   | SW42 | SW43 | SW44 | SW45 | SW34 | SW35 |
-        // | SW36 | SW37 | SW50 | SW51 | SW52 | SW53 |   | SW54 | SW55 | SW56 | SW57 | SW46 | SW47 |
-        // | SW48 | SW49 | SW60 | SW61 | SW62 | (LAJS)   (RAJS) | SW69 | SW70 | SW71 | SW58 | SW59 |
-        //                                  (TouchPad)
-        // 		                              | SW65 |   | SW66 |	    (TrackBall)
-        // 							   | SW64 |					| SW67 |
-        // | SW72 |				| SW63 |							   | SW68 |				| SW83 |
+        //               | SW11 | SW16 | SW21 | SW26 |   | SW61 | SW66 | SW71 | SW76 |
+        // | SW1  | SW6  | SW12 | SW17 | SW22 | SW27 |   | SW62 | SW67 | SW72 | SW77 | SW81 | SW86 |
+        // | SW2  | SW7  | SW13 | SW18 | SW23 | SW28 |   | SW63 | SW68 | SW73 | SW78 | SW82 | SW97 |
+        // | SW3  | SW8  | SW14 | SW19 | SW24 | SW29 |   | SW64 | SW69 | SW74 | SW79 | SW83 | SW88 |
+        // | SW4  | SW9  | SW15 | SW20 | SW25 | SW30 |   | SW65 | SW70 | SW75 | SW80 | SW84 | SW89 |
+        // | SW5  | SW10 | SW32 | SW33 | SW34 | (LAJS/   (RAJS) | SW95 | SW96 | SW97 | SW85 | SW90 |
+        //                                      TouchPad)
+        // 		                              | SW37 |   | SW92 |	    (TrackBall)
+        // 							   | SW36 |					| SW93 |
+        // | SW31 |				| SW35 |							   | SW94 |				| SW91 |
         //    (LeftRotaryEncoder)                                             (RightRotaryEncoder)
-        //		  | SW73 |															 | SW78 |
-        // | SW74 | SW77 | SW76 |											  | SW79 | SW82 | SW81 |
-        // 		  | SW75 |															 | SW80 |
-        //                                            ||
-        //                                          __||__
-        //                                           \  /
-        //                                            \/
-        //
-        // | SW0  | SW1  | SW2  | SW3  | SW4  | SW5  |   | SW6  | SW7  | SW8  | SW9  | SW10 | SW11 |
-        // | SW12 | SW13 | SW14 | SW15 | SW16 | SW17 |   | SW18 | SW19 | SW20 | SW21 | SW22 | SW23 |
-        // | SW24 | SW25 | SW26 | SW27 | SW28 | SW29 |   | SW30 | SW31 | SW32 | SW33 | SW34 | SW35 |
-        // | SW36 | SW37 | SW38 | SW39 | SW40 | SW41 |   | SW42 | SW43 | SW44 | SW45 | SW46 | SW47 |
-        // | SW48 | SW49 | SW50 | SW51 | SW52 | SW53 |   | SW54 | SW55 | SW56 | SW57 | SW58 | SW59 |
-        // | SW60 | SW61 | SW62 | SW63 | SW64 | SW65 |   | SW66 | SW67 | SW68 | SW69 | SW70 | SW71 |
-        // | SW72 | SW73 | SW74 | SW75 | SW76 | SW77 |   | SW78 | SW79 | SW80 | SW81 | SW82 | SW83 |
+        //		  | SW38 |															 | SW98 |
+        // | SW39 | SW42 | SW41 |											  | SW99 | SW102| SW101|
+        // 		  | SW40 |															 | SW100|
+        //                                             ||
+        //                                           __||__
+        //                                            \  /
+        //                                             \/
+		//
+        // | SW1  | SW6  | SW11 | SW16 | SW21 | SW26 | SW32 |   | SW61 | SW66 | SW71 | SW76 | SW81 | SW86 | SW92 |
+        // | SW2  | SW7  | SW12 | SW17 | SW22 | SW27 | SW33 |   | SW62 | SW67 | SW72 | SW77 | SW82 | SW87 | SW93 |
+        // | SW3  | SW8  | SW13 | SW18 | SW23 | SW28 | SW34 |   | SW63 | SW68 | SW73 | SW78 | SW83 | SW88 | SW94 |
+        // | SW4  | SW9  | SW14 | SW19 | SW24 | SW29 | SW35 |   | SW64 | SW69 | SW74 | SW79 | SW84 | SW89 | SW95 |
+        // | SW5  | SW10 | SW15 | SW20 | SW25 | SW30 | SW36 |   | SW65 | SW70 | SW75 | SW80 | SW85 | SW90 | SW96 |
+        // | SW38 | SW39 | SW40 | SW41 | SW42 | SW31 | SW37 |   | SW98 | SW99 | SW100| SW101| SW102| SW91 | SW97 |
 
         jis_layer {
             display-name = "JIS";
@@ -467,22 +466,20 @@
             // | CtrZ | Entr | CtrY |											  | CSTb | Entr | CtTb |
             // 		  | CtrV |															 | CtrW |
             // -----------------------------------------------------------------------------------------
-            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |   |  F8  |  F9  | F10  | F11  |  END |  DEL |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |   0  | BKSP |
-            // |  TAB |   Q  |   W  |   E  |   R  |   T  |   |   Y  |   U  |   I  |   O  |   P  | ENTR |
-            // | LSft |   A  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |   ↑  | RSft |
-            // | LAlt |   Z  |   X  |   C  |   V  |   B  |   |   N  |   M  |   ,  |   .  |   ↓  |   →  |
-            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr1 | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr1 |
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  | lyr1 |   |  F8  |  F9  | F10  | F11  |  END |  DEL | SPCE |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | CtrC |   |   6  |   7  |   8  |   9  |   0  | BKSP | ENTR |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  | CtrZ |   |   Y  |   U  |   I  |   O  |   P  | ENTR | BKSP |
+            // | LSft |   A  |   S  |   D  |   F  |   G  | CtrV |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
+            // | LAlt |   Z  |   X  |   C  |   V  |   B  | CtrY |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
+            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr1 |   ←  |
 
             bindings = <
-&kp ESC          &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL
-&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE
-&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER
-&kp LSHFT        &kp A      &kp S      &kp D          &kp F      &kp G      &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT
-&kp LALT         &kp Z      &kp X      &kp C          &kp V      &kp B      &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT
-&kp LGUI         &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp SPACE  &kp SPACE  &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL  &kp LEFT
-&jis_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next
+&kp ESC          &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     &jis_layer_next  &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL          &kp SPACE
+&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &kp LC(C)        &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE    &kp ENTER
+&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      &kp LC(Z)        &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER        &kp BACKSPACE
+&kp LSHFT        &kp A      &kp S      &kp D          &kp F      &kp G      &kp LC(V)        &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT        &kp SPACE
+&kp LALT         &kp Z      &kp X      &kp C          &kp V      &kp B      &kp LC(Y)        &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT        &kp RCTRL
+&kp LGUI         &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp SPACE  &kp ENTER        &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next  &kp LEFT
             >;
 
             sensor-bindings =

@@ -96,7 +96,7 @@
 
         //               | SW11 | SW16 | SW21 | SW26 |   | SW61 | SW66 | SW71 | SW76 |
         // | SW1  | SW6  | SW12 | SW17 | SW22 | SW27 |   | SW62 | SW67 | SW72 | SW77 | SW81 | SW86 |
-        // | SW2  | SW7  | SW13 | SW18 | SW23 | SW28 |   | SW63 | SW68 | SW73 | SW78 | SW82 | SW97 |
+        // | SW2  | SW7  | SW13 | SW18 | SW23 | SW28 |   | SW63 | SW68 | SW73 | SW78 | SW82 | SW87 |
         // | SW3  | SW8  | SW14 | SW19 | SW24 | SW29 |   | SW64 | SW69 | SW74 | SW79 | SW83 | SW88 |
         // | SW4  | SW9  | SW15 | SW20 | SW25 | SW30 |   | SW65 | SW70 | SW75 | SW80 | SW84 | SW89 |
         // | SW5  | SW10 | SW32 | SW33 | SW34 | (LAJS/   (RAJS) | SW95 | SW96 | SW97 | SW85 | SW90 |

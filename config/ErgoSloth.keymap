@@ -178,32 +178,31 @@
 
     combos {
         compatible = "zmk,combos";
-//encoder_R_up
         combo_ctrlt {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <77 81 11 49>;
+            key-positions = <77 81 11 49>;  //encoder_R_up
             bindings = <&kp RC(T)>;
         };
-//encoder_R_left
+
         combo_cstab {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <78 81 25 50>;
+            key-positions = <78 81 25 50>;  //encoder_R_left
             bindings = <&kp RC(RS(TAB))>;
         };
-//encoder_R_down
+
         combo_ctrlw {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <79 81 39 51>;
+            key-positions = <79 81 39 51>;  //encoder_R_down
             bindings = <&kp RC(W)>;
         };
-//encoder_R_right
-        combo_cstab {
+
+        combo_ctab {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <80 81 53 52>;
+            key-positions = <80 81 53 52>;  //encoder_R_right
             bindings = <&kp RC(RS(TAB))>;
         };
     };

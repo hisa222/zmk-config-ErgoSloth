@@ -501,25 +501,25 @@
             // | LSft |   A  |   X  |   C  |   V  |   B  |   |   N  |   M  |   ,  |   .  |   ↑  | RSft |
             // | LAlt |   Z  |  GUI | LCtr | SPCE |                 | SPCE | RCtr |   ←  |   ↓  |   →  |
             // 		                      	
-            //                                    | SPCE |   | SPCE |
-            // 							   | ENTR |					| ENTR |
-            // | layr |				| BKSP |							   | BKSP |				| layr |
+            //                                    | ENTR |   | ENTR |
+            // 							   | LCLK |					| LCLK |
+            // | layr |				| RCLK |							   | RCLK |				| layr |
             //
             //		  | CtrC |															 | CtrT |
             // | CtrZ | Entr | CtrY |											  | CSTb | Entr | CtTb |
             // 		  | CtrV |															 | CtrW |
             // -----------------------------------------------------------------------------------------
-            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  | lyr1 |   |  F8  |  F9  | F10  | F11  |  END |  DEL | LCLK |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  | CtrC |   |   6  |   7  |   8  |   9  |   0  | BKSP | RCLK |
-            // |  TAB |   Q  |   W  |   E  |   R  |   T  | CtrZ |   |   Y  |   U  |   I  |   O  |   P  | ENTR | ENTR |
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  | lyr1 |   |  F8  |  F9  | F10  | F11  |  END |  DEL | ENTR |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | CtrC |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  | CtrZ |   |   Y  |   U  |   I  |   O  |   P  | ENTR | RCLK |
             // | LSft |   A  |   S  |   D  |   F  |   G  | CtrV |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
             // | LAlt |   Z  |   X  |   C  |   V  |   B  | CtrY |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
             // |  GUI | LCtr | SPCE | ENTR | RCLK | LCLK | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr1 |   ←  |
 
             bindings = <
-&kp ESC          &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     &jis_layer_next  &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL          &mkp LCLK
-&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &none            &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE    &mkp RCLK
-&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      &none            &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER        &kp ENTER
+&kp ESC          &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     &jis_layer_next  &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL          &kp ENTER
+&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &none            &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE    &mkp LCLK
+&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      &none            &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER        &mkp RCLK
 &kp LSHFT        &kp A      &kp S      &kp D          &kp F      &kp G      &none            &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT        &kp SPACE
 &kp LALT         &kp Z      &kp X      &kp C          &kp V      &kp B      &none            &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT        &kp RCTRL
 &kp LGUI         &kp LCTRL  &kp SPACE  &kp ENTER      &mkp RCLK  &mkp LCLK  &kp ENTER        &none      &none            &none          &none        &kp ENTER  &jis_layer_next  &kp LEFT

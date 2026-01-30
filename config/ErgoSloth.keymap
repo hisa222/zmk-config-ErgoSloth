@@ -165,7 +165,7 @@
         combo_ctrlt {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <77 81 49 53>;
+            key-positions = <77 81 11 49>;
             bindings = <&kp RC(T)>;
         };
     };

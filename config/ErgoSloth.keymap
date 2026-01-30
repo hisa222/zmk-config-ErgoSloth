@@ -162,6 +162,12 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
+        combo_ctrlt {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <77 81 49 53>;
+            bindings = <&kp RC(T)>;
+        };
     };
 
     /**************************************************************************/

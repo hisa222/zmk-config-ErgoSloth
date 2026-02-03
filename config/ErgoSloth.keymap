@@ -182,28 +182,28 @@
             layers = <JIS_L>;
             timeout-ms = <50>;
             key-positions = <20 76 4 42>; 
-            bindings = <&kp RC(C)>;
+            bindings = <&kp LC(C)>;
         };
 
         encoder_L_left {
             layers = <JIS_L>;
             timeout-ms = <50>;
             key-positions = <34 76 18 43>; 
-            bindings = <&kp RC(Z)>;
+            bindings = <&kp LC(Z)>;
         };
 
         encoder_L_down {
             layers = <JIS_L>;
             timeout-ms = <50>;
             key-positions = <48 76 32 44>;
-            bindings = <&kp RC(V)>;
+            bindings = <&kp LC(V)>;
         };
 
         encoder_L_right {
             layers = <JIS_L>;
             timeout-ms = <50>;
             key-positions = <62 76 46 45>;
-            bindings = <&kp RC(Y)>;
+            bindings = <&kp LC(Y)>;
         };
 
         encoder_R_up {
@@ -545,7 +545,7 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | ENTR |   | CmR1 | CmR2 | CmR3 | CmR4 | ENTR | lyr1 |   ←  |
 
             bindings = <
-&kp ESC    &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     	     &kp GUI          &kp F8     &kp F9  &kp F10    &kp F11     &kp END    &kp DEL          &kp ENTER
+&kp ESC    &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     	     &kp LWIN         &kp F8     &kp F9  &kp F10    &kp F11     &kp END    &kp DEL          &kp ENTER
 &kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4     &kp N5     	     &kp LCTRL        &kp N6     &kp N7  &kp N8     &kp N9      &kp N0     &kp BACKSPACE    &mkp LCLK
 &kp TAB    &kp Q     &kp W   &kp E   &kp R      &kp T      	     &kp SPACE        &kp Y      &kp U   &kp I      &kp O       &kp P      &kp ENTER        &mkp RCLK
 &kp LSHFT  &kp A     &kp S   &kp D   &kp F      &kp G      	     &mkp RCLK        &kp H      &kp J   &kp K      &kp L       &kp UP     &kp RSHFT        &kp SPACE

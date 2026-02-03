@@ -178,60 +178,60 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_ctrlc {
+        encoder_L_up {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <20 76 4 42>;  //encoder_L_up
+            key-positions = <20 76 4 42>; 
             bindings = <&kp RC(C)>;
         };
 
-        combo_ctrlz {
+        encoder_L_left {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <34 76 18 43>;  //encoder_L_left
+            key-positions = <34 76 18 43>; 
             bindings = <&kp RC(Z)>;
         };
 
-        combo_ctrlv {
+        encoder_L_down {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <48 76 32 44>;  //encoder_L_down
+            key-positions = <48 76 32 44>;
             bindings = <&kp RC(V)>;
         };
 
-        combo_ctrly {
+        encoder_L_right {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <62 76 46 45>;  //encoder_L_right
+            key-positions = <62 76 46 45>;
             bindings = <&kp RC(Y)>;
         };
 
-        combo_ctrlt {
+        encoder_R_up {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <77 81 11 49>;  //encoder_R_up
+            key-positions = <77 81 11 49>;
             bindings = <&kp RC(T)>;
         };
 
-        combo_cstab {
+        encoder_R_left {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <78 81 25 50>;  //encoder_R_left
+            key-positions = <78 81 25 50>;
             bindings = <&kp RC(RS(TAB))>;
         };
 
-        combo_ctrlw {
+        encoder_R_down {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <79 81 39 51>;  //encoder_R_down
+            key-positions = <79 81 39 51>;
             bindings = <&kp RC(W)>;
         };
 
-        combo_ctab {
+        encoder_R_right {
             layers = <JIS_L>;
             timeout-ms = <50>;
-            key-positions = <80 81 53 52>;  //encoder_R_right
-            bindings = <&kp RC(RS(TAB))>;
+            key-positions = <80 81 53 52>;
+            bindings = <&kp RC(TAB)>;
         };
     };
 
@@ -494,7 +494,7 @@
 
         //               | SW11 | SW16 | SW21 | SW26 |   | SW61 | SW66 | SW71 | SW76 |
         // | SW1  | SW6  | SW12 | SW17 | SW22 | SW27 |   | SW62 | SW67 | SW72 | SW77 | SW81 | SW86 |
-        // | SW2  | SW7  | SW13 | SW18 | SW23 | SW28 |   | SW63 | SW68 | SW73 | SW78 | SW82 | SW97 |
+        // | SW2  | SW7  | SW13 | SW18 | SW23 | SW28 |   | SW63 | SW68 | SW73 | SW78 | SW82 | SW87 |
         // | SW3  | SW8  | SW14 | SW19 | SW24 | SW29 |   | SW64 | SW69 | SW74 | SW79 | SW83 | SW88 |
         // | SW4  | SW9  | SW15 | SW20 | SW25 | SW30 |   | SW65 | SW70 | SW75 | SW80 | SW84 | SW89 |
         // | SW5  | SW10 | SW32 | SW33 | SW34 | (LAJS/   (RAJS) | SW95 | SW96 | SW97 | SW85 | SW90 |
@@ -533,16 +533,16 @@
             // 							   | LCLK |					| LCLK |
             // | layr |				| RCLK |							   | RCLK |				| layr |
             //
-            //		  | CtrC |															 | CtrT |
-            // | CtrZ | ENTR | CtrY |											  | CSTb | ENTR | CtTb |
-            // 		  | CtrV |															 | CtrW |
+            //		  | CmL1 |															 | CmR1 |
+            // | CmL2 | ENTR | CmL4 |											  | CmR2 | ENTR | CmR4 |
+            // 		  | CmL3 |															 | CmR3 |
             // -----------------------------------------------------------------------------------------
             // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | ENTR |
             // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
             // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | RCLK |
             // | LSft |   A  |   S  |   D  |   F  |   G  | RCLK |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
             // | LAlt |   Z  |   X  |   C  |   V  |   B  | LCLK |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
-            // | CtrC | CtrZ | CtrV | CtrY | ENTR | lyr1 | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr1 |   ←  |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | ENTR |   | CmR1 | CmR2 | CmR3 | CmR4 | ENTR | lyr1 |   ←  |
 
             bindings = <
 &kp ESC    &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     	     &kp GUI          &kp F8     &kp F9  &kp F10    &kp F11     &kp END    &kp DEL          &kp ENTER

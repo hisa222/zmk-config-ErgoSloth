@@ -178,6 +178,34 @@
 
     combos {
         compatible = "zmk,combos";
+        combo_ctrlc {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <20 76 4 42>;  //encoder_L_up
+            bindings = <&kp RC(C)>;
+        };
+
+        combo_ctrlz {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <34 76 18 43>;  //encoder_L_left
+            bindings = <&kp RC(Z)>;
+        };
+
+        combo_ctrlv {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <48 76 32 44>;  //encoder_L_down
+            bindings = <&kp RC(V)>;
+        };
+
+        combo_ctrly {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <62 76 46 45>;  //encoder_L_right
+            bindings = <&kp RC(Y)>;
+        };
+
         combo_ctrlt {
             layers = <JIS_L>;
             timeout-ms = <50>;
@@ -517,12 +545,12 @@
             // | CtrC | CtrZ | CtrV | CtrY | ENTR | lyr1 | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr1 |   ←  |
 
             bindings = <
-&kp ESC          &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     	  &kp GUI          &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL          &kp ENTER
-&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     	  &kp LCTRL        &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE    &mkp LCLK
-&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      	  &kp SPACE        &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER        &mkp RCLK
-&kp LSHFT        &kp A      &kp S      &kp D          &kp F      &kp G      	  &mkp RCLK        &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT        &kp SPACE
-&kp LALT         &kp Z      &kp X      &kp C          &kp V      &kp B      	  &mkp LCLK        &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT        &kp RCTRL
-&kp N1           &kp N2     &kp N3     &kp N4         &kp N5     &jis_layer_next  &kp ENTER        &none      &none            &none          &none        &kp ENTER  &jis_layer_next  &kp LEFT
+&kp ESC    &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     	     &kp GUI          &kp F8     &kp F9  &kp F10    &kp F11     &kp END    &kp DEL          &kp ENTER
+&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4     &kp N5     	     &kp LCTRL        &kp N6     &kp N7  &kp N8     &kp N9      &kp N0     &kp BACKSPACE    &mkp LCLK
+&kp TAB    &kp Q     &kp W   &kp E   &kp R      &kp T      	     &kp SPACE        &kp Y      &kp U   &kp I      &kp O       &kp P      &kp ENTER        &mkp RCLK
+&kp LSHFT  &kp A     &kp S   &kp D   &kp F      &kp G      	     &mkp RCLK        &kp H      &kp J   &kp K      &kp L       &kp UP     &kp RSHFT        &kp SPACE
+&kp LALT   &kp Z     &kp X   &kp C   &kp V      &kp B      	     &mkp LCLK        &kp N      &kp M   &kp COMMA  &kp PERIOD  &kp DOWN   &kp RIGHT        &kp RCTRL
+&none      &none     &none   &none   &kp ENTER  &jis_layer_next  &kp ENTER        &none      &none   &none      &none       &kp ENTER  &jis_layer_next  &kp LEFT
             >;
 
             sensor-bindings =

@@ -518,11 +518,11 @@
 
             bindings = <
 &kp ESC          &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     &jis_layer_next  &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL          &kp ENTER
-&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &none            &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE    &mkp LCLK
-&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      &none            &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER        &mkp RCLK
-&kp LSHFT        &kp A      &kp S      &kp D          &kp F      &kp G      &none            &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT        &kp SPACE
-&kp LALT         &kp Z      &kp X      &kp C          &kp V      &kp B      &none            &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT        &kp RCTRL
-&kp LGUI         &kp LCTRL  &kp SPACE  &kp ENTER      &mkp RCLK  &mkp LCLK  &kp ENTER        &none      &none            &none          &none        &kp ENTER  &jis_layer_next  &kp LEFT
+&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &kp N1           &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE    &mkp LCLK
+&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      &kp N2           &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER        &mkp RCLK
+&kp LSHFT        &kp A      &kp S      &kp D          &kp F      &kp G      &kp N3           &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT        &kp SPACE
+&kp LALT         &kp Z      &kp X      &kp C          &kp V      &kp B      &kp N4           &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT        &kp RCTRL
+&kp LGUI         &kp LCTRL  &kp SPACE  &kp ENTER      &mkp RCLK  &mkp LCLK  &kp N5           &none      &none            &none          &none        &kp ENTER  &jis_layer_next  &kp LEFT
             >;
 
             sensor-bindings =

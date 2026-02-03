@@ -180,28 +180,28 @@
         compatible = "zmk,combos";
         encoder_L_up {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <1000>;
             key-positions = <20 76 4 42>; 
             bindings = <&kp LC(C)>;
         };
 
         encoder_L_left {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <1000>;
             key-positions = <34 76 18 43>; 
             bindings = <&kp LC(Z)>;
         };
 
         encoder_L_down {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <1000>;
             key-positions = <48 76 32 44>;
             bindings = <&kp LC(V)>;
         };
 
         encoder_L_right {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <1000>;
             key-positions = <62 76 46 45>;
             bindings = <&kp LC(Y)>;
         };

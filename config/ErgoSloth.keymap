@@ -506,23 +506,23 @@
             // | layr |				| RCLK |							   | RCLK |				| layr |
             //
             //		  | CtrC |															 | CtrT |
-            // | CtrZ | Entr | CtrY |											  | CSTb | Entr | CtTb |
+            // | CtrZ | ENTR | CtrY |											  | CSTb | ENTR | CtTb |
             // 		  | CtrV |															 | CtrW |
             // -----------------------------------------------------------------------------------------
-            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  | lyr1 |   |  F8  |  F9  | F10  | F11  |  END |  DEL | ENTR |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  | CtrC |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
-            // |  TAB |   Q  |   W  |   E  |   R  |   T  | CtrZ |   |   Y  |   U  |   I  |   O  |   P  | ENTR | RCLK |
-            // | LSft |   A  |   S  |   D  |   F  |   G  | CtrV |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
-            // | LAlt |   Z  |   X  |   C  |   V  |   B  | CtrY |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
-            // |  GUI | LCtr | SPCE | ENTR | RCLK | LCLK | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr1 |   ←  |
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | ENTR |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | RCLK |
+            // | LSft |   A  |   S  |   D  |   F  |   G  | RCLK |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
+            // | LAlt |   Z  |   X  |   C  |   V  |   B  | LCLK |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
+            // | CtrC | CtrZ | CtrV | CtrY | ENTR | lyr1 | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr1 |   ←  |
 
             bindings = <
-&kp ESC          &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     &jis_layer_next  &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL          &kp ENTER
-&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &kp N1           &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE    &mkp LCLK
-&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      &kp N2           &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER        &mkp RCLK
-&kp LSHFT        &kp A      &kp S      &kp D          &kp F      &kp G      &kp N3           &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT        &kp SPACE
-&kp LALT         &kp Z      &kp X      &kp C          &kp V      &kp B      &kp N4           &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT        &kp RCTRL
-&kp LGUI         &kp LCTRL  &kp SPACE  &kp ENTER      &mkp RCLK  &mkp LCLK  &kp N5           &none      &none            &none          &none        &kp ENTER  &jis_layer_next  &kp LEFT
+&kp ESC          &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     	  &kp GUI          &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL          &kp ENTER
+&kp GRAVE        &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     	  &kp LCTRL        &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE    &mkp LCLK
+&kp TAB          &kp Q      &kp W      &kp E          &kp R      &kp T      	  &kp SPACE        &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER        &mkp RCLK
+&kp LSHFT        &kp A      &kp S      &kp D          &kp F      &kp G      	  &mkp RCLK        &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT        &kp SPACE
+&kp LALT         &kp Z      &kp X      &kp C          &kp V      &kp B      	  &mkp LCLK        &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT        &kp RCTRL
+&kp N1           &kp N2     &kp N3     &kp N4         &kp N5     &jis_layer_next  &kp ENTER        &none      &none            &none          &none        &kp ENTER  &jis_layer_next  &kp LEFT
             >;
 
             sensor-bindings =
@@ -540,7 +540,7 @@
             // | LSft |   A  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |  ' " | RSft |
             // |  ; : |   Z  |   X  |   C  |   V  |   B  |   |   N  |   M  |   <  |   >  |  - _ |  = + |
             // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | Kana | EiSu |  [ { |  ] } |  / ? |
-            // | lyr2 | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr2 |
+            // | lyr2 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr2 |
 
             bindings = <
 &kp ESC                     &mt LEFT_BRACE PLUS  &kp F4            &kp F5         &kp F6      &kp F7      &kp F8     &kp F9           &kp F10            &kp F11                        &mt 0x89 LS(0x89)       &kp DEL
@@ -565,7 +565,7 @@
             // | LSft |   7  |   8  |   9  |   *  |   /  |   |   *  |   1  |   2  |   3  |   /  | RSft |
             // | LAlt |   ,  |   0  |   .  |   (  |   )  |   |   (  |   ,  |   0  |   .  |   )  |   →  |
             // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr5 | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr5 |
+            // | lyr5 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr5 |
 
             bindings = <
 &kp ESC          &kp HOME      &kp F4     &kp F5         &kp F6           &kp F7         &kp F8           &kp F9           &kp F10        &kp F11      &kp END        &kp DEL
@@ -592,7 +592,7 @@
             // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft |
             // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  |
             // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr0 | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr0 |
+            // | lyr0 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr0 |
 
             bindings = <
 &kp F1           &kp F2     &kp F3     &kp F4         &kp F5     &kp F6     &kp F7     &kp F8           &kp F9         &kp F10      &kp F11    &kp F12
@@ -619,7 +619,7 @@
             // | LSft |   A  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |   ↑  | RSft |
             // | LAlt |   Z  |   X  |   C  |   V  |   B  |   |   N  |   M  |   ,  |   .  |   ↓  |   →  |
             // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr3 | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr3 |
+            // | lyr3 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr3 |
 
             bindings = <
 &kp ESC         &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL
@@ -646,7 +646,7 @@
             // | LSft |   A  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |  ' " | RSft |
             // |  ; : |   Z  |   X  |   C  |   V  |   B  |   |   N  |   M  |   <  |   >  |  - _ |  = + |
             // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP |  [ { |  ] } |  / ? |
-            // | lyr4 | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr4 |
+            // | lyr4 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr4 |
 
             bindings = <
 &kp ESC              &mt GRAVE TILDE  &kp F4      &kp F5         &kp F6      &kp F7      &kp F8      &kp F9           &kp F10        &kp F11        &mt BSLH PIPE    &kp DEL
@@ -673,7 +673,7 @@
             // | LSft |   7  |   8  |   9  |   *  |   /  |   |   *  |   1  |   2  |   3  |   /  | RSft |
             // | LAlt |   ,  |   0  |   .  |   (  |   )  |   |   (  |   ,  |   0  |   .  |   )  |   →  |
             // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr5 | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr5 |
+            // | lyr5 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr5 |
 
             bindings = <
 &kp ESC         &kp HOME      &kp F4     &kp F5         &kp F6           &kp F7         &kp F8           &kp F9           &kp F10        &kp F11      &kp END        &kp DEL
@@ -700,7 +700,7 @@
             // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft |
             // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  |
             // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr0 | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT | lyr0 |
+            // | lyr0 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr0 |
 
             bindings = <
 &kp F1          &kp F2     &kp F3     &kp F4         &kp F5     &kp F6     &kp F7     &kp F8           &kp F9         &kp F10      &kp F11    &kp F12
@@ -727,7 +727,7 @@
             // |      |      | MCLK | RCLK | LCLK |      |   |      | LCLK | RCLK | MCLK |      |      |
             // |      |      |      |      |      |      |   |      |      |      |      |      |      |
             // |      |      |      | MCLK | RCLK | LCLK |   | LCLK | RCLK | MCLK |      |      |      |
-            // |      | CtrC | CtrZ | CtrV | CtrY | Entr |   | CtrT | BTab | CtrW | NTab | CtrT |      |
+            // |      | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT |      |
 
             bindings = <
 &none  &none      &none      &none         &none          &none      &none      &none            &none          &none        &none      &none

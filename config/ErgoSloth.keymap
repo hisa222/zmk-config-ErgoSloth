@@ -153,6 +153,7 @@
 /**************************************************************************/
 
 / {
+
 // | 0  | 1  | 2  | 3  | 4  | 5  | 6  |   | 7  | 8  | 9  | 10 | 11 | 12 | 13 |
 // | 14 | 15 | 16 | 17 | 18 | 19 | 20 |   | 21 | 22 | 23 | 24 | 25 | 26 | 27 |
 // | 28 | 29 | 30 | 31 | 32 | 33 | 34 |   | 35 | 36 | 37 | 38 | 39 | 40 | 41 |
@@ -162,50 +163,21 @@
 
 //           | 2  | 3  | 4  | 5  |   	| 7  | 8  | 9  | 10 |
 // | 0  | 1  | 16 | 17 | 18 | 19 |   	| 21 | 22 | 23 | 24 | 11 | 12 |
-// | 14 | 15 | 30 | 31 | 32 | 33 |   	| 35 | 36 | 37 | 38 | 25 | 83 |
+// | 14 | 15 | 30 | 31 | 32 | 33 |   	| 35 | 36 | 37 | 38 | 25 | 26 |
 // | 28 | 29 | 44 | 45 | 46 | 47 |   	| 49 | 50 | 51 | 52 | 39 | 40 |
 // | 42 | 43 | 58 | 59 | 60 | 61 |   	| 63 | 64 | 65 | 66 | 53 | 54 |
-// | 56 | 57 | 70 | 71 | 72 |(LAJS/    (RAJS)| 55 | 69 | 83 | 67 | 68 |
+// | 56 | 57 | 6  | 20 | 34 |(LAJS/    (RAJS)| 55 | 69 | 83 | 67 | 68 |
 //                           TouchPad)
-//                          | 75 |      | 13 |     (TrackBall)
-//                     | 74 |                | 27 |
-// | 6  |         | 73 |                          | 41 |         | 82 |
+//                          | 76 |      | 13 |     (TrackBall)
+//                     | 62 |                | 27 |
+// | 75 |         | 48 |                          | 41 |         | 82 |
 //    (LeftRotaryEncoder)                          (RightRotaryEncoder)
-//      | 20 |                                            | 77 |
-// | 34 | 76 | 62 |                                  | 78 | 81 | 80 |
-//      | 48 |                                            | 79 |
+//      | 70 |                                            | 77 |
+// | 71 | 74 | 73 |                                  | 78 | 81 | 80 |
+//      | 72 |                                            | 79 |
 
 
     combos {
-        compatible = "zmk,combos";
-        encoder_L_up {
-            layers = <JIS_L>;
-            timeout-ms = <100>;
-            key-positions = <20 76 4 42>; 
-            bindings = <&kp LC(C)>;
-        };
-
-        encoder_L_left {
-            layers = <JIS_L>;
-            timeout-ms = <100>;
-            key-positions = <34 76 18 43>; 
-            bindings = <&kp LC(Z)>;
-        };
-
-        encoder_L_down {
-            layers = <JIS_L>;
-            timeout-ms = <100>;
-            key-positions = <48 76 32 44>;
-            bindings = <&kp LC(V)>;
-        };
-
-        encoder_L_right {
-            layers = <JIS_L>;
-            timeout-ms = <100>;
-            key-positions = <62 76 46 45>;
-            bindings = <&kp LC(Y)>;
-        };
-
         encoder_R_up {
             layers = <JIS_L>;
             timeout-ms = <50>;
@@ -234,6 +206,34 @@
             bindings = <&kp RC(TAB)>;
         };
 
+        compatible = "zmk,combos";
+        encoder_L_up {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <70 74 4 42>; 
+            bindings = <&kp LC(C)>;
+        };
+
+        encoder_L_left {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <71 74 18 43>; 
+            bindings = <&kp LC(Z)>;
+        };
+
+        encoder_L_down {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <72 74 32 44>;
+            bindings = <&kp LC(V)>;
+        };
+
+        encoder_L_right {
+            layers = <JIS_L>;
+            timeout-ms = <50>;
+            key-positions = <73 74 46 45>;
+            bindings = <&kp LC(Y)>;
+        };
     };
 
     /**************************************************************************/

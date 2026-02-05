@@ -388,6 +388,15 @@
             tapping-term-ms = <150>;
         };
 
+        mt_btl: mt_btl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <5000>;
+            bindings = <&bootloader>, <&kp ENTER>;
+            display-name = "Mod-Tap-Bootloader";
+        };
+
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -530,7 +539,7 @@
             // | LSft |   A  |   X  |   C  |   V  |   B  |   |   N  |   M  |   ,  |   .  |   ↑  | RSft |
             // | LAlt |   Z  |  GUI | LCtr | SPCE |                 | SPCE | RCtr |   ←  |   ↓  |   →  |
             // 		                      	
-            //                                    | ENTR |   | ENTR |
+            //                                    | EnBl |   | EnBl |
             // 							   | LCLK |					| LCLK |
             // | layr |				| RCLK |							   | RCLK |				| layr |
             //
@@ -538,20 +547,20 @@
             // | CmL2 | ENTR | CmL4 |											  | CmR2 | ENTR | CmR4 |
             // 		  | CmL3 |															 | CmR3 |
             // -----------------------------------------------------------------------------------------
-            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | ENTR |
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | EnBl |
             // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
             // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | RCLK |
             // | LSft |   A  |   S  |   D  |   F  |   G  | RCLK |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
             // | LAlt |   Z  |   X  |   C  |   V  |   B  | LCLK |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
-            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | ENTR |   | CmR1 | CmR2 | CmR3 | CmR4 | ENTR | lyr1 |   ←  |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | EnBl |   | CmR1 | CmR2 | CmR3 | CmR4 | ENTR | lyr1 |   ←  |
 
             bindings = <
-&kp ESC    &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     	     &kp LWIN         &kp F8     &kp F9  &kp F10    &kp F11     &kp END    &kp DEL          &kp ENTER
+&kp ESC    &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     	     &kp LWIN         &kp F8     &kp F9  &kp F10    &kp F11     &kp END    &kp DEL          &mt_btl  
 &kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4     &kp N5     	     &kp LCTRL        &kp N6     &kp N7  &kp N8     &kp N9      &kp N0     &kp BACKSPACE    &mkp LCLK
 &kp TAB    &kp Q     &kp W   &kp E   &kp R      &kp T      	     &kp SPACE        &kp Y      &kp U   &kp I      &kp O       &kp P      &kp ENTER        &mkp RCLK
 &kp LSHFT  &kp A     &kp S   &kp D   &kp F      &kp G      	     &mkp RCLK        &kp H      &kp J   &kp K      &kp L       &kp UP     &kp RSHFT        &kp SPACE
 &kp LALT   &kp Z     &kp X   &kp C   &kp V      &kp B      	     &mkp LCLK        &kp N      &kp M   &kp COMMA  &kp PERIOD  &kp DOWN   &kp RIGHT        &kp RCTRL
-&none      &none     &none   &none   &kp ENTER  &jis_layer_next  &kp ENTER        &none      &none   &none      &none       &kp ENTER  &jis_layer_next  &kp LEFT
+&none      &none     &none   &none   &kp ENTER  &jis_layer_next  &mt_btl          &none      &none   &none      &none       &kp ENTER  &jis_layer_next  &kp LEFT
             >;
 
             sensor-bindings =

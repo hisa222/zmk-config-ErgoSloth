@@ -393,7 +393,7 @@
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <5000>;
-            bindings = <&bootloader>, <&kp ENTER>;
+            bindings = <&bootloader &kp ENTER>;
             display-name = "Mod-Tap-Bootloader";
         };
 

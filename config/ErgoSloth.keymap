@@ -379,6 +379,41 @@
             tap-ms = <25>;
         };
 
+        morph_home: morph_home {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt LEFT_BRACE PLUS>, <&kp HOME>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morph_end: morph_end {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt MINUS LS(0x87)>, <&kp END>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morph_space: morph_space {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&mt SEMICOLON SINGLE_QUOTE>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morph_comma: morph_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RS(COMMA)>, <&mt RIGHT_BRACKET RIGHT_BRACE>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morph_period: morph_period {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RS(PERIOD)>, <&mt BACKSLASH PIPE>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
         mod_mkp: mod_mkp {
             compatible = "zmk,behavior-hold-tap";
             label = "MOD_MKP";
@@ -564,12 +599,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 | ENTR | lyr1 |   ←  |
 
             bindings = <
-&kp ESC    &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     	     &kp LWIN           &kp F8  &kp F9  &kp F10    &kp F11     &kp END    &kp DEL          &mkp RCLK
-&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4     &kp N5     	     &kp LCTRL          &kp N6  &kp N7  &kp N8     &kp N9      &kp N0     &kp BACKSPACE    &mkp LCLK
-&kp TAB    &kp Q     &kp W   &kp E   &kp R      &kp T      	     &kp SPACE          &kp Y   &kp U   &kp I      &kp O       &kp P      &kp ENTER        &kp SPACE
-&kp LSHFT  &kp A     &kp S   &kp D   &kp F      &kp G      	     &kp SPACE          &kp H   &kp J   &kp K      &kp L       &kp UP     &kp RSHFT        &kp SPACE
-&kp LALT   &kp Z     &kp X   &kp C   &kp V      &kp B      	     &mkp LCLK          &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN   &kp RIGHT        &kp RCTRL
-&none      &none     &none   &none   &kp ENTER  &jis_layer_next  &mkp RCLK          &none   &none   &none      &none       &kp ENTER  &jis_layer_next  &kp LEFT
+&kp ESC    &morph_home  &kp F4  &kp F5  &kp F6     &kp F7     	     &kp LWIN           &kp F8  &kp F9  &kp F10    &kp F11     &morph_end  &kp DEL          &mkp RCLK
+&kp GRAVE  &kp N1       &kp N2  &kp N3  &kp N4     &kp N5     	     &kp LCTRL          &kp N6  &kp N7  &kp N8     &kp N9      &kp N0      &kp BACKSPACE    &mkp LCLK
+&kp TAB    &kp Q        &kp W   &kp E   &kp R      &kp T      	     &kp SPACE          &kp Y   &kp U   &kp I      &kp O       &kp P       &kp ENTER        &kp SPACE
+&kp LSHFT  &kp A        &kp S   &kp D   &kp F      &kp G      	     &kp SPACE          &kp H   &kp J   &kp K      &kp L       &kp UP      &kp RSHFT        &morph_space
+&kp LALT   &kp Z        &kp X   &kp C   &kp V      &kp B      	     &mkp LCLK          &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN    &kp RIGHT        &kp RCTRL
+&none      &none        &none   &none   &kp ENTER  &mo JIS_MARKS_L   &mkp RCLK          &none   &none   &none      &none       &kp ENTER   &mo JIS_MARKS_L  &kp LEFT
             >;
 
             sensor-bindings =
@@ -581,22 +616,20 @@
             display-name = "JIS_MARKS";
 
             // -----------------------------------------------------------------------------------------
-            // |  ESC |  ` ~ |  F4  |  F5  |  F6  |  F7  |   |  F8  |  F9  | F10  | F11  |  \ | |  DEL |
-            // |  E/J |   !  |   @  |   #  |   $  |   %  |   |   ^  |   &  |   *  |   (  |   )  | BKSP |
-            // |  TAB |   Q  |   W  |   E  |   R  |   T  |   |   Y  |   U  |   I  |   O  |   P  | ENTR |
-            // | LSft |   A  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |  ' " | RSft |
-            // |  ; : |   Z  |   X  |   C  |   V  |   B  |   |   N  |   M  |   <  |   >  |  - _ |  = + |
-            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | Kana | EiSu |  [ { |  ] } |  / ? |
-            // | lyr2 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr2 |
+            // |  ESC |  ` ~ |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  \ | |  DEL | RCLK |
+            // |  E/J |   !  |   @  |   #  |   $  |   %  | LCtr |   |   ^  |   &  |   *  |   (  |   )  | BKSP | LCLK |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | SPCE |
+            // | LSft |   A  |   S  |   D  |   F  |   G  | BKSP |   |   H  |   J  |   K  |   L  |  ' " | RSft |  ; : |
+            // | LAlt |   Z  |   X  |   C  |   V  |   B  | ENTR |   |   N  |   M  |   <  |   >  |  - _ |  = + | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 | ENTR | lyr1 |  / ? |
 
             bindings = <
-&kp ESC                     &mt LEFT_BRACE PLUS  &kp F4            &kp F5         &kp F6      &kp F7      &kp F8     &kp F9           &kp F10            &kp F11                        &mt 0x89 LS(0x89)       &kp DEL
-&kp GRAVE                   &kp LS(N1)           &kp LEFT_BRACKET  &kp LS(N3)     &kp LS(N4)  &kp LS(N5)  &kp EQUAL  &kp CARET        &kp DOUBLE_QUOTES  &kp ASTERISK                   &kp LEFT_PARENTHESIS    &kp BACKSPACE
-&kp TAB                     &kp LS(Q)            &kp LS(W)         &kp LS(E)      &kp LS(R)   &kp LS(T)   &kp LS(Y)  &kp LS(U)        &kp LS(I)          &kp LS(O)                      &kp LS(P)               &kp ENTER
-&kp LSHFT                   &kp LS(A)            &kp LS(S)         &kp LS(D)      &kp LS(F)   &kp LS(G)   &kp LS(H)  &kp LS(J)        &kp LS(K)          &kp LS(L)                      &mt AMPERSAND AT        &kp RSHFT
-&mt SEMICOLON SINGLE_QUOTE  &kp LS(Z)            &kp LS(X)         &kp LS(C)      &kp LS(V)   &kp LS(B)   &kp LS(N)  &kp LS(M)        &kp LS(COMMA)      &kp LS(PERIOD)                 &mt MINUS LS(0x87)      &mt UNDER COLON
-&kp LGUI                    &kp LCTRL            &kp SPACE         &kp BACKSPACE  &kp ENTER   &kp SPACE   &kp SPACE  &kp LANGUAGE_1   &kp LANGUAGE_2     &mt RIGHT_BRACKET RIGHT_BRACE  &mt RIGHT_BRACKET PIPE  &mt SLASH LS(SLASH)
-&jis_layer_next             &kp LC(C)            &kp LC(Z)         &kp LC(V)      &kp LC(Y)   &kp ENTER   &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)          &kp RC(TAB)                    &kp RC(T)               &jis_layer_next
+&kp ESC    &morph_home  &kp F4            &kp F5         &kp F6      &kp F7      &kp LGUI         &kp F8     &kp F9     &kp F10            &kp F11        &morph_end             &kp DEL          &mkp RCLK
+&kp GRAVE  &kp LS(N1)   &kp LEFT_BRACKET  &kp LS(N3)     &kp LS(N4)  &kp LS(N5)  &kp LCTRL        &kp EQUAL  &kp CARET  &kp DOUBLE_QUOTES  &kp ASTERISK   &kp LEFT_PARENTHESIS   &kp BACKSPACE    &mkp LCLK
+&kp TAB    &kp LS(Q)    &kp LS(W)         &kp LS(E)      &kp LS(R)   &kp LS(T)   &kp SPACE        &kp LS(Y)  &kp LS(U)  &kp LS(I)          &kp LS(O)      &kp LS(P)              &kp ENTER        &kp SPACE
+&kp LSHFT  &kp LS(A)    &kp LS(S)         &kp LS(D)      &kp LS(F)   &kp LS(G)   &kp BACKSPACE    &kp LS(H)  &kp LS(J)  &kp LS(K)          &kp LS(L)      &mt AMPERSAND AT       &kp RSHFT        &mt SEMICOLON SINGLE_QUOTE
+&kp LALT   &kp LS(Z)    &kp LS(X)         &kp LS(C)      &kp LS(V)   &kp LS(B)   &kp ENTER        &kp LS(N)  &kp LS(M)  &morph_comma       &morph_period  &mt MINUS LS(0x87)     &mt UNDER COLON  &kp RCTRL
+&none      &none        &none             &none          &kp ENTER   &trans      &mkp RCLK        &none      &none      &none              &none          &kp ENTER              &trans           &mt SLASH LS(SLASH)
             >;
 
             sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;

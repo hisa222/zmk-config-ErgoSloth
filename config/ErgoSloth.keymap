@@ -398,8 +398,8 @@
     	cs_p: ctrl-shift-positive {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&kp 0>, <&ctrl_p>;
-        	mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
+        	bindings = <&shift_p>, <&ctrl_p>;
+        	mods = <(MOD_LCTL|MOD_RCTL)>;
     	};
     	agcs_p: alt-gui-ctrl-shift-positive {
         	compatible = "zmk,behavior-mod-morph";
@@ -469,7 +469,7 @@
         	compatible = "zmk,behavior-sensor-rotate";
         	#sensor-binding-cells = <0>;
         	bindings = <&sagcs_n>, <&sagcs_p>;
-        	tap-ms = <10>;
+        	tap-ms = <20>;
     	};
 
         td_bspc: tap_dance_0 {

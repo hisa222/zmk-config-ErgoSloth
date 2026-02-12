@@ -371,9 +371,9 @@
     	gui_p: gui-positive {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&kp 0>, <&kp TAB>;
+        	bindings = <&kp 0>, <&kp RIGHT>;
         	mods = <(MOD_LGUI|MOD_RGUI)>;
-        	keep-mods = <(MOD_LCTL)>;
+        	keep-mods = <(MOD_LSFT)>;
     	};
     	ag_p: alt-gui-positive {
         	compatible = "zmk,behavior-mod-morph";
@@ -423,9 +423,9 @@
     	gui_n: gui-negative {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&kp 0>, <&kp LS(TAB)>;
+        	bindings = <&kp 0>, <&kp LEFT>;
         	mods = <(MOD_LGUI|MOD_RGUI)>;
-        	keep-mods = <(MOD_LCTL)>;
+        	keep-mods = <(MOD_LSFT)>;
     	};
     	ag_n: alt-gui-negative {
         	compatible = "zmk,behavior-mod-morph";

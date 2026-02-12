@@ -794,8 +794,8 @@
             >;
 
             sensor-bindings =
-                <&sagcs>,
-                <&sagcs>;
+                <&sagcs_n &sagcs_p>,
+                <&sagcs_n &sagcs_p>;
         };
 
         jis_mark_layer {

@@ -382,14 +382,14 @@
     	shift_p: shift-positive {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&none>, <&mouse_scroll SCRL_DOWN>;
+        	bindings = <&none>, <&msc SCRL_DOWN>;
         	mods = <(MOD_LSFT|MOD_RSFT)>;
 			keep-mods = <(MOD_LSFT)>;
     	};
     	ctrl_p: ctrl-positive {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&none>, <&mouse_scroll SCRL_UP>;
+        	bindings = <&none>, <&msc SCRL_UP>;
         	mods = <(MOD_LCTL|MOD_RCTL)>;
 			keep-mods = <(MOD_LCTL)>;
     	};
@@ -408,7 +408,7 @@
     	sagcs_p: scroll-alt-gui-ctrl-shift-positive {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&mouse_scroll SCRL_DOWN>, <&agcs_p>;
+        	bindings = <&msc SCRL_DOWN>, <&agcs_p>;
         	mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
     	};
     	alt_n: alt-negative {
@@ -434,14 +434,14 @@
     	shift_n: shift-negative {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&none>, <&mouse_scroll SCRL_UP>;
+        	bindings = <&none>, <&msc SCRL_UP>;
         	mods = <(MOD_LSFT|MOD_RSFT)>;
         	keep-mods = <(MOD_LSFT)>;
     	};
     	ctrl_n: ctrl-negative {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&none>, <&mouse_scroll SCRL_DOWN>;
+        	bindings = <&none>, <&msc SCRL_DOWN>;
         	mods = <(MOD_LCTL|MOD_RCTL)>;
         	keep-mods = <(MOD_LCTL)>;
     	};
@@ -460,7 +460,7 @@
     	sagcs_n: scroll-alt-gui-ctrl-shift-negative {
         	compatible = "zmk,behavior-mod-morph";
         	#binding-cells = <0>;
-        	bindings = <&mouse_scroll SCRL_UP>, <&agcs_n>;
+        	bindings = <&msc SCRL_UP>, <&agcs_n>;
         	mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
     	};
     	sagcs: scroll-alt-gui-ctrl-shift {

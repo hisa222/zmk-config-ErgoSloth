@@ -177,13 +177,13 @@
         alt_left {
             timeout-ms = <200>;
             key-positions = <67 83>;
-            bindings = <&kp LALT(LEFT)>;
+            bindings = <&kp LA(LEFT)>;
         };
 
         alt_right {
             timeout-ms = <200>;
             key-positions = <67 68>;
-            bindings = <&kp LALT(RIGHT)>;
+            bindings = <&kp LA(RIGHT)>;
         };
 
         encoder_R_up {

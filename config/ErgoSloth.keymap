@@ -722,14 +722,14 @@
             bindings = <&morph_comma>, <&kp SEMICOLON>;
         };
 
-        td_co_jis tap_dance_colon_jis {
+        td_co_jis: tap_dance_colon_jis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&morph_period>, <&kp JP_COLON>;
         };
 
-        td_co_us tap_dance_colon_us {
+        td_co_us: tap_dance_colon_us {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;

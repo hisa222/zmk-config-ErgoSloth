@@ -5,7 +5,6 @@
  */
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 150
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 50
 #define ZMK_MOUSE_SCRL_VAL 50
 
 #include "ErgoSloth.dtsi"

@@ -363,7 +363,7 @@
 // hold_tap
         esc_bt: escape-bluetooth {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <2000>;
             bindings = <&mo &kp>;

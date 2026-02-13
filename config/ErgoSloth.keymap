@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 200
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 200
 
 #define JIS_L       0
 #define JIS_MARKS_L 1
@@ -348,12 +348,157 @@
     /**************************************************************************/
 
     behaviors {
+// hold_tap
         esc_bt: escape-bluetooth {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <2000>;
             bindings = <&mo EXTRA_L>, <&kp ESC>;
+        };
+
+
+        mt_mkp: ht_mkp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MKP";
+            bindings = <&kp>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+        };
+
+        mt_btl: mt_btl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <3000>;
+            bindings = < &bootloader &kp >;
+            display-name = "Mod-Tap-Bootloader";
+        };
+
+        mt_rst: mt_rst {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <3000>;
+            bindings = < &sys_reset &kp >;
+            display-name = "Mod-Tap-Reset";
+        };
+
+        ime_alt: ime_alt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "IME_ALT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+// mod_morph
+        morph_homec: morph_homec {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp HOME>, <&none>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morph_homes: morph_homes {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&morph_homec>, <&kp JP_TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_home: morph_home {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt JP_TILDE JP_BACKQUOTE>, <&morph_homes>;
+            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_endc: morph_endc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp END>, <&none>;
+            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_ends: morph_ends {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&morph_endc>, <&kp JP_UNDERSCORE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_end: morph_end {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt JP_UNDERSCORE MINUS>, <&morph_ends>;
+            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_space: morph_space {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&mt JP_COLON SEMICOLON>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morph_comma: morph_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt RS(COMMA) COMMA>, <&mt JP_LBRACE JP_LBRACKET>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morph_period: morph_period {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt RS(PERIOD) PERIOD>, <&mt JP_RBRACE JP_RBRACKET>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        morph_2: morph_2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp JP_AT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_6: morph_6 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N6>, <&kp JP_CARET>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_7: morph_7 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp JP_AMPERSAND>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_8: morph_8 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp JP_ASTERISK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_9: morph_9 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp JP_LPAREN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_0: morph_0 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp JP_RPAREN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
     	alt_p: alt-positive {
@@ -460,183 +605,14 @@
         	bindings = <&msc SCRL_UP>, <&agcs_n>;
         	mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_RCTL)>;
     	};
+
+// sensor_rotate
     	enc_sagcs: scroll-alt-gui-ctrl-shift {
         	compatible = "zmk,behavior-sensor-rotate";
         	#sensor-binding-cells = <0>;
         	bindings = <&sagcs_n>, <&sagcs_p>;
         	tap-ms = <20>;
     	};
-
-        td_bspc: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&lt JIS_FUNCS_L BSPC>, <&kp BSPC>;
-        };
-
-        td_spc: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&lt JIS_FUNCS_L SPACE>, <&kp SPACE>;
-        };
-
-        mouse_scroll: mouse_wheel_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-
-            tap-ms = <25>;
-        };
-
-        morph_homec: morph_homec {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp HOME>, <&none>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        morph_homes: morph_homes {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&morph_homec>, <&kp JP_TILDE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_home: morph_home {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mt JP_TILDE JP_BACKQUOTE>, <&morph_homes>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_endc: morph_endc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp END>, <&none>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_ends: morph_ends {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&morph_endc>, <&kp JP_UNDERSCORE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_end: morph_end {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mt JP_UNDERSCORE MINUS>, <&morph_ends>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_space: morph_space {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&mt JP_COLON SEMICOLON>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        morph_comma: morph_comma {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mt RS(COMMA) COMMA>, <&mt JP_LBRACE JP_LBRACKET>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        morph_period: morph_period {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mt RS(PERIOD) PERIOD>, <&mt JP_RBRACE JP_RBRACKET>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        morph_2: morph_2 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N2>, <&kp JP_AT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_6: morph_6 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N6>, <&kp JP_CARET>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_7: morph_7 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp JP_AMPERSAND>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_8: morph_8 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N8>, <&kp JP_ASTERISK>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_9: morph_9 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N9>, <&kp JP_LPAREN>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        morph_0: morph_0 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N0>, <&kp JP_RPAREN>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mod_mkp: mod_mkp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MOD_MKP";
-            bindings = <&kp>, <&mkp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-        };
-
-        mt_btl: mt_btl {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <3000>;
-            bindings = < &bootloader &kp >;
-            display-name = "Mod-Tap-Bootloader";
-        };
-
-        mt_rst: mt_rst {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <3000>;
-            bindings = < &sys_reset &kp >;
-            display-name = "Mod-Tap-Reset";
-        };
-
-        tog_off: toggle_layer_off {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer Off";
-            toggle-mode = "off";
-        };
-
-        ime_alt: ime_alt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "IME_ALT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
 
         encoder_msc_up_down: encoder_msc_up_down {
             compatible = "zmk,behavior-sensor-rotate";
@@ -694,6 +670,58 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp TAB>, <&kp LS(TAB)>;
             tap-ms = <20>;
+        };
+
+        mouse_scroll: mouse_wheel_scroll {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+
+            tap-ms = <25>;
+        };
+
+// toggle_layer
+        tog_off: toggle_layer_off {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
+
+// tap_dance
+        td_jis_ly: tap_dance_jis-layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo JIS_MARKS_L>, <&to JIS_NUMS_L>, <&to JIS_FUNCS_L>;
+        };
+
+        td_us_ly: tap_dance_us-layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo US_MARKS_L>, <&to JIS_NUMS_L>, <&to JIS_FUNCS_L>;
+        };
+
+        td_sc: tap_dance_semicolon {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&morph_comma>, <&kp SEMICOLON>;
+        };
+
+        td_co_jis tap_dance_colon_jis {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&morph_period>, <&kp JP_COLON>;
+        };
+
+        td_co_us tap_dance_colon_us {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&morph_period>, <&kp COLON>;
         };
     };
 
@@ -755,12 +783,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&esc_bt        &morph_home  &kp F4    &kp F5  &kp F6     &kp F7     	     &kp LWIN           &kp F8    &kp F9    &kp F10       &kp F11        &morph_end   &kp DEL          &mkp RCLK
-&kp JP_HANZEN  &kp N1       &morph_2  &kp N3  &kp N4     &kp N5     	     &kp LCTRL          &morph_6  &morph_7  &morph_8      &morph_9       &morph_0     &kp BACKSPACE    &mkp LCLK
-&kp TAB    	   &kp Q        &kp W     &kp E   &kp R      &kp T      	     &kp SPACE          &kp Y     &kp U     &kp I         &kp O          &kp P        &kp ENTER        &kp SPACE
-&kp LSHFT      &kp A        &kp S     &kp D   &kp F      &kp G      	     &kp SPACE          &kp H     &kp J     &kp K         &kp L          &kp UP       &kp RSHFT        &morph_space
-&kp LALT       &kp Z        &kp X     &kp C   &kp V      &kp B      	     &mkp LCLK          &kp N     &kp M     &morph_comma  &morph_period  &kp DOWN     &kp RIGHT        &kp RCTRL
-&none          &none        &none     &none   &kp ENTER  &mo JIS_MARKS_L     &mkp RCLK          &none     &none     &none         &none          &kp F5       &mo JIS_MARKS_L  &kp LEFT
+&esc_bt        &morph_home     &kp F4       &kp F5  		 &kp F6     &kp F7     	     		&kp LWIN           &kp F8    &kp F9    &kp F10   &kp F11        &morph_end     &kp DEL        &mkp RCLK
+&kp JP_HANZEN  &kp N1          &morph_2     &kp N3  		 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  &morph_7  &morph_8  &morph_9       &morph_0       &kp BACKSPACE  &mkp LCLK
+&kp TAB    	   &mt JP_QUOTE Q  &kp W        &mt JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &kp Y     &kp U     &kp I     &mt JP_PIPE O  &mt JP_PLUS P  &kp ENTER      &kp SPACE
+&kp LSHFT      &kp A           &mt SLASH S  &mt JP_DQUOTE D  &kp F      &mt LS(SLASH) G      	&kp SPACE          &kp H     &kp J     &kp K     &kp L          &kp UP         &kp RSHFT      &morph_space
+&kp LALT       &kp Z           &kp X        &kp C   		 &kp V      &mt BACKSLASH B      	&mkp LCLK          &kp N     &kp M     &td_sc    &td_co_jis     &kp DOWN       &kp RIGHT      &kp RCTRL
+&none          &none           &none        &none   		 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     &none     &none     &none          &kp F5         &td_jis_ly     &kp LEFT
             >;
 
             sensor-bindings =
@@ -777,72 +805,70 @@
             // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | SPCE |
             // | LSft |   A  |   S  |   D  |   F  |   G  | BKSP |   |   H  |   J  |   K  |   L  |  ' " | RSft |  ; : |
             // | LAlt |   Z  |   X  |   C  |   V  |   B  | ENTR |   |   N  |   M  |   <  |   >  |  \ | |  = + | RCtr |
-            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 | ENTR | lyr1 |  / ? |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |  / ? |
 
             bindings = <
-&kp ESC        &morph_home  &kp F4     &kp F5         &kp F6      &kp F7      &kp LGUI         &kp F8        &kp F9            &kp F10          &kp F11         &morph_end              &kp DEL               &mkp RCLK
-&kp JP_HANZEN  &kp LS(N1)   &kp JP_AT  &kp LS(N3)     &kp LS(N4)  &kp LS(N5)  &kp LCTRL        &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN   &kp JP_RPAREN           &kp BACKSPACE         &mkp LCLK
-&kp TAB        &kp LS(Q)    &kp LS(W)  &kp LS(E)      &kp LS(R)   &kp LS(T)   &kp SPACE        &kp LS(Y)     &kp LS(U)         &kp LS(I)        &kp LS(O)       &kp LS(P)               &kp ENTER             &kp SPACE
-&kp LSHFT      &kp LS(A)    &kp LS(S)  &kp LS(D)      &kp LS(F)   &kp LS(G)   &kp BACKSPACE    &kp LS(H)     &kp LS(J)         &kp LS(K)        &kp LS(L)       &mt JP_DQUOTE JP_QUOTE  &kp RSHFT             &mt SINGLE_QUOTE SEMICOLON
-&kp LALT       &kp LS(Z)    &kp LS(X)  &kp LS(C)      &kp LS(V)   &kp LS(B)   &kp ENTER        &kp LS(N)     &kp LS(M)         &morph_comma     &morph_period   &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &kp RCTRL
-&none          &none        &none      &none          &kp ENTER   &trans      &mkp RCLK        &none         &none             &none            &none           &kp ENTER               &trans                &mt LS(SLASH) SLASH
+&kp ESC        &morph_home  	   &kp F4     		&kp F5          	 &kp F6      &kp F7      		  &kp LGUI         &kp F8        &kp F9            &kp F10          &kp F11            &morph_end              &kp DEL               &mkp RCLK
+&kp JP_HANZEN  &kp LS(N1)   	   &kp JP_AT  		&kp LS(N3)    		 &kp LS(N4)  &kp LS(N5)  		  &kp LCTRL        &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN      &kp JP_RPAREN           &kp BACKSPACE         &mkp LCLK
+&kp TAB        &mt JP_QUOTE LS(Q)  &kp LS(W)  		&mt JP_EQUAL LS(E)   &kp LS(R)   &kp LS(T)   		  &kp SPACE        &kp LS(Y)     &kp LS(U)         &kp LS(I)        &mt JP_PIPE LS(O)  &mt JP_PLUS LS(P)       &kp ENTER             &kp SPACE
+&kp LSHFT      &kp LS(A)    	   &mt SLASH LS(S)  &mt JP_DQUOTE LS(D)  &kp LS(F)   &mt LS(SLASH) LS(G)  &kp BACKSPACE    &kp LS(H)     &kp LS(J)         &kp LS(K)        &kp LS(L)          &mt JP_DQUOTE JP_QUOTE  &kp RSHFT             &mt JP_COLON SEMICOLON
+&kp LALT       &kp LS(Z)    	   &kp LS(X)  		&kp LS(C)        	 &kp LS(V)   &mt BACKSLASH LS(B)  &kp ENTER        &kp LS(N)     &kp LS(M)         &morph_comma     &morph_period      &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &kp RCTRL
+&none          &none        	   &none      		&none            	 &kp ENTER   &trans      		  &mkp RCLK        &none         &none             &none            &none              &kp F5                  &trans                &mt LS(SLASH) SLASH
             >;
 
-            sensor-bindings = <&encoder_msc_right_left &encoder_msc_up_down>;
+            sensor-bindings =
+                <&enc_sagcs>,
+                <&enc_sagcs>;
         };
 
         jis_num_layer {
             display-name = "JIS_NUMBERS";
 
             // -----------------------------------------------------------------------------------------
-            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |   |  F8  |  F9  | F10  | F11  |  END |  DEL |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |   0  | BKSP |
-            // |  TAB |   4  |   5  |   6  |   +  |   -  |   |   +  |   4  |   5  |   6  |   -  | ENTR |
-            // | LSft |   7  |   8  |   9  |   *  |   /  |   |   *  |   1  |   2  |   3  |   /  | RSft |
-            // | LAlt |   ,  |   0  |   .  |   (  |   )  |   |   (  |   ,  |   0  |   .  |   )  |   →  |
-            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr5 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr5 |
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | RCLK |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB |   4  |   5  |   6  |   +  |   -  | SPCE |   |   +  |   4  |   5  |   6  |   -  | ENTR | SPCE |
+            // | LSft |   7  |   8  |   9  |   *  |   /  | SPCE |   |   *  |   1  |   2  |   3  |   /  | RSft | SPCE |
+            // | LAlt |   ,  |   0  |   .  |   (  |   )  | LCLK |   |   (  |   ,  |   0  |   .  |   )  |   →  | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |   ←  |
 
             bindings = <
-&kp ESC          &kp HOME      &kp F4     &kp F5         &kp F6           &kp F7         &kp F8           &kp F9           &kp F10        &kp F11      &kp END        &kp DEL
-&kp LA(GRAVE)    &kp KP_N1     &kp KP_N2  &kp KP_N3      &kp KP_N4        &kp KP_N5      &kp KP_N6        &kp KP_N7        &kp KP_N8      &kp KP_N9    &kp KP_N0      &kp BACKSPACE
-&kp TAB          &kp KP_N4     &kp KP_N5  &kp KP_N6      &kp KP_PLUS      &kp KP_MINUS   &kp KP_PLUS      &kp KP_N4        &kp KP_N5      &kp KP_N6    &kp KP_MINUS   &kp ENTER
-&kp LSHFT        &kp KP_N7     &kp KP_N8  &kp KP_N9      &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &kp RSHFT
-&kp LALT         &kp KP_COMMA  &kp KP_N0  &kp KP_DOT     &kp KP_LPAR      &kp KP_RPAR    &kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT
-&kp LGUI         &kp LCTRL     &kp SPACE  &kp BACKSPACE  &kp ENTER        &kp SPACE      &kp SPACE        &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL      &kp LEFT
-&jis_layer_next  &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER      &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &jis_layer_next
+&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7         &kp LGUI        &kp F8           &kp F9           &kp F10    &kp F11     &kp END        &kp DEL		   &mkp RCLK
+&kp JP_HANZEN  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5      &kp LCTRL		&kp KP_N6        &kp KP_N7        &kp KP_N8  &kp KP_N9   &kp KP_N0      &kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS   &kp SPACE		&kp KP_PLUS      &kp KP_N4        &kp KP_N5  &kp KP_N6   &kp KP_MINUS   &kp ENTER	   &kp SPACE
+&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp SPACE		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &kp RSHFT	   &kp SPACE
+&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR    &mkp LCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	   &kp RCTRL
+&none  		   &none     	 &none  	&none      	&kp ENTER        &to 0      	&mkp RCLK       &none  			 &none     		  &none  	 &none       &kp F5			&to 0   	   &kp LEFT
             >;
 
             sensor-bindings =
-                <&mouse_scroll SCRL_UP SCRL_DOWN>,
-                <&mouse_scroll SCRL_UP SCRL_DOWN>;
+                <&enc_sagcs>,
+                <&enc_sagcs>;
         };
 
         jis_func_layer {
             display-name = "JIS_FUNCTIONS";
 
             // -----------------------------------------------------------------------------------------
-            // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |   0  | BKSP |
-            // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR |
-            // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft |
-            // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  |
-            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr0 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr0 |
+            // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT | SPCE |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR | SPCE |
+            // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG | SPCE |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft | SPCE |
+            // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB | LCLK |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |   ←  |
 
             bindings = <
-&kp F1           &kp F2     &kp F3     &kp F4         &kp F5     &kp F6     &kp F7     &kp F8           &kp F9         &kp F10      &kp F11    &kp F12
-&kp LA(GRAVE)    &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE
-&kp TAB          &kp LC(Q)  &kp LC(W)  &kp LC(E)      &kp LC(R)  &kp LC(T)  &kp LC(Y)  &kp LC(U)        &kp LC(I)      &kp LC(O)    &kp LC(P)  &kp ENTER
-&kp LSHFT        &kp LC(A)  &kp LC(S)  &kp LC(D)      &kp LC(F)  &kp LC(G)  &kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &kp UP     &kp RSHFT
-&kp LALT         &kp LC(Z)  &kp LC(X)  &kp LC(C)      &kp LC(V)  &kp LC(B)  &kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &kp DOWN   &kp RIGHT
-&kp LGUI         &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp SPACE  &kp SPACE  &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL  &kp LEFT
-&jis_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next
+&kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp GUI		&kp F7     &kp F8         &kp F9     &kp F10     &kp F11    &kp F12		   &mkp RCLK
+&kp JP_HANZEN  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7         &kp N8     &kp N9      &kp N0     &kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)      &kp LC(I)  &kp LC(O)   &kp LC(P)  &kp ENTER	   &kp SPACE
+&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &kp UP     &kp RSHFT	   &kp SPACE
+&kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &kp DOWN   &kp RIGHT	   &kp RCTRL
+&none  		   &none      &none      &none      &kp ENTER  &to 0	  &mkp RCLK		&none  	   &none          &none  	 &none  	 &kp RC(T)  &to 0		   &kp LEFT
             >;
 
             sensor-bindings =
-                <&mouse_scroll SCRL_UP SCRL_DOWN>,
-                <&mouse_scroll SCRL_UP SCRL_DOWN>;
+                <&enc_sagcs>,
+                <&enc_sagcs>;
         };
 
         us_layer {

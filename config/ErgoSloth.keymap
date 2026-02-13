@@ -366,7 +366,7 @@
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <2000>;
-            bindings = <&mo EXTRA_L &kp ESC>;
+            bindings = <&mo &kp>;
         };
 
 
@@ -795,12 +795,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&esc_bt        &morph_home     &kp F4       &kp F5  		 &kp F6     &kp F7     	     		&kp LWIN           &kp F8    &kp F9    &kp F10   &kp F11        &morph_end     &kp DEL        &mkp RCLK
-&kp JP_HANZEN  &kp N1          &morph_2     &kp N3  		 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  &morph_7  &morph_8  &morph_9       &morph_0       &kp BACKSPACE  &mkp LCLK
-&kp TAB    	   &mt JP_QUOTE Q  &kp W        &mt JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &kp Y     &kp U     &kp I     &mt JP_PIPE O  &mt JP_PLUS P  &kp ENTER      &kp SPACE
-&kp LSHFT      &kp A           &mt SLASH S  &mt JP_DQUOTE D  &kp F      &mt LS(SLASH) G      	&kp SPACE          &kp H     &kp J     &kp K     &kp L          &kp UP         &kp RSHFT      &morph_space
-&kp LALT       &kp Z           &kp X        &kp C   		 &kp V      &mt BACKSLASH B      	&mkp LCLK          &kp N     &kp M     &td_sc    &td_co_jis     &kp DOWN       &kp RIGHT      &kp RCTRL
-&none          &none           &none        &none   		 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     &none     &none     &none          &kp F5         &td_jis_ly     &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home     &kp F4       &kp F5  		 &kp F6     &kp F7     	     		&kp LWIN           &kp F8    &kp F9    &kp F10   &kp F11        &morph_end     &kp DEL        &mkp RCLK
+&kp JP_HANZEN  		 &kp N1          &morph_2     &kp N3  		 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  &morph_7  &morph_8  &morph_9       &morph_0       &kp BACKSPACE  &mkp LCLK
+&kp TAB    	   		 &mt JP_QUOTE Q  &kp W        &mt JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &kp Y     &kp U     &kp I     &mt JP_PIPE O  &mt JP_PLUS P  &kp ENTER      &kp SPACE
+&kp LSHFT      		 &kp A           &mt SLASH S  &mt JP_DQUOTE D  &kp F      &mt LS(SLASH) G      	&kp SPACE          &kp H     &kp J     &kp K     &kp L          &kp UP         &kp RSHFT      &morph_space
+&kp LALT       		 &kp Z           &kp X        &kp C   		 &kp V      &mt BACKSLASH B      	&mkp LCLK          &kp N     &kp M     &td_sc    &td_co_jis     &kp DOWN       &kp RIGHT      &kp RCTRL
+&none          		 &none           &none        &none   		 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     &none     &none     &none          &kp F5         &td_jis_ly     &kp LEFT
             >;
 
             sensor-bindings =

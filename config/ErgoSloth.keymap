@@ -735,6 +735,13 @@
             tapping-term-ms = <200>;
             bindings = <&morph_period>, <&kp COLON>;
         };
+
+        td_bt_ad: tap_dance_bluetooth_all_delete {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&none>, <&none>, <&none>, <&bt BT_CLR>;
+        };
     };
 
     /**************************************************************************/
@@ -1039,7 +1046,7 @@
 
             bindings = <
 &trans  &none  &none  &none  &none  &none  &none			&none         &none         &none         &none         &none         &bootloader  &mkp RCLK
-&none   &none  &none  &none  &none  &none  &none			&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR   &mkp LCLK
+&none   &none  &none  &none  &none  &none  &none			&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &td_bt_ad    &mkp LCLK
 &none   &none  &none  &none  &none  &none  &none			&none         &none         &none         &none         &none         &none		   &none
 &none   &none  &none  &none  &none  &none  &none			&none         &none         &none         &none         &none         &none		   &none
 &none   &none  &none  &none  &none  &none  &none			&none         &none         &none         &none         &none         &none		   &none

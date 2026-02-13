@@ -163,25 +163,25 @@
 
     combos {
         to_jis_layer {
-            timeout-ms = <200>;
+            timeout-ms = <50>;
             key-positions = <7 8 9 10>;
             bindings = <&to JIS_L>;
         };
 
         to_us_layer {
-            timeout-ms = <200>;
+            timeout-ms = <50>;
             key-positions = <2 3 4 5>;
             bindings = <&to US_L>;
         };
 
         alt_left {
-            timeout-ms = <200>;
+            timeout-ms = <50>;
             key-positions = <67 83>;
             bindings = <&kp LA(LEFT)>;
         };
 
         alt_right {
-            timeout-ms = <200>;
+            timeout-ms = <50>;
             key-positions = <67 68>;
             bindings = <&kp LA(RIGHT)>;
         };
@@ -824,7 +824,7 @@
 &kp JP_HANZEN  &kp LS(N1)   	   &kp JP_AT  		&kp LS(N3)    		 &kp LS(N4)  &kp LS(N5)  		  &kp LCTRL        &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN      &kp JP_RPAREN           &kp BACKSPACE         &mkp LCLK
 &kp TAB        &mt JP_QUOTE LS(Q)  &kp LS(W)  		&mt JP_EQUAL LS(E)   &kp LS(R)   &kp LS(T)   		  &kp SPACE        &kp LS(Y)     &kp LS(U)         &kp LS(I)        &mt JP_PIPE LS(O)  &mt JP_PLUS LS(P)       &kp ENTER             &kp SPACE
 &kp LSHFT      &kp LS(A)    	   &mt SLASH LS(S)  &mt JP_DQUOTE LS(D)  &kp LS(F)   &mt LS(SLASH) LS(G)  &kp BACKSPACE    &kp LS(H)     &kp LS(J)         &kp LS(K)        &kp LS(L)          &mt JP_DQUOTE JP_QUOTE  &kp RSHFT             &mt JP_COLON SEMICOLON
-&kp LALT       &kp LS(Z)    	   &kp LS(X)  		&kp LS(C)        	 &kp LS(V)   &mt BACKSLASH LS(B)  &kp ENTER        &kp LS(N)     &kp LS(M)         &morph_comma     &morph_period      &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &kp RCTRL
+&kp LALT       &kp LS(Z)    	   &kp LS(X)  		&kp LS(C)        	 &kp LS(V)   &mt JP_YEN LS(B)     &kp ENTER        &kp LS(N)     &kp LS(M)         &morph_comma     &morph_period      &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &kp RCTRL
 &none          &none        	   &none      		&none            	 &kp ENTER   &trans      		  &mkp RCLK        &none         &none             &none            &none              &kp F5                  &trans                &mt LS(SLASH) SLASH
             >;
 
@@ -1021,28 +1021,35 @@
         ex_layer {
             display-name = "EXTRA";
 
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | RCLK |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | SPCE |
+            // | LSft |   A  |   S  |   D  |   F  |   G  | SPCE |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
+            // | LAlt |   Z  |   X  |   C  |   V  |   B  | LCLK |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
+
             // -----------------------------------------------------------------------------------------
-            // | BOOT |      |      |      |      |      |   |      |      |      |      |      | BOOT |
-            // |      |      |      |      |      |      |   | BCLR |  BT0 |  BT1 |  BT2 |  BT3 |  BT4 |
-            // |      |      |      |      |      |      |   |      |      |      |      |      |      |
-            // |      |      |      |      |      |      |   |      |      |      |      |      |      |
-            // |      |      |      |      |      |      |   |      |      |      |      |      |      |
-            // |      |      |      |      |      |      |   |      |      |      |      |      |      |
-            // |      |      |      |      |      |      |   |      |      |      |      |      |      |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      | BOOT | RCLK |
+            // |      |      |      |      |      |      |      |   |  BT0 |  BT1 |  BT2 |  BT3 |  BT4 | BCLR | LCLK |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      |      | LCLK |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      |      | RCLK |   |      |      |      |      |      |      |      |
 
             bindings = <
-&trans	     &none  &none  &none  &none  &none  &none       &none         &none         &none         &none         &none
-&none        &none  &none  &none  &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none        &none  &none  &none  &none  &none  &none       &none         &none         &none         &none         &none
-&none        &none  &none  &none  &none  &none  &none       &none         &none         &none         &none         &none
-&none        &none  &none  &none  &none  &none  &none       &none         &none         &none         &none         &none
-&none        &none  &none  &none  &none  &none  &none       &none         &none         &none         &none         &none
-&none        &none  &none  &none  &none  &none  &none       &none         &none         &none         &none         &none
+&trans  &none  &none  &none  &none  &none  &none			&none         &none         &none         &none         &none         &bootloader  &mkp RCLK
+&none   &none  &none  &none  &none  &none  &none			&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR   &mkp LCLK
+&none   &none  &none  &none  &none  &none  &none			&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &none  &none			&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &none  &none			&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &none  &mkp LCLK		&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &none  &mkp RCLK		&none         &none         &none         &none         &none         &none		   &none
             >;
 
             sensor-bindings =
-                <&mouse_scroll SCRL_UP SCRL_DOWN>,
-                <&mouse_scroll SCRL_UP SCRL_DOWN>;
+                <&enc_sagcs>,
+                <&enc_sagcs>;
         };
     };
 };

@@ -348,6 +348,15 @@
 
     behaviors {
 // hold_tap
+        mt_c: mod_tap_custom {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Mod-Tap";
+        };
+
         esc_bt: escape-bluetooth {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -454,7 +463,7 @@
         morph_home_us: morph_home_us {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt TILDE BACKQUOTE>, <&morph_home_us_s>;
+            bindings = <&mt TILDE GRAVE>, <&morph_home_us_s>;
             mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -468,14 +477,14 @@
         morph_end_us_s: morph_end_us_s {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&morph_end_us_c>, <&kp JP_UNDERSCORE>;
+            bindings = <&morph_end_us_c>, <&kp UNDERSCORE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         morph_end_us: morph_end_us {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt JP_UNDERSCORE MINUS>, <&morph_end_us_s>;
+            bindings = <&mt UNDERSCORE MINUS>, <&morph_end_us_s>;
             mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -852,12 +861,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_jis  &kp F4       &kp F5  		 	&kp F6     &kp F7     	     		&kp LWIN           &kp F8    &kp F9    &kp F10   &kp F11        &morph_end_jis  &kp DEL        &mkp RCLK
-&kp JP_HANZEN  		 &kp N1           &morph_2     &kp N3  		 	&kp N4     &kp N5     	     		&kp LCTRL          &morph_6  &morph_7  &morph_8  &morph_9       &morph_0        &kp BACKSPACE  &mkp LCLK
-&kp TAB    	   		 &mt JP_QUOTE Q   &kp W        &mt JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &kp Y     &kp U     &kp I     &mt JP_PIPE O  &mt JP_PLUS P   &kp ENTER      &kp SPACE
-&kp LSHFT      		 &kp A            &mt SLASH S  &mt JP_DQUOTE D  &kp F      &mt LS(SLASH) G      	&kp SPACE          &kp H     &kp J     &kp K     &kp L          &kp UP          &kp RSHFT      &morph_space_jis
-&kp LALT       		 &kp Z            &kp X        &kp C   		 	&kp V      &mt JP_YEN B      		&mkp LCLK          &kp N     &kp M     &td_sc    &td_co_jis     &kp DOWN        &kp RIGHT      &kp RCTRL
-&none          		 &none            &none        &none   		 	&kp ENTER  &td_jis_ly          		&mkp RCLK          &none     &none     &none     &none          &kp F5          &td_jis_ly     &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_jis   &kp F4         &kp F5  		 	 &kp F6     &kp F7     	     		&kp LWIN           &kp F8    &kp F9    &kp F10   &kp F11          &morph_end_jis   &kp DEL        &mkp RCLK
+&kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  &morph_7  &morph_8  &morph_9         &morph_0         &kp BACKSPACE  &mkp LCLK
+&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &kp Y     &kp U     &kp I     &mt_c JP_PIPE O  &mt_c JP_PLUS P  &kp ENTER      &kp SPACE
+&kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G      	&kp SPACE          &kp H     &kp J     &kp K     &kp L            &kp UP           &kp RSHFT      &morph_space_jis
+&kp LALT       		 &kp Z             &kp X          &kp C   		 	 &kp V      &mt JP_YEN B      		&mkp LCLK          &kp N     &kp M     &td_sc    &td_co_jis       &kp DOWN         &kp RIGHT      &kp RCTRL
+&none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     &none     &none     &none            &kp F5           &td_jis_ly     &kp LEFT
             >;
 
             sensor-bindings =
@@ -877,12 +886,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |  / ? |
 
             bindings = <
-&kp ESC        &morph_home_jis     &kp F4     		&kp F5          	 &kp F6      &kp F7      		  &kp LGUI         &kp F8        &kp F9            &kp F10           &kp F11            &morph_end_jis          &kp DEL               &mkp RCLK
-&kp JP_HANZEN  &kp LS(N1)   	   &kp JP_AT  		&kp LS(N3)    		 &kp LS(N4)  &kp LS(N5)  		  &kp LCTRL        &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK   &kp JP_LPAREN      &kp JP_RPAREN           &kp BACKSPACE         &mkp LCLK
-&kp TAB        &mt JP_QUOTE LS(Q)  &kp LS(W)  		&mt JP_EQUAL LS(E)   &kp LS(R)   &kp LS(T)   		  &kp SPACE        &kp LS(Y)     &kp LS(U)         &kp LS(I)         &mt JP_PIPE LS(O)  &mt JP_PLUS LS(P)       &kp ENTER             &kp SPACE
-&kp LSHFT      &kp LS(A)    	   &mt SLASH LS(S)  &mt JP_DQUOTE LS(D)  &kp LS(F)   &mt LS(SLASH) LS(G)  &kp BACKSPACE    &kp LS(H)     &kp LS(J)         &kp LS(K)         &kp LS(L)          &mt JP_DQUOTE JP_QUOTE  &kp RSHFT             &mt JP_COLON SEMICOLON
-&kp LALT       &kp LS(Z)    	   &kp LS(X)  		&kp LS(C)        	 &kp LS(V)   &mt JP_YEN LS(B)     &kp ENTER        &kp LS(N)     &kp LS(M)         &morph_comma_jis  &morph_period_jis  &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &kp RCTRL
-&none          &none        	   &none      		&none            	 &kp ENTER   &trans      		  &mkp RCLK        &none         &none             &none             &none              &kp F5                  &trans                &mt LS(SLASH) SLASH
+&kp ESC        &morph_home_jis       &kp F4     		&kp F5          	   &kp F6      &kp F7      		  	  &kp LGUI         &kp F8        &kp F9            &kp F10           &kp F11              &morph_end_jis          &kp DEL               &mkp RCLK
+&kp JP_HANZEN  &kp LS(N1)   	     &kp JP_AT  		&kp LS(N3)    		   &kp LS(N4)  &kp LS(N5)  		  	  &kp LCTRL        &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK   &kp JP_LPAREN        &kp JP_RPAREN           &kp BACKSPACE         &mkp LCLK
+&kp TAB        &mt_c JP_QUOTE LS(Q)  &kp LS(W)  		&mt_c JP_EQUAL LS(E)   &kp LS(R)   &kp LS(T)   		  	  &kp SPACE        &kp LS(Y)     &kp LS(U)         &kp LS(I)         &mt_c JP_PIPE LS(O)  &mt_c JP_PLUS LS(P)     &kp ENTER             &kp SPACE
+&kp LSHFT      &kp LS(A)    	     &mt_c SLASH LS(S)  &mt_c JP_DQUOTE LS(D)  &kp LS(F)   &mt_c LS(SLASH) LS(G)  &kp BACKSPACE    &kp LS(H)     &kp LS(J)         &kp LS(K)         &kp LS(L)            &mt JP_DQUOTE JP_QUOTE  &kp RSHFT             &mt JP_COLON SEMICOLON
+&kp LALT       &kp LS(Z)    	     &kp LS(X)  		&kp LS(C)        	   &kp LS(V)   &mt_c JP_YEN LS(B)     &kp ENTER        &kp LS(N)     &kp LS(M)         &morph_comma_jis  &morph_period_jis    &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &kp RCTRL
+&none          &none        	     &none      		&none            	   &kp ENTER   &trans      		  	  &mkp RCLK        &none         &none             &none             &none                &kp F5                  &trans                &mt LS(SLASH) SLASH
             >;
 
             sensor-bindings =
@@ -952,12 +961,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr5 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr5 |   ←  |
 
             bindings = <
-&kp ESC        &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     &kp LGUI			&kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL
-&kp LA(GRAVE)  &kp N1    &kp N2  &kp N3  &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE
-&kp TAB        &kp Q     &kp W   &kp E   &kp R      &kp T      &kp SPACE		&kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER
-&kp LSHFT      &kp A     &kp S   &kp D   &kp F      &kp G      &kp SPACE		&kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT
-&kp LALT       &kp Z     &kp X   &kp C   &kp V      &kp B      &mkp LCLK		&kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT
-&none  		   &none     &none   &none   &kp ENTER  &td_us_ly  &mkp RCLK		&none  	   &none          &none  	 &none  	 &kp F5	    &td_us_ly		   &kp LEFT
+&kp ESC        &kp morph_home_us  &kp F4  		 &kp F5  		&kp F6     &kp F7     		  &kp LGUI		&kp F8  &kp F9  &kp F10    &kp F11       &morph_end_us  &kp DEL
+&kp LA(GRAVE)  &kp N1    		  &kp N2  		 &kp N3  		&kp N4     &kp N5     		  &kp LCTRL		&kp N6  &kp N7  &kp N8     &kp N9        &kp N0     	&kp BACKSPACE
+&kp TAB        &mt_c SQT Q  	  &kp W          &mt_c EQUAL E  &kp R      &kp T      	      &kp SPACE     &kp Y   &kp U   &kp I      &mt_c PIPE O  &mt_c PLUS P   &kp ENTER      &kp SPACE
+&kp LSHFT      &kp A              &mt_c SLASH S  &mt_c DQT D  	&kp F      &mt_c LS(SLASH) G  &kp SPACE     &kp H   &kp J   &kp K      &kp L         &kp UP         &kp RSHFT      &morph_space_us
+&kp LALT       &kp Z              &kp X          &kp C   		&kp V      &mt BSLH B      	  &mkp LCLK		&kp N   &kp M   &kp COMMA  &kp PERIOD    &kp DOWN   	&kp RIGHT
+&none  		   &none      		  &none   		 &none   		&kp ENTER  &td_us_ly  		  &mkp RCLK		&none  	&none   &none  	   &none  	  	 &kp F5	    	&td_us_ly	   &kp LEFT
             >;
 
             sensor-bindings =

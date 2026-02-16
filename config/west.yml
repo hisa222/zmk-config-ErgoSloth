@@ -17,6 +17,9 @@ manifest:
       
     - name: badjeff
       url-base: https://github.com/badjeff
+
+    - name: kot149
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       # remote: zmkfirmware
@@ -43,5 +46,9 @@ manifest:
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
+      #https://github.com/kot149/zmk-mouse-gesture
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
   self:
     path: config

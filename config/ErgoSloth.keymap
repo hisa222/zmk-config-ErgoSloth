@@ -1016,7 +1016,7 @@
 &kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS   &kp SPACE		&kp KP_PLUS      &kp KP_N4        &kp KP_N5      &kp KP_N6    &kp KP_MINUS   &kp ENTER		&kp SPACE
 &kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp SPACE		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &kp RSHFT		&kp SPACE
 &kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR    &mkp LCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT		&kp RCTRL
-&none		   &none	     &none	    &none	    &ENTER           &to US_L       &mkp RCLK		&none            &none			  &none	         &none		  &kp F5	     &td_us_ly		&kp LEFT
+&none		   &none	     &none	    &none	    &kp ENTER        &to US_L       &mkp RCLK		&none            &none			  &none	         &none		  &kp F5	     &to US_L		&kp LEFT
             >;
 
             sensor-bindings =

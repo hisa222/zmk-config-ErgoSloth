@@ -161,6 +161,12 @@
             bindings = <&to US_L>;
         };
 
+        to_extra_layer {
+            timeout-ms = <200>;
+            key-positions = <2 3 4 5 7 8 9 10>;
+            bindings = <&to EXTRA_L>;
+        };
+
         alt_left {
             timeout-ms = <50>;
             key-positions = <67 83>;
@@ -303,45 +309,6 @@
                 <&macro_release &kp LALT>;
         };
 
-        jis_layer_next: jis_layer_next {
-            compatible = "zmk,behavior-macro";
-            label = "JIS_LAYER_NEXT";
-            #binding-cells = <0>;
-
-            // bindings = <&if &layer-0 &to 1 &if &layer-1 &to 2 &if &layer-2 &to 3 &if &layer-3 &to 0>;
-
-            bindings = <&macro_tap_time 1000>, <&macro_tap>, <&to 0>;
-        };
-
-        jis_layer_prev: jis_layer_prev {
-            compatible = "zmk,behavior-macro";
-            label = "JIS_LAYER_PREV";
-            #binding-cells = <0>;
-
-            // bindings = <&if &layer-0 &to 3 &if &layer-1 &to 0 &if &layer-2 &to 1 &if &layer-3 &to 2>;
-
-            bindings = <&macro_tap_time 1000>, <&macro_tap>, <&to 0>;
-        };
-
-        us_layer_next: us_layer_next {
-            compatible = "zmk,behavior-macro";
-            label = "US_LAYER_NEXT";
-            #binding-cells = <0>;
-
-            // bindings = <&if &layer-4 &to 5 &if &layer-5 &to 6 &if &layer-6 &to 7 &if &layer-7 &to 4>;
-
-            bindings = <&macro_tap_time 1000>, <&macro_tap>, <&to 0>;
-        };
-
-        us_layer_prev: us_layer_prev {
-            compatible = "zmk,behavior-macro";
-            label = "US_LAYER_PREV";
-            #binding-cells = <0>;
-
-            // bindings = <&if &layer-4 &to 7 &if &layer-5 &to 4 &if &layer-6 &to 5 &if &layer-7 &to 6>;
-
-            bindings = <&macro_tap_time 1000>, <&macro_tap>, <&to 0>;
-        };
     };
 
     /**************************************************************************/
@@ -991,7 +958,7 @@
 &kp TAB              &mt_c SQT LS(Q)  &kp LS(W)   		 &mt_c EQUAL LS(E)  &kp LS(R)   &kp LS(T)   			&kp SPACE		&kp LS(Y)   &kp LS(U)        &kp LS(I)        &mt_c PIPE LS(O)  &mt_c PLUS LS(P)  &kp ENTER		  &kp SPACE
 &kp LSHFT            &kp LS(A)        &mt_c SLASH LS(S)  &mt_c DQT D      	&kp LS(F)   &mt_c LS(SLASH) LS(G)   &kp SPACE		&kp LS(H)   &kp LS(J)        &kp LS(K)        &kp LS(L)         &mt APOS DQT      &kp RSHFT		  &morph_space_us
 &mt SEMICOLON COLON  &kp LS(Z)        &kp LS(X)   		 &kp LS(C)      	&kp LS(V)   &mt_c BSLH LS(B)		&mkp LCLK		&kp LS(N)   &kp LS(M)        &morph_comma_us  &morph_period_us  &mt MINUS UNDER   &mt EQUAL PLUS  &kp RCTRL
-&none		         &none	          &none		   		 &none		      	&kp ENTER   &td_us_ly   			&mkp RCLK		&none	    &none		     &none	          &none		        &kp F5	          &td_us_ly		  &kp LEFT
+&none		         &none	          &none		   		 &none		      	&kp ENTER   &trans		   			&mkp RCLK		&none	    &none		     &none	          &none		        &kp F5	          &trans		  &kp LEFT
             >;
 
             sensor-bindings =

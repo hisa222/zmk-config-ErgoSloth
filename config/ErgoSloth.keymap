@@ -853,7 +853,7 @@
 &kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  &morph_7  &morph_8  &morph_9         &morph_0         &kp BACKSPACE  &mkp LCLK
 &kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &kp Y     &kp U     &kp I     &mt_c JP_PIPE O  &mt_c JP_PLUS P  &kp ENTER      &kp SPACE
 &kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G      	&kp SPACE          &kp H     &kp J     &kp K     &kp L            &kp UP           &kp RSHFT      &morph_space_jis
-&kp LALT       		 &kp Z             &kp X          &kp C   		 	 &kp V      &mt JP_YEN B      		&mkp LCLK          &kp N     &kp M     &td_sc    &td_co_jis       &kp DOWN         &kp RIGHT      &kp RCTRL
+&kp LALT       		 &kp Z             &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B      	&mkp LCLK          &kp N     &kp M     &td_sc    &td_co_jis       &kp DOWN         &kp RIGHT      &kp RCTRL
 &none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     &none     &none     &none            &kp F5           &td_jis_ly     &kp LEFT
             >;
 

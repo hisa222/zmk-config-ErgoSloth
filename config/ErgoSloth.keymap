@@ -961,12 +961,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr5 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr5 |   ←  |
 
             bindings = <
-&kp ESC        &kp morph_home_us  &kp F4  		 &kp F5  		&kp F6     &kp F7     		  &kp LGUI		&kp F8  &kp F9  &kp F10    &kp F11       &morph_end_us  &kp DEL
-&kp LA(GRAVE)  &kp N1    		  &kp N2  		 &kp N3  		&kp N4     &kp N5     		  &kp LCTRL		&kp N6  &kp N7  &kp N8     &kp N9        &kp N0     	&kp BACKSPACE
-&kp TAB        &mt_c SQT Q  	  &kp W          &mt_c EQUAL E  &kp R      &kp T      	      &kp SPACE     &kp Y   &kp U   &kp I      &mt_c PIPE O  &mt_c PLUS P   &kp ENTER      &kp SPACE
-&kp LSHFT      &kp A              &mt_c SLASH S  &mt_c DQT D  	&kp F      &mt_c LS(SLASH) G  &kp SPACE     &kp H   &kp J   &kp K      &kp L         &kp UP         &kp RSHFT      &morph_space_us
-&kp LALT       &kp Z              &kp X          &kp C   		&kp V      &mt BSLH B      	  &mkp LCLK		&kp N   &kp M   &kp COMMA  &kp PERIOD    &kp DOWN   	&kp RIGHT
-&none  		   &none      		  &none   		 &none   		&kp ENTER  &td_us_ly  		  &mkp RCLK		&none  	&none   &none  	   &none  	  	 &kp F5	    	&td_us_ly	   &kp LEFT
+&kp ESC        &morph_home_us  &kp F4  		  &kp F5  		 &kp F6     &kp F7     		   &kp LGUI		    &kp F8  &kp F9  &kp F10    &kp F11       &morph_end_us  &kp DEL		   &mkp RCLK
+&kp LA(GRAVE)  &kp N1    	   &kp N2  		  &kp N3  		 &kp N4     &kp N5     		   &kp LCTRL		&kp N6  &kp N7  &kp N8     &kp N9        &kp N0     	&kp BACKSPACE  &mkp LCLK
+&kp TAB        &mt_c SQT Q     &kp W          &mt_c EQUAL E  &kp R      &kp T      	       &kp SPACE        &kp Y   &kp U   &kp I      &mt_c PIPE O  &mt_c PLUS P   &kp ENTER      &kp SPACE
+&kp LSHFT      &kp A           &mt_c SLASH S  &mt_c DQT D  	 &kp F      &mt_c LS(SLASH) G  &kp SPACE        &kp H   &kp J   &kp K      &kp L         &kp UP         &kp RSHFT      &morph_space_us
+&kp LALT       &kp Z           &kp X          &kp C   		 &kp V      &mt_c BSLH B       &mkp LCLK		&kp N   &kp M   &kp COMMA  &kp PERIOD    &kp DOWN   	&kp RIGHT	   &kp RCTRL
+&none  		   &none      	   &none   		  &none   		 &kp ENTER  &td_us_ly  		   &mkp RCLK		&none  	&none   &none  	   &none  	  	 &kp F5	    	&td_us_ly	   &kp LEFT
             >;
 
             sensor-bindings =
@@ -978,81 +978,75 @@
             display-name = "US_MARKS";
 
             // -------------------------------------------------------------------------------------------------------
-            // |  ESC |  ` ~ |  F4  |  F5  |  F6  |  F7  |   |  F8  |  F9  | F10  | F11  |  \ | |  DEL |
-            // |  E/J |   !  |   @  |   #  |   $  |   %  |   |   ^  |   &  |   *  |   (  |   )  | BKSP |
-            // |  TAB |   Q  |   W  |   E  |   R  |   T  |   |   Y  |   U  |   I  |   O  |   P  | ENTR |
-            // | LSft |   A  |   S  |   D  |   F  |   G  |   |   H  |   J  |   K  |   L  |  ' " | RSft |
-            // |  ; : |   Z  |   X  |   C  |   V  |   B  |   |   N  |   M  |   <  |   >  |  - _ |  = + |
-            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP |  [ { |  ] } |  / ? |
-            // | lyr4 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr4 |
+            // |  ESC |  ` ~ |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  \ | |  DEL | RCLK |
+            // |  E/J |   !  |   @  |   #  |   $  |   %  | LCtr |   |   ^  |   &  |   *  |   (  |   )  | BKSP | LCLK |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | SPCE |
+            // | LSft |   A  |   S  |   D  |   F  |   G  | SPCE |   |   H  |   J  |   K  |   L  |  ' " | RSft | SPCE |
+            // |  ; : |   Z  |   X  |   C  |   V  |   B  | LCLK |   |   N  |   M  |   <  |   >  |  - _ |  = + | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr4 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr4 |   ←  |
 
             bindings = <
-&kp ESC              &mt GRAVE TILDE  &kp F4      &kp F5         &kp F6      &kp F7      &kp F8      &kp F9           &kp F10        &kp F11        &mt BSLH PIPE    &kp DEL
-&kp LA(GRAVE)        &kp LS(N1)       &kp LS(N2)  &kp LS(N3)     &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LS(N7)       &kp LS(N8)     &kp LS(N9)     &kp LS(N0)       &kp BACKSPACE
-&kp TAB              &kp LS(Q)        &kp LS(W)   &kp LS(E)      &kp LS(R)   &kp LS(T)   &kp LS(Y)   &kp LS(U)        &kp LS(I)      &kp LS(O)      &kp LS(P)        &kp ENTER
-&kp LSHFT            &kp LS(A)        &kp LS(S)   &kp LS(D)      &kp LS(F)   &kp LS(G)   &kp LS(H)   &kp LS(J)        &kp LS(K)      &kp LS(L)      &mt APOS DQT     &kp RSHFT
-&mt SEMICOLON COLON  &kp LS(Z)        &kp LS(X)   &kp LS(C)      &kp LS(V)   &kp LS(B)   &kp LS(N)   &kp LS(M)        &kp LT         &kp GT         &mt MINUS UNDER  &mt EQUAL PLUS
-&kp LGUI             &kp LCTRL        &kp SPACE   &kp BACKSPACE  &kp ENTER   &kp SPACE   &kp SPACE   &kp ENTER        &kp BACKSPACE  &mt LBKT LBRC  &mt RBKT RBRC    &mt SLASH QMARK
-&us_layer_next       &kp LC(C)        &kp LC(Z)   &kp LC(V)      &kp LC(Y)   &kp ENTER   &kp RC(T)   &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)    &kp RC(T)        &us_layer_next
+&kp ESC              &mt GRAVE TILDE  &kp F4      		 &kp F5         	&kp F6      &kp F7      			&kp LGUI		&kp F8      &kp F9           &kp F10          &kp F11           &mt BSLH PIPE     &kp DEL		  &mkp RCLK
+&kp LA(GRAVE)        &kp LS(N1)       &kp LS(N2)  		 &kp LS(N3)     	&kp LS(N4)  &kp LS(N5)  			&kp LCTRL		&kp LS(N6)  &kp LS(N7)       &kp LS(N8)       &kp LS(N9)        &kp LS(N0)        &kp BACKSPACE	  &mkp LCLK
+&kp TAB              &mt_c SQT LS(Q)  &kp LS(W)   		 &mt_c EQUAL LS(E)  &kp LS(R)   &kp LS(T)   			&kp SPACE		&kp LS(Y)   &kp LS(U)        &kp LS(I)        &mt_c PIPE LS(O)  &mt_c PLUS LS(P)  &kp ENTER		  &kp SPACE
+&kp LSHFT            &kp LS(A)        &mt_c SLASH LS(S)  &mt_c DQT D      	&kp LS(F)   &mt_c LS(SLASH) LS(G)   &kp SPACE		&kp LS(H)   &kp LS(J)        &kp LS(K)        &kp LS(L)         &mt APOS DQT      &kp RSHFT		  &morph_space_us
+&mt SEMICOLON COLON  &kp LS(Z)        &kp LS(X)   		 &kp LS(C)      	&kp LS(V)   &mt_c BSLH LS(B)		&mkp LCLK		&kp LS(N)   &kp LS(M)        &morph_comma_us  &morph_period_us  &mt MINUS UNDER   &mt EQUAL PLUS  &kp RCTRL
+&none		         &none	          &none		   		 &none		      	&kp ENTER   &td_us_ly   			&mkp RCLK		&none	    &none		     &none	          &none		        &kp F5	          &td_us_ly		  &kp LEFT
             >;
 
             sensor-bindings =
-                <&mouse_scroll SCRL_UP SCRL_DOWN>,
-                <&mouse_scroll SCRL_UP SCRL_DOWN>;
+                <&enc_sagcs>,
+                <&enc_sagcs>;
         };
 
         us_num_layer {
             display-name = "US_NUMBERS";
 
             // -------------------------------------------------------------------------------------------------------
-            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |   |  F8  |  F9  | F10  | F11  |  END |  DEL |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |   0  | BKSP |
-            // |  TAB |   4  |   5  |   6  |   +  |   -  |   |   +  |   4  |   5  |   6  |   -  | ENTR |
-            // | LSft |   7  |   8  |   9  |   *  |   /  |   |   *  |   1  |   2  |   3  |   /  | RSft |
-            // | LAlt |   ,  |   0  |   .  |   (  |   )  |   |   (  |   ,  |   0  |   .  |   )  |   →  |
-            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr5 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr5 |
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | RCLK |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB |   4  |   5  |   6  |   +  |   -  | SPCE |   |   +  |   4  |   5  |   6  |   -  | ENTR | SPCE |
+            // | LSft |   7  |   8  |   9  |   *  |   /  | SPCE |   |   *  |   1  |   2  |   3  |   /  | RSft | SPCE |
+            // | LAlt |   ,  |   0  |   .  |   (  |   )  | LCLK |   |   (  |   ,  |   0  |   .  |   )  |   →  | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr4 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr4 |   ←  |
 
             bindings = <
-&kp ESC         &kp HOME      &kp F4     &kp F5         &kp F6           &kp F7         &kp F8           &kp F9           &kp F10        &kp F11      &kp END        &kp DEL
-&kp LA(GRAVE)   &kp KP_N1     &kp KP_N2  &kp KP_N3      &kp KP_N4        &kp KP_N5      &kp KP_N6        &kp KP_N7        &kp KP_N8      &kp KP_N9    &kp KP_N0      &kp BACKSPACE
-&kp TAB         &kp KP_N4     &kp KP_N5  &kp KP_N6      &kp KP_PLUS      &kp KP_MINUS   &kp KP_PLUS      &kp KP_N4        &kp KP_N5      &kp KP_N6    &kp KP_MINUS   &kp ENTER
-&kp LSHFT       &kp KP_N7     &kp KP_N8  &kp KP_N9      &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &kp RSHFT
-&kp LALT        &kp KP_COMMA  &kp KP_N0  &kp KP_DOT     &kp KP_LPAR      &kp KP_RPAR    &kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT
-&kp LGUI        &kp LCTRL     &kp SPACE  &kp BACKSPACE  &kp ENTER        &kp SPACE      &kp SPACE        &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL      &kp LEFT
-&us_layer_next  &kp LC(C)     &kp LC(Z)  &kp LC(V)      &kp LC(Y)        &kp ENTER      &kp RC(T)        &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)      &us_layer_next
+&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7         &kp LGUI		&kp F8           &kp F9           &kp F10        &kp F11      &kp END        &kp DEL		&mkp RCLK
+&kp LA(GRAVE)  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5      &kp LCTRL		&kp KP_N6        &kp KP_N7        &kp KP_N8      &kp KP_N9    &kp KP_N0      &kp BACKSPACE	&mkp LCLK
+&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS   &kp SPACE		&kp KP_PLUS      &kp KP_N4        &kp KP_N5      &kp KP_N6    &kp KP_MINUS   &kp ENTER		&kp SPACE
+&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp SPACE		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &kp RSHFT		&kp SPACE
+&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR    &mkp LCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT		&kp RCTRL
+&none		   &none	     &none	    &none	    &ENTER           &to US_L       &mkp RCLK		&none            &none			  &none	         &none		  &kp F5	     &td_us_ly		&kp LEFT
             >;
 
             sensor-bindings =
-                <&mouse_scroll SCRL_UP SCRL_DOWN>,
-                <&mouse_scroll SCRL_UP SCRL_DOWN>;
+                <&enc_sagcs>,
+                <&enc_sagcs>;
         };
 
         us_func_layer {
             display-name = "US_FUNCTIONS";
 
             // -------------------------------------------------------------------------------------------------------
-            // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  |   |   6  |   7  |   8  |   9  |   0  | BKSP |
-            // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR |
-            // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft |
-            // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  |
-            // |  GUI | LCtr | SPCE | BKSP | ENTR | SPCE |   | SPCE | ENTR | BKSP | SPCE | RCtr |   ←  |
-            // | lyr0 | CtrC | CtrZ | CtrV | CtrY | ENTR |   | CtrT | BTab | CtrW | NTab | CtrT | lyr0 |
+            // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT | SPCE |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR | SPCE |
+            // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG | SPCE |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft | SPCE |
+            // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB | LCLK |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr4 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr4 |   ←  |
 
             bindings = <
-&kp F1          &kp F2     &kp F3     &kp F4         &kp F5     &kp F6     &kp F7     &kp F8           &kp F9         &kp F10      &kp F11    &kp F12
-&kp LA(GRAVE)   &kp N1     &kp N2     &kp N3         &kp N4     &kp N5     &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE
-&kp TAB         &kp LC(Q)  &kp LC(W)  &kp LC(E)      &kp LC(R)  &kp LC(T)  &kp LC(Y)  &kp LC(U)        &kp LC(I)      &kp LC(O)    &kp LC(P)  &kp ENTER
-&kp LSHFT       &kp LC(A)  &kp LC(S)  &kp LC(D)      &kp LC(F)  &kp LC(G)  &kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &kp UP     &kp RSHFT
-&kp LALT        &kp LC(Z)  &kp LC(X)  &kp LC(C)      &kp LC(V)  &kp LC(B)  &kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &kp DOWN   &kp RIGHT
-&kp LGUI        &kp LCTRL  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp SPACE  &kp SPACE  &kp ENTER        &kp BACKSPACE  &kp SPACE    &kp RCTRL  &kp LEFT
-&us_layer_next  &kp LC(C)  &kp LC(Z)  &kp LC(V)      &kp LC(Y)  &kp ENTER  &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &us_layer_next
+&kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp LGUI  		&kp F7     &kp F8           &kp F9         &kp F10      &kp F11    &kp F12		  &mkp RCLK
+&kp LA(GRAVE)  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL  		&kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE  		&kp LC(Y)  &kp LC(U)        &kp LC(I)      &kp LC(O)    &kp LC(P)  &kp ENTER	  &kp SPACE
+&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE  		&kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &kp UP     &kp RSHFT	  &kp SPACE
+&kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &kp DOWN   &kp RIGHT	  &kp RCTRL
+&none  		   &none	  &none  	 &none      &kp ENTER  &to US_L   &mkp RCLK  		&none	   &none		    &none	       &none	    &kp F5     &to US_L		  &kp LEFT
             >;
 
             sensor-bindings =
-                <&mouse_scroll SCRL_UP SCRL_DOWN>,
-                <&mouse_scroll SCRL_UP SCRL_DOWN>;
+                <&enc_sagcs>,
+                <&enc_sagcs>;
         };
 
         ex_layer {

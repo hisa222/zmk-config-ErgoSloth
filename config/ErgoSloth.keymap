@@ -170,13 +170,13 @@
         alt_left {
             timeout-ms = <50>;
             key-positions = <67 83>;
-            bindings = <&kp LA(LEFT)>;
+            bindings = <&alt_left>;
         };
 
         alt_right {
             timeout-ms = <50>;
             key-positions = <67 68>;
-            bindings = <&kp LA(RIGHT)>;
+            bindings = <&alt_right>;
         };
 
         encoder_R_up {
@@ -309,6 +309,27 @@
                 <&macro_release &kp LALT>;
         };
 
+        alt_left: alt_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LALT>,
+                <&macro_tap &kp LEFT>,
+                <&macro_release &kp LALT>;
+        };
+
+        alt_right: alt_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LALT>,
+                <&macro_tap &kp RIGHT>,
+                <&macro_release &kp LALT>;
+        };
     };
 
     /**************************************************************************/

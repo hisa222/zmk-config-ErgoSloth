@@ -598,6 +598,7 @@
             #binding-cells = <0>;
             bindings = <&td_f9>, <&kp TAB>;
             mods = <(MOD_LALT)>;
+			keep-mods = <(MOD_LALT)>;
         };
 
         morph_f10: morph_f10 {
@@ -605,7 +606,7 @@
             #binding-cells = <0>;
             bindings = <&td_f10>, <&kp TAB>;
             mods = <(MOD_LALT)>;
-			keep-mods = <(MOD_LSFT)>;
+			keep-mods = <(MOD_LALT|MOD_LSFT)>;
         };
 
     	alt_p: alt-positive {
@@ -946,7 +947,7 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_jis   &kp F4         &kp F5  		 	 &kp F6     &kp F7     	     		&kp LWIN           &kp F8    	 &morph_f9  &morph_f10  &kp F11          &morph_end_jis   &kp DEL        		 &mkp RCLK
+&esc_bt EXTRA_L ESC  &morph_home_jis   &td_f4         &td_f5  		 	 &td_f6     &td_f7     	     		&kp LWIN           &td_f8    	 &morph_f9  &morph_f10  &td_f11          &morph_end_jis   &kp DEL        		 &mkp RCLK
 &kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  	 &morph_7   &morph_8    &morph_9         &morph_0         &kp BACKSPACE  		 &mkp LCLK
 &kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &mt_c LALT Y  &kp U      &kp I       &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt JIS_FUNCS_L ENTER  &kp SPACE
 &kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G      	&kp SPACE          &kp H     	 &kp J      &kp K       &kp L            &kp UP           &kp RSHFT      		 &morph_space_jis
@@ -1046,7 +1047,7 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr5 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr5 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_us  &kp F4  		&kp F5  	   &kp F6     &kp F7     		 &kp LGUI		&kp F8  	  &morph_f9  &morph_f10  &kp F11       &morph_end_us  &kp DEL		   		&mkp RCLK
+&esc_bt EXTRA_L ESC  &morph_home_us  &td_f4  		&td_f5  	   &td_f6     &td_f7     		 &kp LGUI		&td_f8  	  &morph_f9  &morph_f10  &td_f11       &morph_end_us  &kp DEL		   		&mkp RCLK
 &kp LA(GRAVE)  		 &kp N1    	     &kp N2  		&kp N3  	   &kp N4     &kp N5     		 &kp LCTRL		&kp N6  	  &kp N7  	 &kp N8      &kp N9        &kp N0     	  &kp BACKSPACE  		&mkp LCLK
 &kp TAB        		 &mt_c SQT Q     &kp W          &mt_c EQUAL E  &kp R      &kp T      	     &kp SPACE      &mt_c LALT Y  &kp U   	 &kp I       &mt_c PIPE O  &mt_c PLUS P   &lt US_FUNCS_L ENTER  &kp SPACE
 &kp LSHFT      		 &kp A           &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE      &kp H   	  &kp J   	 &kp K       &kp L         &kp UP         &kp RSHFT      		&morph_space_us

@@ -13,15 +13,17 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 200
 
-#define JIS_L       0
-#define JIS_MARKS_L 1
-#define JIS_NUMS_L  2
-#define JIS_FUNCS_L 3
-#define US_L        4
-#define US_MARKS_L  5
-#define US_NUMS_L   6
-#define US_FUNCS_L  7
-#define EXTRA_L     8
+#define JIS_L        0
+#define JIS_MARKS_L  1
+#define JIS_NUMS_L   2
+#define JIS_FUNCS_L  3
+#define JIS_SIMPLE_L 4
+#define US_L         5
+#define US_MARKS_L   6
+#define US_NUMS_L    7
+#define US_FUNCS_L   8
+#define US_SIMPLE_L  9
+#define EXTRA_L      10
 
 // OS設定を日本語キーボードのまま使用するための変換定義
 
@@ -1082,7 +1084,7 @@
 &kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS   &kp SPACE		&kp KP_PLUS      &kp KP_N4        &kp KP_N5  &kp KP_N6   &kp KP_MINUS   &kp ENTER	   &kp SPACE
 &kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp SPACE		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &kp RSHFT	   &kp SPACE
 &kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR    &mkp LCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	   &kp RCTRL
-&none  		   &none     	 &none  	&none      	&kp ENTER        &to 0      	&mkp RCLK       &none  			 &none     		  &none  	 &none       &kp F5			&to 0   	   &kp LEFT
+&none  		   &none     	 &none  	&none      	&kp ENTER        &to JIS_L  	&mkp RCLK       &none  			 &none     		  &none  	 &none       &kp F5			&to JIS_L	   &kp LEFT
             >;
 
             sensor-bindings =
@@ -1107,7 +1109,7 @@
 &kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)      &kp LC(I)  &kp LC(O)   &kp LC(P)  &trans		   &kp SPACE
 &kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &td_cp_tr  &kp RSHFT	   &kp SPACE
 &kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &ctrl_v    &ctrl_y		   &kp RCTRL
-&none  		   &none      &none      &none      &kp ENTER  &to 0	  &mkp RCLK		&none  	   &none          &none  	 &none  	 &kp F5	    &to 0		   &ctrl_z
+&none  		   &none      &none      &none      &kp ENTER  &to JIS_L  &mkp RCLK		&none  	   &none          &none  	 &none  	 &kp F5	    &to JIS_L	   &ctrl_z
             >;
 
             sensor-bindings =
@@ -1126,12 +1128,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&kp ESC    &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7         &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL
-&kp GRAVE  &kp N1     &kp N2     &kp N3         &kp N4     &kp N5         &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE
-&kp TAB    &kp Q      &kp W      &kp E          &kp R      &kp T          &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER
-&kp LSHFT  &kp A      &kp S      &kp D          &kp F      &kp G          &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT
-&kp LALT   &kp Z      &kp X      &kp C          &kp V      &kp B          &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT
-&none	   &none  	  &none		 &none		    &kp ENTER  &to JIS_L      &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next
+&kp ESC    &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7     &kp GUI      &kp F8  &kp F9  &kp F10    &kp F11     &kp END   &kp DEL		&mkp RCLK
+&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4     &kp N5     &kp LCTRL    &kp N6  &kp N7  &kp N8     &kp N9      &kp N0    &kp BACKSPACE  &mkp LCLK
+&kp TAB    &kp Q     &kp W   &kp E   &kp R      &kp T      &kp SPACE    &kp Y   &kp U   &kp I      &kp O       &kp P     &kp ENTER	  	&kp SPACE
+&kp LSHFT  &kp A     &kp S   &kp D   &kp F      &kp G      &kp SPACE    &kp H   &kp J   &kp K      &kp L       &kp UP    &kp RSHFT	    &kp SPACE
+&kp LALT   &kp Z     &kp X   &kp C   &kp V      &kp B      &mkp LCLK    &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN  &kp RIGHT	  	&kp RCTRL
+&none	   &none  	 &none	 &none	 &kp ENTER  &to JIS_L  &mkp RCLK    &none   &none   &none      &none       &kp F5    &to JIS_L	  	&kp LEFT
             >;
 
             sensor-bindings =
@@ -1232,6 +1234,30 @@
 &kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE  		&kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &td_cp_tr  &kp RSHFT	  &kp SPACE
 &kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &ctrl_v    &ctrl_y		  &kp RCTRL
 &none  		   &none	  &none  	 &none      &kp ENTER  &to US_L   &mkp RCLK  		&none	   &none		    &none	       &none	    &kp F5     &to US_L		  &ctrl_z
+            >;
+
+            sensor-bindings =
+                <&enc_sagcs>,
+                <&enc_sagcs>;
+        };
+
+        us_simple_layer {
+            display-name = "US_SIMPLE";
+
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | RCLK |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | SPCE |
+            // | LSft |   A  |   S  |   D  |   F  |   G  | SPCE |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
+            // | LAlt |   Z  |   X  |   C  |   V  |   B  | LCLK |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
+
+            bindings = <
+&kp ESC    	   &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7    &kp GUI      &kp F8  &kp F9  &kp F10    &kp F11     &kp END   &kp DEL		   &mkp RCLK
+&kp LA(GRAVE)  &kp N1    &kp N2  &kp N3  &kp N4     &kp N5    &kp LCTRL    &kp N6  &kp N7  &kp N8     &kp N9      &kp N0    &kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp Q     &kp W   &kp E   &kp R      &kp T     &kp SPACE    &kp Y   &kp U   &kp I      &kp O       &kp P     &kp ENTER	   &kp SPACE
+&kp LSHFT      &kp A     &kp S   &kp D   &kp F      &kp G     &kp SPACE    &kp H   &kp J   &kp K      &kp L       &kp UP    &kp RSHFT	   &kp SPACE
+&kp LALT       &kp Z     &kp X   &kp C   &kp V      &kp B     &mkp LCLK    &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN  &kp RIGHT	   &kp RCTRL
+&none	       &none  	 &none	 &none	 &kp ENTER  &to US_L  &mkp RCLK    &none   &none   &none      &none       &kp F5    &to US_L	   &kp LEFT
             >;
 
             sensor-bindings =

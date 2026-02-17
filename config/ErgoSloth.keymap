@@ -76,7 +76,7 @@
         	layers = <JIS_FUNCS_L US_FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
-            	&zip_scroll_scaler 10 1
+            	&zip_scroll_scaler 100 1
         	>;
     	};
 	};
@@ -606,7 +606,7 @@
             #binding-cells = <0>;
             bindings = <&td_f10>, <&kp TAB>;
             mods = <(MOD_LALT)>;
-			keep-mods = <(MOD_LALT|MOD_LSFT)>;
+			keep-mods = <(MOD_LALT)>, <(MOD_LSFT)>;
         };
 
     	alt_p: alt-positive {

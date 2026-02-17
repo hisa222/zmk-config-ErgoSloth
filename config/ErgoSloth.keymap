@@ -363,6 +363,61 @@
                 <&macro_tap &kp RIGHT>,
                 <&macro_release &kp LALT>;
         };
+
+        ctrl_c: ctrl_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp C>,
+                <&macro_release &kp LCTRL>;
+        };
+
+        ctrl_v: ctrl_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp V>,
+                <&macro_release &kp LCTRL>;
+        };
+
+        ctrl_x: ctrl_x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp X>,
+                <&macro_release &kp LCTRL>;
+        };
+
+        ctrl_z: ctrl_z {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp Z>,
+                <&macro_release &kp LCTRL>;
+        };
+
+        ctrl_y: ctrl_y {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp Y>,
+                <&macro_release &kp LCTRL>;
+        };
     };
 
     /**************************************************************************/
@@ -606,7 +661,7 @@
             #binding-cells = <0>;
             bindings = <&td_f10>, <&kp TAB>;
             mods = <(MOD_LALT)>;
-			keep-mods = <(MOD_LALT)>, <(MOD_LSFT)>;
+			keep-mods = <(MOD_LALT, MOD_LSFT)>;
         };
 
     	alt_p: alt-positive {
@@ -887,6 +942,13 @@
             tapping-term-ms = <400>;
             bindings = <&kp F11>, <&kp F7>, <&none>, <&alt_f4>;
         };
+
+        td_cp_tr: tap_dance_copy_triming {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&ctrl_c>, <&ctrl_x>;
+        };
     };
 
     /**************************************************************************/
@@ -1017,17 +1079,17 @@
             // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
             // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
             // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT | SPCE |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR | SPCE |
-            // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG | SPCE |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft | SPCE |
-            // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB | LCLK |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  | RCtr |
-            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |   ←  |
+            // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG | SPCE |   | CtrH | CtrJ | CtrK | CtrL | Copy | RSft | SPCE |
+            // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB | LCLK |   | CtrN | CtrM |   ,  |   .  | Past | Forw | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 
             bindings = <
 &kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp GUI		&kp F7     &kp F8         &kp F9     &kp F10     &kp F11    &kp F12		   &mkp RCLK
 &kp JP_HANZEN  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7         &kp N8     &kp N9      &kp N0     &kp BACKSPACE  &mkp LCLK
 &kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)      &kp LC(I)  &kp LC(O)   &kp LC(P)  &trans		   &kp SPACE
-&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &kp UP     &kp RSHFT	   &kp SPACE
-&kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &kp DOWN   &kp RIGHT	   &kp RCTRL
-&none  		   &none      &none      &none      &kp ENTER  &to 0	  &mkp RCLK		&none  	   &none          &none  	 &none  	 &kp F5	    &to 0		   &kp LEFT
+&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &td_cp_tr  &kp RSHFT	   &kp SPACE
+&kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &ctrl_v    &ctrl_y		   &kp RCTRL
+&none  		   &none      &none      &none      &kp ENTER  &to 0	  &mkp RCLK		&none  	   &none          &none  	 &none  	 &kp F5	    &to 0		   &ctrl_z
             >;
 
             sensor-bindings =
@@ -1124,10 +1186,10 @@
             bindings = <
 &kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp LGUI  		&kp F7     &kp F8           &kp F9         &kp F10      &kp F11    &kp F12		  &mkp RCLK
 &kp LA(GRAVE)  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL  		&kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE  &mkp LCLK
-&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE  		&kp LC(Y)  &kp LC(U)        &kp LC(I)      &kp LC(O)    &kp LC(P)  &kp ENTER	  &kp SPACE
-&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE  		&kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &kp UP     &kp RSHFT	  &kp SPACE
-&kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &kp DOWN   &kp RIGHT	  &kp RCTRL
-&none  		   &none	  &none  	 &none      &kp ENTER  &to US_L   &mkp RCLK  		&none	   &none		    &none	       &none	    &kp F5     &to US_L		  &kp LEFT
+&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE  		&kp LC(Y)  &kp LC(U)        &kp LC(I)      &kp LC(O)    &kp LC(P)  &kp trans	  &kp SPACE
+&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE  		&kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &td_cp_tr  &kp RSHFT	  &kp SPACE
+&kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &ctrl_v    &ctrl_y		  &kp RCTRL
+&none  		   &none	  &none  	 &none      &kp ENTER  &to US_L   &mkp RCLK  		&none	   &none		    &none	       &none	    &kp F5     &to US_L		  &ctrl_z
             >;
 
             sensor-bindings =

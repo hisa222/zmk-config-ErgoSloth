@@ -70,6 +70,17 @@
     acceleration-exponent = <0>;
 };
 
+// trackball
+	&trackball_right_listener {
+    	scroller {
+        	layers = <JIS_FUNCS_L US_FUNCS_L>;
+        	input-processors = <
+            	&zip_xy_to_scroll_mapper
+            	&zip_scroll_scaler 3 2
+        	>;
+    	};
+	};
+
 // joysticks
     &analog_joystick_right_listener {
 /*
@@ -298,6 +309,28 @@
                 <&macro_tap &kp S>;
         };
 
+        close_window: close_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LALT &kp SPACE>,
+                <&macro_tap &kp N>,
+                <&macro_release &kp LALT &kp SPACE>,
+        };
+
+        close_all_windows: close_all_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LGUI>,
+                <&macro_tap &kp D>,
+                <&macro_release &kp LGUI>,
+        };
+
         alt_f4: alt_f4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -339,7 +372,7 @@
         mt_c: mod_tap_custom {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "tap-preferred";
             tapping-term-ms = <400>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
@@ -348,7 +381,7 @@
         esc_bt: escape-bluetooth {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "tap-preferred";
             tapping-term-ms = <2000>;
             bindings = <&mo &kp>;
         };
@@ -366,7 +399,7 @@
         mt_btl: mt_btl {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "tap-preferred";
             tapping-term-ms = <3000>;
             bindings = < &bootloader &kp >;
             display-name = "Mod-Tap-Bootloader";
@@ -375,7 +408,7 @@
         mt_rst: mt_rst {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "tap-preferred";
             tapping-term-ms = <3000>;
             bindings = < &sys_reset &kp >;
             display-name = "Mod-Tap-Reset";
@@ -558,6 +591,21 @@
             #binding-cells = <0>;
             bindings = <&kp N0>, <&kp JP_RPAREN>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_f9: morph_f9 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&td_f9>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
+        };
+
+        morph_f10: morph_f10 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&td_f10>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
+			keep-mods = <(MOD_LSFT)>;
         };
 
     	alt_p: alt-positive {
@@ -786,8 +834,57 @@
         td_bt_ad: tap_dance_bluetooth_all_delete {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             bindings = <&none>, <&none>, <&none>, <&none>, <&bt BT_CLR>;
+        };
+
+        td_f4: tap_dance_function4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp F4>, <&kp F8>, <&sleep_windows>;
+        };
+        td_f5: tap_dance_function5 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp F5>, <&kp F9>, <&close_window>;
+        };
+        td_f6: tap_dance_function6 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp F6>, <&kp F10>, <&close_all_windows>;
+        };
+        td_f7: tap_dance_function7 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp F7>, <&kp F11>, <&none>, <&alt_f4>;
+        };
+        td_f8: tap_dance_function8 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp F8>, <&kp F4>, <&sleep_windows>;
+        };
+        td_f9: tap_dance_function9 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp F9>, <&kp F5>, <&close_window>;
+        };
+        td_f10: tap_dance_function10 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp F10>, <&kp F6>, <&close_all_windows>;
+        };
+        td_f11: tap_dance_function11 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp F11>, <&kp F7>, <&none>, <&alt_f4>;
         };
     };
 
@@ -849,12 +946,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_jis   &kp F4         &kp F5  		 	 &kp F6     &kp F7     	     		&kp LWIN           &kp F8    &kp F9    &kp F10   &kp F11          &morph_end_jis   &kp DEL        &mkp RCLK
-&kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  &morph_7  &morph_8  &morph_9         &morph_0         &kp BACKSPACE  &mkp LCLK
-&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &kp Y     &kp U     &kp I     &mt_c JP_PIPE O  &mt_c JP_PLUS P  &kp ENTER      &kp SPACE
-&kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G      	&kp SPACE          &kp H     &kp J     &kp K     &kp L            &kp UP           &kp RSHFT      &morph_space_jis
-&kp LALT       		 &kp Z             &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B      	&mkp LCLK          &kp N     &kp M     &td_sc    &td_co_jis       &kp DOWN         &kp RIGHT      &kp RCTRL
-&none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     &none     &none     &none            &kp F5           &td_jis_ly     &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_jis   &kp F4         &kp F5  		 	 &kp F6     &kp F7     	     		&kp LWIN           &kp F8    	 &morph_f9  &morph_f10  &kp F11          &morph_end_jis   &kp DEL        		 &mkp RCLK
+&kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  	 &morph_7   &morph_8    &morph_9         &morph_0         &kp BACKSPACE  		 &mkp LCLK
+&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &mt_c LALT Y  &kp U      &kp I       &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt JIS_FUNCS_L ENTER  &kp SPACE
+&kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G      	&kp SPACE          &kp H     	 &kp J      &kp K       &kp L            &kp UP           &kp RSHFT      		 &morph_space_jis
+&kp LALT       		 &kp Z             &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B      	&mkp LCLK          &kp N     	 &kp M      &td_sc      &td_co_jis       &kp DOWN         &kp RIGHT      		 &kp RCTRL
+&none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     	 &none      &none       &none            &kp F5           &td_jis_ly     		 &kp LEFT
             >;
 
             sensor-bindings =
@@ -926,7 +1023,7 @@
             bindings = <
 &kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp GUI		&kp F7     &kp F8         &kp F9     &kp F10     &kp F11    &kp F12		   &mkp RCLK
 &kp JP_HANZEN  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7         &kp N8     &kp N9      &kp N0     &kp BACKSPACE  &mkp LCLK
-&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)      &kp LC(I)  &kp LC(O)   &kp LC(P)  &kp ENTER	   &kp SPACE
+&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)      &kp LC(I)  &kp LC(O)   &kp LC(P)  &trans		   &kp SPACE
 &kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &kp UP     &kp RSHFT	   &kp SPACE
 &kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &kp DOWN   &kp RIGHT	   &kp RCTRL
 &none  		   &none      &none      &none      &kp ENTER  &to 0	  &mkp RCLK		&none  	   &none          &none  	 &none  	 &kp F5	    &to 0		   &kp LEFT
@@ -949,12 +1046,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr5 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr5 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_us  &kp F4  		&kp F5  	   &kp F6     &kp F7     		 &kp LGUI		&kp F8  &kp F9  &kp F10    &kp F11       &morph_end_us  &kp DEL		   &mkp RCLK
-&kp LA(GRAVE)  		 &kp N1    	     &kp N2  		&kp N3  	   &kp N4     &kp N5     		 &kp LCTRL		&kp N6  &kp N7  &kp N8     &kp N9        &kp N0     	&kp BACKSPACE  &mkp LCLK
-&kp TAB        		 &mt_c SQT Q     &kp W          &mt_c EQUAL E  &kp R      &kp T      	     &kp SPACE      &kp Y   &kp U   &kp I      &mt_c PIPE O  &mt_c PLUS P   &kp ENTER      &kp SPACE
-&kp LSHFT      		 &kp A           &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE      &kp H   &kp J   &kp K      &kp L         &kp UP         &kp RSHFT      &morph_space_us
-&kp LALT       		 &kp Z           &kp X          &kp C   	   &kp V      &mt_c BSLH B       &mkp LCLK		&kp N   &kp M   &kp COMMA  &kp PERIOD    &kp DOWN   	&kp RIGHT	   &kp RCTRL
-&none  		   		 &none      	   &none   		&none   	   &kp ENTER  &td_us_ly  		 &mkp RCLK		&none  	&none   &none  	   &none  	  	 &kp F5	    	&td_us_ly	   &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_us  &kp F4  		&kp F5  	   &kp F6     &kp F7     		 &kp LGUI		&kp F8  	  &morph_f9  &morph_f10  &kp F11       &morph_end_us  &kp DEL		   		&mkp RCLK
+&kp LA(GRAVE)  		 &kp N1    	     &kp N2  		&kp N3  	   &kp N4     &kp N5     		 &kp LCTRL		&kp N6  	  &kp N7  	 &kp N8      &kp N9        &kp N0     	  &kp BACKSPACE  		&mkp LCLK
+&kp TAB        		 &mt_c SQT Q     &kp W          &mt_c EQUAL E  &kp R      &kp T      	     &kp SPACE      &mt_c LALT Y  &kp U   	 &kp I       &mt_c PIPE O  &mt_c PLUS P   &lt US_FUNCS_L ENTER  &kp SPACE
+&kp LSHFT      		 &kp A           &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE      &kp H   	  &kp J   	 &kp K       &kp L         &kp UP         &kp RSHFT      		&morph_space_us
+&kp LALT       		 &kp Z           &kp X          &kp C   	   &kp V      &mt_c BSLH B       &mkp LCLK		&kp N   	  &kp M   	 &kp COMMA   &kp PERIOD    &kp DOWN   	  &kp RIGHT	   		  	&kp RCTRL
+&none  		   		 &none      	   &none   		&none   	   &kp ENTER  &td_us_ly  		 &mkp RCLK		&none  		  &none   	 &none  	 &none  	   &kp F5	      &td_us_ly	   		  	&kp LEFT
             >;
 
             sensor-bindings =

@@ -1115,6 +1115,30 @@
                 <&enc_sagcs>;
         };
 
+        jis_simple_layer {
+            display-name = "JIS_SIMPLE";
+
+            // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | RCLK |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB |   Q  |   W  |   E  |   R  |   T  | SPCE |   |   Y  |   U  |   I  |   O  |   P  | ENTR | SPCE |
+            // | LSft |   A  |   S  |   D  |   F  |   G  | SPCE |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
+            // | LAlt |   Z  |   X  |   C  |   V  |   B  | LCLK |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
+
+            bindings = <
+&kp ESC    &kp HOME   &kp F4     &kp F5         &kp F6     &kp F7         &kp F8     &kp F9           &kp F10        &kp F11      &kp END    &kp DEL
+&kp GRAVE  &kp N1     &kp N2     &kp N3         &kp N4     &kp N5         &kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE
+&kp TAB    &kp Q      &kp W      &kp E          &kp R      &kp T          &kp Y      &kp U            &kp I          &kp O        &kp P      &kp ENTER
+&kp LSHFT  &kp A      &kp S      &kp D          &kp F      &kp G          &kp H      &kp J            &kp K          &kp L        &kp UP     &kp RSHFT
+&kp LALT   &kp Z      &kp X      &kp C          &kp V      &kp B          &kp N      &kp M            &kp COMMA      &kp PERIOD   &kp DOWN   &kp RIGHT
+&none	   &none  	  &none		 &none		    &kp ENTER  &to JIS_L      &kp RC(T)  &kp RC(RS(TAB))  &kp RC(W)      &kp RC(TAB)  &kp RC(T)  &jis_layer_next
+            >;
+
+            sensor-bindings =
+                <&enc_sagcs>,
+                <&enc_sagcs>;
+        };
+
         us_layer {
             display-name = "US";
 

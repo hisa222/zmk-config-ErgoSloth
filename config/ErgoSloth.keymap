@@ -317,7 +317,7 @@
             bindings =
                 <&macro_press &kp LALT &kp SPACE>,
                 <&macro_tap &kp N>,
-                <&macro_release &kp LALT &kp SPACE>,
+                <&macro_release &kp LALT &kp SPACE>;
         };
 
         close_all_windows: close_all_windows {
@@ -328,7 +328,7 @@
             bindings =
                 <&macro_press &kp LGUI>,
                 <&macro_tap &kp D>,
-                <&macro_release &kp LGUI>,
+                <&macro_release &kp LGUI>;
         };
 
         alt_f4: alt_f4 {

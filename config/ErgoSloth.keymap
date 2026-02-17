@@ -659,9 +659,9 @@
         morph_f10: morph_f10 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&td_f10>, <&kp TAB>;
+            bindings = <&td_f10>, <&kp LS(TAB)>;
             mods = <(MOD_LALT)>;
-			keep-mods = <(MOD_LALT, MOD_LSFT)>;
+			keep-mods = <(MOD_LALT)>;
         };
 
     	alt_p: alt-positive {

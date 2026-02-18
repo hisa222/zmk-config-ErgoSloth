@@ -617,7 +617,6 @@
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             bindings = <&kp>, <&kp>;
-            display-name = "Mod-Tap";
         };
 
         mt_fl_a: mod_tap_flick_a {
@@ -626,7 +625,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&none>, <&kp A>;
-            display-name = "Mod-Tap";
         };
         mt_fl_ka: mod_tap_flick_ka {
             compatible = "zmk,behavior-hold-tap";
@@ -634,7 +632,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp K>, <&fl_ka>;
-            display-name = "Mod-Tap";
         };
         mt_fl_sa: mod_tap_flick_sa {
             compatible = "zmk,behavior-hold-tap";
@@ -642,7 +639,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp S>, <&fl_sa>;
-            display-name = "Mod-Tap";
         };
         mt_fl_ta: mod_tap_flick_ta {
             compatible = "zmk,behavior-hold-tap";
@@ -650,7 +646,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp T>, <&fl_ta>;
-            display-name = "Mod-Tap";
         };
         mt_fl_na: mod_tap_flick_na {
             compatible = "zmk,behavior-hold-tap";
@@ -658,7 +653,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp N>, <&fl_na>;
-            display-name = "Mod-Tap";
         };
         mt_fl_ha: mod_tap_flick_ha {
             compatible = "zmk,behavior-hold-tap";
@@ -666,7 +660,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp H>, <&fl_ha>;
-            display-name = "Mod-Tap";
         };
         mt_fl_ma: mod_tap_flick_ma {
             compatible = "zmk,behavior-hold-tap";
@@ -674,7 +667,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp M>, <&fl_ma>;
-            display-name = "Mod-Tap";
         };
         mt_fl_ya: mod_tap_flick_ya {
             compatible = "zmk,behavior-hold-tap";
@@ -682,7 +674,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp Y>, <&fl_ya>;
-            display-name = "Mod-Tap";
         };
         mt_fl_ra: mod_tap_flick_ra {
             compatible = "zmk,behavior-hold-tap";
@@ -690,7 +681,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp R>, <&fl_ra>;
-            display-name = "Mod-Tap";
         };
         mt_fl_wa: mod_tap_flick_wa {
             compatible = "zmk,behavior-hold-tap";
@@ -698,7 +688,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp W>, <&fl_wa>;
-            display-name = "Mod-Tap";
         };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
@@ -706,7 +695,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp G>, <&fl_ga>;
-            display-name = "Mod-Tap";
         };
         mt_fl_za: mod_tap_flick_za {
             compatible = "zmk,behavior-hold-tap";
@@ -714,7 +702,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp Z>, <&fl_za>;
-            display-name = "Mod-Tap";
         };
         mt_fl_da: mod_tap_flick_da {
             compatible = "zmk,behavior-hold-tap";
@@ -722,7 +709,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp D>, <&fl_da>;
-            display-name = "Mod-Tap";
         };
         mt_fl_ba: mod_tap_flick_ba {
             compatible = "zmk,behavior-hold-tap";
@@ -730,7 +716,6 @@
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
             bindings = <&kp B>, <&fl_ba>;
-            display-name = "Mod-Tap";
         };
 
         esc_bt: escape-bluetooth {

@@ -635,87 +635,87 @@
         };
         mt_fl_sa: mod_tap_flick_sa {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp S>, <&fl_sa>;
+            bindings = <&kp &fl_sa>;
         };
         mt_fl_ta: mod_tap_flick_ta {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp T>, <&fl_ta>;
+            bindings = <&kp &fl_ta>;
         };
         mt_fl_na: mod_tap_flick_na {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp N>, <&fl_na>;
+            bindings = <&kp &fl_na>;
         };
         mt_fl_ha: mod_tap_flick_ha {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp H>, <&fl_ha>;
+            bindings = <&kp &fl_ha>;
         };
         mt_fl_ma: mod_tap_flick_ma {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp M>, <&fl_ma>;
+            bindings = <&kp &fl_ma>;
         };
         mt_fl_ya: mod_tap_flick_ya {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp Y>, <&fl_ya>;
+            bindings = <&kp &fl_ya>;
         };
         mt_fl_ra: mod_tap_flick_ra {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp R>, <&fl_ra>;
+            bindings = <&kp &fl_ra>;
         };
         mt_fl_wa: mod_tap_flick_wa {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp W>, <&fl_wa>;
+            bindings = <&kp &fl_wa>;
         };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp G>, <&fl_ga>;
+            bindings = <&kp &fl_ga>;
         };
         mt_fl_za: mod_tap_flick_za {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp Z>, <&fl_za>;
+            bindings = <&kp &fl_za>;
         };
         mt_fl_da: mod_tap_flick_da {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp D>, <&fl_da>;
+            bindings = <&kp &fl_da>;
         };
         mt_fl_ba: mod_tap_flick_ba {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "FLICK_LOGIC";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp B>, <&fl_ba>;
+            bindings = <&kp &fl_ba>;
         };
 
         esc_bt: escape-bluetooth {

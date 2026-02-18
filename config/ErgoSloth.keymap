@@ -27,7 +27,8 @@
 #define JP_FLICK_L	 10
 #define EXTRA_L      11
 
-#define FLICK_LOGIC "tap-unless-interrupted"
+// #define FLICK_LOGIC "tap-unless-interrupted"
+#define FLICK_LOGIC "balanced"
 
 // OS設定を日本語キーボードのまま使用するための変換定義
 

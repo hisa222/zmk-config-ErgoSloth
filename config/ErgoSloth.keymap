@@ -624,7 +624,7 @@
             #binding-cells = <0>;
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
-            bindings = <&none>, <&kp A>;
+            bindings = <&none &kp>;
         };
         mt_fl_ka: mod_tap_flick_ka {
             compatible = "zmk,behavior-hold-tap";

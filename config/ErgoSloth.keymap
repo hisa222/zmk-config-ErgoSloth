@@ -27,7 +27,7 @@
 #define JP_FLICK_L	 10
 #define EXTRA_L      11
 
-#define FLICK_LOGIC tap-unless-interrupted
+#define FLICK_LOGIC "tap-unless-interrupted"
 
 // OS設定を日本語キーボードのまま使用するための変換定義
 
@@ -768,7 +768,7 @@
         morph_home_jis_c: morph_home_jis_c {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp HOME>, <&none>;
+            bindings = <&none>, <&kp HOME>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -789,8 +789,8 @@
         morph_end_jis_c: morph_end_jis_c {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp END>, <&none>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
+            bindings = <&none>, <&kp END>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
         morph_end_jis_s: morph_end_jis_s {
@@ -810,7 +810,7 @@
         morph_home_us_c: morph_home_us_c {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp HOME>, <&none>;
+            bindings = <&none>, <&kp HOME>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -831,8 +831,8 @@
         morph_end_us_c: morph_end_us_c {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp END>, <&none>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
+            bindings = <&none>, <&kp END>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
         morph_end_us_s: morph_end_us_s {

@@ -952,7 +952,7 @@
         morph_ka: morph_ka {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_ka K 0>, <&mt_fl_ga>;
+            bindings = <&mt_fl_ka K 0>, <&mt_fl_ga G 0>;
             mods = <(MOD_LALT)>;
         };
 

@@ -1559,6 +1559,11 @@
 &none   &none  &none  &none  &none  &to US_L  &mkp RCLK		&none         &none         &none         &none         &none         &to JIS_L    &none
             >;
 
+            sensor-bindings =
+                <&enc_sagcs>,
+                <&enc_sagcs>;
+        };
+
         ex_layer {
             display-name = "EXTRA";
 

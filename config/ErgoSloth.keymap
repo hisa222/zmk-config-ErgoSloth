@@ -23,7 +23,10 @@
 #define US_NUMS_L    7
 #define US_FUNCS_L   8
 #define US_SIMPLE_L  9
-#define EXTRA_L      10
+#define JP_FLICK_L	 10
+#define EXTRA_L      11
+
+#define FLICK_LOGIC tap-unless-interrupted
 
 // OS設定を日本語キーボードのまま使用するための変換定義
 
@@ -88,6 +91,31 @@
     acceleration-exponent = <0>;
 };
 
+&zip_mouse_gesture {
+    stroke-size = <300>; // Optional (default: 200)
+    enable-eager-mode; // Optional, but recommended
+
+    gesture_r {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp E>;
+    };
+
+    gesture_l {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp I>;
+    };
+
+    gesture_u {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp U>;
+    };
+
+    gesture_d {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp O>;
+    };
+};
+
 // trackball
 	&trackball_right_listener {
     	scroller {
@@ -99,6 +127,10 @@
             	&zip_scroll_y_scaler 1 10
         	>;
     	};
+		flicker {
+			layers = <JP_FLICK_L>;
+			input-processors = <&zip_mouse_gesture>;
+		};
 	};
 
 // joysticks
@@ -322,8 +354,11 @@
             tap-ms = <40>;
             bindings =
                 <&macro_press &kp LGUI>,
+				<&macro_wait_time 100>,
                 <&macro_tap &kp X>,
+				<&macro_wait_time 100>,
                 <&macro_release &kp LGUI>,
+				<&macro_wait_time 100>,
                 <&macro_tap &kp U>,
                 <&macro_wait_time 100>,
                 <&macro_tap &kp S>;
@@ -438,6 +473,137 @@
                 <&macro_tap &kp Y>,
                 <&macro_release &kp LCTRL>;
         };
+
+        fl_ka: flick_ka {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp K>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_sa: flick_sa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp S>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_ta: flick_ta {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp T>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_na: flick_na {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp N>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_Ha: flick_Ha {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp H>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_Ma: flick_Ma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp M>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_Ya: flick_Ya {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp Y>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_ra: flick_ra {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp R>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_wa: flick_wa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp W>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_ga: flick_ga {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp G>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_za: flick_za {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp Z>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_da: flick_da {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp D>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
+        fl_ba: flick_ba {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp B>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp A>;
+        };
     };
 
     /**************************************************************************/
@@ -450,6 +616,15 @@
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             bindings = <&kp>, <&kp>;
+            display-name = "Mod-Tap";
+        };
+
+        mt_f: mod_tap_flick {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "FLICK_LOGIC";
+            tapping-term-ms = <400>;
+            bindings = <&kp>, <&>;
             display-name = "Mod-Tap";
         };
 
@@ -682,6 +857,13 @@
             bindings = <&td_f10>, <&kp LS(TAB)>;
             mods = <(MOD_LALT)>;
 			keep-mods = <(MOD_LALT)>;
+        };
+
+        morph_ka: morph_ka {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt_f K fl_ka>, <&mt_f G fl_ga>;
+            mods = <(MOD_LALT)>;
         };
 
     	alt_p: alt-positive {
@@ -1265,6 +1447,28 @@
                 <&enc_sagcs>;
         };
 
+        jp_flick_layer {
+            display-name = "JP_FLICK";
+
+            // -------------------------------------------------------------------------------------------------------
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      | BOOT | RCLK |
+            // |      |      |      |      |      |      |      |   |  BT0 |  BT1 |  BT2 |  BT3 |  BT4 | BCLR | LCLK |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      |      | LCLK |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      | lyr4 | RCLK |   |      |      |      |      |      | lyr0 |      |
+
+            bindings = <
+&trans  &none  &none  &none  &none  &none     &none			&none         &none         &none         &none         &none         &bootloader  &mkp RCLK
+&none   &none  &none  &none  &none  &none     &none			&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &td_bt_ad    &mkp LCLK
+&none   &none  &none  &none  &none  &none     &none			&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &none     &none			&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &none     &none			&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &none     &mkp LCLK		&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &to US_L  &mkp RCLK		&none         &none         &none         &none         &none         &to JIS_L    &none
+            >;
+
         ex_layer {
             display-name = "EXTRA";
 
@@ -1280,7 +1484,7 @@
             bindings = <
 &trans  &none  &none  &none  &none  &none     &none			&none         &none         &none         &none         &none         &bootloader  &mkp RCLK
 &none   &none  &none  &none  &none  &none     &none			&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &td_bt_ad    &mkp LCLK
-&none   &none  &none  &none  &none  &none     &none			&none         &none         &none         &none         &none         &none		   &none
+&none   &none  &none  &none  &none  &none     &none			&none         &none         &morph_ka     &none         &none         &none		   &none
 &none   &none  &none  &none  &none  &none     &none			&none         &none         &none         &none         &none         &none		   &none
 &none   &none  &none  &none  &none  &none     &none			&none         &none         &none         &none         &none         &none		   &none
 &none   &none  &none  &none  &none  &none     &mkp LCLK		&none         &none         &none         &none         &none         &none		   &none

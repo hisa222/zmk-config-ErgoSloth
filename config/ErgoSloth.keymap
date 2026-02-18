@@ -625,7 +625,7 @@
             #binding-cells = <2>;
             flavor = "FLICK_LOGIC";
             tapping-term-ms = <400>;
-            bindings = <&kp>, <&>;
+            bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
         };
 
@@ -863,7 +863,7 @@
         morph_ka: morph_ka {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_f K fl_ka>, <&mt_f G fl_ga>;
+            bindings = <&mt_f K &fl_ka>, <&mt_f G &fl_ga>;
             mods = <(MOD_LALT)>;
         };
 

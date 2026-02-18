@@ -515,7 +515,7 @@
 				<&macro_wait_time 100>,
                 <&macro_tap &kp A>;
         };
-        fl_Ha: flick_Ha {
+        fl_ha: flick_ha {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
@@ -525,7 +525,7 @@
 				<&macro_wait_time 100>,
                 <&macro_tap &kp A>;
         };
-        fl_Ma: flick_Ma {
+        fl_ma: flick_ma {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
@@ -535,7 +535,7 @@
 				<&macro_wait_time 100>,
                 <&macro_tap &kp A>;
         };
-        fl_Ya: flick_Ya {
+        fl_ya: flick_ya {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;

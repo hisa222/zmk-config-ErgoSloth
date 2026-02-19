@@ -844,7 +844,7 @@
         };
         mt_fl_ka: mod_tap_flick_ka {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <200>;
             bindings = <&mc_ka &fl_ka>;
@@ -907,7 +907,7 @@
         };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
             bindings = <&mc_ga &fl_ga>;
@@ -1175,7 +1175,7 @@
         morph_ka: morph_ka {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_ka>, <&mt_fl_ga>;
+            bindings = <&mt_fl_ka 0 0>, <&mt_fl_ga 0 0>;
             mods = <(MOD_LALT)>;
         };
         morph_sa: morph_sa {
@@ -1199,7 +1199,7 @@
         morph_a_1: morph_a_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 A>, <&kp N1>;
+            bindings = <&mt_fl_a 0 0>, <&kp N1>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ka_2: morph_ka_2 {
@@ -1223,7 +1223,7 @@
         morph_na_5: morph_na_5 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 N>, <&kp N5>;
+            bindings = <&mt_fl_a 0 0>, <&kp N5>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ha_6: morph_ha_6 {
@@ -1235,25 +1235,25 @@
         morph_ma_7: morph_ma_7 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 M>, <&kp N7>;
+            bindings = <&mt_fl_a 0 0>, <&kp N7>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ya_8: morph_ya_8 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 Y>, <&kp N8>;
+            bindings = <&mt_fl_a 0 0>, <&kp N8>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ra_9: morph_ra_9 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 R>, <&kp N9>;
+            bindings = <&mt_fl_a 0 0>, <&kp N9>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_wa_0: morph_wa_0 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 W>, <&kp N0>;
+            bindings = <&mt_fl_a 0 0>, <&kp N0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
@@ -1864,7 +1864,7 @@
 
             bindings = <
 &trans  &none  &none  &none  &none  &none      &none			&td_f8    	   &morph_f9  		   &morph_f10     &td_f11		 &morph_end_jis  &fl_delete     			 &mkp RCLK
-&none   &none  &none  &none  &none  &none      &none			&kp JP_HANZEN  &mouse_gesture_off  &mc_kakko	  &mt X X		 &mc_nn          &fl_backspace  			 &mkp LCLK
+&none   &none  &none  &none  &none  &none      &none			&kp JP_HANZEN  &mouse_gesture_off  &mc_kakko	  &mt X X		 &mc_nn          &kp BACKSPACE  			 &mkp LCLK
 &none   &none  &none  &none  &none  &none      &none			&kp LALT	   &mt_fl_a 0 A   	   &morph_ka      &morph_sa      &sk LALT        &lt_fl_enter JIS_FUNCS_L 0  &fl_space
 &none   &none  &none  &none  &none  &none      &none			&kp RCTRL	   &morph_ta      	   &mt_fl_na 0 0  &morph_ha      &kp UP          &fl_space	  			     &td_fl_comma
 &none   &none  &none  &none  &none  &none      &mkp LCLK		&kp LCTRL	   &mt_fl_ma 0 0  	   &mt_fl_ya 0 0  &mt_fl_ra 0 0  &kp DOWN        &kp RIGHT   	  			 &mt_fl_wa 0 0

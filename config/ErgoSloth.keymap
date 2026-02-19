@@ -94,7 +94,7 @@
 };
 
 &zip_mouse_gesture {
-    stroke-size = <300>; // Optional (default: 200)
+    stroke-size = <100>; // Optional (default: 200)
     enable-eager-mode; // Optional, but recommended
 
     gesture_r {
@@ -144,7 +144,7 @@
         };
 */
         scroll {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L>;
+            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
             	&zip_scroll_scaler 1 3000
@@ -152,12 +152,12 @@
         };
 /*
         nothing {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L>;
+            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 
 		snipe {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L>;
+			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 4>;
 		};
 */
@@ -171,18 +171,18 @@
         };
 
         scroll {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L>;
+            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
 */
 /*
         nothing {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L>;
+            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 */
 		snipe {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L>;
+			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 50>;
 		};
 
@@ -622,6 +622,36 @@
 				<&macro_wait_time 100>,
                 <&macro_tap &mouse_gesture_off>;
         };
+        fl_space: flick_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp SPACE>,
+				<&macro_wait_time 100>,
+                <&macro_tap &mouse_gesture_off>;
+        };
+        fl_delete: flick_delete {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp DELETE>,
+				<&macro_wait_time 100>,
+                <&macro_tap &mouse_gesture_off>;
+        };
+        fl_backspace: flick_backspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp BACKSPACE>,
+				<&macro_wait_time 100>,
+                <&macro_tap &mouse_gesture_off>;
+        };
         mc_ka: macro_ka {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -629,6 +659,132 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp K>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_sa: macro_sa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp S>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_ta: macro_ta {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp T>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_na: macro_na {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp N>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_ha: macro_ha {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp H>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_ma: macro_ma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp M>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_ya: macro_ya {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp Y>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_ra: macro_ra {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp R>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_wa: macro_wa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp W>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_ga: macro_ga {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp G>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_za: macro_za {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp Z>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_da: macro_da {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp D>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_ba: macro_ba {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp B>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_nn: macro_nn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp N>,
+				<&macro_tap &kp N>;
+        };
+        mc_kakko: macro_kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kp K &kp A &kp K &kp K &kp O &kp SPACE>,
 				<&macro_tap &mouse_gesture_on>;
         };
     };
@@ -650,7 +806,7 @@
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&none &kp>;
+            bindings = <&mouse_gesture_on &kp>;
         };
         mt_fl_ka: mod_tap_flick_ka {
             compatible = "zmk,behavior-hold-tap";
@@ -664,84 +820,91 @@
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_sa>;
+            bindings = <&mc_sa &fl_sa>;
         };
         mt_fl_ta: mod_tap_flick_ta {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_ta>;
+            bindings = <&mc_ta &fl_ta>;
         };
         mt_fl_na: mod_tap_flick_na {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_na>;
+            bindings = <&mc_na &fl_na>;
         };
         mt_fl_ha: mod_tap_flick_ha {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_ha>;
+            bindings = <&mc_ha &fl_ha>;
         };
         mt_fl_ma: mod_tap_flick_ma {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_ma>;
+            bindings = <&mc_ma &fl_ma>;
         };
         mt_fl_ya: mod_tap_flick_ya {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_ya>;
+            bindings = <&mc_ya &fl_ya>;
         };
         mt_fl_ra: mod_tap_flick_ra {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_ra>;
+            bindings = <&mc_ra &fl_ra>;
         };
         mt_fl_wa: mod_tap_flick_wa {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_wa>;
+            bindings = <&mc_wa &fl_wa>;
         };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_ga>;
+            bindings = <&mc_ga &fl_ga>;
         };
         mt_fl_za: mod_tap_flick_za {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_za>;
+            bindings = <&mc_za &fl_za>;
         };
         mt_fl_da: mod_tap_flick_da {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_da>;
+            bindings = <&mc_da &fl_da>;
         };
         mt_fl_ba: mod_tap_flick_ba {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
-            bindings = <&kp &fl_ba>;
+            bindings = <&mc_ba &fl_ba>;
+        };
+        lt_fl_enter: layer_tap_flick_enter {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
+            tapping-term-ms = <400>;
+            bindings = <&mo &fl_enter>;
         };
 
         esc_bt: escape-bluetooth {
@@ -984,19 +1147,19 @@
         morph_sa: morph_sa {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_sa S 0>, <&mt_fl_za Z 0>;
+            bindings = <&mt_fl_sa 0 0>, <&mt_fl_za 0 0>;
             mods = <(MOD_LALT)>;
         };
         morph_ta: morph_ta {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_ta T 0>, <&mt_fl_da D 0>;
+            bindings = <&mt_fl_ta 0 0>, <&mt_fl_da 0 0>;
             mods = <(MOD_LALT)>;
         };
         morph_ha: morph_ha {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_ha H 0>, <&mt_fl_ba B 0>;
+            bindings = <&mt_fl_ha 0 0>, <&mt_fl_ba 0 0>;
             mods = <(MOD_LALT)>;
         };
 
@@ -1284,6 +1447,13 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&ctrl_c>, <&ctrl_x>;
+        };
+
+        td_fl_comma: tap_dance_flick_comma {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <500>;
+            bindings = <&kp COMMA>, <&kp PERIOD>, <&kp LS(SLASH)>, <&kp LS(N1)>;
         };
     };
 
@@ -1585,8 +1755,8 @@
             display-name = "JP_FLICK";
 
             // -------------------------------------------------------------------------------------------------------
-            // |      |      |      |      |      |      |      |   |      |      |      |      |      | BOOT | RCLK |
-            // |      |      |      |      |      |      |      |   |  BT0 |  BT1 |  BT2 |  BT3 |  BT4 | BCLR | LCLK |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      | RCLK |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      | LCLK |
             // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
             // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
             // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
@@ -1594,12 +1764,12 @@
             // |      |      |      |      |      | lyr4 | RCLK |   |      |      |      |      |      | lyr0 |      |
 
             bindings = <
-&trans  &none  &none  &none  &none  &none     		 &none			&none         &none         &none         &none         &none         &bootloader      &mkp RCLK
-&none   &none  &none  &none  &none  &none     		 &none			&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &td_bt_ad        &mkp LCLK
-&none   &none  &none  &none  &none  &none     		 &none			&none         &none         &morph_ka     &none         &none         &fl_enter	       &none
-&none   &none  &none  &none  &none  &none     		 &none			&none         &none         &none         &none         &none         &none		       &none
-&none   &none  &none  &none  &none  &none     		 &mkp LCLK		&none         &none         &none         &none         &none         &none		   	   &none
-&none   &none  &none  &none  &none  &tog JP_FLICK_L  &mkp RCLK		&none         &none         &none         &none         &none         &tog JP_FLICK_L  &none
+&trans  &none  &none  &none  &none  &none     	  &none			&JP_HANZEN			&mouse_gesture_off  &mouse_gesture_off  &mouse_gesture_off  &morph_end_us  &fl_delete     			   &mkp RCLK
+&none   &none  &none  &none  &none  &none     	  &none			&LALT				&mouse_gesture_off  &mouse_gesture_off  &mc_kakko      		&mt X X        &fl_backspace  			   &mkp LCLK
+&none   &none  &none  &none  &none  &none     	  &none			&mouse_gesture_off  &mt_fl_a 0 A   		&morph_ka      		&morph_sa      		&mc_nn         &lt_fl_enter JIS_FUNCS_L	0  &fl_space
+&none   &none  &none  &none  &none  &none     	  &none			&mouse_gesture_off  &morph_ta      		&mt_fl_na 0 0  		&morph_ha      		&kp UP         &fl_space	  			   &td_fl_comma
+&none   &none  &none  &none  &none  &none     	  &mkp LCLK		&mouse_gesture_off  &mt_fl_ma 0 0  		&mt_fl_ya 0 0  		&mt_fl_ra 0 0  		&kp DOWN       &kp RIGHT   	  			   &mt_fl_wa 0 0
+&none   &none  &none  &none  &none  &tog_flick_l  &mkp RCLK		&none         		&none          		&none          		&none          		&kp F5         &tog_flick_l   			   &kp LEFT
             >;
 
             sensor-bindings =

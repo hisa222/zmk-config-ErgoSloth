@@ -787,6 +787,24 @@
                 <&macro_tap &kp K &kp A &kp K &kp K &kp O &kp SPACE>,
 				<&macro_tap &mouse_gesture_on>;
         };
+        tog_fl_l: toggle_flick_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &tog JP_FLICK_L>,
+				<&macro_tap &mouse_gesture_off>;
+        };
+        sk_fl_ctrl: sticky_flick_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &sk LALT>,
+				<&macro_tap &mouse_gesture_off>;
+        };
     };
 
     /**************************************************************************/
@@ -799,6 +817,22 @@
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             bindings = <&kp>, <&kp>;
+        };
+
+        lt_c: layer_tap_custom {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        mt_m: mod_tap_mouse {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&mkp>, <&kp>;
         };
 
         mt_fl_a: mod_tap_flick_a {
@@ -1162,6 +1196,66 @@
             bindings = <&mt_fl_ha 0 0>, <&mt_fl_ba 0 0>;
             mods = <(MOD_LALT)>;
         };
+        morph_a_1: morph_a_1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt_fl_a 0 A>, <&kp N1>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_ka_2: morph_ka_2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&morph_ka>, <&kp N2>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_sa_3: morph_sa_3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&morph_sa>, <&kp N3>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_ta_4: morph_ta_4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&morph_ta>, <&kp N4>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_na_5: morph_na_5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt_fl_a 0 N>, <&kp N5>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_ha_6: morph_ha_6 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&morph_ha>, <&kp N6>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_ma_7: morph_ma_7 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt_fl_a 0 M>, <&kp N7>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_ya_8: morph_ya_8 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt_fl_a 0 Y>, <&kp N8>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_ra_9: morph_ra_9 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt_fl_a 0 R>, <&kp N9>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        morph_wa_0: morph_wa_0 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt_fl_a 0 W>, <&kp N0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
 
     	alt_p: alt-positive {
         	compatible = "zmk,behavior-mod-morph";
@@ -1455,6 +1549,12 @@
             tapping-term-ms = <500>;
             bindings = <&kp COMMA>, <&kp PERIOD>, <&kp LS(SLASH)>, <&kp LS(N1)>;
         };
+        td_fl_kakko: tap_dance_flick_kakko {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(COMMA)>, <&kp LS(PERIOD)>;
+        };
     };
 
     /**************************************************************************/
@@ -1515,12 +1615,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_jis   &td_f4         &td_f5  		 	 &td_f6     &td_f7     	     		&kp LWIN           &td_f8    	 &morph_f9  &morph_f10  &td_f11          &morph_end_jis   &kp DEL        		 &mkp RCLK
-&kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  	 &morph_7   &morph_8    &morph_9         &morph_0         &kp BACKSPACE  		 &mkp LCLK
-&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &mt_c LALT Y  &kp U      &kp I       &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt JIS_FUNCS_L ENTER  &kp SPACE
-&kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G      	&kp SPACE          &kp H     	 &kp J      &kp K       &kp L            &kp UP           &kp RSHFT      		 &morph_space_jis
-&kp LALT       		 &kp Z             &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B      	&mkp LCLK          &kp N     	 &kp M      &td_sc      &td_co_jis       &kp DOWN         &kp RIGHT      		 &kp RCTRL
-&none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     	 &none      &none       &none            &kp F5           &td_jis_ly     		 &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_jis   &td_f4         &td_f5  		 	 &td_f6     &td_f7     	     		&kp LWIN           &td_f8    	 &morph_f9     &morph_f10    &td_f11          &morph_end_jis   &kp DEL        		  &mkp RCLK
+&kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  	 &morph_7      &morph_8      &morph_9         &morph_0         &kp BACKSPACE  		  &mkp LCLK
+&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &mt_c LALT Y  &kp U    	   &mt_m MCLK I  &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt JIS_FUNCS_L ENTER  &kp SPACE
+&kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G      	&kp SPACE          &kp H     	 &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &kp RSHFT      		  &morph_space_jis
+&kp LALT       		 &kp Z             &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B      	&mkp LCLK          &kp N     	 &kp M         &td_sc        &td_co_jis       &kp DOWN         &kp RIGHT      		  &kp RCTRL
+&none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     	 &none         &none         &none            &kp F5           &td_jis_ly     		  &kp LEFT
             >;
 
             sensor-bindings =
@@ -1639,12 +1739,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr5 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr5 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_us  &td_f4  		&td_f5  	   &td_f6     &td_f7     		 &kp LGUI		&td_f8  	  &morph_f9  &morph_f10  &td_f11       &morph_end_us  &kp DEL		   		&mkp RCLK
-&kp LA(GRAVE)  		 &kp N1    	     &kp N2  		&kp N3  	   &kp N4     &kp N5     		 &kp LCTRL		&kp N6  	  &kp N7  	 &kp N8      &kp N9        &kp N0     	  &kp BACKSPACE  		&mkp LCLK
-&kp TAB        		 &mt_c SQT Q     &kp W          &mt_c EQUAL E  &kp R      &kp T      	     &kp SPACE      &mt_c LALT Y  &kp U   	 &kp I       &mt_c PIPE O  &mt_c PLUS P   &lt US_FUNCS_L ENTER  &kp SPACE
-&kp LSHFT      		 &kp A           &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE      &kp H   	  &kp J   	 &kp K       &kp L         &kp UP         &kp RSHFT      		&morph_space_us
-&kp LALT       		 &kp Z           &kp X          &kp C   	   &kp V      &mt_c BSLH B       &mkp LCLK		&kp N   	  &kp M   	 &kp COMMA   &kp PERIOD    &kp DOWN   	  &kp RIGHT	   		  	&kp RCTRL
-&none  		   		 &none      	   &none   		&none   	   &kp ENTER  &td_us_ly  		 &mkp RCLK		&none  		  &none   	 &none  	 &none  	   &kp F5	      &td_us_ly	   		  	&kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_us  &td_f4  		&td_f5  	   &td_f6     &td_f7     		 &kp LGUI		&td_f8  	  &morph_f9     &morph_f10    &td_f11       &morph_end_us  &kp DEL		   		 &mkp RCLK
+&kp LA(GRAVE)  		 &kp N1    	     &kp N2  		&kp N3  	   &kp N4     &kp N5     		 &kp LCTRL		&kp N6  	  &kp N7  	    &kp N8        &kp N9        &kp N0     	   &kp BACKSPACE  		 &mkp LCLK
+&kp TAB        		 &mt_c SQT Q     &kp W          &mt_c EQUAL E  &kp R      &kp T      	     &kp SPACE      &mt_c LALT Y  &kp U   	    &mt_m MCLK I  &mt_c PIPE O  &mt_c PLUS P   &lt US_FUNCS_L ENTER  &kp SPACE
+&kp LSHFT      		 &kp A           &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE      &kp H   	  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &kp RSHFT      		 &morph_space_us
+&kp LALT       		 &kp Z           &kp X          &kp C   	   &kp V      &mt_c BSLH B       &mkp LCLK		&kp N   	  &kp M   	    &kp COMMA     &kp PERIOD    &kp DOWN   	   &kp RIGHT	   		 &kp RCTRL
+&none  		   		 &none      	   &none   		&none   	   &kp ENTER  &td_us_ly  		 &mkp RCLK		&none  		  &none   	    &none  	 	  &none  	    &kp F5	       &td_us_ly	   		 &kp LEFT
             >;
 
             sensor-bindings =
@@ -1755,21 +1855,20 @@
             display-name = "JP_FLICK";
 
             // -------------------------------------------------------------------------------------------------------
-            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      | RCLK |
-            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      | LCLK |
-            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
-            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
-            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
-            // |      |      |      |      |      |      | LCLK |   |      |      |      |      |      |      |      |
-            // |      |      |      |      |      | lyr4 | RCLK |   |      |      |      |      |      | lyr0 |      |
+            // |      |      |      |      |      |      |      |   |  F8  |  F9  |  F10 |  F11 |  - _ |  DEL | RCLK |
+            // |      |      |      |      |      |      |      |   |  E/J | GOff |  <>  | SMLL |  NN  | BKSP | LCLK |
+            // |      |      |      |      |      |      |      |   |  ALT |   A  |  KA  |  SA  | DkTn | ENTR | SPCE |
+            // |      |      |      |      |      |      |      |   |  Num |  TA  |  NA  |  HA  |   ↑  | SPCE | ,.?! |
+            // |      |      |      |      |      |      | LCLK |   |  Num |  MA  |  YA  |  RA  |   ↓  |   →  |  WA  |
+            // |      |      |      |      |      |  lyr | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  |  lyr |   ←  |
 
             bindings = <
-&trans  &none  &none  &none  &none  &none     	  &none			&td_f8    	 		&morph_f9  			&morph_f10  		&td_f11  &morph_end_us  &fl_delete     			   &mkp RCLK
-&none   &none  &none  &none  &none  &none     	  &none			&kp JP_HANZEN		&mouse_gesture_off  &mouse_gesture_off  &mc_kakko      		&mt X X        &fl_backspace  			   &mkp LCLK
-&none   &none  &none  &none  &none  &none     	  &none			&mt_c LALT 0		&mt_fl_a 0 A   		&morph_ka      		&morph_sa      		&mc_nn         &lt_fl_enter JIS_FUNCS_L	0  &fl_space
-&none   &none  &none  &none  &none  &none     	  &none			&mouse_gesture_off  &morph_ta      		&mt_fl_na 0 0  		&morph_ha      		&kp UP         &fl_space	  			   &td_fl_comma
-&none   &none  &none  &none  &none  &none     	  &mkp LCLK		&mouse_gesture_off  &mt_fl_ma 0 0  		&mt_fl_ya 0 0  		&mt_fl_ra 0 0  		&kp DOWN       &kp RIGHT   	  			   &mt_fl_wa 0 0
-&none   &none  &none  &none  &none  &tog_flick_l  &mkp RCLK		&none         		&none          		&none          		&none          		&kp F5         &tog_flick_l   			   &kp LEFT
+&trans  &none  &none  &none  &none  &none      &none			&td_f8    	   &morph_f9  		   &morph_f10     &td_f11		 &morph_end_jis  &fl_delete     			 &mkp RCLK
+&none   &none  &none  &none  &none  &none      &none			&kp JP_HANZEN  &mouse_gesture_off  &mc_kakko	  &mt X X		 &mc_nn          &fl_backspace  			 &mkp LCLK
+&none   &none  &none  &none  &none  &none      &none			&kp LALT	   &mt_fl_a 0 A   	   &morph_ka      &morph_sa      &sk LALT        &lt_fl_enter JIS_FUNCS_L 0  &fl_space
+&none   &none  &none  &none  &none  &none      &none			&kp RCTRL	   &morph_ta      	   &mt_fl_na 0 0  &morph_ha      &kp UP          &fl_space	  			     &td_fl_comma
+&none   &none  &none  &none  &none  &none      &mkp LCLK		&kp LCTRL	   &mt_fl_ma 0 0  	   &mt_fl_ya 0 0  &mt_fl_ra 0 0  &kp DOWN        &kp RIGHT   	  			 &mt_fl_wa 0 0
+&none   &none  &none  &none  &none  &tog_fl_l  &mkp RCLK		&none          &none          	   &none          &none          &kp F5          &tog_fl_l   			     &kp LEFT
             >;
 
             sensor-bindings =
@@ -1783,7 +1882,6 @@
             // -------------------------------------------------------------------------------------------------------
             // |      |      |      |      |      |      |      |   |      |      |      |      |      | BOOT | RCLK |
             // |      |      |      |      |      |      |      |   |  BT0 |  BT1 |  BT2 |  BT3 |  BT4 | BCLR | LCLK |
-            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
             // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
             // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
             // |      |      |      |      |      |      | LCLK |   |      |      |      |      |      |      |      |

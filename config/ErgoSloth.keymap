@@ -844,7 +844,7 @@
         };
         mt_fl_ka: mod_tap_flick_ka {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <200>;
             bindings = <&mc_ka &fl_ka>;
@@ -907,7 +907,7 @@
         };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
             bindings = <&mc_ga &fl_ga>;
@@ -1175,7 +1175,7 @@
         morph_ka: morph_ka {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_ka 0 0>, <&mt_fl_ga G 0>;
+            bindings = <&mt_fl_ka>, <&mt_fl_ga>;
             mods = <(MOD_LALT)>;
         };
         morph_sa: morph_sa {

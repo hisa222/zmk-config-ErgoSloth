@@ -1764,9 +1764,9 @@
             // |      |      |      |      |      | lyr4 | RCLK |   |      |      |      |      |      | lyr0 |      |
 
             bindings = <
-&trans  &none  &none  &none  &none  &none     	  &none			&kp JP_HANZEN		&mouse_gesture_off  &mouse_gesture_off  &mouse_gesture_off  &morph_end_us  &fl_delete     			   &mkp RCLK
-&none   &none  &none  &none  &none  &none     	  &none			&kp LALT			&mouse_gesture_off  &mouse_gesture_off  &mc_kakko      		&mt X X        &fl_backspace  			   &mkp LCLK
-&none   &none  &none  &none  &none  &none     	  &none			&mouse_gesture_off  &mt_fl_a 0 A   		&morph_ka      		&morph_sa      		&mc_nn         &lt_fl_enter JIS_FUNCS_L	0  &fl_space
+&trans  &none  &none  &none  &none  &none     	  &none			&td_f8    	 		&morph_f9  			&morph_f10  		&td_f11  &morph_end_us  &fl_delete     			   &mkp RCLK
+&none   &none  &none  &none  &none  &none     	  &none			&kp JP_HANZEN		&mouse_gesture_off  &mouse_gesture_off  &mc_kakko      		&mt X X        &fl_backspace  			   &mkp LCLK
+&none   &none  &none  &none  &none  &none     	  &none			&mt_c LALT 0		&mt_fl_a 0 A   		&morph_ka      		&morph_sa      		&mc_nn         &lt_fl_enter JIS_FUNCS_L	0  &fl_space
 &none   &none  &none  &none  &none  &none     	  &none			&mouse_gesture_off  &morph_ta      		&mt_fl_na 0 0  		&morph_ha      		&kp UP         &fl_space	  			   &td_fl_comma
 &none   &none  &none  &none  &none  &none     	  &mkp LCLK		&mouse_gesture_off  &mt_fl_ma 0 0  		&mt_fl_ya 0 0  		&mt_fl_ra 0 0  		&kp DOWN       &kp RIGHT   	  			   &mt_fl_wa 0 0
 &none   &none  &none  &none  &none  &tog_flick_l  &mkp RCLK		&none         		&none          		&none          		&none          		&kp F5         &tog_flick_l   			   &kp LEFT

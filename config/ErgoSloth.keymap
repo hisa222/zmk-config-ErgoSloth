@@ -1205,7 +1205,7 @@
             #binding-cells = <0>;
             bindings = <&mt_fl_a 0 0>, <&kp N1>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
-        };uee
+        };
         morph_ka_2: morph_ka_2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;

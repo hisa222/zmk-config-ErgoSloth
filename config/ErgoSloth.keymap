@@ -908,7 +908,7 @@
             flavor = FLICK_LOGIC;
             tapping-term-ms = <400>;
             bindings = <&mc_wa &fl_wa>;
-        };euo
+        };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;

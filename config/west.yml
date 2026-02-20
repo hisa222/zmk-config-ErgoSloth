@@ -47,11 +47,8 @@ manifest:
       remote: badjeff
       revision: main
       #https://github.com/kot149/zmk-mouse-gesture
-#    - name: zmk-mouse-gesture
-#      remote: kot149
-#      revision: v1
     - name: zmk-mouse-gesture
-      remote: hisa222
+      remote: kot149
       revision: v1
   self:
     path: config

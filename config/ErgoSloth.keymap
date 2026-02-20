@@ -94,7 +94,7 @@
 };
 
 &zip_mouse_gesture {
-    stroke-size = <100>; // Optional (default: 200)
+    stroke-size = <20>; // Optional (default: 200)
     enable-eager-mode; // Optional, but recommended
 
     gesture_r {
@@ -513,7 +513,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp K>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_sa: flick_sa {
@@ -523,7 +523,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp S>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_ta: flick_ta {
@@ -533,7 +533,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp T>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_na: flick_na {
@@ -543,7 +543,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp N>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_ha: flick_ha {
@@ -553,7 +553,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp H>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_ma: flick_ma {
@@ -563,7 +563,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp M>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_ya: flick_ya {
@@ -573,7 +573,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp Y>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_ra: flick_ra {
@@ -583,7 +583,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp R>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_wa: flick_wa {
@@ -593,7 +593,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp W>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
         fl_ga: flick_ga {
@@ -651,7 +651,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp ENTER>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &mouse_gesture_off>;
         };
         fl_space: flick_space {
@@ -661,7 +661,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp SPACE>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &mouse_gesture_off>;
         };
         fl_delete: flick_delete {
@@ -671,7 +671,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp DELETE>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &mouse_gesture_off>;
         };
         fl_backspace: flick_backspace {
@@ -681,7 +681,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp BACKSPACE>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 40>,
                 <&macro_tap &mouse_gesture_off>;
         };
         mc_ka: macro_ka {
@@ -879,98 +879,98 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mouse_gesture_on &kp>;
         };
         mt_fl_ka: mod_tap_flick_ka {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_ka &fl_ka>;
         };
         mt_fl_sa: mod_tap_flick_sa {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_sa &fl_sa>;
         };
         mt_fl_ta: mod_tap_flick_ta {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_ta &fl_ta>;
         };
         mt_fl_na: mod_tap_flick_na {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_na &fl_na>;
         };
         mt_fl_ha: mod_tap_flick_ha {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_ha &fl_ha>;
         };
         mt_fl_ma: mod_tap_flick_ma {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_ma &fl_ma>;
         };
         mt_fl_ya: mod_tap_flick_ya {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_ya &fl_ya>;
         };
         mt_fl_ra: mod_tap_flick_ra {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_ra &fl_ra>;
         };
         mt_fl_wa: mod_tap_flick_wa {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_wa &fl_wa>;
         };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_ga &fl_ga>;
         };
         mt_fl_za: mod_tap_flick_za {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_za &fl_za>;
         };
         mt_fl_da: mod_tap_flick_da {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_da &fl_da>;
         };
         mt_fl_ba: mod_tap_flick_ba {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mc_ba &fl_ba>;
         };
         lt_fl_enter: layer_tap_flick_enter {

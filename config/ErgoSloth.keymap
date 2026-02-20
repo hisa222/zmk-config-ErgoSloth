@@ -602,7 +602,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&macro_tap &kt LSHFT>,
+                <&macro_tap &kt_off LSHFT>,
 				<&macro_wait_time 50>,
                 <&macro_tap &kp G>,
 				<&macro_wait_time 50>,
@@ -614,7 +614,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&macro_tap &kt LSHFT>,
+                <&macro_tap &kt_off LSHFT>,
 				<&macro_wait_time 50>,
                 <&macro_tap &kp Z>,
 				<&macro_wait_time 50>,
@@ -626,7 +626,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&macro_tap &kt LSHFT>,
+                <&macro_tap &kt_off LSHFT>,
 				<&macro_wait_time 50>,
                 <&macro_tap &kp D>,
 				<&macro_wait_time 50>,
@@ -638,7 +638,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&macro_tap &kt LSHFT>,
+                <&macro_tap &kt_off LSHFT>,
 				<&macro_wait_time 50>,
                 <&macro_tap &kp B>,
 				<&macro_wait_time 50>,
@@ -771,7 +771,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&macro_tap &kt LSHFT>,
+                <&macro_tap &kt_off LSHFT>,
 				<&macro_wait_time 50>,
                 <&macro_tap &kp G>,
 				<&macro_tap &mouse_gesture_on>;
@@ -782,7 +782,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&macro_tap &kt LSHFT>,
+                <&macro_tap &kt_off LSHFT>,
 				<&macro_wait_time 50>,
                 <&macro_tap &kp Z>,
 				<&macro_tap &mouse_gesture_on>;
@@ -793,7 +793,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&macro_tap &kt LSHFT>,
+                <&macro_tap &kt_off LSHFT>,
 				<&macro_wait_time 50>,
                 <&macro_tap &kp D>,
 				<&macro_tap &mouse_gesture_on>;
@@ -804,7 +804,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
-                <&macro_tap &kt LSHFT>,
+                <&macro_tap &kt_off LSHFT>,
 				<&macro_wait_time 50>,
                 <&macro_tap &kp B>,
 				<&macro_tap &mouse_gesture_on>;
@@ -850,6 +850,13 @@
     /**************************************************************************/
 
     behaviors {
+        kt_off: key_toggle_off_only {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle Off";
+            toggle-mode = "off";
+        };
+
 // hold_tap
         mt_c: mod_tap_custom {
             compatible = "zmk,behavior-hold-tap";

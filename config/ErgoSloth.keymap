@@ -167,28 +167,30 @@
     };
 
     &analog_joystick_left_listener {
-/*
         arrow-prevent-move {
-            layers = <1>;
+            layers = <JIS_FUNCS_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-
+/*
         scroll {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
+            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
-*/
-/*
+
         nothing {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
+            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 */
 		snipe {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
+			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 50>;
 		};
 
+		flicker {
+			layers = <JP_FLICK_L>;
+			input-processors = <&zip_mouse_gesture>;
+		};
     };
 
 &sk {
@@ -235,7 +237,13 @@
             bindings = <&to US_L>;
         };
 
-        tog_flick_layer {
+        tog_flick_layer_l {
+            timeout-ms = <200>;
+            key-positions = <16 17 18 19>;
+            bindings = <&tog JP_FLICK_L>;
+        };
+
+        tog_flick_layer_r {
             timeout-ms = <200>;
             key-positions = <21 22 23 24>;
             bindings = <&tog JP_FLICK_L>;
@@ -269,6 +277,18 @@
             timeout-ms = <50>;
             key-positions = <53 83>;
             bindings = <&ctrl_shift_tab>;
+        };
+
+        ctrl_t {
+            timeout-ms = <50>;
+            key-positions = <53 66>;
+            bindings = <&ctrl_t>;
+        };
+
+        ctrl_w {
+            timeout-ms = <50>;
+            key-positions = <65 66>;
+            bindings = <&ctrl_w>;
         };
 
         f5 {
@@ -506,6 +526,28 @@
             bindings =
                 <&macro_press &kp LCTRL>,
                 <&macro_tap &kp Y>,
+                <&macro_release &kp LCTRL>;
+        };
+
+        ctrl_t: ctrl_t {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp T>,
+                <&macro_release &kp LCTRL>;
+        };
+
+        ctrl_w: ctrl_w {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp W>,
                 <&macro_release &kp LCTRL>;
         };
 
@@ -1905,20 +1947,20 @@
             display-name = "JP_FLICK";
 
             // -------------------------------------------------------------------------------------------------------
-            // |      |      |      |      |      |      |      |   |  F8  |  F9  |  F10 |  F11 |  - _ |  DEL | RCLK |
-            // |      |      |      |      |      |      |      |   |  E/J | GOff |  <>  | SMLL |  NN  | BKSP | LCLK |
-            // |      |      |      |      |      |      |      |   |  ALT |   A  |  KA  |  SA  | DkTn | ENTR | SPCE |
-            // |      |      |      |      |      |      |      |   |  Num |  TA  |  NA  |  HA  |   ↑  | SPCE | ,.?! |
-            // |      |      |      |      |      |      | LCLK |   |  Num |  MA  |  YA  |  RA  |   ↓  |   →  |  WA  |
-            // |      |      |      |      |      |  lyr | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  |  lyr |   ←  |
+            // |  ESC |  DEL |  F4  |  F5  |  F6  |  F7  | ,.?! |   |  F8  |  F9  |  F10 |  F11 |  - _ |  DEL | RCLK |
+            // |  E/J | BKSP | GOff |  <>  | SMLL |  NN  |  WA  |   |  E/J | GOff |  <>  | SMLL |  NN  | BKSP | LCLK |
+            // |  TAB | ENTR |   A  |  KA  |  SA  | DkTn | SPCE |   |  ALT |   A  |  KA  |  SA  | DkTn | ENTR | SPCE |
+            // | SHFT | SPCE |  TA  |  NA  |  HA  |   -  | SPCE |   |  Num |  TA  |  NA  |  HA  |   ↑  | SPCE | ,.?! |
+            // |  ALT |  Num |  MA  |  YA  |  RA  |  Num | LCLK |   |  Num |  MA  |  YA  |  RA  |   ↓  |   →  |  WA  |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR |  lyr | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  |  lyr |   ←  |
 
             bindings = <
-&trans  &none  &none  &none  &none  &none      &none			&td_f8    	   &morph_f9  		  	  &morph_f10    &td_f11		 &morph_end_jis  &fl_delete     			 &mkp RCLK
-&none   &none  &none  &none  &none  &none      &none			&kp JP_HANZEN  &mouse_gesture_off  	  &td_fl_kakko	&mt X X		 &mc_nn          &kp BACKSPACE  			 &mkp LCLK
-&none   &none  &none  &none  &none  &none      &none			&kp LALT	   &morph_a_1   	   	  &morph_ka_2   &morph_sa_3  &kt LSHFT       &lt_fl_enter JIS_FUNCS_L 0  &fl_space
-&none   &none  &none  &none  &none  &none      &none			&kp RCTRL	   &morph_ta_4     	   	  &morph_na_5   &morph_ha_6  &kp UP          &fl_space	  			     &td_fl_comma
-&none   &none  &none  &none  &none  &none      &mkp LCLK		&kp LCTRL	   &morph_ma_7  	   	  &morph_ya_8   &morph_ra_9	 &kp DOWN        &kp RIGHT   	  			 &morph_wa_0
-&none   &none  &none  &none  &none  &tog_fl_l  &mkp RCLK		&none          &none          	   	  &none         &none        &kp F5          &tog_fl_l   			     &kp LEFT
+&kp ESC    	   &fl_delete  				   &td_f4  	  		   &td_f5  	   	 &td_f6       &td_f7     &td_fl_comma	&td_f8    	   &morph_f9  		   &morph_f10    &td_f11	  &morph_end_jis  &fl_delete     			  &mkp RCLK
+&kp JP_HANZEN  &kp BACKSPACE  			   &mouse_gesture_off  &td_fl_kakko	 &mt X X	  &mc_nn  	 &morph_wa_0	&kp JP_HANZEN  &mouse_gesture_off  &td_fl_kakko	 &mt X X	  &mc_nn          &kp BACKSPACE  			  &mkp LCLK
+&kp TAB        &lt_fl_enter JIS_FUNCS_L 0  &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT  &fl_space	    &kp LALT	   &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT       &lt_fl_enter JIS_FUNCS_L 0  &fl_space
+&kp LSHFT      &fl_space  				   &morph_ta_4  	   &morph_na_5   &morph_ha_6  &kp MINUS  &fl_space		&kp RCTRL	   &morph_ta_4     	   &morph_na_5   &morph_ha_6  &kp UP          &fl_space	  			      &td_fl_comma
+&kp LALT       &kp LCTRL  				   &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp RCTRL  &mkp LCLK		&kp LCTRL	   &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp DOWN        &kp RIGHT   	  			  &morph_wa_0
+&none	       &none  	 				   &none	 	  	   &none	 	 &kp ENTER    &tog_fl_l  &mkp RCLK		&none          &none          	   &none         &none        &kp F5          &tog_fl_l   			      &kp LEFT
             >;
 
             sensor-bindings =

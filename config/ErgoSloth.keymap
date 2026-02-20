@@ -254,6 +254,24 @@
             bindings = <&alt_right>;
         };
 
+        ctrl_tab {
+            timeout-ms = <50>;
+            key-positions = <53 68>;
+            bindings = <&ctrl_tab>;
+        };
+
+        ctrl_shift_tab {
+            timeout-ms = <50>;
+            key-positions = <53 83>;
+            bindings = <&ctrl_shift_tab>;
+        };
+
+        f5 {
+            timeout-ms = <50>;
+            key-positions = <53 67>;
+            bindings = <&kp F5>;
+        };
+
         encoder_R_up {
             layers = <JIS_L>;
             timeout-ms = <50>;

@@ -189,7 +189,7 @@
     };
 
 &sk {
-    lazy;
+    // lazy;
 	release-after-ms = <5000>;
 	quick-release;
 };
@@ -1905,7 +1905,7 @@
             bindings = <
 &trans  &none  &none  &none  &none  &none      &none			&td_f8    	   &morph_f9  		  	  &morph_f10   &td_f11		 &morph_end_jis  &fl_delete     			 &mkp RCLK
 &none   &none  &none  &none  &none  &none      &none			&kp JP_HANZEN  &mouse_gesture_toggle  &mc_kakko	   &mt X X		 &mc_nn          &kp BACKSPACE  			 &mkp LCLK
-&none   &none  &none  &none  &none  &none      &none			&kp LALT	   &morph_a_1   	   	  &morph_ka_2  &morph_sa_3   &kt LALT        &lt_fl_enter JIS_FUNCS_L 0  &fl_space
+&none   &none  &none  &none  &none  &none      &none			&kp LALT	   &morph_a_1   	   	  &morph_ka_2  &morph_sa_3   &sk LALT        &lt_fl_enter JIS_FUNCS_L 0  &fl_space
 &none   &none  &none  &none  &none  &none      &none			&kp RCTRL	   &morph_ta_4     	   	  &morph_na_5  &morph_ha_6   &kp UP          &fl_space	  			     &td_fl_comma
 &none   &none  &none  &none  &none  &none      &mkp LCLK		&kp LCTRL	   &morph_ma_7  	   	  &morph_ya_8  &morph_ra_9	 &kp DOWN        &kp RIGHT   	  			 &morph_wa_0
 &none   &none  &none  &none  &none  &tog_fl_l  &mkp RCLK		&none          &none          	   	  &none        &none         &kp F5          &tog_fl_l   			     &kp LEFT

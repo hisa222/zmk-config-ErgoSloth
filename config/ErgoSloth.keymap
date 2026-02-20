@@ -190,6 +190,7 @@
 
 &sk {
     lazy;
+	quick-release;
 };
 
 / {
@@ -861,7 +862,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mouse_gesture_on &kp>;
         };
         mt_fl_ka: mod_tap_flick_ka {
@@ -875,84 +876,84 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_sa &fl_sa>;
         };
         mt_fl_ta: mod_tap_flick_ta {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_ta &fl_ta>;
         };
         mt_fl_na: mod_tap_flick_na {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_na &fl_na>;
         };
         mt_fl_ha: mod_tap_flick_ha {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_ha &fl_ha>;
         };
         mt_fl_ma: mod_tap_flick_ma {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_ma &fl_ma>;
         };
         mt_fl_ya: mod_tap_flick_ya {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_ya &fl_ya>;
         };
         mt_fl_ra: mod_tap_flick_ra {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_ra &fl_ra>;
         };
         mt_fl_wa: mod_tap_flick_wa {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_wa &fl_wa>;
         };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_ga &fl_ga>;
         };
         mt_fl_za: mod_tap_flick_za {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_za &fl_za>;
         };
         mt_fl_da: mod_tap_flick_da {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_da &fl_da>;
         };
         mt_fl_ba: mod_tap_flick_ba {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = FLICK_LOGIC;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             bindings = <&mc_ba &fl_ba>;
         };
         lt_fl_enter: layer_tap_flick_enter {
@@ -1221,7 +1222,7 @@
         morph_a_1: morph_a_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 0>, <&kp N1>;
+            bindings = <&mt_fl_a 0 A>, <&kp N1>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ka_2: morph_ka_2 {
@@ -1245,7 +1246,7 @@
         morph_na_5: morph_na_5 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 0>, <&kp N5>;
+            bindings = <&mt_fl_na 0 0>, <&kp N5>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ha_6: morph_ha_6 {
@@ -1257,25 +1258,25 @@
         morph_ma_7: morph_ma_7 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 0>, <&kp N7>;
+            bindings = <&mt_fl_ma 0 0>, <&kp N7>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ya_8: morph_ya_8 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 0>, <&kp N8>;
+            bindings = <&mt_fl_ya 0 0>, <&kp N8>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ra_9: morph_ra_9 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 0>, <&kp N9>;
+            bindings = <&mt_fl_ra 0 0>, <&kp N9>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_wa_0: morph_wa_0 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 0>, <&kp N0>;
+            bindings = <&mt_fl_wa 0 0>, <&kp N0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 

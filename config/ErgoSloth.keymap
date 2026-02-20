@@ -601,8 +601,10 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
+                <&macro_tap &kp 1>, // dummy
+				<&macro_wait_time 50>,
                 <&macro_tap &kp G>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 50>,
                 <&macro_tap &kp A>;
         };
         fl_za: flick_za {
@@ -611,8 +613,10 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
+                <&macro_tap &kp 1>, // dummy
+				<&macro_wait_time 50>,
                 <&macro_tap &kp Z>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 50>,
                 <&macro_tap &kp A>;
         };
         fl_da: flick_da {
@@ -621,8 +625,10 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
+                <&macro_tap &kp 1>, // dummy
+				<&macro_wait_time 50>,
                 <&macro_tap &kp D>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 50>,
                 <&macro_tap &kp A>;
         };
         fl_ba: flick_ba {
@@ -631,8 +637,10 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
+                <&macro_tap &kp 1>, // dummy
+				<&macro_wait_time 50>,
                 <&macro_tap &kp B>,
-				<&macro_wait_time 100>,
+				<&macro_wait_time 50>,
                 <&macro_tap &kp A>;
         };
         fl_enter: flick_enter {
@@ -643,7 +651,7 @@
             bindings =
                 <&macro_tap &kp ENTER>,
 				<&macro_wait_time 100>,
-                <&macro_tap &mouse_gesture_off>;
+                <&macro_tap &mouse_gesture_toggle>;
         };
         fl_space: flick_space {
             compatible = "zmk,behavior-macro";
@@ -653,7 +661,7 @@
             bindings =
                 <&macro_tap &kp SPACE>,
 				<&macro_wait_time 100>,
-                <&macro_tap &mouse_gesture_off>;
+                <&macro_tap &mouse_gesture_toggle>;
         };
         fl_delete: flick_delete {
             compatible = "zmk,behavior-macro";
@@ -663,7 +671,7 @@
             bindings =
                 <&macro_tap &kp DELETE>,
 				<&macro_wait_time 100>,
-                <&macro_tap &mouse_gesture_off>;
+                <&macro_tap &mouse_gesture_toggle>;
         };
         fl_backspace: flick_backspace {
             compatible = "zmk,behavior-macro";
@@ -673,7 +681,7 @@
             bindings =
                 <&macro_tap &kp BACKSPACE>,
 				<&macro_wait_time 100>,
-                <&macro_tap &mouse_gesture_off>;
+                <&macro_tap &mouse_gesture_toggle>;
         };
         mc_ka: macro_ka {
             compatible = "zmk,behavior-macro";
@@ -762,6 +770,8 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
+                <&macro_tap &kp 1>, // dummy
+				<&macro_wait_time 50>,
                 <&macro_tap &kp G>,
 				<&macro_tap &mouse_gesture_on>;
         };
@@ -771,6 +781,8 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
+                <&macro_tap &kp 1>, // dummy
+				<&macro_wait_time 50>,
                 <&macro_tap &kp Z>,
 				<&macro_tap &mouse_gesture_on>;
         };
@@ -780,6 +792,8 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
+                <&macro_tap &kp 1>, // dummy
+				<&macro_wait_time 50>,
                 <&macro_tap &kp D>,
 				<&macro_tap &mouse_gesture_on>;
         };
@@ -789,6 +803,8 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings =
+                <&macro_tap &kp 1>, // dummy
+				<&macro_wait_time 50>,
                 <&macro_tap &kp B>,
 				<&macro_tap &mouse_gesture_on>;
         };
@@ -817,7 +833,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &tog JP_FLICK_L>,
-				<&macro_tap &mouse_gesture_off>;
+				<&macro_tap &mouse_gesture_toggle>;
         };
         sk_fl_ctrl: sticky_flick_control {
             compatible = "zmk,behavior-macro";
@@ -826,7 +842,7 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &sk LALT>,
-				<&macro_tap &mouse_gesture_off>;
+				<&macro_tap &mouse_gesture_toggle>;
         };
     };
 
@@ -1886,12 +1902,12 @@
             // |      |      |      |      |      |  lyr | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  |  lyr |   ←  |
 
             bindings = <
-&trans  &none  &none  &none  &none  &none      &none			&td_f8    	   &morph_f9  		   &morph_f10     &td_f11		 &morph_end_jis  &fl_delete     			 &mkp RCLK
-&none   &none  &none  &none  &none  &none      &none			&kp JP_HANZEN  &mouse_gesture_off  &mc_kakko	  &mt X X		 &mc_nn          &kp BACKSPACE  			 &mkp LCLK
-&none   &none  &none  &none  &none  &none      &none			&kp LALT	   &morph_a_1   	   &morph_ka_2    &morph_sa_3    &sk LALT        &lt_fl_enter JIS_FUNCS_L 0  &fl_space
-&none   &none  &none  &none  &none  &none      &none			&kp RCTRL	   &morph_ta_4     	   &morph_na_5	  &morph_ha_6    &kp UP          &fl_space	  			     &td_fl_comma
-&none   &none  &none  &none  &none  &none      &mkp LCLK		&kp LCTRL	   &morph_ma_7  	   &morph_ya_8	  &morph_ra_9	 &kp DOWN        &kp RIGHT   	  			 &morph_wa_0
-&none   &none  &none  &none  &none  &tog_fl_l  &mkp RCLK		&none          &none          	   &none          &none          &kp F5          &tog_fl_l   			     &kp LEFT
+&trans  &none  &none  &none  &none  &none      &none			&td_f8    	   &morph_f9  		  	  &morph_f10   &td_f11		 &morph_end_jis  &fl_delete     			 &mkp RCLK
+&none   &none  &none  &none  &none  &none      &none			&kp JP_HANZEN  &mouse_gesture_toggle  &mc_kakko	   &mt X X		 &mc_nn          &kp BACKSPACE  			 &mkp LCLK
+&none   &none  &none  &none  &none  &none      &none			&kp LALT	   &morph_a_1   	   	  &morph_ka_2  &morph_sa_3   &sk LALT        &lt_fl_enter JIS_FUNCS_L 0  &fl_space
+&none   &none  &none  &none  &none  &none      &none			&kp RCTRL	   &morph_ta_4     	   	  &morph_na_5  &morph_ha_6   &kp UP          &fl_space	  			     &td_fl_comma
+&none   &none  &none  &none  &none  &none      &mkp LCLK		&kp LCTRL	   &morph_ma_7  	   	  &morph_ya_8  &morph_ra_9	 &kp DOWN        &kp RIGHT   	  			 &morph_wa_0
+&none   &none  &none  &none  &none  &tog_fl_l  &mkp RCLK		&none          &none          	   	  &none        &none         &kp F5          &tog_fl_l   			     &kp LEFT
             >;
 
             sensor-bindings =

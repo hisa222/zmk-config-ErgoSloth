@@ -234,6 +234,8 @@
 
 
     combos {
+		compatible = "zmk,combos";
+
         to_jis_layer {
             timeout-ms = <200>;
             key-positions = <7 8 9 10>;

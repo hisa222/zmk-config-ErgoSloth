@@ -141,12 +141,12 @@
 // joysticks
     &analog_joystick_right_listener {
 /*
-        arrow-prevent-move {
+        arrow-prevent-move_r {
             layers = <1>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 */
-        scroll {
+        scroll_r {
             layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
@@ -154,12 +154,12 @@
         	>;
         };
 /*
-        nothing {
+        nothing_r {
             layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 
-		snipe {
+		snipe_r {
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 4>;
 		};
@@ -168,27 +168,27 @@
 
     &analog_joystick_left_listener {
 /*
-        arrow-prevent-move {
+        arrow-prevent-move_l {
             layers = <JIS_FUNCS_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 
-        scroll {
+        scroll_l {
             layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
 
-        nothing {
+        nothing_l {
             layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 */
-		snipe {
+		snipe_l {
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 50>;
 		};
 
-    	scroller {
+    	scroller_l {
         	layers = <JIS_FUNCS_L US_FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
@@ -196,7 +196,7 @@
         	>;
     	};
 
-		flicker {
+		flicker_l {
 			layers = <JP_FLICK_L>;
 			input-processors = <&zip_mouse_gesture>;
 		};

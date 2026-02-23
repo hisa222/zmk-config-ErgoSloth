@@ -192,7 +192,7 @@
         	layers = <JIS_FUNCS_L US_FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
-				&zip_scroll_snap
+				&zip_scroll_scaler 1 3000
         	>;
     	};
 

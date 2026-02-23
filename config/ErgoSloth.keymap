@@ -182,7 +182,7 @@
             layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-*/
+
 		snipe_l {
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 50>;
@@ -195,7 +195,7 @@
 				&zip_scroll_scaler 1 3000
         	>;
     	};
-
+*/
 		flicker_l {
 			layers = <JP_FLICK_L>;
 			input-processors = <&zip_mouse_gesture>;

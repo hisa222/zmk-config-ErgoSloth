@@ -167,11 +167,12 @@
     };
 
     &analog_joystick_left_listener {
+/*
         arrow-prevent-move {
             layers = <JIS_FUNCS_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-/*
+
         scroll {
             layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
             input-processors = <&zip_xy_to_scroll_mapper>;
@@ -183,9 +184,17 @@
         };
 */
 		snipe {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
+			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 50>;
 		};
+
+    	scroller {
+        	layers = <JIS_FUNCS_L US_FUNCS_L>;
+        	input-processors = <
+            	&zip_xy_to_scroll_mapper
+				&zip_scroll_snap
+        	>;
+    	};
 
 		flicker {
 			layers = <JP_FLICK_L>;
@@ -247,6 +256,18 @@
             timeout-ms = <200>;
             key-positions = <21 22 23 24>;
             bindings = <&tog JP_FLICK_L>;
+        };
+
+        tog_jis_simple_layer {
+            timeout-ms = <200>;
+            key-positions = <35 36 37 38>;
+            bindings = <&tog JIS_SIMPLE_L>;
+        };
+
+        tog_us_simple_layer {
+            timeout-ms = <200>;
+            key-positions = <30 31 32 33>;
+            bindings = <&tog US_SIMPLE_L>;
         };
 
         to_extra_layer {
@@ -1707,12 +1728,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_jis   &td_f4         &td_f5  		 	 &td_f6     &td_f7     	     		&kp LWIN           &td_f8    	 &morph_f9     &morph_f10    &td_f11          &morph_end_jis   &kp DEL        		  &mkp RCLK
-&kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	     		&kp LCTRL          &morph_6  	 &morph_7      &morph_8      &morph_9         &morph_0         &kp BACKSPACE  		  &mkp LCLK
-&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	     		&kp SPACE          &mt_c LALT Y  &kp U    	   &mt_m MCLK I  &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt JIS_FUNCS_L ENTER  &kp SPACE
-&kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G      	&kp SPACE          &kp H     	 &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &kp RSHFT      		  &morph_space_jis
-&kp LALT       		 &kp Z             &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B      	&mkp LCLK          &kp N     	 &kp M         &td_sc        &td_co_jis       &kp DOWN         &kp RIGHT      		  &kp RCTRL
-&none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly          	&mkp RCLK          &none     	 &none         &none         &none            &kp F5           &td_jis_ly     		  &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_jis   	  &td_f4         &td_f5  		 	&td_f6     &td_f7     	      &kp LWIN           &td_f8    	   &morph_f9     &morph_f10    &td_f11          &morph_end_jis   &kp DEL        		&mkp RCLK
+&kp JP_HANZEN  		 &kp N1            	  &morph_2       &kp N3  		 	&kp N4     &kp N5     	      &kp LCTRL          &morph_6  	   &morph_7      &morph_8      &morph_9         &morph_0         &kp BACKSPACE  		&mkp LCLK
+&kp TAB    	   		 &mt_c JP_QUOTE Q  	  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	      &kp SPACE          &mt_c LALT Y  &kp U    	 &mt_m MCLK I  &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt JIS_FUNCS_L ENTER  &kp SPACE
+&kp LSHFT      		 &kp A             	  &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G  &kp SPACE          &kp H     	   &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &kp RSHFT      		&morph_space_jis
+&kp LALT       		 &lt_c JIS_FUNCS_L Z  &kp X          &kp C   		 	&kp V      &mt_c JP_YEN B     &mkp LCLK          &kp N     	   &kp M         &td_sc        &td_co_jis       &kp DOWN         &kp RIGHT      		&kp RCTRL
+&none          		 &none             	  &none          &none   		 	&kp ENTER  &td_jis_ly         &mkp RCLK          &none     	   &none         &none         &none            &kp F5           &td_jis_ly     		&kp LEFT
             >;
 
             sensor-bindings =
@@ -1778,7 +1799,7 @@
             // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
             // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT | SPCE |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR | SPCE |
             // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG | SPCE |   | CtrH | CtrJ | CtrK | CtrL | Copy | RSft | SPCE |
-            // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB | LCLK |   | CtrN | CtrM |   ,  |   .  | Past | Forw | RCtr |
+            // | LAlt |      | CtrX | CtrC | CtrV | CtrB | LCLK |   | CtrN | CtrM |   ,  |   .  | Past | Forw | RCtr |
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 
             bindings = <
@@ -1786,7 +1807,7 @@
 &kp JP_HANZEN  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7         &kp N8     &kp N9      &kp N0     &kp BACKSPACE  &mkp LCLK
 &kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)      &kp LC(I)  &kp LC(O)   &kp LC(P)  &trans		   &kp SPACE
 &kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &td_cp_tr  &kp RSHFT	   &kp SPACE
-&kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &ctrl_v    &ctrl_y		   &kp RCTRL
+&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &ctrl_v    &ctrl_y		   &kp RCTRL
 &none  		   &none      &none      &none      &kp ENTER  &to JIS_L  &mkp RCLK		&none  	   &none          &none  	 &none  	 &kp F5	    &to JIS_L	   &ctrl_z
             >;
 
@@ -1831,12 +1852,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr5 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr5 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_us  &td_f4  		&td_f5  	   &td_f6     &td_f7     		 &kp LGUI		&td_f8  	  &morph_f9     &morph_f10    &td_f11       &morph_end_us  &kp DEL		   		 &mkp RCLK
-&kp LA(GRAVE)  		 &kp N1    	     &kp N2  		&kp N3  	   &kp N4     &kp N5     		 &kp LCTRL		&kp N6  	  &kp N7  	    &kp N8        &kp N9        &kp N0     	   &kp BACKSPACE  		 &mkp LCLK
-&kp TAB        		 &mt_c SQT Q     &kp W          &mt_c EQUAL E  &kp R      &kp T      	     &kp SPACE      &mt_c LALT Y  &kp U   	    &mt_m MCLK I  &mt_c PIPE O  &mt_c PLUS P   &lt US_FUNCS_L ENTER  &kp SPACE
-&kp LSHFT      		 &kp A           &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE      &kp H   	  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &kp RSHFT      		 &morph_space_us
-&kp LALT       		 &kp Z           &kp X          &kp C   	   &kp V      &mt_c BSLH B       &mkp LCLK		&kp N   	  &kp M   	    &kp COMMA     &kp PERIOD    &kp DOWN   	   &kp RIGHT	   		 &kp RCTRL
-&none  		   		 &none      	   &none   		&none   	   &kp ENTER  &td_us_ly  		 &mkp RCLK		&none  		  &none   	    &none  	 	  &none  	    &kp F5	       &td_us_ly	   		 &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_us  	 &td_f4  		&td_f5  	   &td_f6     &td_f7     		 &kp LGUI		&td_f8  	  &morph_f9     &morph_f10    &td_f11       &morph_end_us  &kp DEL		   		 &mkp RCLK
+&kp LA(GRAVE)  		 &kp N1    	     	 &kp N2  		&kp N3  	   &kp N4     &kp N5     		 &kp LCTRL		&kp N6  	  &kp N7  	    &kp N8        &kp N9        &kp N0     	   &kp BACKSPACE  		 &mkp LCLK
+&kp TAB        		 &mt_c SQT Q     	 &kp W          &mt_c EQUAL E  &kp R      &kp T      	     &kp SPACE      &mt_c LALT Y  &kp U   	    &mt_m MCLK I  &mt_c PIPE O  &mt_c PLUS P   &lt US_FUNCS_L ENTER  &kp SPACE
+&kp LSHFT      		 &kp A           	 &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE      &kp H   	  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &kp RSHFT      		 &morph_space_us
+&kp LALT       		 &lt_c US_FUNCS_L Z  &kp X          &kp C   	   &kp V      &mt_c BSLH B       &mkp LCLK		&kp N   	  &kp M   	    &kp COMMA     &kp PERIOD    &kp DOWN   	   &kp RIGHT	   		 &kp RCTRL
+&none  		   		 &none      	   	 &none   		&none   	   &kp ENTER  &td_us_ly  		 &mkp RCLK		&none  		  &none   	    &none  	 	  &none  	    &kp F5	       &td_us_ly	   		 &kp LEFT
             >;
 
             sensor-bindings =
@@ -1902,7 +1923,7 @@
             // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
             // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT | SPCE |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR | SPCE |
             // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG | SPCE |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft | SPCE |
-            // | LAlt | CtrZ | CtrX | CtrC | CtrV | CtrB | LCLK |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  | RCtr |
+            // | LAlt |      | CtrX | CtrC | CtrV | CtrB | LCLK |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  | RCtr |
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr4 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr4 |   ←  |
 
             bindings = <
@@ -1910,7 +1931,7 @@
 &kp LA(GRAVE)  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL  		&kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE  &mkp LCLK
 &kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE  		&kp LC(Y)  &kp LC(U)        &kp LC(I)      &kp LC(O)    &kp LC(P)  &trans		  &kp SPACE
 &kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &kp SPACE  		&kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &td_cp_tr  &kp RSHFT	  &kp SPACE
-&kp LALT       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &ctrl_v    &ctrl_y		  &kp RCTRL
+&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp LCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &ctrl_v    &ctrl_y		  &kp RCTRL
 &none  		   &none	  &none  	 &none      &kp ENTER  &to US_L   &mkp RCLK  		&none	   &none		    &none	       &none	    &kp F5     &to US_L		  &ctrl_z
             >;
 
@@ -1949,17 +1970,17 @@
             // -------------------------------------------------------------------------------------------------------
             // |  ESC |  DEL |  F4  |  F5  |  F6  |  F7  | ,.?! |   |  F8  |  F9  |  F10 |  F11 |  - _ |  DEL | RCLK |
             // |  E/J | BKSP | GOff |  <>  | SMLL |  NN  |  WA  |   |  E/J | GOff |  <>  | SMLL |  NN  | BKSP | LCLK |
-            // |  TAB | ENTR |   A  |  KA  |  SA  | DkTn | SPCE |   |  ALT |   A  |  KA  |  SA  | DkTn | ENTR | SPCE |
+            // |  TAB |  Num |   A  |  KA  |  SA  | DkTn | SPCE |   |  ALT |   A  |  KA  |  SA  | DkTn | ENTR | SPCE |
             // | SHFT | SPCE |  TA  |  NA  |  HA  |   -  | SPCE |   |  Num |  TA  |  NA  |  HA  |   ↑  | SPCE | ,.?! |
-            // |  ALT |  Num |  MA  |  YA  |  RA  |  Num | LCLK |   |  Num |  MA  |  YA  |  RA  |   ↓  |   →  |  WA  |
+            // |  ALT | ENTR |  MA  |  YA  |  RA  |  Num | LCLK |   |  Num |  MA  |  YA  |  RA  |   ↓  |   →  |  WA  |
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR |  lyr | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  |  lyr |   ←  |
 
             bindings = <
 &kp ESC    	   &fl_delete  				   &td_f4  	  		   &td_f5  	   	 &td_f6       &td_f7     &td_fl_comma	&td_f8    	   &morph_f9  		   &morph_f10    &td_f11	  &morph_end_jis  &fl_delete     			  &mkp RCLK
 &kp JP_HANZEN  &kp BACKSPACE  			   &mouse_gesture_off  &td_fl_kakko	 &mt X X	  &mc_nn  	 &morph_wa_0	&kp JP_HANZEN  &mouse_gesture_off  &td_fl_kakko	 &mt X X	  &mc_nn          &kp BACKSPACE  			  &mkp LCLK
-&kp TAB        &lt_fl_enter JIS_FUNCS_L 0  &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT  &fl_space	    &kp LALT	   &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT       &lt_fl_enter JIS_FUNCS_L 0  &fl_space
+&kp TAB        &kp LCTRL				   &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT  &fl_space	    &kp LALT	   &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT       &lt_fl_enter JIS_FUNCS_L 0  &fl_space
 &kp LSHFT      &fl_space  				   &morph_ta_4  	   &morph_na_5   &morph_ha_6  &kp MINUS  &fl_space		&kp RCTRL	   &morph_ta_4     	   &morph_na_5   &morph_ha_6  &kp UP          &fl_space	  			      &td_fl_comma
-&kp LALT       &kp LCTRL  				   &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp RCTRL  &mkp LCLK		&kp LCTRL	   &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp DOWN        &kp RIGHT   	  			  &morph_wa_0
+&kp LALT       &lt_fl_enter JIS_FUNCS_L 0  &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp RCTRL  &mkp LCLK		&kp LCTRL	   &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp DOWN        &kp RIGHT   	  			  &morph_wa_0
 &none	       &none  	 				   &none	 	  	   &none	 	 &kp ENTER    &tog_fl_l  &mkp RCLK		&none          &none          	   &none         &none        &kp F5          &tog_fl_l   			      &kp LEFT
             >;
 

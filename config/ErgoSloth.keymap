@@ -965,7 +965,7 @@
 
         mt_cp_tr: mod_tap_copy_triming {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             bindings = <&ctrl_x>, <&ctrl_c>;
@@ -973,7 +973,7 @@
 
         mt_pst: mod_tap_paste {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             bindings = <&win_v>, <&ctrl_v>;

@@ -182,7 +182,7 @@
             layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
-
+*/
 		snipe_l {
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 50>;
@@ -195,10 +195,13 @@
 				&zip_scroll_scaler 1 3000
         	>;
     	};
-*/
+
 		flicker_l {
 			layers = <JP_FLICK_L>;
-			input-processors = <&zip_mouse_gesture>;
+			input-processors = <
+				&zip_xy_scaler 1 50
+				&zip_mouse_gesture
+			>;
 		};
     };
 
@@ -571,6 +574,17 @@
                 <&macro_press &kp LCTRL>,
                 <&macro_tap &kp W>,
                 <&macro_release &kp LCTRL>;
+        };
+
+        win_v: windows_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LGUI>,
+                <&macro_tap &kp V>,
+                <&macro_release &kp LGUI>;
         };
 
         fl_ka: flick_ka {
@@ -947,6 +961,22 @@
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             bindings = <&mkp>, <&kp>;
+        };
+
+        mt_cp_tr: mod_tap_copy_triming {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&ctrl_x>, <&ctrl_c>;
+        };
+
+        mt_pst: mod_tap_paste {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&win_v>, <&ctrl_v>;
         };
 
         mt_fl_a: mod_tap_flick_a {
@@ -1653,8 +1683,15 @@
         td_cp_tr: tap_dance_copy_triming {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             bindings = <&ctrl_c>, <&ctrl_x>;
+        };
+
+        td_pst: tap_dance_paste {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&ctrl_v>, <&win_v>;
         };
 
         td_fl_comma: tap_dance_flick_comma {
@@ -1807,8 +1844,8 @@
 &kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp GUI		&kp F7     &kp F8         &kp F9     &kp F10     &kp F11    &kp F12		   &mkp RCLK
 &kp JP_HANZEN  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7         &kp N8     &kp N9      &kp N0     &kp BACKSPACE  &mkp LCLK
 &kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)      &kp LC(I)  &kp LC(O)   &kp LC(P)  &trans		   &kp SPACE
-&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &mkp LCLK		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &td_cp_tr  &kp RSHFT	   &kp SPACE
-&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp RCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &ctrl_v    &ctrl_y		   &kp RCTRL
+&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &mkp LCLK		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &mt_cp_tr  &kp RSHFT	   &kp SPACE
+&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp RCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &mt_pst    &ctrl_y		   &kp RCTRL
 &none  		   &none      &none      &none      &kp ENTER  &to JIS_L  &kp SPACE		&none  	   &none          &none  	 &none  	 &kp F5	    &to JIS_L	   &ctrl_z
             >;
 
@@ -1931,8 +1968,8 @@
 &kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp LGUI  		&kp F7     &kp F8           &kp F9         &kp F10      &kp F11    &kp F12		  &mkp RCLK
 &kp LA(GRAVE)  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL  		&kp N6     &kp N7           &kp N8         &kp N9       &kp N0     &kp BACKSPACE  &mkp LCLK
 &kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE  		&kp LC(Y)  &kp LC(U)        &kp LC(I)      &kp LC(O)    &kp LC(P)  &trans		  &kp SPACE
-&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &mkp LCLK   		&kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &td_cp_tr  &kp RSHFT	  &kp SPACE
-&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp RCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &ctrl_v    &ctrl_y		  &kp RCTRL
+&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &mkp LCLK   		&kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &mt_cp_tr  &kp RSHFT	  &kp SPACE
+&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp RCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &mt_pst    &ctrl_y		  &kp RCTRL
 &none  		   &none	  &none  	 &none      &kp ENTER  &to US_L   &kp SPACE  		&none	   &none		    &none	       &none	    &kp F5     &to US_L		  &ctrl_z
             >;
 

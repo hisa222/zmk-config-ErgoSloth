@@ -1816,12 +1816,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |   ←  |
 
             bindings = <
-&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7         &kp LGUI        &kp F8           &kp F9           &kp F10    &kp F11     &kp END        &kp DEL		   &mkp RCLK
-&kp JP_HANZEN  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5      &kp LCTRL		&kp KP_N6        &kp KP_N7        &kp KP_N8  &kp KP_N9   &kp KP_N0      &kp BACKSPACE  &mkp LCLK
-&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS   &kp SPACE		&kp KP_PLUS      &kp KP_N4        &kp KP_N5  &kp KP_N6   &kp KP_MINUS   &kp ENTER	   &kp SPACE
-&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE  &mkp LCLK 		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &kp RSHFT	   &kp SPACE
-&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR    &mkp RCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	   &kp RCTRL
-&none  		   &none     	 &none  	&none      	&kp ENTER        &to JIS_L  	&kp SPACE       &none  			 &none     		  &none  	 &none       &kp F5			&to JIS_L	   &kp LEFT
+&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7         &kp LGUI        &kp F8           &kp F9        &kp F10    &kp F11     &kp END        &kp DEL		&mkp RCLK
+&kp JP_HANZEN  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5      &kp LCTRL		&kp KP_N6        &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_N0      &kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS   &kp SPACE		&kp KP_PLUS      &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MINUS   &kp ENTER	    &kp SPACE
+&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE  &mkp LCLK 		&kp KP_MULTIPLY  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &kp RSHFT	    &kp SPACE
+&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR    &mkp RCLK		&kp KP_LPAR      &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	    &kp RCTRL
+&none  		   &none     	 &none  	&none      	&kp ENTER        &to JIS_L  	&kp SPACE       &none  			 &none     	   &none  	  &none       &kp F5		 &to JIS_L	    &kp LEFT
             >;
 
             sensor-bindings =
@@ -1841,12 +1841,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 
             bindings = <
-&kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp GUI		&kp F7     &kp F8         &kp F9     &kp F10     &kp F11    &kp F12		   &mkp RCLK
-&kp JP_HANZEN  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7         &kp N8     &kp N9      &kp N0     &kp BACKSPACE  &mkp LCLK
-&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)      &kp LC(I)  &kp LC(O)   &kp LC(P)  &trans		   &kp SPACE
-&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &mkp LCLK		&kp LC(H)  &kp LC(J)      &kp LC(K)  &kp LC(L)   &mt_cp_tr  &kp RSHFT	   &kp SPACE
-&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp RCLK		&kp LC(N)  &kp LC(M)      &kp COMMA  &kp KP_DOT  &mt_pst    &ctrl_y		   &kp RCTRL
-&none  		   &none      &none      &none      &kp ENTER  &to JIS_L  &kp SPACE		&none  	   &none          &none  	 &none  	 &kp F5	    &to JIS_L	   &ctrl_z
+&kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp GUI		&kp F7     &kp F8     &kp F9     &kp F10     &kp F11    &kp F12		   &mkp RCLK
+&kp JP_HANZEN  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7     &kp N8     &kp N9      &kp N0     &kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)  &kp LC(I)  &kp LC(O)   &kp LC(P)  &trans		   &kp SPACE
+&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &mkp LCLK		&kp LC(H)  &kp LC(J)  &kp LC(K)  &kp LC(L)   &mt_cp_tr	&kp RSHFT	   &kp SPACE
+&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp RCLK		&kp LC(N)  &kp LC(M)  &kp COMMA  &kp KP_DOT  &mt_pst	&ctrl_y		   &kp RCTRL
+&none  		   &none      &none      &none      &kp ENTER  &to JIS_L  &kp SPACE		&none  	   &none      &none  	 &none  	 &kp F5	    &to JIS_L	   &ctrl_z
             >;
 
             sensor-bindings =

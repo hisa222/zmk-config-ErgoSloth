@@ -146,21 +146,22 @@
 
 		snipe_l {
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
-			input-processors = <&zip_xy_scaler 1 50>;
+			input-processors = <&zip_xy_scaler 1 4>;
 		};
 */
     	scroller_l {
         	layers = <JIS_FUNCS_L US_FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
-				&zip_scroll_scaler 1 3000
+				&zip_scroll_snap
+				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+				&zip_scroll_scaler 1 60
         	>;
     	};
 
 		flicker_l {
 			layers = <JP_FLICK_L>;
 			input-processors = <
-				&zip_xy_scaler 1 50
 				&zip_mouse_gesture
 			>;
 		};
@@ -1814,18 +1815,18 @@
             // -------------------------------------------------------------------------------------------------------
             // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
             // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
-            // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT | SPCE |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR | SPCE |
-            // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG | LCLK |   | CtrH | CtrJ | CtrK | CtrL | Copy | RSft | SPCE |
-            // | LAlt |      | CtrX | CtrC | CtrV | CtrB | RCLK |   | CtrN | CtrM |   ,  |   .  | Past | Forw | RCtr |
+            // |  TAB | Prev | RWnd | FsFw | Next | VolU | SPCE |   | VolU | Prev | RWnd | FsFw | Next |      | SPCE |
+            // | LSft | Play | PgUp | BrUp | BrMx | Mute | LCLK |   | Mute | PrSc | PrSc | ReSc | Copy | RSft | SPCE |
+            // | LAlt |      | PgDn | BrDn | BrMi | VolD | RCLK |   | VolD | MENU |   ,  |   .  | Past | Forw | RCtr |
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 
             bindings = <
-&kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp GUI		&kp F7     &kp F8     &kp F9     &kp F10     &kp F11    	&kp F12		   &mkp RCLK
-&kp JP_HANZEN  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL		&kp N6     &kp N7     &kp N8     &kp N9      &kp N0     	&kp BACKSPACE  &mkp LCLK
-&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE		&kp LC(Y)  &kp LC(U)  &kp LC(I)  &kp LC(O)   &kp LC(P)  	&trans		   &kp SPACE
-&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &mkp LCLK		&kp LC(H)  &kp LC(J)  &kp LC(K)  &kp LC(L)   &mt_cp_tr 0 0	&kp RSHFT	   &kp SPACE
-&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp RCLK		&kp LC(N)  &kp LC(M)  &kp COMMA  &kp KP_DOT  &mt_pst 0 0	&ctrl_y		   &kp RCTRL
-&none  		   &none      &none      &none      &kp ENTER  &to JIS_L  &kp SPACE		&none  	   &none      &none  	 &none  	 &kp F5	    	&to JIS_L	   &ctrl_z
+&kp F1         &kp F2      &kp F3     &kp F4     	&kp F5         &kp F6     	 &kp GUI		&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	&kp F12		   &mkp RCLK
+&kp JP_HANZEN  &kp N1      &kp N2     &kp N3     	&kp N4     	   &kp N5     	 &kp LCTRL		&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	&kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp C_PREV  &kp C_RW	  &kp C_FF   	&kp C_NEXT     &kp C_VOL_UP  &kp SPACE		&kp K_VOL_UP  &kp K_PREV  &kp K_RW  	 &kp K_FF    &kp K_NEXT  	&trans		   &kp SPACE
+&kp LSHFT      &kp C_PP	   &kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	 &mkp LCLK		&kp K_MUTE	  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0	&kp RSHFT	   &kp SPACE
+&kp LALT       &trans	   &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &mkp RCLK		&kp K_VOL_DN  &kp K_MENU  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0	&ctrl_y		   &kp RCTRL
+&none  		   &none       &none      &none      	&kp ENTER  	   &to JIS_L  	 &kp SPACE		&none  	   	  &none       &none  	 	 &none  	 &kp F5	    	&to JIS_L	   &ctrl_z
             >;
 
             sensor-bindings =
@@ -1938,18 +1939,18 @@
             // -------------------------------------------------------------------------------------------------------
             // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
             // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
-            // |  TAB | CtrQ | CtrW | CtrE | CtrR | CtrT | SPCE |   | CtrY | CtrU | CtrI | CtrO | CtrP | ENTR | SPCE |
-            // | LSft | CtrA | CtrS | CtrD | CtrF | CtrG | LCLK |   | CtrH | CtrJ | CtrK | CtrL |   ↑  | RSft | SPCE |
-            // | LAlt |      | CtrX | CtrC | CtrV | CtrB | RCLK |   | CtrN | CtrM |   ,  |   .  |   ↓  |   →  | RCtr |
-            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr4 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr4 |   ←  |
+            // |  TAB | Prev | RWnd | FsFw | Next | VolU | SPCE |   | VolU | Prev | RWnd | FsFw | Next |      | SPCE |
+            // | LSft | Play | PgUp | BrUp | BrMx | Mute | LCLK |   | Mute | PrSc | PrSc | ReSc | Copy | RSft | SPCE |
+            // | LAlt |      | PgDn | BrDn | BrMi | VolD | RCLK |   | VolD | MENU |   ,  |   .  | Past | Forw | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 
             bindings = <
-&kp F1         &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp LGUI  		&kp F7     &kp F8           &kp F9         &kp F10      &kp F11        &kp F12		  &mkp RCLK
-&kp LA(GRAVE)  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp LCTRL  		&kp N6     &kp N7           &kp N8         &kp N9       &kp N0         &kp BACKSPACE  &mkp LCLK
-&kp TAB        &kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)  &kp SPACE  		&kp LC(Y)  &kp LC(U)        &kp LC(I)      &kp LC(O)    &kp LC(P)  	   &trans		  &kp SPACE
-&kp LSHFT      &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &mkp LCLK   		&kp LC(H)  &kp LC(J)        &kp LC(K)      &kp LC(L)    &mt_cp_tr 0 0  &kp RSHFT	  &kp SPACE
-&kp LALT       &trans	  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &mkp RCLK  		&kp LC(N)  &kp LC(M)        &kp COMMA      &kp KP_DOT   &mt_pst 0 0    &ctrl_y		  &kp RCTRL
-&none  		   &none	  &none  	 &none      &kp ENTER  &to US_L   &kp SPACE  		&none	   &none		    &none	       &none	    &kp F5         &to US_L		  &ctrl_z
+&kp F1         &kp F2      &kp F3     &kp F4     	&kp F5         &kp F6     	 &kp GUI		&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	&kp F12		   &mkp RCLK
+&kp LA(GRAVE)  &kp N1      &kp N2     &kp N3     	&kp N4     	   &kp N5     	 &kp LCTRL		&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	&kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp C_PREV  &kp C_RW	  &kp C_FF   	&kp C_NEXT     &kp C_VOL_UP  &kp SPACE		&kp K_VOL_UP  &kp K_PREV  &kp K_RW  	 &kp K_FF    &kp K_NEXT  	&trans		   &kp SPACE
+&kp LSHFT      &kp C_PP	   &kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	 &mkp LCLK		&kp K_MUTE	  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0	&kp RSHFT	   &kp SPACE
+&kp LALT       &trans	   &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &mkp RCLK		&kp K_VOL_DN  &kp K_MENU  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0	&ctrl_y		   &kp RCTRL
+&none  		   &none       &none      &none      	&kp ENTER  	   &to JIS_L  	 &kp SPACE		&none  	   	  &none       &none  	 	 &none  	 &kp F5	    	&to JIS_L	   &ctrl_z
             >;
 
             sensor-bindings =

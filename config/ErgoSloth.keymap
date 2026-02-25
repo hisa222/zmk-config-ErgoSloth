@@ -1821,12 +1821,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 
             bindings = <
-&kp F1         &kp F2      &kp F3     &kp F4     	&kp F5         &kp F6     	 &kp GUI		&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	&kp F12		   &mkp RCLK
-&kp JP_HANZEN  &kp N1      &kp N2     &kp N3     	&kp N4     	   &kp N5     	 &kp LCTRL		&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	&kp BACKSPACE  &mkp LCLK
-&kp TAB        &kp C_PREV  &kp C_RW	  &kp C_FF   	&kp C_NEXT     &kp C_VOL_UP  &kp SPACE		&kp K_VOL_UP  &kp K_PREV  &kp K_RW  	 &kp K_FF    &kp K_NEXT  	&trans		   &kp SPACE
-&kp LSHFT      &kp C_PP	   &kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	 &mkp LCLK		&kp K_MUTE	  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0	&kp RSHFT	   &kp SPACE
-&kp LALT       &trans	   &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &mkp RCLK		&kp K_VOL_DN  &kp K_MENU  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0	&ctrl_y		   &kp RCTRL
-&none  		   &none       &none      &none      	&kp ENTER  	   &to JIS_L  	 &kp SPACE		&none  	   	  &none       &none  	 	 &none  	 &kp F5	    	&to JIS_L	   &ctrl_z
+&kp F1         &kp F2      &kp F3     &kp F4     	&kp F5         &kp F6     	 &kp GUI		&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	  &kp F12		 &mkp RCLK
+&kp JP_HANZEN  &kp N1      &kp N2     &kp N3     	&kp N4     	   &kp N5     	 &kp LCTRL		&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	  &kp BACKSPACE  &mkp LCLK
+&kp TAB        &kp C_PREV  &kp C_RW	  &kp C_FF   	&kp C_NEXT     &kp C_VOL_UP  &kp SPACE		&kp K_VOL_UP  &kp K_PREV  &kp K_PP  	 &kp K_NEXT  &kp LC(LA(DEL))  &trans		 &kp SPACE
+&kp LSHFT      &kp C_PP	   &kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	 &mkp LCLK		&kp K_MUTE	  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0	  &kp RSHFT	     &kp SPACE
+&kp LALT       &trans	   &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &mkp RCLK		&kp K_VOL_DN  &kp K_MENU  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0	  &ctrl_y		 &kp RCTRL
+&none  		   &none       &none      &none      	&kp ENTER  	   &to JIS_L  	 &kp SPACE		&none  	   	  &none       &none  	 	 &none  	 &kp F5	    	  &to JIS_L	     &ctrl_z
             >;
 
             sensor-bindings =

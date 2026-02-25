@@ -141,15 +141,16 @@
     };
 };
 // listeners
+&analog_joystick_right_listener {
+	status = "okay";
+    device = <&analog_joystick_right>;
+};
+
 &trackball_right_listener {
         status = "okay";
         device = <&trackball_right>;
 };
 
-&analog_joystick_right_listener {
-	status = "okay";
-    device = <&analog_joystick_right>;
-};
 /*
 &glidepoint_left_listener {
     status = "okay";

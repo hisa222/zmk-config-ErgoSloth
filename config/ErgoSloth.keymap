@@ -206,13 +206,18 @@
 	require-prior-idle-ms = <500>;
     excluded-positions = <
 		13 // RCLK_R
+		20 // Ctrl_L
 		27 // LCLK_R
+		42 // Shift_L
 		45 // D
 		46 // F
 		48 // LCLK_L
         50 // J
         51 // K
+		54 // Shift_R
+		56 // Alt_L
 		62 // RCLK_L
+		69 // Ctrl_R
     >;
 };
 

@@ -26,8 +26,9 @@
 #define US_NUMS_L    7
 #define US_FUNCS_L   8
 #define US_SIMPLE_L  9
-#define JP_FLICK_L	 10
-#define EXTRA_L      11
+#define MOUSE_L		 10
+#define JP_FLICK_L	 11
+#define EXTRA_L      12
 
 // #define FLICK_LOGIC "tap-unless-interrupted"
 #define FLICK_LOGIC "balanced"
@@ -191,7 +192,29 @@
 			layers = <JP_FLICK_L>;
 			input-processors = <&zip_mouse_gesture>;
 		};
+		auto_mouse {
+			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
+			input-processors = <&zip_temp_layer MOUSE_L 10000>;
+		};
 	};
+
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer MOUSE_L 500>;
+};
+
+&zip_temp_layer {
+	require-prior-idle-ms = <500>;
+    excluded-positions = <
+		13 // RCLK_R
+		27 // LCLK_R
+		45 // D
+		46 // F
+		48 // LCLK_L
+        50 // J
+        51 // K
+		62 // RCLK_L
+    >;
+};
 
 &sk {
     // lazy;
@@ -2031,6 +2054,31 @@
 &kp LSHFT      &kp A     &kp S   &kp D   &kp F      &kp G     &mkp LCLK    		&kp H   &kp J   &kp K      &kp L       &kp UP    &kp RSHFT	   &kp SPACE
 &kp LALT       &kp Z     &kp X   &kp C   &kp V      &kp B     &mkp RCLK    		&kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN  &kp RIGHT	   &kp RCTRL
 &none	       &none  	 &none	 &none	 &kp ENTER  &to US_L  &kp SPACE    		&none   &none   &none      &none       &kp F5    &to US_L	   &kp LEFT
+            >;
+
+            sensor-bindings =
+                <&enc_sagcs>,
+                <&enc_sagcs>;
+        };
+
+        mouse_layer {
+            display-name = "MOUSE";
+
+            // -------------------------------------------------------------------------------------------------------
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      | RCLK |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      | LCLK |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+            // |      |      |      | LCLK | RCLK |      | LCLK |   |      | LCLK | RCLK |      |      |      |      |
+            // |      |      |      |      |      |      | RCLK |   |      |      |      |      |      |      |      |
+            // |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+
+            bindings = <
+&trans  &trans  &trans &trans 	  &trans 	 &trans  &trans			&trans  &trans     &trans  	  &trans  &trans  &trans  &mkp RCLK
+&trans  &trans  &trans &trans 	  &trans 	 &trans  &trans			&trans  &trans     &trans  	  &trans  &trans  &trans  &mkp LCLK
+&trans  &trans  &trans &trans 	  &trans 	 &trans  &trans			&trans  &trans	   &trans	  &trans  &trans  &trans  &trans
+&trans  &trans  &trans &mkp LCLK  &mkp RCLK  &trans  &mkp LCLK 		&trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans
+&trans  &trans  &trans &trans 	  &trans 	 &trans  &mkp RCLK		&trans  &trans     &trans  	  &trans  &trans  &trans  &trans
+&trans  &trans  &trans &trans 	  &trans 	 &trans  &trans			&trans  &trans     &trans  	  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings =

@@ -760,6 +760,18 @@
 				<&macro_wait_time 40>,
                 <&macro_tap &kp A>;
         };
+        fl_va: flick_va {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kt_off LSHFT>,
+				<&macro_wait_time 50>,
+                <&macro_tap &kp V>,
+				<&macro_wait_time 50>,
+                <&macro_tap &kp A>;
+        };
         fl_ga: flick_ga {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -927,6 +939,17 @@
             tap-ms = <40>;
             bindings =
                 <&macro_tap &kp W>,
+				<&macro_tap &mouse_gesture_on>;
+        };
+        mc_va: macro_va {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &kt_off LSHFT>,
+				<&macro_wait_time 50>,
+                <&macro_tap &kp V>,
 				<&macro_tap &mouse_gesture_on>;
         };
         mc_ga: macro_ga {
@@ -1132,6 +1155,13 @@
             flavor = FLICK_LOGIC;
             tapping-term-ms = <150>;
             bindings = <&mc_wa &fl_wa>;
+        };
+        mt_fl_va: mod_tap_flick_va {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = FLICK_LOGIC;
+            tapping-term-ms = <150>;
+            bindings = <&mc_va &fl_va>;
         };
         mt_fl_ga: mod_tap_flick_ga {
             compatible = "zmk,behavior-hold-tap";
@@ -1399,6 +1429,12 @@
 			keep-mods = <(MOD_LALT)>;
         };
 
+        morph_a: morph_a {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt_fl_a 0 A>, <&mt_fl_va 0 0>;
+            mods = <(MOD_LSFT)>;
+        };
         morph_ka: morph_ka {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -1426,7 +1462,7 @@
         morph_a_1: morph_a_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt_fl_a 0 A>, <&kp N1>;
+            bindings = <&morph_a>, <&kp N1>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         morph_ka_2: morph_ka_2 {

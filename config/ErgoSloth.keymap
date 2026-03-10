@@ -260,16 +260,30 @@
     combos {
 		compatible = "zmk,combos";
 
-        middle_click_r {
+        middle_click_r1 {
             timeout-ms = <200>;
             key-positions = <13 27>;
             bindings = <&mkp MCLK>;
         };
 
-        middle_click_l {
+        middle_click_r2 {
+            timeout-ms = <200>;
+            key-positions = <50 51>;
+            bindings = <&mkp MCLK>;
+			layers = <MOUSE_L>;
+        };
+
+        middle_click_l1 {
             timeout-ms = <200>;
             key-positions = <48 62>;
             bindings = <&mkp MCLK>;
+        };
+
+        middle_click_l2 {
+            timeout-ms = <200>;
+            key-positions = <45 46>;
+            bindings = <&mkp MCLK>;
+			layers = <MOUSE_L>;
         };
 
         to_jis_layer {

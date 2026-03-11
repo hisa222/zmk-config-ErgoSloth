@@ -19,16 +19,15 @@
 #define JIS_L        0
 #define JIS_MARKS_L  1
 #define JIS_NUMS_L   2
-#define JIS_FUNCS_L  3
-#define JIS_SIMPLE_L 4
-#define US_L         5
-#define US_MARKS_L   6
-#define US_NUMS_L    7
-#define US_FUNCS_L   8
-#define US_SIMPLE_L  9
-#define MOUSE_L		 10
-#define JP_FLICK_L	 11
-#define EXTRA_L      12
+#define JIS_SIMPLE_L 3
+#define US_L         4
+#define US_MARKS_L   5
+#define US_NUMS_L    6
+#define US_SIMPLE_L  7
+#define FUNCS_L  	 8
+#define MOUSE_L		 9
+#define JP_FLICK_L	 10
+#define EXTRA_L      11
 
 // #define FLICK_LOGIC "tap-unless-interrupted"
 #define FLICK_LOGIC "balanced"
@@ -124,7 +123,7 @@
 // joysticks
     &analog_joystick_right_listener {
         quick_scroll_r {
-            layers = <JIS_FUNCS_L US_FUNCS_L>;
+            layers = <FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
             	&zip_scroll_scaler 1 1000
@@ -140,7 +139,7 @@
         };
 /*
 		snipe_r {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L JP_FLICK_L EXTRA_L>;
+			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L FUNCS_L JP_FLICK_L EXTRA_L>;
 			input-processors = <&zip_xy_scaler 1 4>;
 		};
 */
@@ -149,7 +148,7 @@
     &analog_joystick_left_listener {
 /*
         scroll_l {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_FUNCS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_FUNCS_L US_SIMPLE_L EXTRA_L>;
+            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L FUNCS_L EXTRA_L>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
 
@@ -159,7 +158,7 @@
 		};
 */
     	scroller_l {
-        	layers = <JIS_FUNCS_L US_FUNCS_L>;
+        	layers = <FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
 				&zip_scroll_snap
@@ -184,7 +183,7 @@
 // trackball
 	&trackball_right_listener {
     	scroller {
-        	layers = <JIS_FUNCS_L US_FUNCS_L>;
+        	layers = <FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
 				&zip_scroll_snap
@@ -334,16 +333,16 @@
             bindings = <&tog US_MARKS_L>;
         };
 
-        tog_jis_funcs_layer {
+        tog_funcs_layer_r {
             timeout-ms = <200>;
             key-positions = <9 10>;
-            bindings = <&tog JIS_FUNCS_L>;
+            bindings = <&tog FUNCS_L>;
         };
 
-        tog_us_funcs_layer {
+        tog_funcs_layer_l {
             timeout-ms = <200>;
             key-positions = <2 3>;
-            bindings = <&tog US_FUNCS_L>;
+            bindings = <&tog FUNCS_L>;
         };
 
         tog_jis_simple_layer {
@@ -404,6 +403,34 @@
             timeout-ms = <50>;
             key-positions = <53 67>;
             bindings = <&kp F5>;
+        };
+
+        ctrl_t_f {
+            timeout-ms = <200>;
+            key-positions = <37 38>;
+            bindings = <&kp LC(T)>;
+			layers = <FUNCS_L>;
+        };
+
+        ctrl_z_f {
+            timeout-ms = <200>;
+            key-positions = <50 51>;
+            bindings = <&kp LC(Z)>;
+			layers = <FUNCS_L>;
+        };
+
+        ctrl_y_f {
+            timeout-ms = <200>;
+            key-positions = <51 52>;
+            bindings = <&kp LC(Y)>;
+			layers = <FUNCS_L>;
+        };
+
+        ctrl_w_f {
+            timeout-ms = <200>;
+            key-positions = <65 66>;
+            bindings = <&kp LC(W)>;
+			layers = <FUNCS_L>;
         };
 
         encoder_R_up {
@@ -669,6 +696,17 @@
                 <&macro_tap &kp V>,
                 <&macro_release &kp LGUI>;
         };
+
+		mo_fun_alt: momentary_function_layer_alt
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+			bindings = 
+				<&macro_press &mo FUNCS_L &kp LALT>,
+			    <&macro_pause_for_release>,
+			    <&macro_release &mo FUNCS_L &kp LALT>;
+		};
 
         fl_ka: flick_ka {
             compatible = "zmk,behavior-macro";
@@ -1429,6 +1467,71 @@
 			keep-mods = <(MOD_LALT)>;
         };
 
+        morph_fun_j: morph_function_j {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PSCRN>, <&kp ENTER>;
+            mods = <(MOD_LALT)>;
+        };
+
+        morph_fun_k: morph_function_k {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(S))>, <&kp LS(TAB)>;
+            mods = <(MOD_LALT)>;
+			keep-mods = <(MOD_LALT)>;
+        };
+
+        morph_fun_l: morph_function_l {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LG(G)>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
+			keep-mods = <(MOD_LALT)>;
+        };
+
+        morph_fun_u: morph_function_u {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C_PREV>, <&mt_cp_tr 0 0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        morph_fun_i: morph_function_i {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C_PP>, <&kp LC(LS(TAB))>;
+            mods = <(MOD_LALT)>;
+        };
+
+        morph_fun_o: morph_function_o {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C_NEXT>, <&kp LC(TAB)>;
+            mods = <(MOD_LALT)>;
+        };
+
+        morph_fun_m: morph_function_m {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C_MUTE>, <&mt_pst 0 0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        morph_fun_com: morph_function_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp LA(LEFT)>;
+            mods = <(MOD_LALT)>;
+        };
+
+        morph_fun_per: morph_function_period {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_DOT>, <&kp LA(RIGHT)>;
+            mods = <(MOD_LALT)>;
+        };
+
         morph_a: morph_a {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -1712,14 +1815,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&mo JIS_MARKS_L>, <&to JIS_NUMS_L>, <&to JIS_FUNCS_L>;
+            bindings = <&mo JIS_MARKS_L>, <&tog JIS_NUMS_L>, <&tog FUNCS_L>;
         };
 
         td_us_ly: tap_dance_us-layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&mo US_MARKS_L>, <&to US_NUMS_L>, <&to US_FUNCS_L>;
+            bindings = <&mo US_MARKS_L>, <&tog US_NUMS_L>, <&tog FUNCS_L>;
         };
 
         td_sc_jis: tap_dance_semicolon_jis {
@@ -1892,12 +1995,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_jis   	  &td_f4         &td_f5  		 	&td_f6     &td_f7     	      &kp LWIN           &td_f8    	   		&morph_f9     &morph_f10    &td_f11          &morph_end_jis   &kp DEL        		 &mkp RCLK
-&kp JP_HANZEN  		 &kp N1            	  &morph_2       &kp N3  		 	&kp N4     &kp N5     	      &kp LCTRL          &morph_6  	   		&morph_7      &morph_8      &morph_9         &morph_0         &kp BACKSPACE  		 &mkp LCLK
-&kp TAB    	   		 &mt_c JP_QUOTE Q  	  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	      &kp SPACE          &mt_c LALT Y  		&kp U    	  &mt_m MCLK I  &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt JIS_FUNCS_L ENTER  &kp SPACE
-&kp LSHFT      		 &kp A             	  &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G  &mkp LCLK          &lt JIS_FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &mt_mkp RSHFT LCLK	 &morph_space_jis
-&kp LALT       		 &lt_c JIS_FUNCS_L Z  &kp X          &kp C   		 	&kp V      &mt_c JP_YEN B     &mkp RCLK          &kp N     	   		&kp M         &td_sc_jis    &td_co_jis       &kp DOWN         &kp RIGHT      		 &kp RCTRL
-&none          		 &none             	  &none          &none   		 	&kp ENTER  &td_jis_ly         &kp SPACE          &none     	   		&none         &none         &none            &kp F5           &td_jis_ly     		 &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_jis   &td_f4         &td_f5  		 	 &td_f6     &td_f7     	       &kp LWIN           &td_f8    	 &morph_f9     &morph_f10    &td_f11          &morph_end_jis   &kp DEL        	   &mkp RCLK
+&kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	       &kp LCTRL          &morph_6  	 &morph_7      &morph_8      &morph_9         &morph_0         &kp BACKSPACE  	   &mkp LCLK
+&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &kp T      	       &kp SPACE          &mt_c LALT Y   &kp U    	   &mt_m MCLK I  &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt FUNCS_L ENTER   &kp SPACE
+&kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G  &mkp LCLK          &lt FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &mt_mkp RSHFT LCLK  &morph_space_jis
+&kp LALT       		 &lt_c FUNCS_L Z   &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B     &mkp RCLK          &kp N     	 &kp M         &td_sc_jis    &td_co_jis       &kp DOWN         &kp RIGHT      	   &kp RCTRL
+&none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly         &kp SPACE          &none     	 &none         &none         &none            &kp F5           &td_jis_ly     	   &kp LEFT
             >;
 
             sensor-bindings =
@@ -1942,37 +2045,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |   ←  |
 
             bindings = <
-&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7         &kp LGUI        &kp F8           &kp F9        &kp F10    &kp F11     &kp END        &kp DEL			 &mkp RCLK
-&kp JP_HANZEN  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5      &kp LCTRL		&kp KP_N6        &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_N0      &kp BACKSPACE  	 &mkp LCLK
-&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS   &kp SPACE		&kp KP_PLUS      &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MINUS   &kp ENTER	    	 &kp SPACE
-&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE  &mkp LCLK 		&kp KP_MULTIPLY  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &mt_mkp RSHFT LCLK  &kp SPACE
-&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR    &mkp RCLK		&kp KP_LPAR      &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	    	 &kp RCTRL
-&none  		   &none     	 &none  	&none      	&kp ENTER        &to JIS_L  	&kp SPACE       &none  			 &none     	   &none  	  &none       &kp F5		 &to JIS_L	    	 &kp LEFT
-            >;
-
-            sensor-bindings =
-                <&enc_sagcs>,
-                <&enc_sagcs>;
-        };
-
-        jis_func_layer {
-            display-name = "JIS_FUNCTIONS";
-
-            // -------------------------------------------------------------------------------------------------------
-            // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
-            // |  TAB | Prev | RWnd | FsFw | Next | VolU | SPCE |   | VolU | Prev | RWnd | FsFw | Next |      | SPCE |
-            // | LSft | Play | PgUp | BrUp | BrMx | Mute | LCLK |   | Mute | PrSc | PrSc | ReSc | Copy | RSft | SPCE |
-            // | LAlt |      | PgDn | BrDn | BrMi | VolD | RCLK |   | VolD | MENU |   ,  |   .  | Past | Forw | RCtr |
-            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
-
-            bindings = <
-&kp F1         &kp F2      &kp F3     &kp F4     	&kp F5         &kp F6     	 &kp GUI		&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	  &kp F12		 	  &mkp RCLK
-&kp JP_HANZEN  &kp N1      &kp N2     &kp N3     	&kp N4     	   &kp N5     	 &kp LCTRL		&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	  &kp BACKSPACE  	  &mkp LCLK
-&kp TAB        &kp C_PREV  &kp C_RW	  &kp C_FF   	&kp C_NEXT     &kp C_VOL_UP  &kp SPACE		&kp C_VOL_UP  &kp C_PREV  &kp C_PP  	 &kp C_NEXT  &kp LC(LA(DEL))  &trans		 	  &kp SPACE
-&kp LSHFT      &kp C_PP	   &kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	 &mkp LCLK		&trans		  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0	  &mt_mkp RSHFT LCLK  &kp SPACE
-&kp LALT       &trans	   &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &mkp RCLK		&kp C_VOL_DN  &kp C_MUTE  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0	  &ctrl_y		 	  &kp RCTRL
-&none  		   &none       &none      &none      	&kp ENTER  	   &to JIS_L  	 &kp SPACE		&none  	   	  &none       &none  	 	 &none  	 &kp F5	    	  &to JIS_L	     	  &ctrl_z
+&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7           &kp LGUI      &kp F8           &kp F9        &kp F10    &kp F11     &kp END        &kp DEL			 &mkp RCLK
+&kp JP_HANZEN  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5        &kp LCTRL		&kp KP_N6        &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_N0      &kp BACKSPACE  	 &mkp LCLK
+&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS     &kp SPACE		&kp KP_PLUS      &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MINUS   &kp ENTER	    	 &kp SPACE
+&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE    &mkp LCLK 	&kp KP_MULTIPLY  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &mt_mkp RSHFT LCLK  &kp SPACE
+&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR      &mkp RCLK		&kp KP_LPAR      &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	    	 &kp RCTRL
+&none  		   &none     	 &none  	&none      	&kp ENTER        &tog JIS_NUMS_L  &kp SPACE     &none  			 &none     	   &none  	  &none       &kp F5		 &tog JIS_NUMS_L	 &kp LEFT
             >;
 
             sensor-bindings =
@@ -2016,12 +2094,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr5 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr5 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_us  	 &td_f4  		&td_f5  	   &td_f6     &td_f7     		 &kp LGUI		&td_f8  	  		&morph_f9     &morph_f10    &td_f11       &morph_end_us  &kp DEL		   	   &mkp RCLK
-&kp LA(GRAVE)  		 &kp N1    	     	 &kp N2  		&kp N3  	   &kp N4     &kp N5     		 &kp LCTRL		&kp N6  	  		&kp N7  	  &kp N8        &kp N9        &kp N0     	 &kp BACKSPACE  	   &mkp LCLK
-&kp TAB        		 &mt_c SQT Q     	 &kp W          &mt_c EQUAL E  &kp R      &kp T      	     &kp SPACE      &mt_c LALT Y  		&kp U   	  &mt_m MCLK I  &mt_c PIPE O  &mt_c PLUS P   &lt US_FUNCS_L ENTER  &kp SPACE
-&kp LSHFT      		 &kp A           	 &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &mkp LCLK      &lt_c US_FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &mt_mkp RSHFT LCLK	   &morph_space_us
-&kp LALT       		 &lt_c US_FUNCS_L Z  &kp X          &kp C   	   &kp V      &mt_c BSLH B       &mkp RCLK		&kp N   	  		&kp M   	  &td_sc_us		&td_co_us	  &kp DOWN   	 &kp RIGHT	   		   &kp RCTRL
-&none  		   		 &none      	   	 &none   		&none   	   &kp ENTER  &td_us_ly  		 &kp SPACE		&none  		  		&none   	  &none  	 	&none  	  	  &kp F5	     &td_us_ly	   		   &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_us   &td_f4  		 &td_f5  	    &td_f6     &td_f7     		  &kp LGUI		&td_f8  	  	 &morph_f9     &morph_f10    &td_f11       &morph_end_us  &kp DEL		   	  &mkp RCLK
+&kp LA(GRAVE)  		 &kp N1    	      &kp N2  		 &kp N3  	    &kp N4     &kp N5     		  &kp LCTRL		&kp N6  	  	 &kp N7  	   &kp N8        &kp N9        &kp N0     	  &kp BACKSPACE  	  &mkp LCLK
+&kp TAB        		 &mt_c SQT Q      &kp W          &mt_c EQUAL E  &kp R      &kp T      	      &kp SPACE     &mt_c LALT Y  	 &kp U   	   &mt_m MCLK I  &mt_c PIPE O  &mt_c PLUS P   &lt FUNCS_L ENTER   &kp SPACE
+&kp LSHFT      		 &kp A            &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &mkp LCLK     &lt_c FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &mt_mkp RSHFT LCLK  &morph_space_us
+&kp LALT       		 &lt_c FUNCS_L Z  &kp X          &kp C   	    &kp V      &mt_c BSLH B       &mkp RCLK		&kp N   	  	 &kp M   	   &td_sc_us	 &td_co_us	   &kp DOWN   	  &kp RIGHT	   		  &kp RCTRL
+&none  		   		 &none      	  &none   		 &none   	    &kp ENTER  &td_us_ly  		  &kp SPACE		&none  		  	 &none   	   &none  	 	 &none  	   &kp F5	      &td_us_ly	   		  &kp LEFT
             >;
 
             sensor-bindings =
@@ -2066,37 +2144,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr4 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr4 |   ←  |
 
             bindings = <
-&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7         &kp LGUI		&kp F8           &kp F9           &kp F10        &kp F11      &kp END        &kp DEL			 &mkp RCLK
-&kp LA(GRAVE)  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5      &kp LCTRL		&kp KP_N6        &kp KP_N7        &kp KP_N8      &kp KP_N9    &kp KP_N0      &kp BACKSPACE		 &mkp LCLK
-&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS   &kp SPACE		&kp KP_PLUS      &kp KP_N4        &kp KP_N5      &kp KP_N6    &kp KP_MINUS   &kp ENTER			 &kp SPACE
-&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE  &mkp LCLK 		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &mt_mkp RSHFT LCLK  &kp SPACE
-&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR    &mkp RCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT			 &kp RCTRL
-&none		   &none	     &none	    &none	    &kp ENTER        &to US_L       &kp SPACE		&none            &none			  &none	         &none		  &kp F5	     &to US_L			 &kp LEFT
-            >;
-
-            sensor-bindings =
-                <&enc_sagcs>,
-                <&enc_sagcs>;
-        };
-
-        us_func_layer {
-            display-name = "US_FUNCTIONS";
-
-            // -------------------------------------------------------------------------------------------------------
-            // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
-            // |  TAB | Prev | RWnd | FsFw | Next | VolU | SPCE |   | VolU | Prev | RWnd | FsFw | Next |      | SPCE |
-            // | LSft | Play | PgUp | BrUp | BrMx | Mute | LCLK |   | Mute | PrSc | PrSc | ReSc | Copy | RSft | SPCE |
-            // | LAlt |      | PgDn | BrDn | BrMi | VolD | RCLK |   | VolD | MENU |   ,  |   .  | Past | Forw | RCtr |
-            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
-
-            bindings = <
-&kp F1         &kp F2      &kp F3     &kp F4     	&kp F5         &kp F6     	 &kp GUI		&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	  &kp F12		 	  &mkp RCLK
-&kp LA(GRAVE)  &kp N1      &kp N2     &kp N3     	&kp N4     	   &kp N5     	 &kp LCTRL		&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	  &kp BACKSPACE  	  &mkp LCLK
-&kp TAB        &kp C_PREV  &kp C_RW	  &kp C_FF   	&kp C_NEXT     &kp C_VOL_UP  &kp SPACE		&kp C_VOL_UP  &kp C_PREV  &kp C_PP  	 &kp C_NEXT  &kp LC(LA(DEL))  &trans		 	  &kp SPACE
-&kp LSHFT      &kp C_PP	   &kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	 &mkp LCLK		&trans		  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0	  &mt_mkp RSHFT LCLK  &kp SPACE
-&kp LALT       &trans	   &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &mkp RCLK		&kp C_VOL_DN  &kp C_MUTE  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0	  &ctrl_y		 	  &kp RCTRL
-&none  		   &none       &none      &none      	&kp ENTER  	   &to JIS_L  	 &kp SPACE		&none  	   	  &none       &none  	 	 &none  	 &kp F5	    	  &to JIS_L	     	  &ctrl_z
+&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7          &kp LGUI		&kp F8           &kp F9           &kp F10        &kp F11      &kp END        &kp DEL			 &mkp RCLK
+&kp LA(GRAVE)  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5       &kp LCTRL		&kp KP_N6        &kp KP_N7        &kp KP_N8      &kp KP_N9    &kp KP_N0      &kp BACKSPACE		 &mkp LCLK
+&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS    &kp SPACE		&kp KP_PLUS      &kp KP_N4        &kp KP_N5      &kp KP_N6    &kp KP_MINUS   &kp ENTER			 &kp SPACE
+&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE   &mkp LCLK 		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &mt_mkp RSHFT LCLK  &kp SPACE
+&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR     &mkp RCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT			 &kp RCTRL
+&none		   &none	     &none	    &none	    &kp ENTER        &tog US_NUMS_L  &kp SPACE		&none            &none			  &none	         &none		  &kp F5	     &to US_NUMS_L		 &kp LEFT
             >;
 
             sensor-bindings =
@@ -2121,6 +2174,31 @@
 &kp LSHFT      &kp A     &kp S   &kp D   &kp F      &kp G     &mkp LCLK    		&kp H   &kp J   &kp K      &kp L       &kp UP    &kp RSHFT	   &kp SPACE
 &kp LALT       &kp Z     &kp X   &kp C   &kp V      &kp B     &mkp RCLK    		&kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN  &kp RIGHT	   &kp RCTRL
 &none	       &none  	 &none	 &none	 &kp ENTER  &to US_L  &kp SPACE    		&none   &none   &none      &none       &kp F5    &to US_L	   &kp LEFT
+            >;
+
+            sensor-bindings =
+                <&enc_sagcs>,
+                <&enc_sagcs>;
+        };
+
+        func_layer {
+            display-name = "FUNCTIONS";
+
+            // -------------------------------------------------------------------------------------------------------
+            // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
+            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB | Prev | RWnd | FsFw | Next | VolU | SPCE |   | VolU | Prev | RWnd | FsFw | Next |      | SPCE |
+            // | LSft | Play | PgUp | BrUp | BrMx | Mute | LCLK |   |      | PrSc | PrSc | ReSc | Copy | RSft | SPCE |
+            // | LAlt |      | PgDn | BrDn | BrMi | VolD | RCLK |   | VolD | MUTE |   ,  |   .  | Past | Forw | RCtr |
+            // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
+
+            bindings = <
+&kp F1      &kp F2      &kp F3     &kp F4     	 &kp F5         &kp F6     	  	  &kp GUI		&kp F7     	  &kp F8      	&kp F9     	 	&kp F10     	&kp F11    	  	 &kp F12		 	 &mkp RCLK
+&kp C_MENU  &kp N1      &kp N2     &kp N3     	 &kp N4     	&kp N5     	  	  &kp LCTRL		&kp N6    	  &kp N7      	&kp N8     	 	&kp N9      	&kp N0     	  	 &kp BACKSPACE  	 &mkp LCLK
+&kp TAB     &kp C_PREV  &kp C_RW   &kp C_FF   	 &kp C_NEXT     &kp C_VOL_UP  	  &kp SPACE		&kp C_VOL_UP  &morph_fun_u  &morph_fun_i  	&morph_fun_o  	&kp LC(LA(DEL))  &trans		 	  	 &kp SPACE
+&kp LSHFT   &kp C_PP	&kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	  	  &mkp LCLK		&trans		  &morph_fun_j  &morph_fun_k  	&morph_fun_l  	&mt_cp_tr 0 0	 &mt_mkp RSHFT LCLK  &kp SPACE
+&kp LALT    &trans	    &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  	  &mkp RCLK		&kp C_VOL_DN  &morph_fun_m  &morph_fun_com  &morph_fun_per  &mt_pst 0 0	  	 &ctrl_y		 	 &kp RCTRL
+&none  		&none       &none      &none      	 &kp ENTER  	&tog FUNCS_L  	  &kp SPACE		&none  	   	  &none       	&none  	 	 	&none  	 		&kp F5	    	 &tog FUNCS_L	 	 &ctrl_z
             >;
 
             sensor-bindings =
@@ -2165,12 +2243,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR |  lyr | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  |  lyr |   ←  |
 
             bindings = <
-&kp ESC    	   &fl_delete  				   &td_f4  	  		   &td_f5  	   	 &td_f6       &td_f7     &td_fl_comma	&td_f8    	   &morph_f9  		   &morph_f10    &td_f11	  &morph_end_jis  &fl_delete     			  &mkp RCLK
-&kp JP_HANZEN  &kp BACKSPACE  			   &mouse_gesture_off  &td_fl_kakko	 &mt X X	  &mc_nn  	 &morph_wa_0	&kp JP_HANZEN  &mouse_gesture_off  &td_fl_kakko	 &mt X X	  &mc_nn          &kp BACKSPACE  			  &mkp LCLK
-&kp TAB        &kp LCTRL				   &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT  &fl_space	    &kp LALT	   &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT       &lt_fl_enter JIS_FUNCS_L 0  &fl_space
-&kp LSHFT      &fl_space  				   &morph_ta_4  	   &morph_na_5   &morph_ha_6  &kp MINUS  &mkp LCLK 		&kp RCTRL	   &morph_ta_4     	   &morph_na_5   &morph_ha_6  &kp UP          &fl_space	  			      &td_fl_comma
-&kp LALT       &lt_fl_enter JIS_FUNCS_L 0  &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp RCTRL  &mkp RCLK		&kp LCTRL	   &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp DOWN        &kp RIGHT   	  			  &morph_wa_0
-&none	       &none  	 				   &none	 	  	   &none	 	 &kp ENTER    &tog_fl_l  &fl_space		&none          &none          	   &none         &none        &kp F5          &tog_fl_l   			      &kp LEFT
+&kp ESC    	   &fl_delete  			   &td_f4  	  		   &td_f5  	   	 &td_f6       &td_f7     &td_fl_comma	&td_f8    	   &morph_f9  		   &morph_f10    &td_f11	  &morph_end_jis  &fl_delete     		  &mkp RCLK
+&kp JP_HANZEN  &kp BACKSPACE  		   &mouse_gesture_off  &td_fl_kakko	 &mt X X	  &mc_nn  	 &morph_wa_0	&kp JP_HANZEN  &mouse_gesture_off  &td_fl_kakko	 &mt X X	  &mc_nn          &kp BACKSPACE  		  &mkp LCLK
+&kp TAB        &kp LCTRL			   &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT  &fl_space	    &kp LALT	   &morph_a_1   	   &morph_ka_2   &morph_sa_3  &kt LSHFT       &lt_fl_enter FUNCS_L 0  &fl_space
+&kp LSHFT      &fl_space  			   &morph_ta_4  	   &morph_na_5   &morph_ha_6  &kp MINUS  &mkp LCLK 		&kp RCTRL	   &morph_ta_4     	   &morph_na_5   &morph_ha_6  &kp UP          &fl_space	  			  &td_fl_comma
+&kp LALT       &lt_fl_enter FUNCS_L 0  &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp RCTRL  &mkp RCLK		&kp LCTRL	   &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp DOWN        &kp RIGHT   	  		  &morph_wa_0
+&none	       &none  	 			   &none	 	  	   &none	 	 &kp ENTER    &tog_fl_l  &fl_space		&none          &none          	   &none         &none        &kp F5          &tog_fl_l   			  &kp LEFT
             >;
 
             sensor-bindings =

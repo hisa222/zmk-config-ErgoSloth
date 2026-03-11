@@ -1501,14 +1501,14 @@
         morph_fun_com: morph_function_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp LA(LEFT)>;
+            bindings = <&kp COMMA>, <&kp LC(Z)>;
             mods = <(MOD_LALT)>;
         };
 
         morph_fun_per: morph_function_period {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp KP_DOT>, <&kp LA(RIGHT)>;
+            bindings = <&kp KP_DOT>, <&kp LC(Y)>;
             mods = <(MOD_LALT)>;
         };
 

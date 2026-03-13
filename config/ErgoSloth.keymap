@@ -121,6 +121,7 @@
 };
 
 // joysticks
+/*
     &analog_joystick_right_listener {
         quick_scroll_r {
             layers = <FUNCS_L>;
@@ -137,26 +138,9 @@
             	&zip_scroll_scaler 1 3000
         	>;
         };
-/*
-		snipe_r {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L FUNCS_L JP_FLICK_L EXTRA_L>;
-			input-processors = <&zip_xy_scaler 1 4>;
-		};
-*/
     };
 
     &analog_joystick_left_listener {
-/*
-        scroll_l {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L FUNCS_L EXTRA_L>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-        };
-
-		snipe_l {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
-			input-processors = <&zip_xy_scaler 1 4>;
-		};
-*/
     	scroller_l {
         	layers = <FUNCS_L>;
         	input-processors = <
@@ -179,7 +163,7 @@
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
 		};
     };
-
+*/
 // trackball
 	&trackball_right_listener {
     	scroller {

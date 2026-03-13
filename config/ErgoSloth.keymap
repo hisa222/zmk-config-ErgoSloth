@@ -1085,7 +1085,8 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
-            bindings = <&ctrl_x>, <&ctrl_c>;
+            // bindings = <&ctrl_x>, <&ctrl_c>;
+            bindings = <&ctrl_x>, <&kp C_AC_COPY>;
         };
 
         mt_pst: mod_tap_paste {
@@ -1093,7 +1094,8 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
-            bindings = <&win_v>, <&ctrl_v>;
+            // bindings = <&win_v>, <&ctrl_v>;
+			bindings = <&win_v>, <&kp C_AC_PASTE>;
         };
 
         h_fun_alt: h_function_layer_alt {

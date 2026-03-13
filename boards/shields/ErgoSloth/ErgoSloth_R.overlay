@@ -35,7 +35,7 @@
     status = "okay";
 };
 
-//joystick
+//joystick	on
 / {
 	analog_joystick_right: analog_joystick_right {
 		compatible = "zmk,analog-input";

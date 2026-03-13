@@ -116,5 +116,5 @@
 
 &analog_joystick_left_split {
 	// status = "okay";
-	device = <&analog_joystick_left>;
+	// device = <&analog_joystick_left>; //joystick off
 };

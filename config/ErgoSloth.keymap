@@ -1069,8 +1069,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
-            // bindings = <&ctrl_x>, <&ctrl_c>;
-            bindings = <&ctrl_x>, <&kp>;
+            bindings = <&ctrl_x>, <&ctrl_c>;
         };
 
         mt_pst: mod_tap_paste {
@@ -1078,8 +1077,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
-            // bindings = <&win_v>, <&ctrl_v>;
-			bindings = <&win_v>, <&kp>;
+            bindings = <&win_v>, <&ctrl_v>;
         };
 
         h_fun_alt: h_function_layer_alt {
@@ -2159,12 +2157,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | SPCE |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 
             bindings = <
-&kp F1      &kp F2      &kp F3     &kp F4     	 &kp F5         &kp F6     	  	  &kp GUI		&kp F7     	  &kp F8      	&kp F9     	 	&kp F10     	&kp F11    	  	 	   &kp F12		 	   &mkp RCLK
-&kp C_MENU  &kp N1      &kp N2     &kp N3     	 &kp N4     	&kp N5     	  	  &kp LCTRL		&kp N6    	  &kp N7      	&kp N8     	 	&kp N9      	&kp N0     	  	 	   &kp BACKSPACE  	   &mkp LCLK
-&kp TAB     &kp C_PREV  &kp C_RW   &kp C_FF   	 &kp C_NEXT     &kp C_VOL_UP  	  &kp SPACE		&kp C_VOL_UP  &morph_fun_u  &morph_fun_i  	&morph_fun_o  	&kp LC(LA(DEL))  	   &trans		 	   &kp SPACE
-&kp LSHFT   &kp C_PP	&kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	  	  &mkp LCLK		&trans		  &morph_fun_j  &morph_fun_k  	&morph_fun_l  	&mt_cp_tr 0 C_AC_COPY  &mt_mkp RSHFT LCLK  &kp SPACE
-&kp LALT    &trans	    &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  	  &mkp RCLK		&kp C_VOL_DN  &morph_fun_m  &morph_fun_com  &morph_fun_per  &mt_pst 0 C_AC_PASTE   &ctrl_y		 	   &kp RCTRL
-&none  		&none       &none      &none      	 &kp ENTER  	&tog FUNCS_L  	  &kp SPACE		&none  	   	  &none       	&none  	 	 	&none  	 		&kp F5	    	 	   &tog FUNCS_L	 	   &ctrl_z
+&kp F1      &kp F2      &kp F3     &kp F4     	 &kp F5         &kp F6     	  	  &kp GUI		&kp F7     	  &kp F8      	&kp F9     	 	&kp F10     	&kp F11    	  	 &kp F12		 	 &mkp RCLK
+&kp C_MENU  &kp N1      &kp N2     &kp N3     	 &kp N4     	&kp N5     	  	  &kp LCTRL		&kp N6    	  &kp N7      	&kp N8     	 	&kp N9      	&kp N0     	  	 &kp BACKSPACE  	 &mkp LCLK
+&kp TAB     &kp C_PREV  &kp C_RW   &kp C_FF   	 &kp C_NEXT     &kp C_VOL_UP  	  &kp SPACE		&kp C_VOL_UP  &morph_fun_u  &morph_fun_i  	&morph_fun_o  	&kp LC(LA(DEL))  &trans		 	     &kp SPACE
+&kp LSHFT   &kp C_PP	&kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	  	  &mkp LCLK		&trans		  &morph_fun_j  &morph_fun_k  	&morph_fun_l  	&mt_cp_tr 0 0  	 &mt_mkp RSHFT LCLK  &kp SPACE
+&kp LALT    &trans	    &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  	  &mkp RCLK		&kp C_VOL_DN  &morph_fun_m  &morph_fun_com  &morph_fun_per  &mt_pst 0 0      &ctrl_y		 	 &kp RCTRL
+&none  		&none       &none      &none      	 &kp ENTER  	&tog FUNCS_L  	  &kp SPACE		&none  	   	  &none       	&none  	 	 	&none  	 		&kp F5	    	 &tog FUNCS_L	 	 &ctrl_z
             >;
 
             sensor-bindings =

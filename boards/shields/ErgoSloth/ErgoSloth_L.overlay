@@ -81,6 +81,7 @@
     device = <&glidepoint_left>;
 };
 */
+/*
 // joystick
 / {
 	analog_joystick_left: analog_joystick_left {
@@ -114,7 +115,7 @@
 	};
 };
 
-/*
+
 &analog_joystick_left_split {
 	// status = "okay";
 	device = <&analog_joystick_left>; //joystick off

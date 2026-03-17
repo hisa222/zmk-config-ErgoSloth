@@ -1345,52 +1345,63 @@
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        morph_comma_c_jis: morph_comma_ctrl_jis {
+        morph_comma_jis_a: morph_comma_jis_alt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LS(TAB)>, <&mt JP_LBRACE JP_LBRACKET>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
+            bindings = <&mt JP_LBRACE JP_LBRACKET>, <&kp LS(TAB)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+			keep-mods = <(MOD_LALT)>;
         };
 
         morph_comma_jis: morph_comma_jis {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt RS(COMMA) COMMA>, <&morph_comma_c_jis>;
+            bindings = <&mt RS(COMMA) COMMA>, <&morph_comma_jis_a>;
             mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
         };
 
-        morph_comma_c_us: morph_comma_ctrl_us {
+        morph_comma_us_a: morph_comma_us_alt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LS(TAB)>, <&mt LEFT_BRACE LEFT_BRACKET>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
+            bindings = <&mt LEFT_BRACE LEFT_BRACKET>, <&kp LS(TAB)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+			keep-mods = <(MOD_LALT)>;
         };
 
         morph_comma_us: morph_comma_us {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt RS(COMMA) COMMA>, <&morph_comma_c_us>;
+            bindings = <&mt RS(COMMA) COMMA>, <&morph_comma_us_a>;
             mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
         };
 
-        morph_period_c_jis: morph_period_ctrl_jis {
+        morph_period_jis_a: morph_period_jis_alt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp TAB>, <&mt JP_RBRACE JP_RBRACKET>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
+            bindings = <&mt JP_RBRACE JP_RBRACKET>, <&kp TAB>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+			keep-mods = <(MOD_LALT)>;
         };
 
         morph_period_jis: morph_period_jis {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt RS(PERIOD) PERIOD>, <&morph_period_c_jis>;
+            bindings = <&mt RS(PERIOD) PERIOD>, <&morph_period_jis_a>;
             mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
+        };
+
+        morph_period_us_a: morph_period_us_alt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt RIGHT_BRACE RIGHT_BRACKET>, <&kp TAB>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+			keep-mods = <(MOD_LALT)>;
         };
 
         morph_period_us: morph_period_us {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt RS(PERIOD) PERIOD>, <&mt RIGHT_BRACE RIGHT_BRACKET>;
+            bindings = <&mt RS(PERIOD) PERIOD>, <&morph_period_us_a>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 

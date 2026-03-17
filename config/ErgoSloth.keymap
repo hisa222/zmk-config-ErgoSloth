@@ -1084,7 +1084,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <1000>;
+            tapping-term-ms = <700>;
             bindings = <&sleep_windows>, <&kp>;
         };
 
@@ -1092,7 +1092,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <1000>;
+            tapping-term-ms = <700>;
             bindings = <&close_window>, <&kp>;
         };
 
@@ -1100,7 +1100,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <1000>;
+            tapping-term-ms = <700>;
             bindings = <&close_all_windows>, <&kp>;
         };
 
@@ -1108,7 +1108,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <2000>;
+            tapping-term-ms = <1200>;
             bindings = <&alt_f4>, <&kp>;
         };
 

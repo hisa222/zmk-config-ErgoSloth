@@ -1080,6 +1080,38 @@
             bindings = <&win_v>, <&ctrl_v>;
         };
 
+        mt_slp: mod_tap_sleep {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <1000>;
+            bindings = <&sleep_windows>, <&kp>;
+        };
+
+        mt_cls: mod_tap_close {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <1000>;
+            bindings = <&close_window>, <&kp>;
+        };
+
+        mt_cls_a: mod_tap_close_all {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <1000>;
+            bindings = <&close_all_windows>, <&kp>;
+        };
+
+        mt_a4: mod_tap_alt_f4 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <2000>;
+            bindings = <&alt_f4>, <&kp>;
+        };
+
         h_fun_alt: h_function_layer_alt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -1802,49 +1834,49 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp F4>, <&kp F8>, <&sleep_windows>;
+            bindings = <&mt_slp 0 F4>, <&kp F8>, <&sleep_windows>;
         };
         td_f5: tap_dance_function5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp F5>, <&kp F9>, <&close_window>;
+            bindings = <&mt_cls 0 F5>, <&kp F9>, <&close_window>;
         };
         td_f6: tap_dance_function6 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp F6>, <&kp F10>, <&close_all_windows>;
+            bindings = <&mt_cls_a 0 F6>, <&kp F10>, <&close_all_windows>;
         };
         td_f7: tap_dance_function7 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <500>;
-            bindings = <&kp F7>, <&kp F11>, <&none>, <&alt_f4>;
+            bindings = <&mt_a4 0 F7>, <&kp F11>, <&none>, <&alt_f4>;
         };
         td_f8: tap_dance_function8 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp F8>, <&kp F4>, <&sleep_windows>;
+            bindings = <&mt_slp 0 F8>, <&kp F4>, <&sleep_windows>;
         };
         td_f9: tap_dance_function9 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp F9>, <&kp F5>, <&close_window>;
+            bindings = <&mt_cls 0 F9>, <&kp F5>, <&close_window>;
         };
         td_f10: tap_dance_function10 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp F10>, <&kp F6>, <&close_all_windows>;
+            bindings = <&mt_cls_a 0 F10>, <&kp F6>, <&close_all_windows>;
         };
         td_f11: tap_dance_function11 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <500>;
-            bindings = <&kp F11>, <&kp F7>, <&none>, <&alt_f4>;
+            bindings = <&mt_a4 0 F11>, <&kp F7>, <&none>, <&alt_f4>;
         };
 
         td_cp_tr: tap_dance_copy_triming {

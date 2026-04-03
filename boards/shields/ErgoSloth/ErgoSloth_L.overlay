@@ -67,6 +67,7 @@
     glidepoint_left: glidepoint_left@1 {
         compatible = "cirque,pinnacle";
         status = "okay";
+		dr-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH)>;
         reg = <1>;
         spi-max-frequency = <1000000>;
         sensitivity = "2x";

@@ -121,7 +121,6 @@
 };
 
 // joysticks
-/*
     &analog_joystick_right_listener {
         quick_scroll_r {
             layers = <FUNCS_L>;
@@ -163,7 +162,7 @@
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
 		};
     };
-*/
+
 // trackball
 	&trackball_right_listener {
     	scroller {

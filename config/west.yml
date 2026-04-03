@@ -60,12 +60,15 @@ manifest:
     - name: zmk-mouse-gesture
       remote: hisa222
       revision: v1
+      #https://github.com/halfdane/zmk-input-gestures?tab=readme-ov-file#installation--usage
     - name: zmk-input-gestures
       remote: halfdane
       revision: main
+      #https://github.com/halfdane/zmk-input-processors
     - name: zmk-input-processors
       remote: halfdane
       revision: main
+      #https://github.com/halfdane/zmk-input-gestures?tab=readme-ov-file#installation--usage
     - name: cirque-input-module
       remote: halfdane
       revision: absolute_mode

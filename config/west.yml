@@ -20,6 +20,9 @@ manifest:
 
     - name: kot149
       url-base: https://github.com/kot149
+
+      - name: halfdane
+      url-base: https://github.com/halfdane
   projects:
     - name: zmk
       # remote: zmkfirmware
@@ -57,5 +60,13 @@ manifest:
     - name: zmk-mouse-gesture
       remote: hisa222
       revision: v1
+    - name: zmk-input-gestures
+      remote: halfdane
+      revision: main
+    - name: zmk-input-processors
+      remote: halfdane
+      revision: main
+    - name: cirque-input-module
+      remote: halfdane
   self:
     path: config

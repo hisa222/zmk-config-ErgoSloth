@@ -21,7 +21,7 @@ manifest:
     - name: kot149
       url-base: https://github.com/kot149
 
-      - name: halfdane
+    - name: halfdane
       url-base: https://github.com/halfdane
   projects:
     - name: zmk

@@ -68,5 +68,6 @@ manifest:
       revision: main
     - name: cirque-input-module
       remote: halfdane
+      revision: absolute_mode
   self:
     path: config

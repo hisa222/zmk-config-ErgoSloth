@@ -40,10 +40,10 @@ manifest:
       path: modules/prospector-zmk-module
 
       # https://github.com/ShiniNet/cirque-input-module
-    - name: cirque-input-module
-      remote: ShiniNet
-      revision: main
-      path: modules/cirque-input-module-shininet
+    #- name: cirque-input-module
+      #remote: ShiniNet
+      #revision: main
+      #path: modules/cirque-input-module-shininet
 
       # https://github.com/badjeff/zmk-analog-input-driver
     - name: zmk-analog-input-driver

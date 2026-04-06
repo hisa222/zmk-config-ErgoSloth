@@ -84,6 +84,7 @@
 };
 
 // joystick
+/*
 / {
 	analog_joystick_left: analog_joystick_left {
 		compatible = "zmk,analog-input";
@@ -121,3 +122,4 @@
 	status = "okay";
 	device = <&analog_joystick_left>;
 };
+*/

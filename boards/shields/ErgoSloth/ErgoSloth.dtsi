@@ -57,12 +57,12 @@
             compatible = "zmk,input-split";
             reg = <1>;
         };
-
+/*
         analog_joystick_left_split: analog_left_split@2 {
             compatible = "zmk,input-split";
             reg = <2>;
         };
-
+*/
     };
 
 // trackball
@@ -83,13 +83,13 @@
         status = "disabled";
         compatible = "zmk,input-listener";
     };
-
+/*
     analog_joystick_left_listener: analog_joystick_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
         device = <&analog_joystick_left_split>;
     };
-
+*/
 // keymap
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";

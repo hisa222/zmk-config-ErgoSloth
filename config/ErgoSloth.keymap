@@ -138,7 +138,7 @@
         	>;
         };
     };
-/*
+
     &analog_joystick_left_listener {
     	scroller_l {
         	layers = <FUNCS_L>;
@@ -162,7 +162,7 @@
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
 		};
     };
-*/
+
 // trackball
 	&trackball_right_listener {
     	scroller {

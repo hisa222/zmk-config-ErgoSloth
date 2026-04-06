@@ -153,7 +153,8 @@
 &glidepoint_left_listener {
     status = "okay";
 };
-
+/*
 &analog_joystick_left_listener {
 	status = "okay";
 };
+*/

@@ -55,7 +55,7 @@
         };
     };
 };
-
+/*
 &spi1 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -75,7 +75,24 @@
         // no-taps;
         // no-smoothing;
     };
+};
+*/
+&xiao_spi {
+    status = "okay";
+    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>, <&gpio0 13 (GPIO_PULL_UP)>;//dummy
 
+    glidepoint_left: glidepoint_left@1 {
+        compatible = "cirque,pinnacle";
+        status = "okay";
+        reg = <1>;
+        spi-max-frequency = <1000000>;
+        dr-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "2x";
+        // no-taps;
+        // no-smoothing;
+        //absolute-mode;
+    };
 };
 
 &glidepoint_left_split {
@@ -84,7 +101,7 @@
 };
 
 // joystick
-/*
+
 / {
 	analog_joystick_left: analog_joystick_left {
 		compatible = "zmk,analog-input";
@@ -122,4 +139,3 @@
 	status = "okay";
 	device = <&analog_joystick_left>;
 };
-*/

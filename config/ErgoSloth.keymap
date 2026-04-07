@@ -1069,7 +1069,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
-            bindings = <&macro_hold_ctrl_x>, <&macro_tap_ctrl_c>;
+            bindings = <&ctrl_x>, <&ctrl_c>;
         };
 
         mt_pst: mod_tap_paste {

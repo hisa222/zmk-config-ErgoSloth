@@ -17,8 +17,14 @@ manifest:
       
     - name: badjeff
       url-base: https://github.com/badjeff
+
+    - name: kot149
+      url-base: https://github.com/kot149
+
+    - name: halfdane
+      url-base: https://github.com/halfdane
   projects:
-    - name: zmk
+    - name: zmk-v0.3
       # remote: zmkfirmware
       remote: hisa222
       revision: main
@@ -43,5 +49,28 @@ manifest:
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
+      # https://github.com/kot149/zmk-scroll-snap
+    - name: zmk-scroll-snap
+      remote: kot149
+      revision: v1
+      #https://github.com/kot149/zmk-mouse-gesture
+#    - name: zmk-mouse-gesture
+#      remote: kot149
+#      revision: v1
+    - name: zmk-mouse-gesture
+      remote: hisa222
+      revision: v1
+      #https://github.com/halfdane/zmk-input-gestures?tab=readme-ov-file#installation--usage
+    - name: zmk-input-gestures
+      remote: halfdane
+      revision: main
+      #https://github.com/halfdane/zmk-input-processors
+    - name: zmk-input-processors
+      remote: halfdane
+      revision: main
+      #https://github.com/halfdane/zmk-input-gestures?tab=readme-ov-file#installation--usage
+    #- name: cirque-input-module
+      #remote: halfdane
+      #revision: absolute_mode
   self:
     path: config

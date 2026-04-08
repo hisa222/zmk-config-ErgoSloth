@@ -78,7 +78,7 @@
     glidepoint_left_listener: glidepoint_left_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&glidepoint_left>;
+        //device = <&glidepoint_left>;
     };
 
 // joysticks
@@ -91,7 +91,7 @@
     analog_joystick_left_listener: analog_joystick_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
-        device = <&analog_joystick_left>;
+        //device = <&analog_joystick_left>;
     };
 
 // keymap

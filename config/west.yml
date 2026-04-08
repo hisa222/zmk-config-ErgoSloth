@@ -23,6 +23,9 @@ manifest:
 
     - name: halfdane
       url-base: https://github.com/halfdane
+
+    - name: geeksville
+      url-base: https://github.com/geeksville
   projects:
     - name: zmk-v0.3
       # remote: zmkfirmware

@@ -95,11 +95,6 @@
     };
 };
 
-&glidepoint_left_split {
-	status = "okay";
-    device = <&glidepoint_left>;
-};
-
 // joystick
 
 / {
@@ -138,4 +133,50 @@
 &analog_joystick_left_split {
 	status = "okay";
 	device = <&analog_joystick_left>;
+};
+
+
+//_______________________________________________________________________________________________________
+
+// ここに指定したキーではAMLから抜けなくなる
+&zip_temp_layer {
+    excluded-positions = <
+        27 // L Prev
+		28 // L Next
+		31 // R Prev
+		32 // R Next
+		38 // L Middle Click
+		39 // L Right Click
+		40 // L Left Click
+		43 // R Left Click
+		44 // R Right Click
+		45 // R Middle Click
+		63 // L Middle Click
+		64 // L Right Click
+		65 // L Left Click
+		66 // R Left Click
+		67 // R Right Click
+		68 // R Middle Click
+    >;
+    require-prior-idle-ms = <100>;
+};
+
+
+// listeners
+&analog_joystick_right_listener {
+	status = "okay";
+    device = <&analog_joystick_right>;
+};
+
+&trackball_right_listener {
+        status = "okay";
+        device = <&trackball_right>;
+};
+
+&glidepoint_left_listener {
+    status = "okay";
+};
+
+&analog_joystick_left_listener {
+	status = "okay";
 };

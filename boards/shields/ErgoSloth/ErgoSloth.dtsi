@@ -70,6 +70,7 @@
     trackball_right_listener: trackball_right_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
+        device = <&trackball_right_split>;
 		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
     };
 
@@ -77,19 +78,20 @@
     glidepoint_left_listener: glidepoint_left_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&glidepoint_left_split>;
+        device = <&glidepoint_left>;
     };
 
 // joysticks
     analog_joystick_right_listener: analog_joystick_right_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
+		device = <&analog_joystick_right_split>;
     };
 
     analog_joystick_left_listener: analog_joystick_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
-        device = <&analog_joystick_left_split>;
+        device = <&analog_joystick_left>;
     };
 
 // keymap

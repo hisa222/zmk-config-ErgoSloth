@@ -159,18 +159,18 @@
 // listeners
 &analog_joystick_right_listener {
 	status = "okay";
-    device = <&analog_joystick_right>;
 };
 
 &trackball_right_listener {
-        status = "okay";
-        device = <&trackball_right>;
+    status = "okay";
 };
 
 &glidepoint_left_listener {
     status = "okay";
+	device = <&glidepoint_left>;
 };
 
 &analog_joystick_left_listener {
 	status = "okay";
+	device = <&analog_joystick_left>;
 };

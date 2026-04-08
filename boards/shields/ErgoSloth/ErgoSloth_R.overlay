@@ -140,21 +140,18 @@
         y-input-code = <INPUT_REL_Y>;
     };
 };
-// listeners
-&analog_joystick_right_listener {
+
+//__________________________________________________________________________________________
+
+
+&trackball_right_split {
 	status = "okay";
-    device = <&analog_joystick_right>;
+    device = <&trackball_right>;
 };
 
-&trackball_right_listener {
-        status = "okay";
-        device = <&trackball_right>;
-};
 
-&glidepoint_left_listener {
-    status = "okay";
-};
 
-&analog_joystick_left_listener {
+&analog_joystick_right_split {
 	status = "okay";
+	device = <&analog_joystick_right>;
 };

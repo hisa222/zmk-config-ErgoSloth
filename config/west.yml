@@ -24,7 +24,7 @@ manifest:
     - name: halfdane
       url-base: https://github.com/halfdane
   projects:
-    - name: zmk
+    - name: zmk-v0.3
       # remote: zmkfirmware
       remote: hisa222
       revision: main

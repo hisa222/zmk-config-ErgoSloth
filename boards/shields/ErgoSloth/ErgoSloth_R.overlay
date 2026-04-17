@@ -147,14 +147,16 @@
 };
 
 &trackball_right_listener {
-        status = "okay";
-        device = <&trackball_right>;
+    status = "okay";
+    device = <&trackball_right>;
 };
 
 &glidepoint_left_listener {
     status = "okay";
+	device = <&glidepoint_left_split>;
 };
 
 &analog_joystick_left_listener {
 	status = "okay";
+	device = <&analog_joystick_left_split>;
 };

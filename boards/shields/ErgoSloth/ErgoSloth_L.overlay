@@ -65,11 +65,11 @@
     // cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>,<&gpio0 13 (GPIO_PULL_UP)>;
 	cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>,<&gpio1 1 (GPIO_PULL_UP)>;
 
-    glidepoint_left: glidepoint_left@1 {
+    glidepoint_left: glidepoint_left@0 {
         compatible = "cirque,pinnacle";
         status = "okay";
 		dr-gpios = <&gpio1 3 (GPIO_ACTIVE_HIGH)>;
-        reg = <1>;
+        reg = <0>;
         spi-max-frequency = <1000000>;
         sensitivity = "2x";
         // no-taps;

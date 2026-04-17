@@ -77,7 +77,7 @@
     glidepoint_left_listener: glidepoint_left_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&glidepoint_left_split>;
+        // device = <&glidepoint_left_split>;
     };
 
 // joysticks
@@ -89,7 +89,7 @@
     analog_joystick_left_listener: analog_joystick_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
-        device = <&analog_joystick_left_split>;
+        // device = <&analog_joystick_left_split>;
     };
 
 // keymap
@@ -146,7 +146,7 @@
 &uicr {
 	nfct-pins-as-gpios;
 };
-    
+/*  
 &spi0 {
         status = "disabled";
 
@@ -160,6 +160,7 @@
             reg = <1>;
         };
 };
+*/
 /*
 &spi1 {
         status = "disabled";

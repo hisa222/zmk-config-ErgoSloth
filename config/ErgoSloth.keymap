@@ -58,8 +58,6 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 
-&trackball_right { cpi = <600>; };
-
 / {
     input_processors {
         zip_wheel_scaler: zip_wheel_scaler {

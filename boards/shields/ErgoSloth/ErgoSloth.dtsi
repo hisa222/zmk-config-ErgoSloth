@@ -154,6 +154,11 @@
             status = "disabled";
             reg = <0>;
         };
+
+        glidepoint_left: glidepoint_left@1 {
+            status = "disabled";
+            reg = <1>;
+        };
 };
 /*
 &spi1 {
@@ -165,6 +170,7 @@
         };
 };
 */
+/*
 &xiao_spi {
         status = "disabled";
 
@@ -173,3 +179,4 @@
             reg = <1>;
         };
 };
+*/

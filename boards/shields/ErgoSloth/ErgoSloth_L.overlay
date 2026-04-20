@@ -65,7 +65,7 @@
         dr-gpios = <&gpio1 3 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "2x";
         x-invert;
-		rotate_90;
+		rotate-90;
 
         // Optional: turning this on enables very aggressive power saving, after 5 seconds with no touches
         // the trackpad will go to sleep.  It wakes up on touch, but there is a ~300ms delay.  Most users will find

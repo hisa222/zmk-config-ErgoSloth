@@ -54,16 +54,21 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        trackball_right_split: trackball_right_split@1 {
-            compatible = "zmk,input-split";
-            reg = <1>;
-        };
-
         analog_joystick_right_split: analog_right_split@2 {
             compatible = "zmk,input-split";
             reg = <2>;
         };
 
+        trackball_right_split: trackball_right_split@1 {
+            compatible = "zmk,input-split";
+            reg = <1>;
+        };
+/*
+        analog_joystick_right_split: analog_right_split@2 {
+            compatible = "zmk,input-split";
+            reg = <2>;
+        };
+*/
     };
 
 // trackball

@@ -75,18 +75,10 @@
     };
 
 // touchpad
-/*
-    glidepoint_left_listener: glidepoint_left_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        //device = <&glidepoint_left>;
-    };
-*/
-
 	glidepoint_left_listener: glidepoint_left_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&glidepoint_left>;
+        // device = <&glidepoint_left>;
     };
 
 // joysticks

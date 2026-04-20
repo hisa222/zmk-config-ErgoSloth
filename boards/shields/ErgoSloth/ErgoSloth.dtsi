@@ -156,7 +156,8 @@
 &uicr {
 	nfct-pins-as-gpios;
 };
-    
+
+/*
 &spi0 {
         status = "disabled";
 
@@ -165,6 +166,7 @@
             reg = <0>;
         };
 };
+*/
 /*
 &spi1 {
         status = "disabled";

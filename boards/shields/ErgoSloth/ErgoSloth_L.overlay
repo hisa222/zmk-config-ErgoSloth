@@ -38,7 +38,7 @@
 
 // touchpad
 &pinctrl {
-    spi1_default: spi1_default {
+    spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, // xiao D8, see posix_seeed_xiao.overlay in zmk source
             <NRF_PSEL(SPIM_MISO, 1, 15)>, // xiao D9 
@@ -48,7 +48,7 @@
         };
     };
 
-    spi1_sleep: spi1_sleep {
+    spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
                     <NRF_PSEL(SPIM_MISO, 1, 14)>,

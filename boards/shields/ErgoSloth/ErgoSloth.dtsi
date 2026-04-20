@@ -54,14 +54,14 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        glidepoint_left_split: glidepoint_left_split@1 {
+        glidepoint_left_split: glidepoint_left_split@0 {
             compatible = "zmk,input-split";
-            reg = <1>;
+            reg = <0>;
         };
 
-        analog_joystick_left_split: analog_left_split@2 {
+        analog_joystick_left_split: analog_left_split@1 {
             compatible = "zmk,input-split";
-            reg = <2>;
+            reg = <1>;
         };
 
     };
@@ -77,7 +77,7 @@
     glidepoint_left_listener: glidepoint_left_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        // device = <&glidepoint_left_split>;
+        device = <&glidepoint_left_split>;
     };
 
 // joysticks
@@ -89,7 +89,7 @@
     analog_joystick_left_listener: analog_joystick_left_listener {
         status = "disabled";
         compatible = "zmk,input-listener";
-        // device = <&analog_joystick_left_split>;
+        device = <&analog_joystick_left_split>;
     };
 
 // keymap
@@ -146,38 +146,3 @@
 &uicr {
 	nfct-pins-as-gpios;
 };
-/*  
-&spi0 {
-        status = "disabled";
-
-        trackball_right: trackball_right@0 {
-            status = "disabled";
-            reg = <0>;
-        };
-
-        glidepoint_left: glidepoint_left@1 {
-            status = "disabled";
-            reg = <1>;
-        };
-};
-*/
-/*
-&spi1 {
-        status = "disabled";
-
-        glidepoint_left: glidepoint_left@1 {
-            status = "disabled";
-            reg = <1>;
-        };
-};
-*/
-/*
-&xiao_spi {
-        status = "disabled";
-
-        glidepoint_left: glidepoint_left@1 {
-            status = "disabled";
-            reg = <1>;
-        };
-};
-*/

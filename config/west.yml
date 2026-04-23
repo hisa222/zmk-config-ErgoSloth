@@ -79,5 +79,9 @@ manifest:
     - name: cirque-input-module
       remote: geeksville
       revision: main
+      #https://github.com/badjeff/zmk-split-peripheral-input-relay
+    - name: zmk-split-peripheral-input-relay
+      remote: badjeff
+      revision: main
   self:
     path: config

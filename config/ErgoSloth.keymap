@@ -142,11 +142,19 @@
         	input-processors = <
             	&zip_xy_to_scroll_mapper
             	&zip_scroll_scaler 1 3000
+				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         	>;
         };
     };
 
     &analog_joystick_left_listener {
+		flicker_l {
+			layers = <JP_FLICK_L>;
+			input-processors = <
+				&zip_mouse_gesture
+			>;
+		};
+
     	scroller_l {
         	// layers = <FUNCS_L>;
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L FUNCS_L JP_FLICK_L EXTRA_L>;
@@ -157,18 +165,12 @@
 				&zip_scroll_scaler 1 100
         	>;
     	};
-
-		flicker_l {
-			layers = <JP_FLICK_L>;
-			input-processors = <
-				&zip_mouse_gesture
-			>;
-		};
-
+/*
 		auto_mouse_l {
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
 		};
+*/
     };
 
 // trackball
@@ -204,6 +206,16 @@
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
             >;
         };
+
+		flicker {
+			layers = <JP_FLICK_L>;
+			input-processors = <&zip_mouse_gesture>;
+		};
+
+		auto_mouse {
+			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
+			input-processors = <&zip_temp_layer MOUSE_L 10000>;
+		};
     };
 
 

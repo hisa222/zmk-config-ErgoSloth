@@ -97,6 +97,7 @@
     stroke-size = <20>; // Optional (default: 200)
     enable-eager-mode; // Optional, but recommended
 
+/*
     gesture_r {
         pattern = <GESTURE_RIGHT>;
         bindings = <&kp E>;
@@ -115,6 +116,56 @@
     gesture_d {
         pattern = <GESTURE_DOWN>;
         bindings = <&kp O>;
+    };
+*/
+    gesture_r {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&alt_right>;
+    };
+
+    gesture_l {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&alt_left>;
+    };
+
+    gesture_u {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LC(C)>;
+    };
+
+    gesture_d {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LC(V)>;
+    };
+
+    gesture_u_r {
+        pattern = <GESTURE_UP GESTURE_RIGHT>;
+        bindings = <&kp LC(T)>;
+    };
+
+    gesture_u_l {
+        pattern = <GESTURE_UP GESTURE_LEFT>;
+        bindings = <&kp LC(W)>;
+    };
+
+    gesture_d_r {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LC(TAB)>;
+    };
+
+    gesture_d_l {
+        pattern = <GESTURE_DOWN GESTURE_LEFT>;
+        bindings = <&kp LC(LS(TAB))>;
+    };
+
+    gesture_u_d {
+        pattern = <GESTURE_UP GESTURE_DOWN>;
+        bindings = <&kp F5>;
+    };
+
+    gesture_r_l {
+        pattern = <GESTURE_RIGHT GESTURE_LEFT>;
+        bindings = <&kp LC(A)>;
     };
 };
 
@@ -191,10 +242,12 @@
             	&zip_scroll_y_scaler 1 10
         	>;
     	};
+/*
 		flicker {
 			layers = <JP_FLICK_L>;
 			input-processors = <&zip_mouse_gesture>;
 		};
+*/
 		auto_mouse {
 			layers = <US_L US_MARKS_L US_NUMS_L US_SIMPLE_L JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
@@ -212,12 +265,12 @@
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
             >;
         };
-
+/*
 		flicker {
 			layers = <JP_FLICK_L>;
 			input-processors = <&zip_mouse_gesture>;
 		};
-
+*/
 		auto_mouse {
 			layers = <US_L US_MARKS_L US_NUMS_L US_SIMPLE_L JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
@@ -2287,12 +2340,12 @@
             // |      |      |      |      |      |  lyr | RCLK |   |      |      |      |      |      |  lyr |      |
 
             bindings = <
-&none   &none  &none  &none  &none  &none     	  &none			&none         &none         &none         &none         &none         &none		    &mkp RCLK
-&none   &none  &none  &none  &none  &none     	  &none			&none         &none         &none	      &none         &none         &none		    &mkp LCLK
-&none   &none  &none  &none  &none  &none     	  &none			&none         &none         &none	      &none         &none         &none		    &none
-&none   &none  &none  &none  &none  &none     	  &none		 	&none         &none         &none         &none         &none         &none		    &none
-&none   &none  &none  &none  &none  &none     	  &mkp LCLK		&none         &none         &none         &none         &none         &none		    &none
-&none   &none  &none  &none  &none  &tog_fl_l	  &mkp RCLK		&none         &none         &none         &none         &none         &tog_fl_l	    &none
+&trans  &none  &none  &none  &none  &none   &none			&none  &none  &none  &none  &none  &none   &mkp RCLK
+&none   &none  &none  &none  &none  &none   &none			&none  &none  &none	 &none  &none  &none   &mkp LCLK
+&none   &none  &none  &none  &none  &none   &none			&none  &none  &none  &none  &none  &none   &none
+&none   &none  &none  &none  &none  &none   &none		 	&none  &none  &none  &none  &none  &none   &none
+&none   &none  &none  &none  &none  &none   &mkp LCLK		&none  &none  &none  &none  &none  &none   &none
+&none   &none  &none  &none  &none  &trans	&mkp RCLK		&none  &none  &none  &none  &none  &trans  &none
             >;
 
             sensor-bindings =

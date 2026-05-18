@@ -1040,16 +1040,6 @@
                 <&macro_tap &kp K &kp A &kp K &kp K &kp O &kp SPACE>,
 				<&macro_tap &mouse_gesture_on>;
         };
-        tog_fl_l: toggle_flick_layer {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_tap &tog JP_FLICK_L>,
-                <&macro_tap &kt_off>,
-				<&macro_tap &mouse_gesture_off>;
-        };
         sk_fl_ctrl: sticky_flick_control {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -1060,6 +1050,16 @@
 				<&macro_tap &mouse_gesture_off>;
         };
 */
+        tog_fl_l: toggle_flick_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_tap &tog JP_FLICK_L>,
+                <&macro_tap &kt_off>,
+				<&macro_tap &mouse_gesture_off>;
+        };
     };
 
     /**************************************************************************/

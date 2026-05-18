@@ -129,12 +129,12 @@
 */
     gesture_r {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LA(RIGHT)>;
+        bindings = <&alt_right>;
     };
 
     gesture_l {
         pattern = <GESTURE_LEFT>;
-        bindings = <&kp LA(LEFT)>;
+        bindings = <&alt_left>;
     };
 
     gesture_u {

@@ -96,7 +96,7 @@
 &zip_mouse_gesture {
     stroke-size = <20>; // Optional (default: 200)
     enable-eager-mode; // Optional, but recommended
-
+/*
     gesture_r {
         pattern = <GESTURE_RIGHT>;
         bindings = <&kp E>;
@@ -115,6 +115,46 @@
     gesture_d {
         pattern = <GESTURE_DOWN>;
         bindings = <&kp O>;
+    };
+*/
+    gesture_r {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(RIGHT)>;
+    };
+
+    gesture_l {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+
+    gesture_u {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LC(C)>;
+    };
+
+    gesture_d {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LC(V)>;
+    };
+
+    gesture_r_r {
+        pattern = <GESTURE_RIGHT GESTURE_RIGHT>;
+        bindings = <&kp LC(TAB)>;
+    };
+
+    gesture_l_l {
+        pattern = <GESTURE_LEFT GESTURE_LEFT>;
+        bindings = <&kp LC(LS(TAB))>;
+    };
+
+    gesture_u_u {
+        pattern = <GESTURE_UP GESTURE_UP>;
+        bindings = <&kp LC(T)>;
+    };
+
+    gesture_d_d {
+        pattern = <GESTURE_DOWN GESTURE_DOWN>;
+        bindings = <&kp LC(W)>;
     };
 };
 

@@ -26,6 +26,9 @@ manifest:
 
     - name: geeksville
       url-base: https://github.com/geeksville
+
+    - name: ssbb
+      url-base: https://github.com/ssbb
   projects:
     - name: zmk-v0.3
       # remote: zmkfirmware
@@ -83,5 +86,9 @@ manifest:
     - name: zmk-split-peripheral-input-relay
       remote: badjeff
       revision: main
+      #https://github.com/ssbb/zmk-listeners
+    - name: zmk-listeners
+      remote: ssbb
+      revision: v1
   self:
     path: config

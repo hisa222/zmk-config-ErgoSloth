@@ -147,24 +147,34 @@
         bindings = <&kp LC(V)>;
     };
 
-    gesture_r_r {
-        pattern = <GESTURE_RIGHT GESTURE_RIGHT>;
-        bindings = <&kp LC(TAB)>;
-    };
-
-    gesture_l_l {
-        pattern = <GESTURE_LEFT GESTURE_LEFT>;
-        bindings = <&kp LC(LS(TAB))>;
-    };
-
-    gesture_u_u {
-        pattern = <GESTURE_UP GESTURE_UP>;
+    gesture_u_r {
+        pattern = <GESTURE_UP GESTURE_RIGHT>;
         bindings = <&kp LC(T)>;
     };
 
-    gesture_d_d {
-        pattern = <GESTURE_DOWN GESTURE_DOWN>;
+    gesture_u_l {
+        pattern = <GESTURE_UP GESTURE_LEFT>;
         bindings = <&kp LC(W)>;
+    };
+
+    gesture_d_r {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LC(TAB)>;
+    };
+
+    gesture_d_l {
+        pattern = <GESTURE_DOWN GESTURE_LEFT>;
+        bindings = <&kp LC(LS(TAB))>;
+    };
+
+    gesture_u_d {
+        pattern = <GESTURE_UP GESTURE_DOWN>;
+        bindings = <&kp F5>;
+    };
+
+    gesture_r_l {
+        pattern = <GESTURE_RIGHT GESTURE_LEFT>;
+        bindings = <&kp LC(A)>;
     };
 };
 
@@ -190,7 +200,7 @@
         	input-processors = <
             	&zip_xy_to_scroll_mapper
             	&zip_scroll_scaler 1 3000
-				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+				// &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         	>;
         };
     };
@@ -201,6 +211,7 @@
         	input-processors = <
             	&zip_xy_to_scroll_mapper
             	&zip_scroll_scaler 1 30
+				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         	>;
         };
 
@@ -241,10 +252,12 @@
             	&zip_scroll_y_scaler 1 10
         	>;
     	};
+/*
 		flicker {
 			layers = <JP_FLICK_L>;
 			input-processors = <&zip_mouse_gesture>;
 		};
+*/
 		auto_mouse {
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
@@ -262,12 +275,12 @@
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
             >;
         };
-
+/*
 		flicker {
 			layers = <JP_FLICK_L>;
 			input-processors = <&zip_mouse_gesture>;
 		};
-
+*/
 		auto_mouse {
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;

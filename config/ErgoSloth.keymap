@@ -185,6 +185,7 @@
         	input-processors = <
             	&zip_xy_to_scroll_mapper
             	&zip_scroll_scaler 1 1000
+				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         	>;
         };
 
@@ -200,7 +201,7 @@
         	input-processors = <
             	&zip_xy_to_scroll_mapper
             	&zip_scroll_scaler 1 3000
-				// &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         	>;
         };
     };

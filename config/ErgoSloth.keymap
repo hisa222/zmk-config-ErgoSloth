@@ -136,7 +136,7 @@
 		};
 
         scroll_r {
-            layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L FUNCS_L EXTRA_L>;
+            layers = <US_L US_MARKS_L US_NUMS_L US_SIMPLE_L JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L FUNCS_L EXTRA_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
             	&zip_scroll_scaler 1 3000
@@ -163,7 +163,7 @@
 
     	scroller_l {
         	// layers = <FUNCS_L>;
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
+			layers = <US_L US_MARKS_L US_NUMS_L US_SIMPLE_L JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L EXTRA_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
 				&zip_scroll_snap
@@ -173,7 +173,7 @@
     	};
 /*
 		auto_mouse_l {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
+			layers = <US_L US_MARKS_L US_NUMS_L US_SIMPLE_L JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
 		};
 */
@@ -196,7 +196,7 @@
 			input-processors = <&zip_mouse_gesture>;
 		};
 		auto_mouse {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
+			layers = <US_L US_MARKS_L US_NUMS_L US_SIMPLE_L JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
 		};
 	};
@@ -219,7 +219,7 @@
 		};
 
 		auto_mouse {
-			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
+			layers = <US_L US_MARKS_L US_NUMS_L US_SIMPLE_L JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L EXTRA_L>;
 			input-processors = <&zip_temp_layer MOUSE_L 10000>;
 		};
     };

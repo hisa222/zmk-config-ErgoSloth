@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <behaviors/input_processor_gestures.dtsi>
 
 
 &adc {
@@ -67,13 +68,16 @@
         sensitivity = "2x";
         x-invert;
 		rotate-90;
-		inertial-cursor;
 
         // Optional: turning this on enables very aggressive power saving, after 5 seconds with no touches
         // the trackpad will go to sleep.  It wakes up on touch, but there is a ~300ms delay.  Most users will find
         // the standard behavior of 'put to sleep when zmk enters idle state (30 seconds without a keypress) feels better.
 	    //sleep;
     };
+};
+
+&zip_gestures {
+	inertial-cursor;
 };
 
 // joystick

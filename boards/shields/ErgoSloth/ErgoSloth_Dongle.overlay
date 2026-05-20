@@ -18,4 +18,4 @@
 		/* virtual input device on central, which used to emit input event as an agent device */
 		device = <&analog_joystick_right_split>;
 	};
-}
+};

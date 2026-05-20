@@ -1,6 +1,9 @@
 # Copyright (c) 2020 Pete Johanson
 # SPDX-License-Identifier: MIT
 
+config SHIELD_ERGOSLOTH_DONGLE
+    def_bool $(shields_list_contains,ErgoSloth_Dongle)
+
 config SHIELD_ERGOSLOTH_RIGHT
     def_bool $(shields_list_contains,ErgoSloth_R)
 

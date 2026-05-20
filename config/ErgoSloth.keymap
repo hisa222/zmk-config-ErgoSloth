@@ -13,6 +13,7 @@
 
 #include <mouse-gesture.dtsi>
 #include <scroll-snap.dtsi>
+#include <behaviors/input_processor_gestures.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 200
 
@@ -178,6 +179,11 @@
     };
 };
 
+&zip_gestures {
+	tap-detection;
+	inertial-cursor;
+};
+
 // joysticks
     &analog_joystick_right_listener {
         quick_scroll_r {
@@ -267,7 +273,10 @@
 
 // trackpad
 	&glidepoint_left_listener {
-        input-processors = <&zip_xy_scaler 250 100>;
+        input-processors = <
+			&zip_xy_scaler 250 100
+			&zip_gestures
+		>;
         scroller {
             layers = <FUNCS_L>;
             input-processors = <

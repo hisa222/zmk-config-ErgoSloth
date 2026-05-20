@@ -25,4 +25,6 @@ include:
  - board: seeeduino_xiao_ble
    shield: ErgoSloth_L
  - board: seeeduino_xiao_ble
+   shield: ErgoSloth_Dongle
+ - board: seeeduino_xiao_ble
    shield: settings_reset

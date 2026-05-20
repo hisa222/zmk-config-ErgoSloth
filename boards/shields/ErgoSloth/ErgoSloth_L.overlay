@@ -78,6 +78,8 @@
 
 &zip_gestures {
 	inertial-cursor;
+	inertial-cursor-velocity-threshold-ms=<20>;
+	inertial-cursor-decay-percent=<98>;
 };
 
 // joystick

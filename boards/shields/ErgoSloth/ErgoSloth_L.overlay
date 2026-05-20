@@ -68,6 +68,8 @@
         sensitivity = "2x";
         x-invert;
 		rotate-90;
+		inertial-cursor-velocity-threshold-ms=<20>;
+		inertial-cursor-decay-percent=<98>;
 
         // Optional: turning this on enables very aggressive power saving, after 5 seconds with no touches
         // the trackpad will go to sleep.  It wakes up on touch, but there is a ~300ms delay.  Most users will find
@@ -78,8 +80,6 @@
 
 &zip_gestures {
 	inertial-cursor;
-	inertial-cursor-velocity-threshold-ms=<20>;
-	inertial-cursor-decay-percent=<98>;
 };
 
 // joystick

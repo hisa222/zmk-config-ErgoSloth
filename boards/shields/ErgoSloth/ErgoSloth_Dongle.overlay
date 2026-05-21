@@ -12,15 +12,6 @@
       events = <0>;
    };
 
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-        trackball_right_split: trackball_right_split@1 {
-            compatible = "zmk,input-split";
-            reg = <1>;
-        };
-    };
-
     /* define virtual input, will be resurrected for emitting input event */
 	/* NOTE: set `device = <&analog_joystick_right_split>` in `zmk,input-listener` */
 	analog_joystick_right_split: virtual_input {

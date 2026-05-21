@@ -18,17 +18,23 @@
 		compatible = "zmk,virtual-input";
 	};
 
+	analog_joystick_left_split: virtual_input {
+		compatible = "zmk,virtual-input";
+	};
+
 	/* for central side, define (relay-channel)-to-(virtual-input) mapping */
-	input_relay_config_22 {
+	input_relay_config_222 {
 		compatible = "zmk,split-peripheral-input-relay";
 		
 		/* channel id, used to filter incoming input event from split peripheral */
 		/* NOTE: should matching relay-channel on peripheral overlay */
-		relay-channel = <22>;
+		relay-channel = <222>;
 
 		/* virtual input device on central, which used to emit input event as an agent device */
-		device = <&analog_joystick_right_split>;
+		device = <&analog_joystick_left_split>;
 	};
+
+
 };
 
 // listeners

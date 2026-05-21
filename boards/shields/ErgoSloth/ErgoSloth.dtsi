@@ -54,16 +54,17 @@
     };
 
 // split options
-/*
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
         trackball_right_split: trackball_right_split@1 {
             compatible = "zmk,input-split";
+			status = "disabled";
             reg = <1>;
         };
     };
-*/
+
 // trackball
     trackball_right_listener: trackball_right_listener {
         compatible = "zmk,input-listener";

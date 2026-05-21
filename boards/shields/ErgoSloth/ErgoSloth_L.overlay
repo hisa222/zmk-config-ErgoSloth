@@ -112,7 +112,7 @@
 
 
     /* THIS only makes keymap binding happy, nothing happens on peripheral side */
-	analog_joystick_left_split: virtual_input {
+	analog_joystick_left_split: virtual_input2 {
 		compatible = "zmk,virtual-input";
 	};
 

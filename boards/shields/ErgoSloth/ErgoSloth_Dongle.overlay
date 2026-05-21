@@ -30,3 +30,20 @@
 		device = <&analog_joystick_right_split>;
 	};
 };
+
+// listeners
+&analog_joystick_right_listener {
+	status = "okay";
+};
+
+&trackball_right_listener {
+    status = "okay";
+};
+
+&glidepoint_left_listener {
+    status = "okay";
+};
+
+&analog_joystick_left_listener {
+	status = "okay";
+};

@@ -14,11 +14,11 @@
 
     /* define virtual input, will be resurrected for emitting input event */
 	/* NOTE: set `device = <&analog_joystick_right_split>` in `zmk,input-listener` */
-	analog_joystick_right_split: virtual_input {
+	analog_joystick_right_split: virtual_input1 {
 		compatible = "zmk,virtual-input";
 	};
 
-	analog_joystick_left_split: virtual_input {
+	analog_joystick_left_split: virtual_input2 {
 		compatible = "zmk,virtual-input";
 	};
 

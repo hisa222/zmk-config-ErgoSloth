@@ -141,12 +141,13 @@
 			RC(0,6) RC(1,6) RC(2,6) RC(3,6) RC(4,6) RC(5,6) RC(6,5) 	RC(0,13) RC(1,13) RC(2,13) RC(3,13) RC(4,13) RC(5,13) RC(6,12)
         >;
     };
-
+/*
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-charlieplex";
         wakeup-source;
         interrupt-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
+*/
 };
 
 // Use NFC pins as GPIOs

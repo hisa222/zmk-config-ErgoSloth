@@ -25,6 +25,10 @@
 
 / {
 
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
 // encoders
     encoder_left: encoder_left {
         compatible = "alps,ec11";

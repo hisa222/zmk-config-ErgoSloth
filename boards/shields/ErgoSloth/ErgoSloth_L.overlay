@@ -111,23 +111,24 @@
 	};
 
 
-    /* define virtual input, will be resurrected for emitting input event */
-	/* NOTE: set `device = <&analog_joystick_right_split>` in `zmk,input-listener` */
-	analog_joystick_right_split: virtual_input {
+    /* THIS only makes keymap binding happy, nothing happens on peripheral side */
+	analog_joystick_left_split: virtual_input {
 		compatible = "zmk,virtual-input";
 	};
 
-	/* for central side, define (relay-channel)-to-(virtual-input) mapping */
-	input_relay_config_22 {
-		compatible = "zmk,split-peripheral-input-relay";
-		
-		/* channel id, used to filter incoming input event from split peripheral */
-		/* NOTE: should matching relay-channel on peripheral overlay */
-		relay-channel = <22>;
+    input_relay_config_222 {
+        compatible = "zmk,split-peripheral-input-relay";
 
-		/* virtual input device on central, which used to emit input event as an agent device */
-		device = <&analog_joystick_right_split>;
-	};
+        /* peripheral side input device, used to... */
+		/*  - be intecepted on peripheral; */
+		/*  - and then, be resurrected as `zmk,virtual-device` on central; */
+        device = <&analog_joystick_left>;
+
+        /* channel id, used to be be transfered along with all input events. */
+		/* NOTE 1: pick any 8bit integer. (1 - 255) */
+		/* NOTE 2: should matching relay-channel on central overlay */
+		relay-channel = <222>;
+    };
 
 };
 
@@ -157,22 +158,7 @@
     require-prior-idle-ms = <100>;
 };
 
-
-// listeners
-&analog_joystick_right_listener {
+&glidepoint_left_split {
 	status = "okay";
-};
-
-&trackball_right_listener {
-    status = "okay";
-};
-
-&glidepoint_left_listener {
-    status = "okay";
-	device = <&glidepoint_left>;
-};
-
-&analog_joystick_left_listener {
-	status = "okay";
-	device = <&analog_joystick_left>;
+    device = <&glidepoint_left>;
 };

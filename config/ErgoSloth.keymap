@@ -120,10 +120,6 @@
     };
 };
 
-&zip_gestures {
-	tap-detection;
-	inertial-cursor;
-};
 
 // joysticks
     &analog_joystick_right_listener {

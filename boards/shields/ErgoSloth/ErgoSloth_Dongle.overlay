@@ -46,7 +46,7 @@
 	status = "okay";
 }
 
-&gkidepoint_left_split {
+&glidepoint_left_split {
 	status = "okay";
 }
 

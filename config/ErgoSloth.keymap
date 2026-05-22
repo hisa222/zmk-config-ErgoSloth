@@ -269,7 +269,6 @@
 	&glidepoint_left_listener {
         input-processors = <
 			&zip_xy_scaler 250 100
-			&zip_gestures
 		>;
         scroller {
             layers = <FUNCS_L>;

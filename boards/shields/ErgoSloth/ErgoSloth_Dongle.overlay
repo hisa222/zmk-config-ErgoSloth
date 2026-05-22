@@ -42,6 +42,14 @@
 
 };
 
+&trackball_right_split {
+	status = "okay";
+}
+
+&gkidepoint_left_split {
+	status = "okay";
+}
+
 // listeners
 &analog_joystick_right_listener {
 	device = <&analog_joystick_right_split>;

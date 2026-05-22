@@ -61,13 +61,13 @@
 
         trackball_right_split: trackball_right_split@1 {
             compatible = "zmk,input-split";
-			// status = "disabled";
+			status = "disabled";
             reg = <1>;
         };
 
         glidepoint_left_split: glidepoint_left_split@2 {
             compatible = "zmk,input-split";
-			// status = "disabled";
+			status = "disabled";
             reg = <2>;
         };
     };

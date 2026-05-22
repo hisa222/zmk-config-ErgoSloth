@@ -44,11 +44,11 @@
 
 &trackball_right_split {
 	status = "okay";
-}
+};
 
 &glidepoint_left_split {
 	status = "okay";
-}
+};
 
 // listeners
 &analog_joystick_right_listener {

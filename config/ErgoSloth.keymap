@@ -13,7 +13,6 @@
 
 #include <mouse-gesture.dtsi>
 #include <scroll-snap.dtsi>
-#include <behaviors/input_processor_gestures.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 200
 

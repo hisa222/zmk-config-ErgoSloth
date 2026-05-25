@@ -9,8 +9,8 @@ manifest:
     - name: hisa222
       url-base: https://github.com/hisa222
       
-    - name: prospector
-      url-base: https://github.com/hisa222
+    #- name: prospector
+      #url-base: https://github.com/t-ogura
       
     - name: ShiniNet
       url-base: https://github.com/ShiniNet
@@ -41,7 +41,8 @@ manifest:
       revision: main
       
     - name: prospector-zmk-module
-      remote: prospector
+      #remote: prospector
+      remote: hisa222
       #revision: v2.2.1
       revision: main
       path: modules/prospector-zmk-module

@@ -12,8 +12,11 @@ manifest:
     #- name: prospector
       #url-base: https://github.com/t-ogura
 
-    - name: carrefinho                            # <--- add this
-      url-base: https://github.com/carrefinho     # <--- and this
+    #- name: carrefinho
+      #url-base: https://github.com/carrefinho
+
+    #- name: janpfischer
+      #url-base: https://github.com/janpfischer
       
     - name: ShiniNet
       url-base: https://github.com/ShiniNet
@@ -43,9 +46,14 @@ manifest:
       remote: hisa222
       revision: main
 
-    - name: prospector-zmk-module                 # <--- and these
-      remote: carrefinho                          # <---
-      revision: main                              # <---
+    - name: zmk-dongle-screen
+      #remote: janpfischer
+      remote: hisa222
+      revision: main
+
+    #- name: prospector-zmk-module
+      #remote: carrefinho
+      #revision: main
       
     #- name: prospector-zmk-module
       #remote: prospector

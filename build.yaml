@@ -26,6 +26,5 @@ include:
    shield: ErgoSloth_L
  - board: seeeduino_xiao_ble
    shield: ErgoSloth_Dongle dongle_screen
-   artifact-name: ErgoSloth_Dongle
  - board: seeeduino_xiao_ble
    shield: settings_reset

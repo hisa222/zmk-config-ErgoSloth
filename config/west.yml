@@ -42,14 +42,9 @@ manifest:
       
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.2.1
+      #revision: v2.2.1
+      revision: main
       path: modules/prospector-zmk-module
-
-      # https://github.com/ShiniNet/cirque-input-module
-    #- name: cirque-input-module
-      #remote: ShiniNet
-      #revision: main
-      #path: modules/cirque-input-module-shininet
 
       # https://github.com/badjeff/zmk-analog-input-driver
     - name: zmk-analog-input-driver
@@ -59,10 +54,7 @@ manifest:
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
-      #https://github.com/kot149/zmk-mouse-gesture
-#    - name: zmk-mouse-gesture
-#      remote: kot149
-#      revision: v1
+
     - name: zmk-mouse-gesture
       remote: hisa222
       revision: v1
@@ -75,10 +67,6 @@ manifest:
       remote: halfdane
       revision: main
       #https://github.com/halfdane/zmk-input-gestures?tab=readme-ov-file#installation--usage
-    #- name: cirque-input-module
-      #remote: halfdane
-      #revision: absolute_mode
-      #https://github.com/geeksville/cirque-input-module/tree/main
     - name: cirque-input-module
       remote: geeksville
       revision: main

@@ -68,6 +68,7 @@
 
 &glidepoint_left_listener {
     status = "okay";
+	device = <&glidepoint_left_split>;
 };
 
 &analog_joystick_left_listener {

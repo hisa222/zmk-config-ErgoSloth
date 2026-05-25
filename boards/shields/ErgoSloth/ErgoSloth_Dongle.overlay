@@ -14,10 +14,6 @@
 
     /* define virtual input, will be resurrected for emitting input event */
 	/* NOTE: set `device = <&analog_joystick_right_split>` in `zmk,input-listener` */
-	glidepoint_left_split: virtual_input0 {
-		compatible = "zmk,virtual-input";
-	};
-
 	analog_joystick_right_split: virtual_input1 {
 		compatible = "zmk,virtual-input";
 	};
@@ -56,6 +52,10 @@
 	status = "okay";
 };
 
+&glidepoint_left_split {
+	status = "okay";
+};
+
 // listeners
 &analog_joystick_right_listener {
 	device = <&analog_joystick_right_split>;
@@ -68,7 +68,6 @@
 
 &glidepoint_left_listener {
     status = "okay";
-	device = <&glidepoint_left_split>;
 };
 
 &analog_joystick_left_listener {

@@ -112,31 +112,21 @@
 
 
     /* THIS only makes keymap binding happy, nothing happens on peripheral side */
-	glidepoint_left_split: virtual_input0 {
-		compatible = "zmk,virtual-input";
-	};
-
-    input_relay_config_2 {
-        compatible = "zmk,split-peripheral-input-relay";
-
-        /* peripheral side input device, used to... */
-		/*  - be intecepted on peripheral; */
-		/*  - and then, be resurrected as `zmk,virtual-device` on central; */
-        device = <&glidepoint_left>;
-
-        /* channel id, used to be be transfered along with all input events. */
-		/* NOTE 1: pick any 8bit integer. (1 - 255) */
-		/* NOTE 2: should matching relay-channel on central overlay */
-		relay-channel = <2>;
-    };
-
 	analog_joystick_left_split: virtual_input2 {
 		compatible = "zmk,virtual-input";
 	};
 
     input_relay_config_222 {
         compatible = "zmk,split-peripheral-input-relay";
+
+        /* peripheral side input device, used to... */
+		/*  - be intecepted on peripheral; */
+		/*  - and then, be resurrected as `zmk,virtual-device` on central; */
         device = <&analog_joystick_left>;
+
+        /* channel id, used to be be transfered along with all input events. */
+		/* NOTE 1: pick any 8bit integer. (1 - 255) */
+		/* NOTE 2: should matching relay-channel on central overlay */
 		relay-channel = <222>;
     };
 

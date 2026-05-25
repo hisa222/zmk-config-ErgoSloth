@@ -11,6 +11,9 @@ manifest:
       
     #- name: prospector
       #url-base: https://github.com/t-ogura
+
+    - name: carrefinho                            # <--- add this
+      url-base: https://github.com/carrefinho     # <--- and this
       
     - name: ShiniNet
       url-base: https://github.com/ShiniNet
@@ -39,13 +42,17 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: hisa222
       revision: main
+
+    - name: prospector-zmk-module                 # <--- and these
+      remote: carrefinho                          # <---
+      revision: main                              # <---
       
-    - name: prospector-zmk-module
+    #- name: prospector-zmk-module
       #remote: prospector
-      remote: hisa222
+      #remote: hisa222
       #revision: v2.2.1
-      revision: main
-      path: modules/prospector-zmk-module
+      #revision: main
+      #path: modules/prospector-zmk-module
 
       # https://github.com/badjeff/zmk-analog-input-driver
     - name: zmk-analog-input-driver

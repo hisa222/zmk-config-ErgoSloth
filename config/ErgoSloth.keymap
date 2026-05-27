@@ -175,7 +175,8 @@
             layers = <FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
-            	&zip_scroll_scaler 1 1000
+            	&zip_scroll_scaler 1 500
+				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         	>;
         };
 
@@ -201,7 +202,8 @@
             layers = <FUNCS_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
-            	&zip_scroll_scaler 1 30
+            	&zip_scroll_scaler 1 15
+				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         	>;
         };
 

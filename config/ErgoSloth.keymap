@@ -83,6 +83,14 @@
             codes = <INPUT_REL_WHEEL>;
             track-remainders;
         };
+
+    layer_listeners {
+        compatible = "zmk,layer-listeners";
+
+        flicl_layer {
+            layers = <JP_FLICK_L>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
     };
 };
 

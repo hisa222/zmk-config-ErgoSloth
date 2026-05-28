@@ -43,7 +43,7 @@
     	status = "okay";
 			x-ch {
 				io-channels = <&adc 0>;
-				mv-mid = <1570>;
+				mv-mid = <2500>; //1570
 				mv-min-max = <900>;
 				mv-deadzone = <50>;
 				scale-multiplier = <1>;

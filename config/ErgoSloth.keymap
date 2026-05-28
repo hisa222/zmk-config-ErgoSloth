@@ -83,6 +83,7 @@
             codes = <INPUT_REL_WHEEL>;
             track-remainders;
         };
+	};
 
     layer_listeners {
         compatible = "zmk,layer-listeners";

@@ -88,8 +88,7 @@ manifest:
       revision: main
       #https://github.com/badjeff/zmk-split-peripheral-input-relay
     - name: zmk-split-peripheral-input-relay
-      #remote: badjeff
-      remote: hisa222
+      remote: badjeff
       revision: main
       #https://github.com/ssbb/zmk-listeners
     - name: zmk-listeners

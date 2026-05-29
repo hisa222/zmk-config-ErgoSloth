@@ -54,9 +54,9 @@
 			};
 			y-ch {
 				io-channels = <&adc 1>;
-				mv-mid = <1650>;
+				mv-mid = <1700>;
 				mv-min-max = <900>;
-				mv-deadzone = <100>;
+				mv-deadzone = <200>;
 				scale-multiplier = <1>;
 				scale-divisor = <1>;
 				// invert;

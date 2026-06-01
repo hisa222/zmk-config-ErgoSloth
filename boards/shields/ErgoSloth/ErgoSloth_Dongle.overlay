@@ -23,20 +23,12 @@
 	};
 
 	/* for central side, define (relay-channel)-to-(virtual-input) mapping */
-	input_relay_config_2 {
-		compatible = "zmk,split-peripheral-input-relay";
-		
-		/* channel id, used to filter incoming input event from split peripheral */
-		/* NOTE: should matching relay-channel on peripheral overlay */
-		relay-channel = <2>;
-
-		/* virtual input device on central, which used to emit input event as an agent device */
-		device = <&glidepoint_left_split>;
-	};
-
 	input_relay_config_22 {
 		compatible = "zmk,split-peripheral-input-relay";
+		/* channel id, used to filter incoming input event from split peripheral */
+		/* NOTE: should matching relay-channel on peripheral overlay */
 		relay-channel = <22>;
+		/* virtual input device on central, which used to emit input event as an agent device */
 		device = <&analog_joystick_right_split>;
 	};
 

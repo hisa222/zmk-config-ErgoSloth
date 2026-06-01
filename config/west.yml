@@ -47,8 +47,8 @@ manifest:
       revision: main
 
     - name: zmk-dongle-screen
-      remote: janpfischer
-      #remote: hisa222
+      #remote: janpfischer
+      remote: hisa222
       revision: main
 
     #- name: prospector-zmk-module

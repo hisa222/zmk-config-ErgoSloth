@@ -15,8 +15,8 @@ manifest:
     #- name: carrefinho
       #url-base: https://github.com/carrefinho
 
-    #- name: janpfischer
-      #url-base: https://github.com/janpfischer
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
       
     - name: ShiniNet
       url-base: https://github.com/ShiniNet

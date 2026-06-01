@@ -47,8 +47,8 @@ manifest:
       revision: main
 
     - name: zmk-dongle-screen
-      #remote: janpfischer
-      remote: hisa222
+      remote: janpfischer
+      #remote: hisa222
       revision: main
 
     #- name: prospector-zmk-module
@@ -88,8 +88,8 @@ manifest:
       revision: main
       #https://github.com/badjeff/zmk-split-peripheral-input-relay
     - name: zmk-split-peripheral-input-relay
-      remote: hisa222
-      #remote: badjeff
+      #remote: hisa222
+      remote: badjeff
       revision: main
       #https://github.com/ssbb/zmk-listeners
     - name: zmk-listeners

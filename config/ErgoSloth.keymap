@@ -200,7 +200,7 @@
             layers = <US_L US_MARKS_L US_NUMS_L US_SIMPLE_L JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L FUNCS_L EXTRA_L>;
         	input-processors = <
             	&zip_xy_to_scroll_mapper
-            	&zip_scroll_scaler 1 3000
+            	&zip_scroll_scaler 1 1500
 				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         	>;
         };
@@ -230,7 +230,7 @@
             	&zip_xy_to_scroll_mapper
 				&zip_scroll_snap
 				&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-				&zip_scroll_scaler 1 100
+				&zip_scroll_scaler 1 30
         	>;
     	};
 /*
@@ -261,7 +261,7 @@
 */
 		mouse {
 			layers = <MOUSE_L>;
-			input-processors = <&zip_xy_scaler 3 2>;
+			input-processors = <&zip_xy_scaler 9 2>;
 		};
 
 		auto_mouse {
@@ -289,7 +289,7 @@
 */
 		mouse {
 			layers = <MOUSE_L>;
-			input-processors = <&zip_xy_scaler 4 1>;
+			input-processors = <&zip_xy_scaler 12 1>;
 		};
 
 		auto_mouse {

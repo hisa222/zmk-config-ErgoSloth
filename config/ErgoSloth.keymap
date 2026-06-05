@@ -293,7 +293,7 @@
 			layers = <JIS_L JIS_MARKS_L JIS_NUMS_L JIS_SIMPLE_L US_L US_MARKS_L US_NUMS_L US_SIMPLE_L EXTRA_L>;
 			input-processors = <
 				&zip_temp_layer MOUSE_L 10000
-				&zip_xy_scaler 200 100
+				&zip_xy_scaler 250 100
 			>;
 		};
     };

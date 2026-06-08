@@ -19,7 +19,7 @@
     col-offset = <7>;
 };
 
-&kscan0 {
+&kscan1 {
         interrupt-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     	gpios
     	    = <&xiao_d 5 (GPIO_ACTIVE_HIGH)>

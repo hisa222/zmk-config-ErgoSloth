@@ -170,7 +170,7 @@
     kscan2: kscan_direct {
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
-		input-gpios;
+		// input-gpios;
     };
 };
 

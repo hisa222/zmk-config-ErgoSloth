@@ -9,6 +9,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+/ {
+    chosen {
+        zmk,kscan = &kscan1;
+    };
+};
+
 &kscan1 {
         interrupt-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     	gpios

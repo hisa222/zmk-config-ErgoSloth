@@ -143,7 +143,7 @@
 			RC(7,0) RC(7,1)
         >;
     };
-
+/*
     kscan0: kscan_composite {
         compatible = "zmk,kscan-composite";
         rows = <14>;
@@ -164,12 +164,15 @@
     kscan1: kscan_matrix {
         compatible = "zmk,kscan-gpio-charlieplex";
         wakeup-source;
+		gpios;
     };
 
     kscan2: kscan_direct {
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
+		input-gpios;
     };
+*/
 };
 
 // Use NFC pins as GPIOs

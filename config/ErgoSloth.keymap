@@ -2090,7 +2090,8 @@
 &kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G  &kp SPACE          			&lt_c FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &mt_mkp RSHFT LCLK  &morph_space_jis
 &kp LALT       		 &lt_c FUNCS_L Z   &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B     &mkp LCLK         			&mt_c LALT N 	 &kp M         &td_sc_jis    &td_co_jis       &kp DOWN         &kp RIGHT      	   &kp RCTRL
 &none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly         &mkp RCLK         			&none     	     &none         &none         &none            &kp F5           &td_jis_ly     	   &kp LEFT
-            >;
+&kp LS(L)			 &kp LS(R)
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2115,7 +2116,8 @@
 &kp LSHFT      &kp LS(A)    	     &mt_c LS(S) SLASH  &mt_c LS(D) JP_DQUOTE  &kp LS(F)   &mt_c LS(G) LS(SLASH)  &kp SPACE 	   &kp LS(H)     	   &kp LS(J)         &kp LS(K)         &kp LS(L)            &mt JP_DQUOTE JP_QUOTE  &mt_mkp RSHFT LCLK    &mt JP_COLON SEMICOLON
 &kp LALT       &kp LS(Z)    	     &kp LS(X)  		&kp LS(C)        	   &kp LS(V)   &mt_c LS(B) JP_YEN     &mkp LCLK        &kp LS(N)     	   &kp LS(M)         &morph_comma_jis  &morph_period_jis    &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &kp RCTRL
 &none          &none        	     &none 	     		&none            	   &kp ENTER   &trans      		  	  &mkp RCLK        &none         	   &none             &none             &none                &kp F5                  &trans                &mt LS(SLASH) SLASH
-            >;
+&trans		   &trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2140,7 +2142,8 @@
 &kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE    &kp SPACE 	&kp KP_MULTIPLY  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &mt_mkp RSHFT LCLK  &kp SPACE
 &kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR      &mkp LCLK		&kp KP_LPAR      &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	    	 &kp RCTRL
 &none  		   &none     	 &none  	&none      	&kp ENTER        &tog JIS_NUMS_L  &mkp RCLK     &none  			 &none     	   &none  	  &none       &kp F5		 &tog JIS_NUMS_L	 &kp LEFT
-            >;
+&trans		   &trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2164,7 +2167,8 @@
 &kp LSHFT  &kp A     &kp S   &kp D   &kp F      &kp G      &mkp LCLK    &kp H   &kp J   &kp K      &kp L       &kp UP    &kp RSHFT	    &kp SPACE
 &kp LALT   &kp Z     &kp X   &kp C   &kp V      &kp B      &mkp RCLK    &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN  &kp RIGHT	  	&kp RCTRL
 &none	   &none  	 &none	 &none	 &kp ENTER  &to JIS_L  &kp SPACE    &none   &none   &none      &none       &kp F5    &to JIS_L	  	&kp LEFT
-            >;
+&trans	   &trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2189,7 +2193,8 @@
 &kp LSHFT      		 &kp A            &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE     			&h_fun_alt 0 H  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &mt_mkp RSHFT LCLK  &morph_space_us
 &kp LALT       		 &lt_c FUNCS_L Z  &kp X          &kp C   	    &kp V      &mt_c BSLH B       &mkp LCLK					&mt_c LALT N  	&kp M   	  &td_sc_us	 	&td_co_us	  &kp DOWN   	 &kp RIGHT	   		 &kp RCTRL
 &none  		   		 &none      	  &none   		 &none   	    &kp ENTER  &td_us_ly  		  &mkp RCLK					&none  		  	&none   	  &none  	 	&none  	   	  &kp F5	     &td_us_ly	   		 &kp LEFT
-            >;
+&kp LS(L)			 &kp LS(R)
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2214,7 +2219,8 @@
 &kp LSHFT            &kp LS(A)        &mt_c LS(S) SLASH  &mt_c LS(D) DQT	&kp LS(F)   &mt_c LS(G) LS(SLASH)   &kp SPACE 		&kp LS(H)   	  &kp LS(J)        &kp LS(K)        &kp LS(L)         &mt APOS DQT      &mt_mkp RSHFT LCLK  &morph_space_us
 &mt SEMICOLON COLON  &kp LS(Z)        &kp LS(X)   		 &kp LS(C)      	&kp LS(V)   &mt_c LS(B) BSLH		&mkp LCLK		&kp LS(N)   	  &kp LS(M)        &morph_comma_us  &morph_period_us  &mt MINUS UNDER   &mt EQUAL PLUS  	&kp RCTRL
 &none		         &none	          &none		   		 &none		      	&kp ENTER   &trans		   			&mkp RCLK		&none	    	  &none		       &none	        &none		      &kp F5	        &trans		  	  	&kp LEFT
-            >;
+&trans				 &trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2239,7 +2245,8 @@
 &kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE   &kp SPACE 		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &mt_mkp RSHFT LCLK  &kp SPACE
 &kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR     &mkp LCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT			 &kp RCTRL
 &none		   &none	     &none	    &none	    &kp ENTER        &tog US_NUMS_L  &mkp RCLK		&none            &none			  &none	         &none		  &kp F5	     &to US_NUMS_L		 &kp LEFT
-            >;
+&trans		   &trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2263,7 +2270,8 @@
 &kp LSHFT      &kp A     &kp S   &kp D   &kp F      &kp G     &kp SPACE    		&kp H   &kp J   &kp K      &kp L       &kp UP    &kp RSHFT	    &kp SPACE
 &kp LALT       &kp Z     &kp X   &kp C   &kp V      &kp B     &mkp LCLK    		&kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN  &kp RIGHT	    &kp RCTRL
 &none	       &none  	 &none	 &none	 &kp ENTER  &to US_L  &mkp RCLK    		&none   &none   &none      &none       &kp F5    &to US_L	    &kp LEFT
-            >;
+&trans		   &trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2288,7 +2296,8 @@
 &kp LSHFT   &kp C_PP	&kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	  &kp SPACE			&trans		  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0    &mt_mkp RSHFT LCLK  &kp SPACE
 &kp LALT    &trans	    &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &mkp LCLK			&kp C_VOL_DN  &kp C_MUTE  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0  	  &ctrl_y		 	  &kp RCTRL
 &none  		&none       &none      &none      	 &kp ENTER  	&tog FUNCS_L  &mkp RCLK			&none  	   	  &none       &none  	 	 &none  	 &kp F5	          &tog FUNCS_L		  &ctrl_z
-            >;
+&trans		&trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2313,7 +2322,8 @@
 &trans  &trans  &trans &trans  &trans  &trans  &trans 			&trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans
 &trans  &trans  &trans &trans  &trans  &trans  &mkp LCLK		&trans  &trans     &trans  	  &trans  &trans  &trans  &trans
 &trans  &trans  &trans &trans  &trans  &trans  &mkp RCLK		&trans  &trans     &trans  	  &trans  &trans  &trans  &trans
-            >;
+&trans	&trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2338,7 +2348,8 @@
 &kp LSHFT      &fl_space  			   &morph_ta_4  	   &morph_na_5   &morph_ha_6  &kp MINUS  &fl_space 		&kp RCTRL	   &morph_ta_4     	   &morph_na_5   &morph_ha_6  &kp UP          &fl_space	  			  &td_fl_comma
 &kp LALT       &lt_fl_enter FUNCS_L 0  &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp RCTRL  &mkp LCLK		&kp LCTRL	   &morph_ma_7  	   &morph_ya_8   &morph_ra_9  &kp DOWN        &kp RIGHT   	  		  &morph_wa_0
 &none	       &none  	 			   &none	 	  	   &none	 	 &kp ENTER    &tog_fl_l  &mkp RCLK		&none          &none          	   &none         &none        &kp F5          &tog_fl_l   			  &kp LEFT
-            >;
+&trans		   &trans
+			>;
 
             sensor-bindings =
                 <&enc_sagcs>,
@@ -2363,6 +2374,7 @@
 &none   &none  &none  &none  &none  &none   &none		 	&none  &none  &none  &none  &none  &none   &none
 &none   &none  &none  &none  &none  &none   &mkp LCLK		&none  &none  &none  &none  &none  &none   &none
 &none   &none  &none  &none  &none  &trans	&mkp RCLK		&none  &none  &none  &none  &none  &trans  &none
+&trans	&trans
             >;
 
             sensor-bindings =
@@ -2388,6 +2400,7 @@
 &none   &none  &none  &none  &none  &none     	  &none		 	&none         &none         &none         &none         &none         &none		    &none
 &none   &none  &none  &none  &none  &none     	  &mkp LCLK		&none         &none         &none         &none         &none         &none		    &none
 &none   &none  &none  &none  &none  &tog EXTRA_L  &mkp RCLK		&none         &none         &none         &none         &none         &tog EXTRA_L  &none
+&trans	&trans
             >;
 
             sensor-bindings =

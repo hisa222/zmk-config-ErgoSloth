@@ -289,7 +289,7 @@
 */
 		mouse {
 			layers = <MOUSE_L>;
-			input-processors = <&zip_xy_scaler 12 1>;
+			input-processors = <&zip_xy_scaler 6 1>;
 		};
 
 		auto_mouse {

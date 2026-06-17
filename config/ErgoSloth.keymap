@@ -336,6 +336,7 @@
 // | 42 | 43 | 44 | 45 | 46 | 47 | 48 |   | 49 | 50 | 51 | 52 | 53 | 54 | 55 |
 // | 56 | 57 | 58 | 59 | 60 | 61 | 62 |   | 63 | 64 | 65 | 66 | 67 | 68 | 69 |
 // | 70 | 71 | 72 | 73 | 74 | 75 | 76 |   | 77 | 78 | 79 | 80 | 81 | 82 | 83 |
+// | 84 | 85 |  (Dongle)
 
 //           | 2  | 3  | 4  | 5  |   	| 7  | 8  | 9  | 10 |
 // | 0  | 1  | 16 | 17 | 18 | 19 |   	| 21 | 22 | 23 | 24 | 11 | 12 |
@@ -351,10 +352,17 @@
 //      | 70 |                                            | 77 |
 // | 71 | 74 | 73 |                                  | 78 | 81 | 80 |
 //      | 72 |                                            | 79 |
+//					  (Dongle) | 84 | 85 |
 
 
     combos {
 		compatible = "zmk,combos";
+
+        dongle {
+            timeout-ms = <200>;
+            key-positions = <84 85>;
+            bindings = <&open_windows>;
+        };
 
         middle_click_r1 {
             timeout-ms = <200>;
@@ -613,6 +621,23 @@
 				<&macro_wait_time 100>,
                 <&macro_tap &kp U>,
                 <&macro_wait_time 100>,
+                <&macro_tap &kp S>;
+        };
+
+        open_windows: open_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp N0>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp N2>,
+				<&macro_wait_time 100>,
+                <&macro_release &kp N2>,
+				<&macro_wait_time 100>,
+                <&macro_tap &kp U>,
+                <&macro_wait_time N2>,
                 <&macro_tap &kp S>;
         };
 
@@ -1228,6 +1253,14 @@
             flavor = "tap-preferred";
             tapping-term-ms = <1200>;
             bindings = <&alt_f4>, <&kp>;
+        };
+
+        mt_boot: mod_tap_bootloader {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <1200>;
+            bindings = <&bootloader>, <&kp>;
         };
 
         h_fun_alt: h_function_layer_alt {
@@ -2010,6 +2043,20 @@
             tapping-term-ms = <400>;
             bindings = <&ctrl_v>, <&win_v>;
         };
+
+        td_slp_a4: tap_dance_sleep_alt_f4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&mt_slp 0 ENTER>, <&sleep_windows>, <&alt_f4>;
+        };
+
+        td_rst_boot: tap_dance_reset_boot {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&mt_boot 0 ENTER>, <&reset>, <&bootloader>;
+        };
 /*
         td_fl_comma: tap_dance_flick_comma {
             compatible = "zmk,behavior-tap-dance";
@@ -2090,7 +2137,7 @@
 &kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G  &kp SPACE          			&lt_c FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &mt_mkp RSHFT LCLK  &morph_space_jis
 &kp LALT       		 &lt_c FUNCS_L Z   &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B     &mkp LCLK         			&mt_c LALT N 	 &kp M         &td_sc_jis    &td_co_jis       &kp DOWN         &kp RIGHT      	   &kp RCTRL
 &none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly         &mkp RCLK         			&none     	     &none         &none         &none            &kp F5           &td_jis_ly     	   &kp LEFT
-&kp LS(L)			 &kp LS(R)
+&td_rst_boot		 &td_slp_a4
 			>;
 
             sensor-bindings =
@@ -2193,7 +2240,7 @@
 &kp LSHFT      		 &kp A            &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE     			&h_fun_alt 0 H  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &mt_mkp RSHFT LCLK  &morph_space_us
 &kp LALT       		 &lt_c FUNCS_L Z  &kp X          &kp C   	    &kp V      &mt_c BSLH B       &mkp LCLK					&mt_c LALT N  	&kp M   	  &td_sc_us	 	&td_co_us	  &kp DOWN   	 &kp RIGHT	   		 &kp RCTRL
 &none  		   		 &none      	  &none   		 &none   	    &kp ENTER  &td_us_ly  		  &mkp RCLK					&none  		  	&none   	  &none  	 	&none  	   	  &kp F5	     &td_us_ly	   		 &kp LEFT
-&kp LS(L)			 &kp LS(R)
+&td_rst_boot		 &td_slp_a4
 			>;
 
             sensor-bindings =

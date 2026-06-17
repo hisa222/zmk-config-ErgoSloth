@@ -2055,7 +2055,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&mt_boot 0 ENTER>, <&reset>, <&bootloader>;
+            bindings = <&mt_boot 0 ENTER>, <&sys_reset>, <&bootloader>;
         };
 /*
         td_fl_comma: tap_dance_flick_comma {

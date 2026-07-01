@@ -461,6 +461,24 @@
             bindings = <&tog EXTRA_L>;
         };
 
+        del_left {
+            timeout-ms = <50>;
+            key-positions = <0 14>;
+            bindings = <&kp DELETE>;
+        };
+
+        backspace_left {
+            timeout-ms = <50>;
+            key-positions = <14 28>;
+            bindings = <&kp BACKSPACE>;
+        };
+
+        ctrl_all_right {
+            timeout-ms = <50>;
+            key-positions = <12 26>;
+            bindings = <&kp LC(A)>;
+        };
+
         alt_left {
             timeout-ms = <50>;
             key-positions = <67 83>;
@@ -2131,8 +2149,8 @@
             bindings = <
 &esc_bt EXTRA_L ESC  &morph_home_jis   &td_f4         &td_f5  		 	 &td_f6     &td_f7     	       &kp LWIN          			&td_f8    	   	 &morph_f9     &morph_f10    &td_f11          &morph_end_jis   &kp DEL        	   &mkp RCLK
 &kp JP_HANZEN  		 &kp N1            &morph_2       &kp N3  		 	 &kp N4     &kp N5     	       &kp LCTRL          			&morph_6  	   	 &morph_7      &morph_8      &morph_9         &morph_0         &kp BACKSPACE  	   &mkp LCLK
-&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &lt_c FUNCS_L T    &lt_c JP_FLICK_L SPACE       &mt_c LALT Y     &kp U    	   &mt_m MCLK I  &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt FUNCS_L ENTER   &kp SPACE
-&kp LSHFT      		 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G  &kp SPACE          			&lt_c FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &mt_mkp RSHFT LCLK  &morph_space_jis
+&kp TAB    	   		 &mt_c JP_QUOTE Q  &kp W          &mt_c JP_EQUAL E   &kp R      &lt_c FUNCS_L T    &lt_c JP_FLICK_L SPACE       &mt_c LALT Y     &kp U    	   &mt_m MCLK I  &mt_c JP_PIPE O  &mt_c JP_PLUS P  &lt FUNCS_L ENTER   &mt_c LALT SPACE
+&mt_c LSHFT ENTER	 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G  &kp SPACE          			&lt_c FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &mt_mkp RSHFT TAB   &morph_space_jis
 &kp LALT       		 &lt_c FUNCS_L Z   &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B     &mkp LCLK         			&mt_c LALT N 	 &kp M         &td_sc_jis    &td_co_jis       &kp DOWN         &kp RIGHT      	   &kp RCTRL
 &none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly         &mkp RCLK         			&none     	     &none         &none         &none            &kp F5           &td_jis_ly     	   &kp LEFT
 &td_rst_boot		 &td_slp_a4
@@ -2155,13 +2173,13 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |  / ? |
 
             bindings = <
-&kp ESC        &morph_home_jis       &kp F4     		&kp F5          	   &kp F6      &kp F7      		  	  &kp LGUI         &kp F8        	   &kp F9            &kp F10           &kp F11              &morph_end_jis          &kp DEL               &mkp RCLK
-&kp JP_HANZEN  &kp LS(N1)   	     &kp JP_AT  		&kp LS(N3)    		   &kp LS(N4)  &kp LS(N5)  		  	  &kp LCTRL        &kp JP_CARET  	   &kp JP_AMPERSAND  &kp JP_ASTERISK   &kp JP_LPAREN        &kp JP_RPAREN           &kp BACKSPACE         &mkp LCLK
-&kp TAB        &mt_c LS(Q) JP_QUOTE  &kp LS(W)  		&mt_c LS(E) JP_EQUAL   &kp LS(R)   &kp LS(T)   		  	  &kp SPACE        &mt_c LS(Y) JP_YEN  &kp LS(U)         &kp LS(I)         &mt_c LS(O) JP_PIPE  &mt_c LS(P)JP_PLUS      &kp ENTER             &kp SPACE
-&kp LSHFT      &kp LS(A)    	     &mt_c LS(S) SLASH  &mt_c LS(D) JP_DQUOTE  &kp LS(F)   &mt_c LS(G) LS(SLASH)  &kp SPACE 	   &kp LS(H)     	   &kp LS(J)         &kp LS(K)         &kp LS(L)            &mt JP_DQUOTE JP_QUOTE  &mt_mkp RSHFT LCLK    &mt JP_COLON SEMICOLON
-&kp LALT       &kp LS(Z)    	     &kp LS(X)  		&kp LS(C)        	   &kp LS(V)   &mt_c LS(B) JP_YEN     &mkp LCLK        &kp LS(N)     	   &kp LS(M)         &morph_comma_jis  &morph_period_jis    &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &kp RCTRL
-&none          &none        	     &none 	     		&none            	   &kp ENTER   &trans      		  	  &mkp RCLK        &none         	   &none             &none             &none                &kp F5                  &trans                &mt LS(SLASH) SLASH
-&trans		   &trans
+&trans  &mt GRAVE TILDE		  &trans     		 &trans          	    &trans      &trans      		   &trans        &trans        	     &trans            &trans           &trans               &trans         		 &trans                &trans
+&trans  &kp LS(N1)   	      &kp JP_AT  		 &kp LS(N3)    		    &kp LS(N4)  &kp LS(N5)  		   &trans        &kp JP_CARET  	     &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN        &kp JP_RPAREN           &trans		           &trans
+&trans  &mt_c LS(Q) JP_QUOTE  &kp LS(W)  		 &mt_c LS(E) JP_EQUAL   &kp LS(R)   &kp LS(T)   		   &trans        &mt_c LS(Y) JP_YEN  &kp LS(U)         &kp LS(I)        &mt_c LS(O) JP_PIPE  &mt_c LS(P)JP_PLUS      &trans	               &trans
+&trans	&kp LS(A)    	      &mt_c LS(S) SLASH  &mt_c LS(D) JP_DQUOTE  &kp LS(F)   &mt_c LS(G) LS(SLASH)  &trans 	     &kp LS(H)     	     &kp LS(J)         &kp LS(K)        &kp LS(L)            &mt JP_DQUOTE JP_QUOTE  &trans			       &mt JP_COLON SEMICOLON
+&trans	&kp LS(Z)    	      &kp LS(X)  		 &kp LS(C)        	    &kp LS(V)   &mt_c LS(B) JP_YEN     &trans        &kp LS(N)     	     &kp LS(M)         &td_sc_jis  		&td_co_jis    		 &mt JP_PIPE JP_YEN      &mt JP_PLUS JP_EQUAL  &trans
+&none   &none        	      &none 	     	 &none            	    &trans	    &trans      		   &trans        &none         	     &none             &none            &none                &trans                  &trans                &mt LS(SLASH) SLASH
+&trans	&trans
 			>;
 
             sensor-bindings =
@@ -2181,12 +2199,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 |   ←  |
 
             bindings = <
-&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7           &kp LGUI      &kp F8           &kp F9        &kp F10    &kp F11     &kp END        &kp DEL			 &mkp RCLK
-&kp JP_HANZEN  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5        &kp LCTRL		&kp KP_N6        &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_N0      &kp BACKSPACE  	 &mkp LCLK
-&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS     &kp SPACE		&kp KP_PLUS      &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MINUS   &kp ENTER	    	 &kp SPACE
-&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE    &kp SPACE 	&kp KP_MULTIPLY  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &mt_mkp RSHFT LCLK  &kp SPACE
-&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR      &mkp LCLK		&kp KP_LPAR      &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	    	 &kp RCTRL
-&none  		   &none     	 &none  	&none      	&kp ENTER        &tog JIS_NUMS_L  &mkp RCLK     &none  			 &none     	   &none  	  &none       &kp F5		 &tog JIS_NUMS_L	 &kp LEFT
+&trans  &kp HOME      &trans     &trans      &trans           &trans           &trans       &trans           &trans        &trans	  &trans      &trans         &trans			  &trans
+&trans  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5        &trans		&kp KP_N6        &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_N0      &trans		      &trans
+&trans  &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS     &trans		&kp KP_PLUS      &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MINUS   &trans		   	  &trans
+&trans  &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE    &trans 		&kp KP_MULTIPLY  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_DIVIDE  &trans			  &trans
+&trans  &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR      &trans		&kp KP_LPAR      &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_RPAR    &kp RIGHT	      &trans
+&none  	&none     	  &none  	 &none       &kp ENTER        &tog JIS_NUMS_L  &trans     	&none  			 &none     	   &none  	  &none       &trans		 &tog JIS_NUMS_L  &kp LEFT
 &trans		   &trans
 			>;
 
@@ -2232,12 +2250,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr5 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr5 |   ←  |
 
             bindings = <
-&esc_bt EXTRA_L ESC  &morph_home_us   &td_f4  		 &td_f5  	    &td_f6     &td_f7     		  &kp LGUI					&td_f8  	  	&morph_f9     &morph_f10    &td_f11       &morph_end_us  &kp DEL		   	 &mkp RCLK
-&alt_grave     		 &kp N1    	      &kp N2  		 &kp N3  	    &kp N4     &kp N5     		  &kp LCTRL					&kp N6  	  	&kp N7  	  &kp N8        &kp N9        &kp N0     	 &kp BACKSPACE  	 &mkp LCLK
-&kp TAB        		 &mt_c SQT Q      &kp W          &mt_c EQUAL E  &kp R      &lt_c FUNCS_L T    &lt_c JP_FLICK_L SPACE    &mt_c LALT Y  	&kp U   	  &mt_m MCLK I  &mt_c PIPE O  &mt_c PLUS P   &lt FUNCS_L ENTER   &mt_c LALT SPACE
-&kp LSHFT      		 &kp A            &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE     			&h_fun_alt 0 H  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &mt_mkp RSHFT LCLK  &morph_space_us
-&kp LALT       		 &lt_c FUNCS_L Z  &kp X          &kp C   	    &kp V      &mt_c BSLH B       &mkp LCLK					&mt_c LALT N  	&kp M   	  &td_sc_us	 	&td_co_us	  &kp DOWN   	 &kp RIGHT	   		 &kp RCTRL
-&none  		   		 &none      	  &none   		 &none   	    &kp ENTER  &td_us_ly  		  &mkp RCLK					&none  		  	&none   	  &none  	 	&none  	   	  &kp F5	     &td_us_ly	   		 &kp LEFT
+&esc_bt EXTRA_L ESC  &morph_home_us   &td_f4  		 &td_f5  	    &td_f6     &td_f7     		  &kp LGUI					&td_f8  	  	&morph_f9     &morph_f10    &td_f11       &morph_end_us  &kp DEL		   	&mkp RCLK
+&alt_grave     		 &kp N1    	      &kp N2  		 &kp N3  	    &kp N4     &kp N5     		  &kp LCTRL					&kp N6  	  	&kp N7  	  &kp N8        &kp N9        &kp N0     	 &kp BACKSPACE  	&mkp LCLK
+&kp TAB        		 &mt_c SQT Q      &kp W          &mt_c EQUAL E  &kp R      &lt_c FUNCS_L T    &lt_c JP_FLICK_L SPACE    &mt_c LALT Y  	&kp U   	  &mt_m MCLK I  &mt_c PIPE O  &mt_c PLUS P   &lt FUNCS_L ENTER  &mt_c LALT SPACE
+&mt_c LSHFT ENTER	 &kp A            &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE     			&h_fun_alt 0 H  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &mt_mkp RSHFT TAB  &morph_space_us
+&kp LALT       		 &lt_c FUNCS_L Z  &kp X          &kp C   	    &kp V      &mt_c BSLH B       &mkp LCLK					&mt_c LALT N  	&kp M   	  &td_sc_us	 	&td_co_us	  &kp DOWN   	 &kp RIGHT	   		&kp RCTRL
+&none  		   		 &none      	  &none   		 &none   	    &kp ENTER  &td_us_ly  		  &mkp RCLK					&none  		  	&none   	  &none  	 	&none  	   	  &kp F5	     &td_us_ly	   		&kp LEFT
 &td_rst_boot		 &td_slp_a4
 			>;
 
@@ -2253,18 +2271,18 @@
             // |  ESC |  ` ~ |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  \ | |  DEL | RCLK |
             // |  E/J |   !  |   @  |   #  |   $  |   %  | LCtr |   |   ^  |   &  |   *  |   (  |   )  | BKSP | LCLK |
             // |  TAB |   '  |   W  |   =  |   R  |   T  | SPCE |   |   \  |   U  |   I  |   |  |   +  | ENTR | SPCE |
-            // | LSft |   A  |   /  |   "  |   F  |   ?  | SPCE |   |   H  |   J  |   K  |   L  |  ' " | RSft | SPCE |
-            // |  ; : |   Z  |   X  |   C  |   V  |   \  | LCLK |   |   N  |   M  |   <  |   >  |  - _ |  = + | RCtr |
+            // | LSft |   A  |   /  |   "  |   F  |   ?  | SPCE |   |   H  |   J  |   K  |   L  |  ' " | RSft |  ; : |
+            // | LALT |   Z  |   X  |   C  |   V  |   \  | LCLK |   |   N  |   M  |   <  |   >  |  - _ |  = + | RCtr |
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr4 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr4 |   ←  |
 
             bindings = <
-&kp ESC              &mt GRAVE TILDE  &kp F4      		 &kp F5         	&kp F6      &kp F7      			&kp LGUI		&kp F8      	  &kp F9           &kp F10          &kp F11           &mt BSLH PIPE     &kp DEL		  	  	&mkp RCLK
-&alt_grave           &kp LS(N1)       &kp LS(N2)  		 &kp LS(N3)     	&kp LS(N4)  &kp LS(N5)  			&kp LCTRL		&kp LS(N6)  	  &kp LS(N7)       &kp LS(N8)       &kp LS(N9)        &kp LS(N0)        &kp BACKSPACE	  	&mkp LCLK
-&kp TAB              &mt_c LS(Q) SQT  &kp LS(W)   		 &mt_c LS(E) EQUAL  &kp LS(R)   &kp LS(T)   			&kp SPACE		&mt_c LS(B) BSLH  &kp LS(U)        &kp LS(I)        &mt_c LS(O) PIPE  &mt_c LS(P) PLUS  &kp ENTER		  	&kp SPACE
-&kp LSHFT            &kp LS(A)        &mt_c LS(S) SLASH  &mt_c LS(D) DQT	&kp LS(F)   &mt_c LS(G) LS(SLASH)   &kp SPACE 		&kp LS(H)   	  &kp LS(J)        &kp LS(K)        &kp LS(L)         &mt APOS DQT      &mt_mkp RSHFT LCLK  &morph_space_us
-&mt SEMICOLON COLON  &kp LS(Z)        &kp LS(X)   		 &kp LS(C)      	&kp LS(V)   &mt_c LS(B) BSLH		&mkp LCLK		&kp LS(N)   	  &kp LS(M)        &morph_comma_us  &morph_period_us  &mt MINUS UNDER   &mt EQUAL PLUS  	&kp RCTRL
-&none		         &none	          &none		   		 &none		      	&kp ENTER   &trans		   			&mkp RCLK		&none	    	  &none		       &none	        &none		      &kp F5	        &trans		  	  	&kp LEFT
-&trans				 &trans
+&trans  &mt GRAVE TILDE  &trans      		&trans         	   &trans      &trans      			  &trans		&trans      	  &trans           &trans           &trans            &mt BSLH PIPE     &trans		  	&mkp RCLK
+&trans  &kp LS(N1)       &kp LS(N2)  		&kp LS(N3)     	   &kp LS(N4)  &kp LS(N5)  			  &trans		&kp LS(N6)  	  &kp LS(N7)       &kp LS(N8)       &kp LS(N9)        &kp LS(N0)        &trans	  		&mkp LCLK
+&trans  &mt_c LS(Q) SQT  &kp LS(W)   		&mt_c LS(E) EQUAL  &kp LS(R)   &kp LS(T)   			  &trans		&mt_c LS(B) BSLH  &kp LS(U)        &kp LS(I)        &mt_c LS(O) PIPE  &mt_c LS(P) PLUS  &trans		  	&trans
+&trans  &kp LS(A)        &mt_c LS(S) SLASH  &mt_c LS(D) DQT	   &kp LS(F)   &mt_c LS(G) LS(SLASH)  &trans 		&kp LS(H)   	  &kp LS(J)        &kp LS(K)        &kp LS(L)         &mt APOS DQT      &trans  		&mt SEMICOLON COLON
+&trans  &kp LS(Z)        &kp LS(X)   		&kp LS(C)      	   &kp LS(V)   &mt_c LS(B) BSLH		  &trans		&kp LS(N)   	  &kp LS(M)        &td_sc_us	 	&td_co_us		  &mt MINUS UNDER   &mt EQUAL PLUS  &kp RCTRL
+&none	&none	         &none		   		&none		       &trans      &trans		   		  &trans		&none	    	  &none		       &none	        &none		      &kp F5	        &trans		  	&kp LEFT
+&trans	&trans
 			>;
 
             sensor-bindings =
@@ -2284,13 +2302,13 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr4 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr4 |   ←  |
 
             bindings = <
-&kp ESC        &kp HOME      &kp F4     &kp F5      &kp F6           &kp F7          &kp LGUI		&kp F8           &kp F9           &kp F10        &kp F11      &kp END        &kp DEL			 &mkp RCLK
-&alt_grave     &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5       &kp LCTRL		&kp KP_N6        &kp KP_N7        &kp KP_N8      &kp KP_N9    &kp KP_N0      &kp BACKSPACE		 &mkp LCLK
-&kp TAB        &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS    &kp SPACE		&kp KP_PLUS      &kp KP_N4        &kp KP_N5      &kp KP_N6    &kp KP_MINUS   &kp ENTER			 &kp SPACE
-&kp LSHFT      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE   &kp SPACE 		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &mt_mkp RSHFT LCLK  &kp SPACE
-&kp LALT       &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR     &mkp LCLK		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT			 &kp RCTRL
-&none		   &none	     &none	    &none	    &kp ENTER        &tog US_NUMS_L  &mkp RCLK		&none            &none			  &none	         &none		  &kp F5	     &to US_NUMS_L		 &kp LEFT
-&trans		   &trans
+&trans  &kp HOME      &trans     &trans      &trans           &trans          &trans		&trans           &trans           &trans         &trans       &kp END        &trans			&mkp RCLK
+&trans  &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_N4        &kp KP_N5       &trans		&kp KP_N6        &kp KP_N7        &kp KP_N8      &kp KP_N9    &kp KP_N0      &trans		 	&mkp LCLK
+&trans  &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_PLUS      &kp KP_MINUS    &trans		&kp KP_PLUS      &kp KP_N4        &kp KP_N5      &kp KP_N6    &kp KP_MINUS   &trans			&kp SPACE
+&trans  &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_MULTIPLY  &kp KP_DIVIDE   &trans 		&kp KP_MULTIPLY  &kp KP_N1        &kp KP_N2      &kp KP_N3    &kp KP_DIVIDE  &trans  		&kp SPACE
+&trans  &kp KP_COMMA  &kp KP_N0  &kp KP_DOT  &kp KP_LPAR      &kp KP_RPAR     &trans		&kp KP_LPAR      &kp KP_COMMA     &kp KP_N0      &kp KP_DOT   &kp KP_RPAR    &kp RIGHT		&kp RCTRL
+&none	&none	      &none	     &none	     &kp ENTER        &tog US_NUMS_L  &trans		&none            &none			  &none	         &none		  &kp F5	     &to US_NUMS_L	&kp LEFT
+&trans	&trans
 			>;
 
             sensor-bindings =
@@ -2309,13 +2327,13 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
 
             bindings = <
-&kp ESC    	   &kp HOME  &kp F4  &kp F5  &kp F6     &kp F7    &kp GUI      		&kp F8  &kp F9  &kp F10    &kp F11     &kp END   &kp DEL		&mkp RCLK
-&alt_grave     &kp N1    &kp N2  &kp N3  &kp N4     &kp N5    &kp LCTRL    		&kp N6  &kp N7  &kp N8     &kp N9      &kp N0    &kp BACKSPACE  &mkp LCLK
-&kp TAB        &kp Q     &kp W   &kp E   &kp R      &kp T     &kp SPACE    		&kp Y   &kp U   &kp I      &kp O       &kp P     &kp ENTER	    &kp SPACE
-&kp LSHFT      &kp A     &kp S   &kp D   &kp F      &kp G     &kp SPACE    		&kp H   &kp J   &kp K      &kp L       &kp UP    &kp RSHFT	    &kp SPACE
-&kp LALT       &kp Z     &kp X   &kp C   &kp V      &kp B     &mkp LCLK    		&kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN  &kp RIGHT	    &kp RCTRL
-&none	       &none  	 &none	 &none	 &kp ENTER  &to US_L  &mkp RCLK    		&none   &none   &none      &none       &kp F5    &to US_L	    &kp LEFT
-&trans		   &trans
+&kp ESC    	&kp HOME  &kp F4  &kp F5  &kp F6     &kp F7    &kp GUI      		&kp F8  &kp F9  &kp F10    &kp F11     &kp END   &kp DEL		&mkp RCLK
+&alt_grave  &kp N1    &kp N2  &kp N3  &kp N4     &kp N5    &kp LCTRL    		&kp N6  &kp N7  &kp N8     &kp N9      &kp N0    &kp BACKSPACE  &mkp LCLK
+&kp TAB     &kp Q     &kp W   &kp E   &kp R      &kp T     &kp SPACE    		&kp Y   &kp U   &kp I      &kp O       &kp P     &kp ENTER	    &kp SPACE
+&kp LSHFT   &kp A     &kp S   &kp D   &kp F      &kp G     &kp SPACE    		&kp H   &kp J   &kp K      &kp L       &kp UP    &kp RSHFT	    &kp SPACE
+&kp LALT    &kp Z     &kp X   &kp C   &kp V      &kp B     &mkp LCLK    		&kp N   &kp M   &kp COMMA  &kp PERIOD  &kp DOWN  &kp RIGHT	    &kp RCTRL
+&none	    &none  	  &none	  &none	  &kp ENTER  &to US_L  &mkp RCLK    		&none   &none   &none      &none       &kp F5    &to US_L	    &kp LEFT
+&trans		&trans
 			>;
 
             sensor-bindings =
@@ -2335,12 +2353,12 @@
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 
             bindings = <
-&kp F1      &kp F2      &kp F3     &kp F4     	 &kp F5         &kp F6     	  &kp GUI			&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	  &kp F12		 	  &mkp RCLK
-&kp C_MENU  &kp N1      &kp N2     &kp N3     	 &kp N4     	&kp N5     	  &kp LCTRL			&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	  &kp BACKSPACE  	  &mkp LCLK
-&kp TAB     &kp C_PREV  &kp C_RW   &kp C_FF   	 &kp C_NEXT     &kp C_VOL_UP  &kp SPACE			&kp C_VOL_UP  &kp C_PREV  &kp C_PP  	 &kp C_NEXT  &kp LC(LA(DEL))  &trans		 	  &kp SPACE
-&kp LSHFT   &kp C_PP	&kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	  &kp SPACE			&trans		  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0    &mt_mkp RSHFT LCLK  &kp SPACE
-&kp LALT    &trans	    &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &mkp LCLK			&kp C_VOL_DN  &kp C_MUTE  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0  	  &ctrl_y		 	  &kp RCTRL
-&none  		&none       &none      &none      	 &kp ENTER  	&tog FUNCS_L  &mkp RCLK			&none  	   	  &none       &none  	 	 &none  	 &kp F5	          &tog FUNCS_L		  &ctrl_z
+&kp F1      &kp F2      &kp F3     &kp F4     	 &kp F5         &kp F6     	  &trans			&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	  &kp F12		 	  &trans
+&kp C_MENU  &kp N1      &kp N2     &kp N3     	 &kp N4     	&kp N5     	  &trans			&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	  &trans		  	  &trans
+&kp TAB     &kp C_PREV  &kp C_RW   &kp C_FF   	 &kp C_NEXT     &kp C_VOL_UP  &trans			&kp C_VOL_UP  &kp C_PREV  &kp C_PP  	 &kp C_NEXT  &kp LC(LA(DEL))  &trans		 	  &trans
+&kp LSHFT   &kp C_PP	&kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	  &trans			&trans		  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0    &trans			  &trans
+&kp LALT    &trans	    &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &trans			&kp C_VOL_DN  &kp C_MUTE  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0  	  &ctrl_y		 	  &trans
+&none  		&none       &none      &none      	 &kp ENTER  	&tog FUNCS_L  &trans			&none  	   	  &none       &none  	 	 &none  	 &kp F5	          &tog FUNCS_L		  &ctrl_z
 &trans		&trans
 			>;
 

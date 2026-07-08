@@ -1640,7 +1640,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&kp TAB>;
-            mods = <(MOD_LALT))>;
+            mods = <(MOD_LALT)>;
         };
 
         morph_2: morph_2 {

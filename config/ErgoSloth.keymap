@@ -723,6 +723,30 @@
                 <&macro_release &kp LALT>;
         };
 
+        all_delete: all_delete {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp A>,
+                <&macro_release &kp LCTRL>,
+				<&macro_wait_time 100>,
+				<&macro_tap &kp DELETE>;
+        };
+
+        ctrl_a: ctrl_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_tap &kp A>,
+                <&macro_release &kp LCTRL>;
+        };
+
         ctrl_c: ctrl_c {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -1221,6 +1245,14 @@
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             bindings = <&mkp>, <&kp>;
+        };
+
+        mt_dlt: mod_tap_delete {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&ctrl_a>, <&kp>;
         };
 
         mt_cp_tr: mod_tap_copy_triming {
@@ -2073,6 +2105,13 @@
             tapping-term-ms = <400>;
             bindings = <&mt_boot 0 ENTER>, <&sys_reset>, <&bootloader>;
         };
+
+        td_dlt_cls: tap_dance_delete_close {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&mt_dlt 0 DELETE>, <&close_window>, <&close_all_windows>;
+        };
 /*
         td_fl_comma: tap_dance_flick_comma {
             compatible = "zmk,behavior-tap-dance";
@@ -2108,6 +2147,9 @@
         //		  | SW38 |															 | SW98 |
         // | SW39 | SW42 | SW41 |											  | SW99 | SW102| SW101|
         // 		  | SW40 |															 | SW100|
+		//											(Dongle)
+		//									   | DSW1 |  | DSW2 |
+		//
         //                                             ||
         //                                           __||__
         //                                            \  /
@@ -2119,6 +2161,7 @@
         // | SW4  | SW9  | SW14 | SW19 | SW24 | SW29 | SW35 |   | SW64 | SW69 | SW74 | SW79 | SW84 | SW89 | SW95 |
         // | SW5  | SW10 | SW15 | SW20 | SW25 | SW30 | SW36 |   | SW65 | SW70 | SW75 | SW80 | SW85 | SW90 | SW96 |
         // | SW38 | SW39 | SW40 | SW41 | SW42 | SW31 | SW37 |   | SW98 | SW99 | SW100| SW101| SW102| SW91 | SW97 |
+		// | DSW1 | DSW2 |
 
         jis_layer {
             display-name = "JIS";
@@ -2138,6 +2181,8 @@
             //		  | CmL1 |															 | CmR1 |
             // | CmL2 | ENTR | CmL4 |											  | CmR2 | ENTR | CmR4 |
             // 		  | CmL3 |															 | CmR3 |
+			//											(Dongle)
+			//										| DCm1 | DCm2 |
             // -------------------------------------------------------------------------------------------------------
             // |  ESC | HOME |  F4  |  F5  |  F6  |  F7  |  GUI |   |  F8  |  F9  | F10  | F11  |  END |  DEL | RCLK |
             // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
@@ -2145,6 +2190,7 @@
             // | LSft |   A  |   S  |   D  |   F  |   G  | SPCE |   |   H  |   J  |   K  |   L  |   ↑  | RSft | SPCE |
             // | LAlt |   Z  |   X  |   C  |   V  |   B  | LCLK |   |   N  |   M  |   ,  |   .  |   ↓  |   →  | RCtr |
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr1 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr1 |   ←  |
+			// | DCm1 | DCm2 |
 
             bindings = <
 &esc_bt EXTRA_L ESC  &morph_home_jis   &td_f4         &td_f5  		 	 &td_f6     &td_f7     	       &kp LWIN          			&td_f8    	   	 &morph_f9     &morph_f10    &td_f11          &morph_end_jis   &kp DEL        	   &mkp RCLK
@@ -2153,7 +2199,7 @@
 &mt_c LSHFT ENTER	 &kp A             &mt_c SLASH S  &mt_c JP_DQUOTE D  &kp F      &mt_c LS(SLASH) G  &kp SPACE          			&lt_c FUNCS_L H  &mt_m LCLK J  &mt_m RCLK K  &kp L            &kp UP           &mt_c RSHFT TAB	   &morph_space_jis
 &kp LALT       		 &lt_c FUNCS_L Z   &kp X          &kp C   		 	 &kp V      &mt_c JP_YEN B     &mkp LCLK         			&mt_c LALT N 	 &kp M         &td_sc_jis    &td_co_jis       &kp DOWN         &kp RIGHT      	   &kp RCTRL
 &none          		 &none             &none          &none   		 	 &kp ENTER  &td_jis_ly         &mkp RCLK         			&none     	     &none         &none         &none            &kp F5           &td_jis_ly     	   &kp LEFT
-&td_rst_boot		 &td_slp_a4
+&td_dlt_cls			 &td_slp_a4
 			>;
 
             sensor-bindings =
@@ -2256,7 +2302,7 @@
 &mt_c LSHFT ENTER	 &kp A            &mt_c SLASH S  &mt_c DQT D    &kp F      &mt_c LS(SLASH) G  &kp SPACE     			&h_fun_alt 0 H  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &mt_c RSHFT TAB	&morph_space_us
 &kp LALT       		 &lt_c FUNCS_L Z  &kp X          &kp C   	    &kp V      &mt_c BSLH B       &mkp LCLK					&mt_c LALT N  	&kp M   	  &td_sc_us	 	&td_co_us	  &kp DOWN   	 &kp RIGHT	   		&kp RCTRL
 &none  		   		 &none      	  &none   		 &none   	    &kp ENTER  &td_us_ly  		  &mkp RCLK					&none  		  	&none   	  &none  	 	&none  	   	  &kp F5	     &td_us_ly	   		&kp LEFT
-&td_rst_boot		 &td_slp_a4
+&td_dlt_cls			 &td_slp_a4
 			>;
 
             sensor-bindings =

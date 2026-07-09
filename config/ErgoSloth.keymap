@@ -383,6 +383,18 @@
             bindings = <&mkp MCLK>;
         };
 
+        right_click_left {
+            timeout-ms = <200>;
+            key-positions = <48 62>;
+            bindings = <&mkp RCLK>;
+        };
+
+        right_click_right {
+            timeout-ms = <200>;
+            key-positions = <27 41>;
+            bindings = <&mkp RCLK>;
+        };
+
         to_jis_layer {
             timeout-ms = <200>;
             key-positions = <7 8 9 10>;
@@ -456,123 +468,123 @@
         };
 
         tog_extra_layer {
-            timeout-ms = <200>;
+            timeout-ms = <300>;
             key-positions = <2 3 4 5 7 8 9 10>;
             bindings = <&tog EXTRA_L>;
         };
 
         del_left {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <0 14>;
             bindings = <&kp DELETE>;
         };
 
         backspace_left {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <14 28>;
             bindings = <&kp BACKSPACE>;
         };
 
         ctrl_all_right {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <12 26>;
             bindings = <&kp LC(A)>;
         };
 
         alt_left {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <67 83>;
             bindings = <&alt_left>;
         };
 
         alt_right {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <67 68>;
             bindings = <&alt_right>;
         };
 
         ctrl_tab {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <53 68>;
             bindings = <&ctrl_tab>;
         };
 
         ctrl_shift_tab {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <53 83>;
             bindings = <&ctrl_shift_tab>;
         };
 
         ctrl_t {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <53 66>;
             bindings = <&ctrl_t>;
         };
 
         ctrl_w {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <65 66>;
             bindings = <&ctrl_w>;
         };
 
         f5 {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <53 67>;
             bindings = <&kp F5>;
         };
 
         encoder_R_up {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <77 81 11 49>;
             bindings = <&kp RC(T)>;
         };
 
         encoder_R_left {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <78 81 25 50>;
             bindings = <&kp RC(RS(TAB))>;
         };
 
         encoder_R_down {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <79 81 39 51>;
             bindings = <&kp RC(W)>;
         };
 
         encoder_R_right {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <80 81 53 52>;
             bindings = <&kp RC(TAB)>;
         };
 
         encoder_L_up {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <70 74 4 42>; 
             bindings = <&kp LC(C)>;
         };
 
         encoder_L_left {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <71 74 18 43>; 
             bindings = <&kp LC(Z)>;
         };
 
         encoder_L_down {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <72 74 32 44>;
             bindings = <&kp LC(V)>;
         };
 
         encoder_L_right {
             layers = <JIS_L>;
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <73 74 46 45>;
             bindings = <&kp LC(Y)>;
         };

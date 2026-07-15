@@ -384,13 +384,13 @@
         };
 
         right_click_left {
-            timeout-ms = <200>;
+            timeout-ms = <400>;
             key-positions = <48 62>;
             bindings = <&mkp RCLK>;
         };
 
         right_click_right {
-            timeout-ms = <200>;
+            timeout-ms = <400>;
             key-positions = <27 41>;
             bindings = <&mkp RCLK>;
         };
@@ -485,9 +485,15 @@
             bindings = <&kp BACKSPACE>;
         };
 
-        ctrl_all_right {
+        combo_esc {
             timeout-ms = <200>;
             key-positions = <12 26>;
+            bindings = <&kp ESC>;
+        };
+
+		ctrl_all_right {
+            timeout-ms = <200>;
+            key-positions = <26 40>;
             bindings = <&kp LC(A)>;
         };
 

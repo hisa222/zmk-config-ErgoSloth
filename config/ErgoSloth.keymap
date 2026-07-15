@@ -2118,7 +2118,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&mt_c LC(LA(DELETE)) ENTER>, <&sleep_windows>, <&alt_f4>;
+            bindings = <&mt_c LC(LA(DELETE)) ENTER>, <&sleep_windows>, <&none>, <&alt_f4>;
         };
 
         td_rst_boot: tap_dance_reset_boot {

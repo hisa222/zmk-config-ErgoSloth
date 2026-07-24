@@ -49,7 +49,7 @@ manifest:
     - name: zmk-dongle-screen
       #remote: janpfischer
       remote: hisa222
-      revision: main
+      revision: home
 
     #- name: prospector-zmk-module
       #remote: carrefinho

@@ -57,7 +57,8 @@
 // listeners
 &analog_joystick_right_listener {
 	device = <&analog_joystick_right_split>;
-	status = "okay";
+	// status = "okay";
+	status = "disabled";
 };
 
 &trackball_right_listener {

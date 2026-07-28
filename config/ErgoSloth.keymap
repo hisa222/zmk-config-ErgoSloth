@@ -544,6 +544,54 @@
             bindings = <&kp F5>;
         };
 
+		unlock_l{
+            timeout-ms = <200>;
+            key-positions = <62 46>;
+            bindings = <&open_windows>;
+        };
+
+		small_l {
+            timeout-ms = <200>;
+            key-positions = <62 45>;
+            bindings = <&close_window>;
+        };
+
+		close_app_l {
+            timeout-ms = <200>;
+            key-positions = <62 44>;
+            bindings = <&alt_f4>;
+        };
+
+		sleep_l {
+            timeout-ms = <200>;
+            key-positions = <62 43>;
+            bindings = <&sleep_windows>;
+        };
+
+		unlock_r {
+            timeout-ms = <200>;
+            key-positions = <27 50>;
+            bindings = <&open_windows>;
+        };
+
+		small_r {
+            timeout-ms = <200>;
+            key-positions = <27 51>;
+            bindings = <&close_window>;
+        };
+
+		close_app_r {
+            timeout-ms = <200>;
+            key-positions = <27 52>;
+            bindings = <&alt_f4>;
+        };
+
+		sleep_r {
+            timeout-ms = <200>;
+            key-positions = <27 53>;
+            bindings = <&sleep_windows>;
+        };
+
         encoder_R_up {
             layers = <JIS_L>;
             timeout-ms = <200>;

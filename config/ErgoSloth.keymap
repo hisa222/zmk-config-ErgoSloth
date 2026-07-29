@@ -725,23 +725,39 @@
                 <&macro_tap &kp N2>;
         };
 
-        open_windows2: open_windows2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <150>;
-            tap-ms = <50>;
-            bindings =
+		open_windows2: open_windows2 {
+    		compatible = "zmk,behavior-macro";
+    		#binding-cells = <0>;
+    		wait-ms = <100>;
+		    bindings =
+		        <&macro_press &kp ENTER>,
+        		<&macro_wait_time 20>,
+        		<&macro_release &kp ENTER>,
+
 				<&macro_wait_time 1000>,
-				<&macro_tap &kp ENTER>,
-				<&macro_wait_time 1000>,
-                <&macro_tap &kp N0>,
-				<&macro_wait_time 100>,
-                <&macro_tap &kp N2>,
-				<&macro_wait_time 100>,
-                <&macro_tap &kp N2>,
-                <&macro_wait_time 100>,
-                <&macro_tap &kp N2>;
-        };
+
+        		<&macro_press &kp N0>,
+        		<&macro_wait_time 20>,
+        		<&macro_release &kp N0>,
+
+        		<&macro_wait_time 50>,
+
+        		<&macro_press &kp N2>,
+        		<&macro_wait_time 20>,
+	        	<&macro_release &kp N2>,
+
+    	    	<&macro_wait_time 50>,
+
+        		<&macro_press &kp N2>,
+        		<&macro_wait_time 20>,
+        		<&macro_release &kp N2>,
+
+        		<&macro_wait_time 50>,
+
+        		<&macro_press &kp N2>,
+        		<&macro_wait_time 20>,
+        		<&macro_release &kp N2>;
+		};
 
         close_window: close_window {
             compatible = "zmk,behavior-macro";

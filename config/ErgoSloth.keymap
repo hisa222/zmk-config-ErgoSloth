@@ -729,12 +729,14 @@
     		compatible = "zmk,behavior-macro";
     		#binding-cells = <0>;
     		wait-ms = <100>;
+			tap-ms = <40>;
 		    bindings =
 		        <&macro_press &kp ENTER>,
         		<&macro_wait_time 20>,
         		<&macro_release &kp ENTER>,
 
-				<&macro_wait_time 1000>,
+				<&macro_wait_time 500>,
+				<&macro_wait_time 500>,
 
         		<&macro_press &kp N0>,
         		<&macro_wait_time 20>,

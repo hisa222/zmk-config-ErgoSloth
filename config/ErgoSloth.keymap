@@ -1718,7 +1718,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mt RS(PERIOD) PERIOD>, <&morph_period_us_a>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
+            mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
         };
 
         morph_space_tab: morph_space_tab {

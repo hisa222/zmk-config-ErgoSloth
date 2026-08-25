@@ -1793,6 +1793,14 @@
             bindings = <&kp KP_DOT>, <&kp LC(Y)>;
             mods = <(MOD_LALT)>;
         };
+
+        morph_right: morph_right {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&td_right>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
+			keep-mods = <(MOD_LALT)>;
+        };
 /*
         morph_a: morph_a {
             compatible = "zmk,behavior-mod-morph";
@@ -2205,6 +2213,20 @@
             tapping-term-ms = <400>;
             bindings = <&mt_dlt 0 DELETE>, <&close_window>, <&close_all_windows>;
         };
+
+        td_right: tap_dance_right {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&mt_c ESC RIGHT>, <&sleep_windows>, <&none>, <&alt_f4>;
+        };
+
+        td_left: tap_dance_left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&mt_c LALT LEFT>, <&close_window>, <&close_all_windows>, <&all_delete>;
+        };
 /*
         td_fl_comma: tap_dance_flick_comma {
             compatible = "zmk,behavior-tap-dance";
@@ -2292,7 +2314,7 @@
 &mt_c LSHFT ENTER	 &kp A            &mt_c SLASH S  &mt_c DQT D    &mt_c LALT F  &mt_c LS(SLASH) G  &morph_space_tab			&h_fun_alt 0 H  &mt_m LCLK J  &mt_m RCLK K  &kp L         &kp UP         &mt_c RSHFT TAB	&morph_space_us
 &kp LALT       		 &lt_c FUNCS_L Z  &kp X          &kp C   	    &kp V         &mt_c BSLH B       &mkp LCLK					&mt_c LALT N  	&kp M   	  &td_sc_us	 	&td_co_us	  &kp DOWN   	 &kp RIGHT	   		&kp RCTRL
 &none  		   		 &none      	  &none   		 &none   	    &kp ENTER     &td_us_ly  		 &mkp RCLK					&none  		  	&none   	  &none  	 	&none  	   	  &kp F5	     &td_us_ly	   		&kp LEFT
-&td_dlt_cls			 &td_slp_a4
+&td_left			 &morph_right
 			>;
 
             sensor-bindings =

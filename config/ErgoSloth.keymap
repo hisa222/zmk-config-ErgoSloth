@@ -176,6 +176,26 @@
         pattern = <GESTURE_RIGHT GESTURE_LEFT>;
         bindings = <&kp LC(A)>;
     };
+
+    gesture_r_u {
+        pattern = <GESTURE_RIGHT GESTURE_UP>;
+        bindings = <&kp LG(LC(RIGHT))>;
+    };
+
+    gesture_r_d {
+        pattern = <GESTURE_RIGHT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(LEFT))>;
+    };
+
+    gesture_l_u {
+        pattern = <GESTURE_LEFT GESTURE_UP>;
+        bindings = <&kp LG(LC(D))>;
+    };
+
+    gesture_l_d {
+        pattern = <GESTURE_LEFT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(F4))>;
+    };
 };
 
 // joysticks
@@ -2218,14 +2238,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&mt_c ESC RIGHT>, <&sleep_windows>, <&none>, <&alt_f4>;
+            bindings = <&mt_dlt 0 RIGHT>, <&kp ENTER>, <&sleep_windows>, <&alt_f4>;
         };
 
         td_left: tap_dance_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&mt_c LALT LEFT>, <&close_window>, <&close_all_windows>, <&all_delete>;
+            bindings = <&mt_c LALT LEFT>, <&kp DELETE>, <&kp SPACE>, <&kp F11>;
         };
 /*
         td_fl_comma: tap_dance_flick_comma {
@@ -2531,20 +2551,20 @@
 
             // -------------------------------------------------------------------------------------------------------
             // |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  GUI |   |  F7  |  F8  |  F9  | F10  |  F11 |  F12 | RCLK |
-            // |  E/J |   1  |   2  |   3  |   4  |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
-            // |  TAB | Prev | RWnd | FsFw | Next | VolU | SPCE |   | VolU | Prev | RWnd | FsFw | Next |      | SPCE |
-            // | LSft | Play | PgUp | BrUp | BrMx | Mute | SPCE |   |      | PrSc | PrSc | ReSc | Copy | RSft | SPCE |
+            // |  E/J |   1  |   2  | DskD | DskA |   5  | LCtr |   |   6  |   7  |   8  |   9  |   0  | BKSP | LCLK |
+            // |  TAB | Prev | Next | DskL | DskR | 	 | SPCE |   | VolU | DskD | DskA | Rwnd | FsFw |      | SPCE |
+            // | LSft | Play | PgUp | BrUp | BrMx | VolU | SPCE |   |      | DskL | DskR | ReSc | Copy | RSft | SPCE |
             // | LAlt |      | PgDn | BrDn | BrMi | VolD | LCLK |   | VolD | MUTE |   ,  |   .  | Past | Forw | RCtr |
             // | CmL1 | CmL2 | CmL3 | CmL4 | ENTR | lyr0 | RCLK |   | CmR1 | CmR2 | CmR3 | CmR4 |  F5  | lyr0 | Prev |
 			// | DCm1 | DCm2 |
 
             bindings = <
-&kp F1      &kp F2      &kp F3     &kp F4     	 &kp F5         &kp F6     	  &trans			&kp F7     	  &kp F8      &kp F9     	 &kp F10     &kp F11    	  &kp F12		 	  &trans
-&kp C_MENU  &kp N1      &kp N2     &kp N3     	 &kp N4     	&kp N5     	  &trans			&kp N6    	  &kp N7      &kp N8     	 &kp N9      &kp N0     	  &trans		  	  &trans
-&kp TAB     &kp C_PREV  &kp C_RW   &kp C_FF   	 &kp C_NEXT     &kp C_VOL_UP  &trans			&kp C_VOL_UP  &kp C_PREV  &kp C_PP  	 &kp C_NEXT  &kp LC(LA(DEL))  &trans		 	  &trans
-&kp LSHFT   &kp C_PP	&kp PG_UP  &kp C_BRI_UP  &kp C_BRI_MAX  &kp C_MUTE	  &trans			&trans		  &kp PSCRN   &kp LG(LS(S))  &kp LG(G)   &mt_cp_tr 0 0    &trans			  &trans
-&kp LALT    &trans	    &kp PG_DN  &kp C_BRI_DN  &kp C_BRI_MIN  &kp C_VOL_DN  &trans			&kp C_VOL_DN  &kp C_MUTE  &kp COMMA  	 &kp KP_DOT  &mt_pst 0 0  	  &ctrl_y		 	  &trans
-&none  		&none       &none      &none      	 &kp ENTER  	&tog FUNCS_L  &trans			&none  	   	  &none       &none  	 	 &none  	 &kp F5	          &tog FUNCS_L		  &ctrl_z
+&kp F1      &kp F2      &kp F3  	&kp F4     	  	  &kp F5         	 &kp F6        &trans			&kp F7     	  &kp F8      		&kp F9     	 	   &kp F10    &kp F11    	 &kp F12	   &trans
+&kp C_MENU  &kp N1      &kp N2  	&kp LG(LC(F4))    &kp LG(LC(D))      &kp N5        &trans			&kp N6    	  &kp N7      		&kp N8     	 	   &kp N9     &kp N0     	 &trans		   &trans
+&kp TAB     &kp C_PREV  &kp C_NEXT  &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &trans		   &trans			&kp C_VOL_UP  &kp LG(LC(F4))    &kp LG(LC(D)) 	   &kp C_RW	  &kp C_FF		 &trans		   &trans
+&kp LSHFT   &kp C_PP	&kp PG_UP  	&kp C_BRI_UP  	  &kp C_BRI_MAX  	 &kp C_VOL_UP  &trans			&trans		  &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp LG(G)  &mt_cp_tr 0 0  &trans		   &trans
+&kp LALT    &trans	    &kp PG_DN  	&kp C_BRI_DN  	  &kp C_BRI_MIN  	 &kp C_VOL_DN  &trans			&kp C_VOL_DN  &kp C_MUTE  		&kp LG(LS(S))	   &kp PSCRN  &mt_pst 0 0    &ctrl_y	   &trans
+&none  		&none       &none      	&none      	  	  &kp ENTER  	 	 &tog FUNCS_L  &trans			&none  	   	  &none       		&none  	 	 	   &none  	  &kp F5	     &tog FUNCS_L  &ctrl_z
 &trans		&trans
 			>;
 

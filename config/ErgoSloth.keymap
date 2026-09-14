@@ -408,10 +408,11 @@
             bindings = <&mkp MCLK>;
         };
 
-        right_click_t_l {
+        middle_click_l2 {
             timeout-ms = <200>;
             key-positions = <45 46>;
-            bindings = <&rclk_t>;
+            bindings = <&mkp MCLK>;
+			layers = <MOUSE_L>;
         };
 
         right_click_left {
@@ -424,6 +425,30 @@
             timeout-ms = <400>;
             key-positions = <27 41>;
             bindings = <&mkp RCLK>;
+        };
+
+		window_left_l {
+            timeout-ms = <400>;
+            key-positions = <46 48>;
+            bindings = <&kp LG(LS(LEFT))>;
+        };
+
+        window_left_r {
+            timeout-ms = <400>;
+            key-positions = <13 50>;
+            bindings = <&kp LG(LS(LEFT))>;
+        };
+
+		window_right_l {
+            timeout-ms = <400>;
+            key-positions = <46 76>;
+            bindings = <&kp LG(LS(RIGHT))>;
+        };
+
+        window_right_r {
+            timeout-ms = <400>;
+            key-positions = <41 50>;
+            bindings = <&kp LG(LS(RIGHT))>;
         };
 
         to_jis_layer {

@@ -390,22 +390,17 @@
             bindings = <&mkp MCLK>;
         };
 
-        right_click_t_r {
+        middle_click_r2 {
             timeout-ms = <200>;
             key-positions = <50 51>;
-            bindings = <&rclk_t>;
+            bindings = <&mkp MCLK>;
+			layers = <MOUSE_L>;
         };
 
         middle_click_l1 {
             timeout-ms = <200>;
             key-positions = <62 76>;
             bindings = <&mkp MCLK>;
-        };
-
-        right_click_t_l {
-            timeout-ms = <200>;
-            key-positions = <45 46>;
-            bindings = <&rclk_t>;
         };
 
         right_click_left {
@@ -953,16 +948,6 @@
 			    <&macro_pause_for_release>,
 			    <&macro_release &mo FUNCS_L &kp LALT>;
 		};
-
-        rclk_t: right_click_t {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <100>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_tap &mkp RCLK>,
-                <&macro_tap &kp T>;
-        };
 /*
         fl_ka: flick_ka {
             compatible = "zmk,behavior-macro";

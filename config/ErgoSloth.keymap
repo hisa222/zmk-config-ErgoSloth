@@ -395,10 +395,11 @@
             bindings = <&mkp MCLK>;
         };
 
-        right_click_t_r {
+        middle_click_r2 {
             timeout-ms = <200>;
             key-positions = <50 51>;
-            bindings = <&rclk_t>;
+            bindings = <&mkp MCLK>;
+			layers = <MOUSE_L>;
         };
 
         middle_click_l1 {

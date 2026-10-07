@@ -394,7 +394,7 @@
             timeout-ms = <200>;
             key-positions = <50 51>;
             bindings = <&mkp MCLK>;
-			layers = <MOUSE_L>;
+			// layers = <MOUSE_L>;
         };
 
         middle_click_l1 {
